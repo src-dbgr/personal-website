@@ -1,0 +1,34 @@
+:root {
+  --clr-background-major: rgb(181, 178, 166);
+  --clr-background-minor: rgb(150, 149, 141);
+  --clr-text: rgb(52, 69, 73);
+  --clr-details: rgb(53, 161, 105);
+
+  --clr-triangle-peak-top-pink: rgb(164, 90, 154);
+  --clr-triangle-peak-top-green: rgb(34, 169, 110);
+  --clr-triangle-peak-left-right-pink: rgb(145, 107, 158);
+  --clr-triangle-peak-left-right-green: rgb(73, 108, 81);
+  --clr-triangle-body-red: rgb(176, 77, 118);
+  --clr-triangle-body-green: rgb(61, 139, 104);
+
+  --clr-inner-circle-dark: rgb(81, 101, 106);
+  --clr-inner-circle-light: rgb(154, 152, 142);
+
+  --clr-inner-circle-gradient: radial-gradient(
+    var(var(--clr-inner-circle-light)),
+    var(--clr-inner-circle-dark)
+  );
+
+  --crl-triangle-peak-top-gradient: linear-gradient(
+    rgb(172, 74, 156),
+    rgb(0, 175, 100)
+  );
+  --crl-triangle-peak-right-gradient: linear-gradient(
+    rgb(150, 105, 164),
+    rgb(69, 107, 77)
+  );
+  --crl-triangle-body-gradient: linear-gradient(
+    rgb(179, 69, 117),
+    rgb(36, 141, 100)
+  );
+}
