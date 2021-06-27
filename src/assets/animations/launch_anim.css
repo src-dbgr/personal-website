@@ -1,0 +1,66 @@
+/* removing browser default settings*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* padding: 100px; */
+  background: rgb(181, 178, 166);
+}
+
+#imagewrapper {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+#logo {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  height: 300px;
+}
+
+#triangle {
+  cursor: pointer;
+}
+
+/* The animation code */
+@keyframes highlightDescription {
+  0% {
+    fill: rgb(52, 69, 73);
+  }
+  50% {
+    fill: rgb(52, 69, 73, 0.5);
+  }
+  95% {
+    fill: rgb(52, 69, 73);
+  }
+  100% {
+    fill: rgb(201, 201, 201, 0.5);
+  }
+}
+
+/* The animation code */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#description path {
+  animation-name: highlightDescription;
+  animation-duration: 3.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}

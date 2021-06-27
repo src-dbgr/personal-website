@@ -28,16 +28,20 @@ const data = [
   },
 ];
 
-export default ({ styleClass }) => {
+const tempLinks = data.map((link) => {
+  return (
+    <li key={link.id}>
+      <Link to={link.url}>{link.text}</Link>
+    </li>
+  );
+});
+
+const links = function ({ styleClass }) {
   return (
     <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-      {data.map((link) => {
-        return (
-          <li key={link.id}>
-            <Link to={link.url}>{link.text}</Link>
-          </li>
-        );
-      })}
+      {tempLinks}
     </ul>
   );
 };
+
+export default links;
