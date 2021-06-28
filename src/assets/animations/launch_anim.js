@@ -145,6 +145,7 @@ if (isIE()) {
         document
           .querySelector("#triangle")
           .removeEventListener("click", killAnimation);
+        document.body.removeEventListener("keyup", killAnimation);
         setTimeout(function () {
           document.getElementById("imagewrapper").remove();
         }, animTimeout * 3);
@@ -216,7 +217,14 @@ if (isIE()) {
       setTimeout(killAnimation, animTimeout * 60000); // launch after timeout if user does not click to launch
     }
 
-    document.querySelector("#triangle").onclick = killAnimation;
+    let triangleElement = document.querySelector("#triangle");
+    triangleElement.onclick = killAnimation;
+    document.body.addEventListener("keyup", function (event) {
+      if (event.keyCode === 13) {
+        event.preventDefault();
+        killAnimation();
+      }
+    });
 
     return initialAnimation;
   };
