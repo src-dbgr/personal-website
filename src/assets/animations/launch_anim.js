@@ -80,16 +80,17 @@ let launchAnimation = function () {
 
   tl_stop
     .add({
-      targets: "#logo #description",
-      rotate: 60,
-      transformOrigin: "50% 50%",
+      targets: "#description, #outercircle",
+      rotate: [0, 360],
+      transformOrigin: ["50% 50% 0", "50% 60% 0"],
+      scale: 0.5,
       opacity: 0,
     })
     .add({
-      targets: "#innercircle, #outercircle",
-      scale: 30,
+      targets: "#innercircle",
       opacity: 0,
-      transformOrigin: "50% 50%",
+      scale: 1.4,
+      transformOrigin: ["50% 50% 0", "50% 50% 0"],
     })
     .add({
       targets: "#triangle polygon",
@@ -144,13 +145,13 @@ let launchAnimation = function () {
     tl_start
       .add({
         targets: "#outercircle",
-        transformOrigin: "50% 50%",
+        transformOrigin: ["50% 50% 0", "50% 50% 0"],
         scale: [0, 0.5, 1],
         opacity: 1,
       })
       .add({
         targets: "#triangle,#innercircle",
-        transformOrigin: "50% 60% 0",
+        transformOrigin: ["50% 50% 0", "50% 50% 0"],
         opacity: [0, 0.2, 0.5, 0.95],
         rotate: [0, 1080],
         scale: [0, 0.2, 1.1, 1],
@@ -161,8 +162,8 @@ let launchAnimation = function () {
       })
       .add({
         targets: "#triangle",
-        transformOrigin: "50% 60% 0",
-        rotate: [0, 360],
+        transformOrigin: ["50% 55% 0", "50% 55% 0"],
+        rotate: [0, 720],
         complete: function (anim) {
           tl_start.remove();
         },
@@ -186,7 +187,7 @@ let launchAnimation = function () {
     let startAnim = startAnimation();
     startAnim.play();
     setTimeout(startElementMotion, animTimeout * 3);
-    setTimeout(killAnimation, animTimeout * 60); // launch after timeout if user does not click to launch
+    setTimeout(killAnimation, animTimeout * 60000); // launch after timeout if user does not click to launch
   }
 
   document.querySelector("#triangle").onclick = killAnimation;

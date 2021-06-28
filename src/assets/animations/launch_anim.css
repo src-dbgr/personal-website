@@ -6,8 +6,10 @@
 }
 
 body {
-  /* padding: 100px; */
-  background: rgb(181, 178, 166);
+  background: rgb(181, 178, 166); /* fallback*/
+  background: radial-gradient(rgb(181, 178, 166), rgb(150, 149, 141));
+  height: 100vh;
+  width: 100vw;
 }
 
 #imagewrapper {
@@ -32,7 +34,7 @@ body {
 }
 
 /* The animation code */
-@keyframes highlightDescription {
+@keyframes highlight_descr {
   0% {
     fill: rgb(52, 69, 73);
   }
@@ -58,7 +60,7 @@ body {
 }
 
 #description path {
-  animation-name: highlightDescription;
+  animation-name: highlight_descr;
   animation-duration: 3.5s;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
