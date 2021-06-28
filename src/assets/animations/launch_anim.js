@@ -244,7 +244,10 @@ if (isIE()) {
     ) {
       let delay = execDelay;
       let startDelay = execStartDelay;
-      Array.from(letters).forEach(function (letter) {
+      Array.from(letters).forEach(function (letter, index) {
+        // delay typing at the following letter indizes
+        startDelay +=
+          index === 3 || index === 13 || index === 12 ? delay * 5 : 0;
         return setTimeout(callback, (startDelay += delay), letter, color);
       });
     }
