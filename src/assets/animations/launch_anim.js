@@ -221,4 +221,46 @@ if (isIE()) {
     return initialAnimation;
   };
   launchAnimation()();
+
+  function descriptionAnimation() {
+    let letters = document.querySelectorAll("#description path");
+    Array.from(letters).forEach(function (letter) {
+      letter.style.opacity = "0";
+    });
+
+    function enableDescriptionLetters(letter) {
+      letter.style.opacity = "1";
+    }
+
+    function colorizeDescriptionLetters(letter, color) {
+      letter.style.fill = color;
+    }
+
+    function makeDescriptionVisible(
+      callback,
+      execDelay,
+      execStartDelay,
+      color
+    ) {
+      let delay = execDelay;
+      let startDelay = execStartDelay;
+      Array.from(letters).forEach(function (letter) {
+        return setTimeout(callback, (startDelay += delay), letter, color);
+      });
+    }
+
+    let printSpeed = 100; // ms
+    let startDelay = 2000; // ms
+    makeDescriptionVisible(enableDescriptionLetters, printSpeed, startDelay);
+
+    // colorization also possible, turn off keyframe animation beforehand
+    // makeDescriptionVisible(
+    //   colorizeDescriptionLetters,
+    //   printSpeed,
+    //   startDelay + 100,
+    //   "rgb(181, 178, 166)"
+    // );
+  }
+
+  descriptionAnimation();
 }
