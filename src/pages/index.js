@@ -1,7 +1,8 @@
 import React from "react";
+import Navbar from "../components/00_navigation/Navbar";
 
 const index = () => {
-  return <div>Clean Start</div>;
+  return <Navbar />;
 };
 
 export default index;
