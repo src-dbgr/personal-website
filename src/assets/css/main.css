@@ -35,6 +35,8 @@
 
   --ff-primary: "Bebas Neue", cursive;
   --ff-secondary: "Oswald", sans-serif;
+
+  --transition: all 0.5s ease;
 }
 
 /*
@@ -113,26 +115,34 @@ NAVBAR
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
-  color: var(--clr-primary-5);
+  color: var(--clr-background-minor);
   cursor: pointer;
   transition: var(--transition);
 }
 .toggle-btn:hover {
-  color: var(--clr-primary-2);
+  color: var(--clr-background-minor);
 }
 
-.toggle-btn img {
-  margin-top: .7rem;
-  width: 3.3rem;
+.toggle-btn svg {
+  width: 3.5rem;
+  height: 3.5rem;
 }
 
-.toggle-btn:hover stop:last-child {
-  stop-color: var(--clr-custom-22);
+.toggle-btn:hover #circle_gradient_first_child {
+  stop-color: var(--clr-background-major);
+}
+
+#toggle stop {
+  transition: var(--transition);
 }
 
 .nav-links {
   font-size: 1.3rem;
   display: none;
+}
+
+#triangle_nav {
+  visibility: hidden;
 }
 
 @media screen and (min-width: 768px) {
@@ -151,24 +161,32 @@ NAVBAR
   }
   .nav-links a {
     text-transform: uppercase;
-    color: var(--clr-custom-22);
+    color: var(--clr-background-minor);
     letter-spacing: var(--spacing);
     transition: var(--transition);
     padding: 0.5rem 0;
   }
   .nav-links a:hover {
-    color: var(--clr-custom-23);
-    box-shadow: 0px 1.5px var(--clr-custom-23);
+    color: var(--clr-background-minor);
+    box-shadow: 0px 1.5px var(--clr-background-minor);
   }
   .nav-center {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
   }
+
+  #triangle_nav {
+    visibility: hidden;
+  }
 }
 
 @media screen and (min-width: 992px) {
   .navbar {
     background: var(--clr-background-minor);
+  }
+
+  #triangle_nav {
+    visibility: hidden;
   }
 }
