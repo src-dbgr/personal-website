@@ -1,6 +1,5 @@
 import React from "react";
 import triangle from "../../assets/images/navigation/triangle_clr.svg";
-import circle from "../../assets/images/navigation/toggle_menu_alt.svg";
 import PageLinks from "../../data/constants/links";
 
 const Navbar = () => {
