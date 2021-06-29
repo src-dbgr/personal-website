@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  background: #333;
+}
+
+#toggle {
+  /*background: red;*/
+  display: block;
+  margin: 20px auto;
+  width: 100px;
+  cursor: pointer;
+}
+
+#triangle_nav {
+  visibility: hidden;
+}

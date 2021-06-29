@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html class="" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Navbar toggle</title>
+    <link rel="stylesheet" href="menu_toggle.css" />
+  </head>
+
+  <body>
+    <svg
+      id="toggle"
+      xmlns="http://www.w3.org/2000/svg"
+      width="250"
+      height="250"
+      viewBox="0 0 250 250"
+    >
+      <defs>
+        <linearGradient
+          id="circle_gradient"
+          data-name="Unbenannter Verlauf 221"
+          x1="187.28"
+          y1="232.76"
+          x2="62.42"
+          y2="16.49"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop id="circle_grad_1" offset="0" stop-color="#32a169"></stop>
+          <stop id="circle_grad_2" offset="0.32" stop-color="#467b6a"></stop>
+          <stop id="circle_grad_3" offset="0.53" stop-color="#51656b"></stop>
+          <stop id="circle_grad_4" offset="1" stop-color="#b5b2a6"></stop>
+        </linearGradient>
+        <linearGradient
+          id="triangle_gradient"
+          data-name="Unbenannter Verlauf 224"
+          x1="24"
+          y1="191.69"
+          x2="163.5"
+          y2="-49.94"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop offset="0" stop-color="#2fa169"></stop>
+          <stop offset="0.12" stop-color="#339969"></stop>
+          <stop offset="0.3" stop-color="#3f856a"></stop>
+          <stop offset="0.51" stop-color="#51656c"></stop>
+          <stop offset="0.72" stop-color="#828b88"></stop>
+          <stop offset="0.9" stop-color="#a7a79e"></stop>
+          <stop offset="1" stop-color="#b5b2a6"></stop>
+        </linearGradient>
+      </defs>
+      <path
+        id="circle_nav"
+        d="M125.3,0C191.9-1.3,249.9,56,250,124.8S191.9,251.2,123,250C55.6,248.8.5,193.4,0,124.8S58.4-1.7,125.3,0Z"
+        transform="translate(0 0)"
+        fill="url(#circle_gradient)"
+        style="fill: url('#circle_gradient')"
+        data-original="M125.3,0C191.9-1.3,249.9,56,250,124.8S191.9,251.2,123,250C55.6,248.8.5,193.4,0,124.8S58.4-1.7,125.3,0Z"
+      ></path>
+      <polygon
+        id="triangle_nav"
+        points="250 0 125 250 0 0 250 0"
+        fill="url(#triangle_gradient)"
+      ></polygon>
+    </svg>
+
+    <!-- <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script> -->
+    <script src="gsap.min.js"></script>
+    <!-- <script src="https://assets.codepen.io/16327/MorphSVGPlugin3.min.js"></script> -->
+    <script src="morph.svg.min.js"></script>
+    <script>
+      var tl = gsap.timeline({ defaults: { duration: 0.12 } }),
+        circle = document.getElementById("circle_nav");
+      triangle = document.getElementById("triangle_nav");
+
+      let toggle = false;
+      function morph() {
+        if (!toggle) {
+          circle.style.fill = "url(#triangle_gradient)";
+          tl.to(circle, { morphSVG: triangle }, "+=0");
+          toggle = !toggle;
+        } else {
+          circle.style.fill = "url(#circle_gradient)";
+          tl.to(circle, { morphSVG: circle }, "+=0");
+          toggle = !toggle;
+        }
+      }
+
+      document.getElementById("toggle").addEventListener("click", morph);
+    </script>
+  </body>
+</html>
