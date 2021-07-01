@@ -1,6 +1,10 @@
 body {
   margin: 0;
-  background: #333;
+  background: rgb(181, 178, 166);
+}
+
+#togglewrapper{
+  background: rgb(150, 149, 141);
 }
 
 #toggle {
@@ -11,6 +15,6 @@ body {
   cursor: pointer;
 }
 
-#triangle_nav {
+#circle_nav {
   visibility: hidden;
 }

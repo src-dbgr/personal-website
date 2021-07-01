@@ -1,8 +1,14 @@
 import React from "react";
-import Navbar from "../components/00_navigation/Navbar";
+import Layout from "../components/Layout";
 
 const index = () => {
-  return <Navbar />;
+  return (
+    <>
+      <Layout>
+        <h1>Test</h1>
+      </Layout>
+    </>
+  );
 };
 
 export default index;
