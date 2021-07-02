@@ -6,11 +6,12 @@ import anime from "animejs";
 const Navbar = (props) => {
   const [scaleTrigger, setScaleTrigger] = useState(false);
   const [gradientTrigger, setGradientTrigger] = useState(false);
+  const animationDuration = 500;
+  const downSidePath = "M0,0,124.3,250,250,0Z";
+  const upSidePath = "M250,250,125.7,0,0,250Z";
   const isFirstRun = useRef(true);
-  // passing path parameter to perform morph
-  const animeNavToggle = (params) => {
-    let animationDuration = 500;
-    let toggle = anime({
+  const animation = (params) => {
+    return anime({
       targets: "#triangle_nav",
       easing: "easeInOutSine",
       duration: animationDuration,
@@ -18,7 +19,6 @@ const Navbar = (props) => {
       d: [{ value: params }],
       loop: false,
     });
-    return toggle;
   };
 
   useEffect(() => {
@@ -35,9 +35,9 @@ const Navbar = (props) => {
     }, 500);
     return () => {
       if (!props.sideBarIsOpen) {
-        animeNavToggle("M250,250,125.7,0,0,250Z").play();
+        animation(upSidePath).play();
       } else {
-        animeNavToggle("M0,0,124.3,250,250,0Z").play();
+        animation(downSidePath).play();
       }
       setScaleTrigger(true);
     };
