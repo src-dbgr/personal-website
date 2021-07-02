@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import anime from "animejs";
 
-const Launch = () => {
+const Launch = (props) => {
   useEffect(() => {
     function isIE() {
       const ua = window.navigator.userAgent;
@@ -25,7 +25,6 @@ const Launch = () => {
           "#triangle polygon:not(#_12triangleback)"
         );
         let pathLength = trianglePathEls.length;
-        let hasStarted = false;
         let aimations = [];
 
         let breathAnimation = anime({
@@ -151,14 +150,13 @@ const Launch = () => {
               .removeEventListener("click", killAnimation);
             document.body.removeEventListener("keyup", killAnimation);
             setTimeout(function () {
-              document.getElementById("imagewrapper").remove();
+              props.finishLaunching();
             }, animTimeout * 3);
             killAnimationTriggered = !killAnimationTriggered;
           }
         }
 
         function startAnimation() {
-          console.log("Start Animation!");
           let tl_start = anime.timeline({
             easing: "easeOutExpo",
             duration: animTimeout,
@@ -196,26 +194,16 @@ const Launch = () => {
 
         // kick off animation
         function initialAnimation() {
-          console.log("Initial Animation Start");
           // make background layer invisible
           let nodes = document.querySelectorAll(
             "#description,#outercircle,#innercircle,#triangle,#_12triangleback"
           );
 
           document.querySelector("#_12triangleback").style.opacity = 0;
-          //TODO Fix here!
           Array.from(nodes).forEach(function (item) {
             item.style.opacity = 0;
           });
 
-          // remove in order to make it work in IE ...
-          // [
-          //   ...document.querySelectorAll(
-          //     "#description,#outercircle,#innercircle,#triangle,#_12triangleback"
-          //   ),
-          // ].map((item) => {
-          //   item.style.opacity = 0;
-          // });
           // in order to not render on load up make logo visible later
           document.querySelector("#logo").style.opacity = 1;
           let startAnim = startAnimation();
@@ -247,9 +235,9 @@ const Launch = () => {
           letter.style.opacity = "1";
         }
 
-        function colorizeDescriptionLetters(letter, color) {
-          letter.style.fill = color;
-        }
+        // function colorizeDescriptionLetters(letter, color) {
+        //   letter.style.fill = color;
+        // }
 
         function makeDescriptionVisible(
           callback,
@@ -260,7 +248,6 @@ const Launch = () => {
           let delay = execDelay;
           let startDelay = execStartDelay;
           Array.from(letters).forEach(function (letter, index) {
-            console.log("printing Letter: " + letter);
             // delay typing at the following letter indizes
             startDelay +=
               index === 3 || index === 13 || index === 12 ? delay * 5 : 0;
@@ -287,7 +274,7 @@ const Launch = () => {
 
       descriptionAnimation();
     }
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div id="imagewrapper">

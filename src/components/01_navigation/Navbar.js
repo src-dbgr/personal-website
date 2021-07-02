@@ -70,8 +70,8 @@ const Navbar = (props) => {
                   r="125"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#9a988e"></stop>
-                  <stop offset="1" stop-color="#51656a"></stop>
+                  <stop offset="0" stopColor="#9a988e"></stop>
+                  <stop offset="1" stopColor="#51656a"></stop>
                 </radialGradient>
                 <linearGradient
                   id="triangle_gradient"
@@ -83,8 +83,8 @@ const Navbar = (props) => {
                   gradientTransform="matrix(-1, 0, 0, 1, 762.1, 3.6)"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#ac4a9c"></stop>
-                  <stop offset="1" stop-color="#00af64"></stop>
+                  <stop offset="0" stopColor="#ac4a9c"></stop>
+                  <stop offset="1" stopColor="#00af64"></stop>
                 </linearGradient>
                 <linearGradient
                   id="circle_gradient_magenta"
@@ -95,9 +95,9 @@ const Navbar = (props) => {
                   y2="16.49"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#9769a4"></stop>
-                  <stop offset="0.3" stop-color="#52666b"></stop>
-                  <stop offset="1" stop-color="#9a988e"></stop>
+                  <stop offset="0" stopColor="#9769a4"></stop>
+                  <stop offset="0.3" stopColor="#52666b"></stop>
+                  <stop offset="1" stopColor="#9a988e"></stop>
                 </linearGradient>
                 <linearGradient
                   id="circle_gradient_green"
@@ -108,9 +108,9 @@ const Navbar = (props) => {
                   y2="16.49"
                   gradientUnits="userSpaceOnUse"
                 >
-                  <stop offset="0" stop-color="#b5b2a6"></stop>
-                  <stop offset="0.7" stop-color="#51656b"></stop>
-                  <stop offset="1" stop-color="#32a169"></stop>
+                  <stop offset="0" stopColor="#b5b2a6"></stop>
+                  <stop offset="0.7" stopColor="#51656b"></stop>
+                  <stop offset="1" stopColor="#32a169"></stop>
                 </linearGradient>
               </defs>
               <path
