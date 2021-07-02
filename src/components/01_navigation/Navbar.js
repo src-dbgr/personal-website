@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import triangle from "../../assets/images/navigation/triangle_clr.svg";
+import triangleimg from "../../assets/images/navigation/triangle_clr.svg";
 import PageLinks from "../../data/constants/links";
 import anime from "animejs";
 
@@ -47,7 +47,7 @@ const Navbar = (props) => {
     <nav className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <img id="nav_main_logo" src={triangle} alt="img" />
+          <img id="nav_main_logo" src={triangleimg} alt="img" />
           <button
             type="button"
             className="toggle-btn"

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./01_navigation/Navbar";
 import Sidebar from "./01_navigation/Sidebar";
+import Launch from "./Launch";
 
 const Layout = ({ children }) => {
   const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false);
@@ -11,8 +12,9 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Navbar toggleSideBar={toggleSideBar} sideBarIsOpen={sideBarIsOpen}/>
+      <Navbar toggleSideBar={toggleSideBar} sideBarIsOpen={sideBarIsOpen} />
       <Sidebar toggleSideBar={toggleSideBar} sideBarIsOpen={sideBarIsOpen} />
+      <Launch />
       {children}
     </>
   );
