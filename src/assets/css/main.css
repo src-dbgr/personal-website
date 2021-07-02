@@ -97,7 +97,7 @@ Launch
 */
 
 #imagewrapper {
-  height: 100vh;
+  height: calc(100vh);
   width: 100vw;
   position: relative;
   background: var(--clr-body-background-radial-gradient);
@@ -111,7 +111,10 @@ Launch
   left: 0;
   right: 0;
   bottom: 0;
-  height: 300px;
+  min-height: 30vh;
+  max-height: 40vh;
+  max-width: 90vw;
+  overflow: hidden;
   opacity: 0; /* make opaque for animation */
 }
 
@@ -356,10 +359,10 @@ Sidebar
 .sidebar {
   background: grey;
   position: fixed;
-  top: 0;
+  top: var(--nav-page-top-space);
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   z-index: 199;
   display: grid;
   place-items: center;
