@@ -338,6 +338,7 @@ Launch
   right: 0;
   bottom: 0;
   min-height: 30vh;
+  min-width: 40vw;
   max-height: 40vh;
   max-width: 90vw;
   overflow: hidden;
@@ -402,6 +403,11 @@ Launch
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
+}
+@media screen and (min-width: 992px) {
+  #logo {
+    max-height: 30vh;
+  }
 }
 
 /*
@@ -563,6 +569,12 @@ NAVBAR
     color: var(--clr-dark);
     box-shadow: 0px -3px var(--clr-hyphen);
     text-shadow: 1px 1px var(--clr-background-major);
+    /* background: var(--clr-mix-side-linear-gradient); */
+    background: linear-gradient(
+      180deg,
+      rgba(150, 149, 141, 0.5),
+      rgba(90, 107, 110, 0.5)
+    );
   }
 
   #nav_main_logo {
@@ -631,6 +643,7 @@ Sidebar
 .sidebar-links li a:hover {
   background: var(--clr-mix-side-linear-gradient);
   color: var(--clr-background-major);
+  text-shadow: 1px 1px var(--clr-dark);
 }
 
 @media screen and (min-width: 768px) {

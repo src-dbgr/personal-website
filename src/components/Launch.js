@@ -138,7 +138,7 @@ const Launch = (props) => {
         let animTimeout = 1000;
         let killAnimationTriggered = false;
 
-        function killAnimation() {
+        function killAnimation(e) {
           if (!killAnimationTriggered) {
             document.querySelector(
               "#triangle #_12triangleback"
@@ -148,10 +148,18 @@ const Launch = (props) => {
             document
               .querySelector("#triangle")
               .removeEventListener("click", killAnimation);
-            document.body.removeEventListener("keyup", killAnimation);
-            setTimeout(function () {
+            document.body.removeEventListener("keydown", killAnimation);
+            if (e instanceof Event && e.code !== "customIdentifier") {
+              // this section stops the animation immediately since
+              // the user killed the animation
               props.finishLaunching();
-            }, animTimeout * 3);
+            } else {
+              // this section ends the animation smoothly with polygon decay
+              // applies when everything runs without user interruption
+              setTimeout(function () {
+                props.finishLaunching();
+              }, animTimeout * 3);
+            }
             killAnimationTriggered = !killAnimationTriggered;
           }
         }
@@ -208,18 +216,49 @@ const Launch = (props) => {
           document.querySelector("#logo").style.opacity = 1;
           let startAnim = startAnimation();
           startAnim.play();
+          // delayed start of polygon motion
           setTimeout(startElementMotion, animTimeout * 3);
-          setTimeout(killAnimation, animTimeout * 60000); // launch after timeout if user does not click to launch
         }
 
         let triangleElement = document.querySelector("#triangle");
         triangleElement.onclick = killAnimation;
-        document.body.addEventListener("keyup", function (event) {
-          if (event.keyCode === 13) {
-            event.preventDefault();
-            killAnimation();
-          }
-        });
+        document.body.addEventListener(
+          "keydown",
+          function (event) {
+            if (event.defaultPrevented) {
+              return;
+            }
+            var handled = false;
+            // if (event.keyCode === 13) {
+            //   killAnimation();
+            // }
+
+            if (event.key !== undefined) {
+              // Handle the event with KeyboardEvent.key and set handled true.
+              if (event.key === "Enter") {
+                killAnimation(event);
+                handled = true;
+              }
+            } else if (event.keyIdentifier !== undefined) {
+              // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
+              if (event.key === "Enter") {
+                killAnimation(event);
+                handled = true;
+              }
+            } else if (event.keyCode !== undefined) {
+              if (event.key === "Enter") {
+                killAnimation(event);
+                handled = true;
+              }
+              // Handle the event with KeyboardEvent.keyCode and set handled true.
+            }
+
+            if (handled) {
+              event.preventDefault();
+            }
+          },
+          true
+        );
 
         return initialAnimation;
       };
@@ -227,12 +266,17 @@ const Launch = (props) => {
 
       function descriptionAnimation() {
         let letters = document.querySelectorAll("#description path");
+        let printSpeed = 100; // ms
+        let startDelay = 2000; // ms
         Array.from(letters).forEach(function (letter) {
           letter.style.opacity = "0";
         });
 
-        function enableDescriptionLetters(letter) {
+        function enableDescriptionLetters(letter, callback) {
           letter.style.opacity = "1";
+          if (callback && typeof callback === "function") {
+            setTimeout(callback, printSpeed * 5); // set little timeout to print final letter.
+          }
         }
 
         // function colorizeDescriptionLetters(letter, color) {
@@ -251,19 +295,35 @@ const Launch = (props) => {
             // delay typing at the following letter indizes
             startDelay +=
               index === 3 || index === 13 || index === 12 ? delay * 5 : 0;
-            return setTimeout(callback, (startDelay += delay), letter, color);
+            // return setTimeout(callback, (startDelay += delay), letter, color);
+            if (index === letters.length - 1) {
+              return setTimeout(callback, (startDelay += delay), letter, () => {
+                // anonymous inner callback, simulates a key down event to stop animation and launch page
+                document.body.dispatchEvent(
+                  new KeyboardEvent("keydown", {
+                    key: "Enter",
+                    keyCode: 13, // Enter keyCode
+                    code: "customIdentifier", // identify that this keystroke is triggered automatically
+                    which: 13,
+                    shiftKey: false,
+                    ctrlKey: false,
+                    metaKey: false,
+                  })
+                );
+              });
+            } else {
+              return setTimeout(callback, (startDelay += delay), letter);
+            }
           });
         }
 
-        let printSpeed = 100; // ms
-        let startDelay = 2000; // ms
         makeDescriptionVisible(
           enableDescriptionLetters,
           printSpeed,
           startDelay
         );
 
-        // colorization also possible, turn off keyframe animation beforehand
+        // colorization also possible, turn off css keyframe animation beforehand
         // makeDescriptionVisible(
         //   colorizeDescriptionLetters,
         //   printSpeed,
