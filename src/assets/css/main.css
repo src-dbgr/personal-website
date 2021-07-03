@@ -205,7 +205,8 @@
   --clr-very-dark: rgb(26, 26, 26);
   --clr-dark-strong: rgb(46, 46, 46);
   --clr-dark: rgb(52, 69, 73);
-  --clr-light-dark: #5a6b6e;
+  --clr-light-dark_alt: rgb(103,118,118);
+  --clr-light-dark: rgb(90,107,110);
   --clr-details: rgb(53, 161, 105);
   --clr-hyphen: rgb(53, 160, 103);
   --clr-dark-magenta: rgb(118, 112, 129);
@@ -241,6 +242,11 @@
   );
 
   --clr-inner-circle-gradient: radial-gradient(
+    var(--clr-inner-circle-light),
+    var(--clr-inner-circle-dark)
+  );
+
+  --clr-inner-circle-linear-gradient: linear-gradient(
     var(--clr-inner-circle-light),
     var(--clr-inner-circle-dark)
   );
@@ -590,6 +596,7 @@ Sidebar
   place-items: center;
   transition: var(--transition);
   transform: translateY(-100%);
+  opacity: .92;
 }
 .show-sidebar {
   /* opacity: 1; */
@@ -610,12 +617,13 @@ Sidebar
   letter-spacing: var(--spacing);
   margin-bottom: 0.5rem;
   font-size: 2rem;
+  width: 100vw;
   /* transition: var(--transition); */
-  border-radius: var(--radius);
+  /* border-radius: var(--radius); */
 }
 .sidebar-links li a:hover {
-  background: pink;
-  color: green;
+  background: var(--clr-light-dark);
+  color: var(--clr-background-major);
 }
 
 @media screen and (min-width: 768px) {
