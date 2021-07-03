@@ -231,6 +231,11 @@
     var(--clr-dark)
   );
 
+  --clr-mix-side-linear-gradient: linear-gradient(270deg,
+    var(--clr-background-minor),
+    var(--clr-light-dark)
+  );
+
   --clr-dark-linear-gradient: linear-gradient(
     var(--clr-dark-strong),
     var(--clr-dark)
@@ -556,6 +561,7 @@ NAVBAR
   .nav-links a:hover {
     color: var(--clr-very-dark);
     box-shadow: 0px -3px var(--clr-hyphen);
+    text-shadow: 1.5px 1px var(--clr-dark-magenta);;
   }
 
   #nav_main_logo {
@@ -622,7 +628,7 @@ Sidebar
   /* border-radius: var(--radius); */
 }
 .sidebar-links li a:hover {
-  background: var(--clr-light-dark);
+  background: var(--clr-mix-side-linear-gradient);
   color: var(--clr-background-major);
 }
 

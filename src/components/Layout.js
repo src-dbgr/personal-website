@@ -4,7 +4,7 @@ import Sidebar from "./01_navigation/Sidebar";
 import Launch from "./Launch";
 
 const Layout = ({ children }) => {
-  const isIndexPage = false; // TODO ==> Change, compare to location pathname or slug!
+  const isIndexPage = true; // TODO ==> Change, compare to location pathname or slug!
   const [isLaunching, setIsLaunching] = useState(isIndexPage);
 
   const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false);
