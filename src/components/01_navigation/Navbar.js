@@ -44,7 +44,11 @@ const Navbar = (props) => {
   }, [props.sideBarIsOpen]);
 
   return (
-    <nav className="navbar">
+    <nav
+      className={`${
+        props.sideBarIsOpen ? " navbar navbar_open" : "navbar navbar_closed"
+      }`}
+    >
       <div className="nav-center">
         <div className="nav-header">
           <img id="nav_main_logo" src={triangleimg} alt="img" />
