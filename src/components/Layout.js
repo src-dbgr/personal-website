@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
             in={true}
             appear={true}
             timeout={navDelay}
-            classNames="fadein"
+            classNames="fade"
           >
             <Navbar
               toggleSideBar={toggleSideBar}

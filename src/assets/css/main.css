@@ -275,6 +275,7 @@
 
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
 
   --nav-page-top-space: 5rem;
   --neg-page-top-space: -5rem;
@@ -314,6 +315,20 @@ ul {
 a {
   text-decoration: none;
 }
+
+body::-webkit-scrollbar {
+  width: 10px; left:-100px;
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--clr-background-minor);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: var(--clr-dark);
+  border: 3px solid var(--clr-background-minor);
+}
+
 
 /*
 ==========
@@ -616,10 +631,11 @@ Sidebar
   place-items: center;
   transition: var(--transition);
   transform: translateY(-100%);
-  opacity: 0.92;
+  visibility: hidden;
 }
 .show-sidebar {
-  /* opacity: 1; */
+  visibility: visible;
+  opacity: 0.92;
   transform: translateY(0);
 }
 .sidebar-links li {
@@ -657,14 +673,42 @@ Sidebar
 Transition Styles
 ===============
 */
-.fadein-appear {
+.fade-appear {
   opacity: 0;
 }
 
-.fadein-appear.fadein-appear-active{
+.fade-appear.fade-appear-active{
   opacity: 1;
+  transition: opacity 1000ms linear;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter.fade-enter-active{
+  opacity: 1;
+  transition: opacity 1000ms linear;
+}
+
+.fade-enter-done {
+  opacity: 1;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit.fade-exit-active{
+  opacity: 0;
   transition: opacity 400ms linear;
 }
+
+.fade-exit-done {
+  opacity: 1;
+}
+
+
 
 .fadeup-appear {
   opacity: 0.01;
