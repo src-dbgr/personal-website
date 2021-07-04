@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import { CSSTransition } from "react-transition-group";
+import { navDelay } from "@utils";
 const data = [
   {
     id: 1,
@@ -38,9 +40,16 @@ const tempLinks = data.map((link) => {
 
 const links = function ({ styleClass }) {
   return (
-    <ul className={`page-links ${styleClass ? styleClass : ""}`}>
-      {tempLinks}
-    </ul>
+    <CSSTransition
+      in={true}
+      appear={true}
+      timeout={navDelay}
+      classNames="fadedown"
+    >
+      <ul className={`page-links ${styleClass ? styleClass : ""}`}>
+        {tempLinks}
+      </ul>
+    </CSSTransition>
   );
 };
 

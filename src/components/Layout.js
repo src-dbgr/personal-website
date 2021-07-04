@@ -1,7 +1,9 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import Navbar from "./01_navigation/Navbar";
 import Sidebar from "./01_navigation/Sidebar";
 import Launch from "./Launch";
+import { CSSTransition } from "react-transition-group";
+import { navDelay } from "@utils";
 
 const Layout = ({ children }) => {
   const isIndexPage = true; // TODO ==> Change, compare to location pathname or slug!
@@ -19,7 +21,17 @@ const Layout = ({ children }) => {
         <Launch finishLaunching={() => setIsLaunching(false)} />
       ) : (
         <>
-          <Navbar toggleSideBar={toggleSideBar} sideBarIsOpen={sideBarIsOpen} />
+          <CSSTransition
+            in={true}
+            appear={true}
+            timeout={navDelay}
+            classNames="fadein"
+          >
+            <Navbar
+              toggleSideBar={toggleSideBar}
+              sideBarIsOpen={sideBarIsOpen}
+            />
+          </CSSTransition>
           <Sidebar
             toggleSideBar={toggleSideBar}
             sideBarIsOpen={sideBarIsOpen}

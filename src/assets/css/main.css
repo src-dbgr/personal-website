@@ -273,6 +273,7 @@
   --ff-primary: "Bebas Neue", cursive;
   --ff-secondary: "Oswald", sans-serif;
 
+  --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.3s ease;
 
   --nav-page-top-space: 5rem;
@@ -653,65 +654,55 @@ Sidebar
 }
 /*
 =============== 
-Sidebar Animation
+Transition Styles
 ===============
 */
-/* .sidebar-links li {
-  animation: slideRight 0s ease-in-out 0.1s forwards;
-}
-.sidebar-links li:nth-of-type(1) {
-  animation-delay: 0.1s;
-}
-.sidebar-links li:nth-of-type(2) {
-  animation-delay: 0.15s;
-}
-.sidebar-links li:nth-of-type(3) {
-  animation-delay: 0.2s;
-}
-.sidebar-links li:nth-of-type(4) {
-  animation-delay: 0.25s;
-}
-.sidebar-links li:nth-of-type(5) {
-  animation-delay: 0.3s;
-}
-@keyframes slideRight {
-  0% {
-    transform: translateX(-200px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-.sidebar-icons li {
+.fadein-appear {
   opacity: 0;
-  animation: slideUp 0s ease-in-out 0.1s forwards;
 }
-.sidebar-icons li:nth-of-type(1) {
-  animation-delay: 0.1s;
+
+.fadein-appear.fadein-appear-active{
+  opacity: 1;
+  transition: opacity 400ms linear;
 }
-.sidebar-icons li:nth-of-type(2) {
-  animation-delay: 0.15s;
+
+.fadeup-appear {
+  opacity: 0.01;
+  transform: translateY(20px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
 }
-.sidebar-icons li:nth-of-type(3) {
-  animation-delay: 0.2s;
+
+.fadeup-appear-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 300ms var(--easing), transform 300ms var(--easing);
 }
-.sidebar-icons li:nth-of-type(4) {
-  animation-delay: 0.25s;
+
+/* Fade down */
+.fadedown-appear {
+  opacity: 0.01;
+  transform: translateY(-20px);
+  transition: opacity 500ms var(--easing), transform 500ms var(--easing);
 }
-.sidebar-icons li:nth-of-type(5) {
-  animation-delay: 0.3s;
+
+.fadedown-appear-active {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 500ms var(--easing), transform 500ms var(--easing);
 }
-@keyframes slideUp {
-  0% {
-    transform: translateY(200px);
-    opacity: 0;
-    color: yellow;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-    color: yellow;
-  }
+
+/* Fade */
+/* .fade-enter {
+  opacity: 0;
+}
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms var(--easing);
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 300ms var(--easing);
 } */
