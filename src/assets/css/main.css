@@ -611,6 +611,11 @@ NAVBAR
   visibility: hidden;
 }
 
+#nav_main_logo:hover {
+  stroke: var(--clr-hyphen);
+  stroke-width: 20px;
+}
+
 .toggle-btn {
   font-size: 2rem;
   background: transparent;
@@ -636,6 +641,11 @@ NAVBAR
 
 #toggle stop {
   transition: var(--transition);
+}
+
+#triangle_nav:hover {
+  stroke: var(--clr-hyphen);
+  stroke-width: 0.3rem;
 }
 
 .nav-links {
@@ -816,7 +826,7 @@ Transition Styles
 
 .fade-appear.fade-appear-active {
   opacity: 1;
-  transition: opacity 1000ms linear;
+  transition: opacity 2000ms linear;
 }
 
 .fade-enter {
@@ -825,7 +835,7 @@ Transition Styles
 
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 1000ms linear;
+  transition: opacity 2000ms linear;
 }
 
 .fade-enter-done {
@@ -952,6 +962,8 @@ Hero
     grid-column: 1 / span 8;
   }
   .hero-img {
+    /* width: 80%; */
+    opacity: .95;
     display: block;
     grid-row: 1/1;
     grid-column: 6/-1;

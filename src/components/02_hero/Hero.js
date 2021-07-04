@@ -2,12 +2,11 @@ import React from "react";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
-import hero from "../../assets/images/hero/hero-img.png";
 // import Image from "gatsby-image";
 
 const query = graphql`
   {
-    file(relativePath: { eq: "hero/hero-img.png" }) {
+    file(relativePath: { eq: "hero/hero-img-sam.webp" }) {
       childImageSharp {
         gatsbyImageData
       }
@@ -33,7 +32,7 @@ const Hero = () => {
         </article>
         {/* <GatsbyImage image={image} alt="" /> */}
         <StaticImage
-          src="../../assets/images/hero/hero-img.png"
+          src="../../assets/images/hero/hero-img-sam2.png"
           alt="hero"
           className="hero-img"
           placeholder="tracedSVG"
