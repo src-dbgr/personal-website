@@ -276,8 +276,8 @@
   --ff-secondary: "Oswald", sans-serif;
 
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --transition: all 0.9s ease;
-  --transition-fast: all 0.5s ease;
+  --transition: all 0.5s ease;
+  --transition-fast: all 0.3s ease;
 
   --nav-page-top-space: 5rem;
   --neg-page-top-space: -5rem;
@@ -454,7 +454,7 @@ NAVBAR
   align-items: center;
   z-index: 200;
   box-shadow: 2px 0px 4px var(--clr-dark-strong);
-  transition: var(--transition-fast);
+  transition: var(--transition);
 }
 
 .navbar_disappear{
@@ -467,7 +467,7 @@ NAVBAR
   align-items: center;
   z-index: 200;
   box-shadow: 2px 0px 4px var(--clr-dark-strong);
-  transition: var(--transition-fast);
+  transition: var(--transition);
   transform: translateY(-100%);
 }
 
@@ -598,7 +598,7 @@ NAVBAR
     text-transform: uppercase;
     color: var(--clr-dark);
     letter-spacing: var(--spacing);
-    transition: var(--transition);
+    transition: var(--transition-fast);
     padding: 0.2rem 0;
   }
   .nav-links a:hover {
