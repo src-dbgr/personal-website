@@ -1,8 +1,23 @@
 import React from "react";
+import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
+import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
+import hero from "../../assets/images/hero/hero-img.png";
 // import Image from "gatsby-image";
 
+const query = graphql`
+  {
+    file(relativePath: { eq: "hero/hero-img.png" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
+  }
+`;
+
 const Hero = () => {
+  const data = useStaticQuery(query);
+  const image = getImage(data.file);
   return (
     <header className="hero">
       <div className="section-center hero-center">
@@ -16,7 +31,13 @@ const Hero = () => {
             </Link>
           </div>
         </article>
-        {/* <Image fluid={data.file.childImageSharp.fluid} className="hero-img" /> */}
+        {/* <GatsbyImage image={image} alt="" /> */}
+        <StaticImage
+          src="../../assets/images/hero/hero-img.png"
+          alt="hero"
+          className="hero-img"
+          placeholder="tracedSVG"
+        />
       </div>
     </header>
   );

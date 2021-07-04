@@ -62,7 +62,7 @@ const Navbar = (props) => {
     return () => {
       window.removeEventListener("scroll", controlNavbarVisibility);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <nav
