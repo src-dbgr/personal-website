@@ -6,6 +6,7 @@ import anime from "animejs";
 const Navbar = (props) => {
   const [scaleTrigger, setScaleTrigger] = useState(false);
   const [gradientTrigger, setGradientTrigger] = useState(false);
+  const [showNavbar, setShowNavbar] = useState(true);
   const animationDuration = 500;
   const downSidePath = "M0,0,124.3,250,250,0Z";
   const upSidePath = "M250,250,125.7,0,0,250Z";
@@ -43,10 +44,37 @@ const Navbar = (props) => {
     };
   }, [props.sideBarIsOpen]);
 
+  let prevScrollpos = window.pageYOffset;
+  const controlNavbarVisibility = () => {
+    console.log(window.scrollY);
+    if (window.scrollY > 50) {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        setShowNavbar(true);
+      } else {
+        setShowNavbar(false);
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbarVisibility);
+    return () => {
+      window.removeEventListener("scroll", controlNavbarVisibility);
+    };
+  }, []);
+
   return (
     <nav
       className={`${
-        props.sideBarIsOpen ? " navbar navbar_open" : "navbar navbar_closed"
+        props.sideBarIsOpen
+          ? showNavbar
+            ? "navbar navbar_open"
+            : "navbar_disappear"
+          : showNavbar
+          ? "navbar navbar_closed"
+          : "navbar_disappear"
       }`}
     >
       <div className="nav-center">

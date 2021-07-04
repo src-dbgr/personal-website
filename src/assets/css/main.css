@@ -197,7 +197,9 @@
 /* @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@300;500&display=swap"); */
 :root {
   --clr-background-major: rgb(181, 178, 166);
+  --clr-background-major-opaque: rgba(181, 178, 166, 0.9);
   --clr-background-minor: rgb(150, 149, 141);
+  --clr-background-minor-opaque: rgba(150, 149, 141, 0.9);
   --clr-background-major-inverted: rgb(74, 77, 89);
   --clr-background-major-complement: rgb(166, 169, 181);
   --clr-background-minor-inverted: rgb(105, 106, 114);
@@ -274,8 +276,8 @@
   --ff-secondary: "Oswald", sans-serif;
 
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
-  --transition: all 0.3s ease;
-  --transition-fast: all 0.2s ease;
+  --transition: all 0.9s ease;
+  --transition-fast: all 0.5s ease;
 
   --nav-page-top-space: 5rem;
   --neg-page-top-space: -5rem;
@@ -317,7 +319,8 @@ a {
 }
 
 body::-webkit-scrollbar {
-  width: 10px; left:-100px;
+  width: 9px;
+  left: -100px;
 }
 
 body::-webkit-scrollbar-track {
@@ -327,8 +330,9 @@ body::-webkit-scrollbar-track {
 body::-webkit-scrollbar-thumb {
   background-color: var(--clr-dark);
   border: 3px solid var(--clr-background-minor);
+  border-top: 0px;
+  border-bottom: 0px;
 }
-
 
 /*
 ==========
@@ -433,11 +437,11 @@ NAVBAR
 */
 
 .navbar_open {
-  background: var(--clr-background-major);
+  background: var(--clr-background-major-opaque);
 }
 
 .navbar_closed {
-  background: var(--clr-background-minor);
+  background: var(--clr-background-minor-opaque);
 }
 
 .navbar {
@@ -450,7 +454,23 @@ NAVBAR
   align-items: center;
   z-index: 200;
   box-shadow: 2px 0px 4px var(--clr-dark-strong);
+  transition: var(--transition-fast);
 }
+
+.navbar_disappear{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  z-index: 200;
+  box-shadow: 2px 0px 4px var(--clr-dark-strong);
+  transition: var(--transition-fast);
+  transform: translateY(-100%);
+}
+
 .nav-center {
   width: 90vw;
   max-width: 1170px;
@@ -561,7 +581,7 @@ NAVBAR
 
 @media screen and (min-width: 768px) {
   .navbar {
-    background: var(--clr-background-minor);
+    background: var(--clr-background-minor-opaque);
   }
 
   .toggle-btn {
@@ -606,7 +626,7 @@ NAVBAR
 
 @media screen and (min-width: 992px) {
   .navbar {
-    background: var(--clr-background-minor);
+    background: var(--clr-background-minor-opaque);
   }
 
   #nav_main_logo {
@@ -677,7 +697,7 @@ Transition Styles
   opacity: 0;
 }
 
-.fade-appear.fade-appear-active{
+.fade-appear.fade-appear-active {
   opacity: 1;
   transition: opacity 1000ms linear;
 }
@@ -686,7 +706,7 @@ Transition Styles
   opacity: 0;
 }
 
-.fade-enter.fade-enter-active{
+.fade-enter.fade-enter-active {
   opacity: 1;
   transition: opacity 1000ms linear;
 }
@@ -699,7 +719,7 @@ Transition Styles
   opacity: 1;
 }
 
-.fade-exit.fade-exit-active{
+.fade-exit.fade-exit-active {
   opacity: 0;
   transition: opacity 400ms linear;
 }
@@ -707,8 +727,6 @@ Transition Styles
 .fade-exit-done {
   opacity: 1;
 }
-
-
 
 .fadeup-appear {
   opacity: 0.01;
