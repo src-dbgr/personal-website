@@ -925,6 +925,7 @@ Hero
 }
 .hero-img {
   display: none;
+  background: pink;
 }
 .hero-info h4 {
   color: var(--clr-dark);
