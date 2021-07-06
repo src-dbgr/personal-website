@@ -46,7 +46,6 @@ const Navbar = (props) => {
 
   let prevScrollpos = window.pageYOffset;
   const controlNavbarVisibility = () => {
-    console.log(window.scrollY);
     if (window.scrollY > 50) {
       let currentScrollPos = window.pageYOffset;
       if (prevScrollpos > currentScrollPos) {
@@ -63,7 +62,7 @@ const Navbar = (props) => {
     return () => {
       window.removeEventListener("scroll", controlNavbarVisibility);
     };
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <nav
