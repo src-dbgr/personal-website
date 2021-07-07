@@ -35,7 +35,8 @@ const Hero = () => {
           src="../../assets/images/hero/hero-img-sam2.png"
           alt="hero"
           className="hero-img"
-          placeholder="tracedSVG"
+          placeholder="blur-up"
+          formats={["auto", "webp", "avif"]}
         />
       </div>
     </header>
