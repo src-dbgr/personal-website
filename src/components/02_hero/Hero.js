@@ -2,7 +2,7 @@ import React from "react";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
-import Threejsstarter from "../Threejsstarter";
+import Threejsrender from "../Threejs/Threejsrender";
 // import Image from "gatsby-image";
 
 const query = graphql`
@@ -40,7 +40,7 @@ const Hero = () => {
           formats={["auto", "webp", "avif"]}
         /> */}
         <div className="hero-img">
-          <Threejsstarter />
+          <Threejsrender />
         </div>
       </div>
     </header>

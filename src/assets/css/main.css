@@ -925,8 +925,10 @@ Hero
 }
 .hero-img {
   display: none;
-  background: pink;
+  height: calc(100vh + var(--neg-page-top-space));
+  width: 50vw;
 }
+
 .hero-info h4 {
   color: var(--clr-dark);
 }
@@ -937,19 +939,29 @@ Hero
   margin-top: 1.25rem;
 }
 
+canvas {
+  /* background: var(--clr-very-dark); */
+  /* padding-right: 20%; */
+}
+
 @media screen and (min-width: 992px) {
   .hero::before {
+    /* padding-top: -5rem; */
+    margin-top: 5rem;
     content: "";
     position: absolute;
     top: 0;
-    left: 65%;
+    left: 50%;
     right: 0;
     bottom: 0;
     background: linear-gradient(
-      90deg,
-      var(--clr-background-major),
-      var(--clr-dark)
+      270deg,
+      var(--clr-dark),
+      var(--clr-background-major)
     );
+    /* background: rgba(26, 26, 26, 1); */
+    /* background: rgb(181, 178, 166); */
+    /* background: var(--clr-inner-circle-gradient); */
   }
   .hero-center {
     grid-template-columns: repeat(12, 1fr);
@@ -964,7 +976,7 @@ Hero
   }
   .hero-img {
     /* width: 80%; */
-    opacity: .95;
+    opacity: 0.95;
     display: block;
     grid-row: 1/1;
     grid-column: 6/-1;
