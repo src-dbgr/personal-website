@@ -3,6 +3,7 @@ import Layout from "../components/Layout";
 import Hero from "../components/02_hero/Hero";
 import { CSSTransition } from "react-transition-group";
 import { loaderDelay } from "@utils";
+import Sound from "../components/Sound";
 
 const index = () => {
   return (
@@ -16,6 +17,7 @@ const index = () => {
         >
           <Hero />
         </CSSTransition>
+        {/* <Sound src="https://www.free-stock-music.com/music/punch-deck-brahe.mp3" /> */}
         <h1>Test</h1>
         <h1>Test</h1>
         <h1>Test</h1>

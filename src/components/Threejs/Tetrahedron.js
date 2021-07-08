@@ -1,15 +1,25 @@
-import React, { useRef, useState } from "react";
+import * as THREE from "three";
+import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 import normal from "./Textures/normal.jpg";
+import ThreejsRender from "./Threejsrender";
 
 const Tetrahedron = (props) => {
   // This reference will give us direct access to the mesh so we can animate it
+
+  // This component creates a suspense block, blocking execution until
+  // all async tasks (in this case PositionAudio) have been resolved.
+
   const mesh = useRef();
 
   // Set up state for the hovered and active state
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered]);
 
   // Rotate mesh every frame, this is outside of React without overhead
   let sin = 0;
@@ -45,8 +55,12 @@ const Tetrahedron = (props) => {
       ref={mesh}
       scale={active ? [1, 1, 1] : [1.4, 1.4, 1.4]}
       onClick={(e) => setActive(!active)}
-      onPointerOver={(e) => setHover(true)}
-      onPointerOut={(e) => setHover(false)}
+      onPointerOver={(e) => {
+        setHover(true);
+      }}
+      onPointerOut={(e) => {
+        setHover(false);
+      }}
     >
       <tetrahedronBufferGeometry attach="geometry" args={[1.2, 0]} />
       <meshStandardMaterial

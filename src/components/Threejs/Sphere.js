@@ -1,4 +1,4 @@
-import React, { useRef, useState, lazy, Suspense } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
 // import { useTexture } from "@react-three/drei";
@@ -13,6 +13,10 @@ const Sphere = (props) => {
   const [hovered, setHover] = useState(false);
   const [active, setActive] = useState(false);
 
+  useEffect(() => {
+    document.body.style.cursor = hovered ? "pointer" : "auto";
+  }, [hovered]);
+
   // Rotate mesh every frame, this is outside of React without overhead
   let sigmoid = 0;
   let sin = 0;
@@ -25,9 +29,9 @@ const Sphere = (props) => {
     mesh.current.material.emissiveIntensity = 0.9 * sin;
     mesh.current.material.opacity =
       0.7 * Math.abs(Math.sin(clock.elapsedTime / 3));
-    mesh.current.scale.x = (sin+0.2) * (active ? 1.8 : 0.8);
-    mesh.current.scale.y = (sin+0.2) * (active ? 1.8 : 0.8);
-    mesh.current.scale.z = (sin+0.2) * (active ? 1.8 : 0.8);
+    mesh.current.scale.x = (sin + 0.2) * (active ? 1.8 : 0.8);
+    mesh.current.scale.y = (sin + 0.2) * (active ? 1.8 : 0.8);
+    mesh.current.scale.z = (sin + 0.2) * (active ? 1.8 : 0.8);
   });
 
   const {

@@ -293,6 +293,16 @@ Global Styles
 ===============
 */
 
+html {
+  scrollbar-face-color: var(--clr-dark); 
+  scrollbar-shadow-color: var(--clr-dark-magenta); 
+  scrollbar-highlight-color: var(--clr-dark-magenta);
+  scrollbar-color: var(--clr-dark) var(--clr-background-minor);
+  scrollbar-width: thin;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 *,
 ::after,
 ::before {
@@ -329,7 +339,7 @@ body::-webkit-scrollbar-track {
 
 body::-webkit-scrollbar-thumb {
   background-color: var(--clr-dark);
-  border: 3px solid var(--clr-background-minor);
+  /* border: 0px solid var(--clr-background-minor); */
   border-top: 0px;
   border-bottom: 0px;
 }
