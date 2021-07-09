@@ -24,10 +24,10 @@ const Hero = () => {
         <article className="hero-info">
           <div>
             <div className="underline"></div>
-            <h1>I'm Samuel</h1>
+            <h1>I'm <span className="highlight">Samuel</span></h1>
             <h4>developer and machine learning enthusiast</h4>
             <Link to="/contact" className="btn">
-              contact me
+              GET IN TOUCH
             </Link>
           </div>
         </article>

@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
   return (
     <>
       {isIndexPage && isLaunching ? (
-        <Launch finishLaunching={() => setIsLaunching(false)} />
+        <Launch finishLaunching={() => setIsLaunching(false)}/>
       ) : (
         <>
           <CSSTransition

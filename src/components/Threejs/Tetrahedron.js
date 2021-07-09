@@ -29,7 +29,7 @@ const Tetrahedron = (props) => {
       0.0025 - +(mouse.x * mouse.y) / 80;
     mesh.current.rotation.y = mesh.current.rotation.x +=
       0.0025 - +(mouse.y * mouse.y) / 80;
-    mesh.current.position.y = 1 * Math.abs(Math.sin(clock.elapsedTime / 5));
+    mesh.current.position.y = 0.9 * Math.abs(Math.sin(clock.elapsedTime / 5));
     mesh.current.material.emissiveIntensity = 6 * sin;
   });
   const texture = useLoader(TextureLoader, normal);

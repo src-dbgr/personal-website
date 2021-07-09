@@ -25,7 +25,7 @@ const Sphere = (props) => {
     sigmoid = 1 / (1 + Math.pow(Math.E, -sin));
     mesh.current.rotation.x = mesh.current.rotation.y +=
       0.003 + (mouse.x * mouse.y) / 80;
-    mesh.current.position.y = 1 * Math.abs(Math.sin(clock.elapsedTime / 5));
+    mesh.current.position.y = 0.9 * Math.abs(Math.sin(clock.elapsedTime / 5));
     mesh.current.material.emissiveIntensity = 0.9 * sin;
     mesh.current.material.opacity =
       0.7 * Math.abs(Math.sin(clock.elapsedTime / 3));
