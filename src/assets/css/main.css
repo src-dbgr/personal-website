@@ -215,7 +215,6 @@
   --clr-dark-sidebar: rgb(52, 69, 73);
   --clr-sidebar-font: rgb(181, 178, 166);
   --clr-sidebar-font-hover: rgb(181, 178, 166);
-  
 
   --clr-triangle-nav-stroke: rgb(53, 160, 103);
 
@@ -237,6 +236,12 @@
   --clr-very-dark-radial-gradient: linear-gradient(
     var(--clr-dark-strong),
     var(--clr-dark)
+  );
+
+  --clr-prisma-background-gradient: linear-gradient(
+    270deg,
+    var(--clr-dark),
+    var(--clr-background-major)
   );
 
   --clr-mix-side-linear-gradient: linear-gradient(
@@ -318,7 +323,12 @@
     var(--clr-background-minor),
     rgb(46, 46, 46)
   );
-  --clr-sidebar-font-hover: rgb(123,99,137);
+  --clr-prisma-background-gradient: linear-gradient(
+    270deg,
+    rgba(61, 139, 104, 0.8),
+    rgb(46, 46, 46, 0.8)
+  );
+  --clr-sidebar-font-hover: rgb(123, 99, 137);
   --clr-body-background-radial-gradient: var(--clr-background-minor);
   transition: var(--transition);
 }
@@ -442,8 +452,8 @@ p {
   cursor: pointer;
 }
 
-#sunmoon path{
-  fill: var(--clr-background-major)
+#sunmoon path {
+  fill: var(--clr-background-major);
 }
 
 #themeiconwrapper:hover #sunmoon path {
@@ -1060,11 +1070,7 @@ canvas {
     left: 50%;
     right: 0;
     bottom: 0;
-    background: linear-gradient(
-      270deg,
-      var(--clr-dark),
-      var(--clr-background-major)
-    );
+    background: var(--clr-prisma-background-gradient);
     /* background: rgba(26, 26, 26, 1); */
     /* background: rgb(181, 178, 166); */
     /* background: var(--clr-inner-circle-gradient); */
