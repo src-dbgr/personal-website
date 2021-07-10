@@ -1,5 +1,5 @@
 import React from "react";
-import Links from "../../data/constants/links";
+import Links from "../../data/constants/Links";
 
 const Sidebar = (props) => {
   return (
