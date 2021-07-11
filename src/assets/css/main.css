@@ -281,15 +281,6 @@
   overflow-x: hidden;
 }
 
-.nav_main_logo_dark {
-  opacity: 0.4;
-  transition: var(--transition);
-}
-
-.nav_main_logo_dark:hover {
-  opacity: 1;
-}
-
 /*
 =============== 
 Global Styles
@@ -592,7 +583,7 @@ NAVBAR
 }
 
 .navbar_closed {
-  background: var(--clr-background-minor-opaque-strong);
+  background: var(--clr-background-minor-opaque);
 }
 
 .navbar {
@@ -638,7 +629,6 @@ NAVBAR
   height: 3.5rem;
   width: 3.5rem;
   visibility: hidden;
-  transition: var(--transition);
 }
 
 .toggle-btn {

@@ -40,21 +40,7 @@ const tempLinks = data.map((link) => {
   );
 });
 
-const Links = function ({ styleClass }) {
-  const [darkTheme, setDarkTheme] = useState(false);
-
-  function enableTheme() {
-    setDarkTheme(!darkTheme);
-    document
-      .getElementById("nav_main_logo_wrapper")
-      .classList.toggle("nav_main_logo_dark");
-    document.body.classList.toggle("dark-theme");
-    document.documentElement.classList.toggle("htmlScrollbarDarkMode");
-  }
-
-  // useEffect(() => {
-  //   return () => {};
-  // }, [darkTheme]);
+const Links = function (props) {
 
   return (
     <CSSTransition
@@ -63,9 +49,9 @@ const Links = function ({ styleClass }) {
       timeout={navDelay}
       classNames="fadedown"
     >
-      <ul className={`page-links ${styleClass ? styleClass : ""}`}>
+      <ul className={`page-links ${props.styleClass ? props.styleClass : ""}`}>
         {tempLinks}
-        <div id="themeiconwrapper" onClick={enableTheme}>
+        <div id="themeiconwrapper" onClick={props.toggleDarkTheme}>
           <svg
             id="sunmoon"
             xmlns="http://www.w3.org/2000/svg"
@@ -77,9 +63,9 @@ const Links = function ({ styleClass }) {
               id="moon"
               d="M166.8,151.4C81.7,152.9,51.7,39.8,125.2,1.9,61.2-10.3-.7,38.3,0,100.6c-1.8,105,154.3,137.9,200,44.3A86.9,86.9,0,0,1,166.8,151.4Z"
               fill="#34464a"
-              opacity={`${darkTheme ? "1" : "0"}`}
+              opacity={`${props.darkTheme ? "1" : "0"}`}
             />
-            <g fill="#34464a" opacity={`${darkTheme ? "0" : "1"}`}>
+            <g fill="#34464a" opacity={`${props.darkTheme ? "0" : "1"}`}>
               <path d="M.4,99.6C10.3,94.2,19.9,89,29.8,83.4v33.1C20.3,110.8,8.6,105.9.4,99.6Z" />
               <path d="M157.8,100c.9,75.4-117.2,75.1-116.1-.1C41,24.6,158.9,25,157.8,100Z" />
               <path d="M116.4,30.1H83.1L99.8.2Z" />
