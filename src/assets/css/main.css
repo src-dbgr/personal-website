@@ -800,20 +800,28 @@ Hero
 .hero-info h4 {
   color: var(--clr-dark);
   font-family: var(--ff-ternary);
-  text-transform: uppercase;
+  text-transform: none;
 }
+
 .hero-icons {
   justify-items: flex-start;
 }
 .hero .btn {
   margin-top: 1.25rem;
   font-family: var(--ff-ternary);
-  text-transform: uppercase;
 }
 
 .hero h1 {
   font-family: var(--ff-secondary);
-  text-transform: uppercase;
+}
+
+.hero-description {
+  max-width: 500px;
+  hyphens: auto;
+  text-align: justify;
+  padding-right: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 @media screen and (min-width: 992px) {
