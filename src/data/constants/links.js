@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "gatsby";
 import { CSSTransition } from "react-transition-group";
 import { navDelay } from "@utils";
-import sun from "../../assets/images/navigation/sun.svg";
-import moon from "../../assets/images/navigation/moon.svg";
 const data = [
   {
     id: 1,
@@ -41,7 +39,6 @@ const tempLinks = data.map((link) => {
 });
 
 const Links = function (props) {
-
   return (
     <CSSTransition
       in={true}
@@ -51,7 +48,13 @@ const Links = function (props) {
     >
       <ul className={`page-links ${props.styleClass ? props.styleClass : ""}`}>
         {tempLinks}
-        <div id="themeiconwrapper" onClick={props.toggleDarkTheme}>
+        <div
+          id="themeiconwrapper"
+          onClick={props.toggleDarkTheme}
+          onKeyDown={props.toggleDarkTheme}
+          role="button"
+          tabIndex={0}
+        >
           <svg
             id="sunmoon"
             xmlns="http://www.w3.org/2000/svg"

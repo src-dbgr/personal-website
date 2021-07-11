@@ -1,197 +1,41 @@
 @font-face {
-  font-family: "BNP Book";
-  src: local("BNP Book"), url("../fonts/BNP/BNP-Book.woff") format("woff"),
-    url("../fonts/BNP/BNP-Book.woff2") format("woff2"),
-    url("../fonts/BNP/BNP-Book.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 350;
-}
-
-@font-face {
-  font-family: "BNP Book Italic";
-  src: local("BNP Book Italic"),
-    url("../fonts/BNP/BNP-BookItalic.woff") format("woff"),
-    url("../fonts/BNP/BNP-BookItalic.woff2") format("woff2"),
-    url("../fonts/BNP/BNP-BookItalic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 350;
-}
-
-@font-face {
-  font-family: "BNP Regular";
-  src: local("BNP Regular"), url("../fonts/BNP/BNP-Regular.woff") format("woff"),
-    url("../fonts/BNP/BNP-Regular.woff2") format("woff2"),
-    url("../fonts/BNP/BNP-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "BNP Italic";
-  src: local("BNP Italic"), url("../fonts/BNP/BNP-Italic.woff") format("woff"),
-    url("../fonts/BNP/BNP-Italic.woff2") format("woff2"),
-    url("../fonts/BNP/BNP-Italic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "BNP Bold";
-  src: local("BNP Bold"), url("../fonts/BNP/BNP-Bold.woff") format("woff"),
-    url("../fonts/BNP/BNP-Bold.woff2") format("woff2"),
-    url("../fonts/BNP/BNP-Bold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "BNP BoldItalic";
-  src: local("BNP BoldItalic"),
-    url("../fonts/BNP/BNP-BoldItalic.woff") format("woff"),
-    url("../fonts/BNP/BNP-BoldItalic.woff2") format("woff2"),
-    url("../fonts/BNP/BNP-BoldItalic.ttf") format("truetype");
-  font-style: italic;
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "SF Mono Regular";
-  src: local("SF Mono Regular"),
-    url("../fonts/SFMono/SFMono-Regular.woff") format("woff"),
-    url("../fonts/SFMono/SFMono-Regular.woff2") format("woff2"),
-    url("../fonts/SFMono/SFMono-Regular.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "SF Mono Regular Italic";
-  src: local("SF Mono Regular Italic"),
-    url("../fonts/SFMono/SFMono-RegularItalic.woff") format("woff"),
-    url("../fonts/SFMono/SFMono-RegularItalic.woff2") format("woff2"),
-    url("../fonts/SFMono/SFMono-RegularItalic.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "SF Mono Medium";
-  src: local("SF Mono Medium"),
-    url("../fonts/SFMono/SFMono-Medium.woff") format("woff"),
-    url("../fonts/SFMono/SFMono-Medium.woff2") format("woff2"),
-    url("../fonts/SFMono/SFMono-Medium.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "SF Mono Medium Italic";
-  src: local("SF Mono Medium Italic"),
-    url("../fonts/SFMono/SFMono-MediumItalic.woff") format("woff"),
-    url("../fonts/SFMono/SFMono-MediumItalic.woff2") format("woff2"),
-    url("../fonts/SFMono/SFMono-MediumItalic.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "SF Mono Semibold";
-  src: local("SF Mono Semibold"),
-    url("../fonts/SFMono/SFMono-Semibold.woff") format("woff"),
-    url("../fonts/SFMono/SFMono-Semibold.woff2") format("woff2"),
-    url("../fonts/SFMono/SFMono-Semibold.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "SF Mono Semibold Italic";
-  src: local("SF Mono Semibold Italic"),
-    url("../fonts/SFMono/SFMono-SemiboldItalic.woff") format("woff"),
-    url("../fonts/SFMono/SFMono-SemiboldItalic.woff2") format("woff2"),
-    url("../fonts/SFMono/SFMono-SemiboldItalic.ttf") format("truetype");
-  font-style: normal;
-  font-weight: normal;
-}
-
-@font-face {
-  font-family: "Calibre";
-  src: local("Calibre Light"), local("Calibre-Light"),
-    url("../fonts/Calibre/Calibre-Light.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-Light.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-Light.ttf") format("truetype");
+  font-family: "Oswald-300";
+  src: local("Oswald"), local("Oswald-300"),
+    url("../fonts/Oswald/oswald-v36-latin-300.woff2") format("woff2"),
+    url("../fonts/Oswald/oswald-v36-latin-300.woff") format("woff"),
+    url("../fonts/Oswald/oswald-v36-latin-300.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Calibre";
-  src: local("Calibre Light Italic"), local("Calibre-LightItalic"),
-    url("../fonts/Calibre/Calibre-LightItalic.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-LightItalic.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-LightItalic.ttf") format("truetype");
-  font-weight: 300;
-  font-style: italic;
+  font-family: "Oswald-Regular";
+  src: local("Oswald"), local("Oswald-Regular"),
+    url("../fonts/Oswald/oswald-v36-latin-regular.woff2") format("woff2"),
+    url("../fonts/Oswald/oswald-v36-latin-regular.woff") format("woff"),
+    url("../fonts/Oswald/oswald-v36-latin-regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
-  font-family: "Calibre";
-  src: local("Calibre Medium"), local("Calibre-Medium"),
-    url("../fonts/Calibre/Calibre-Medium.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-Medium.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-Medium.ttf") format("truetype");
+  font-family: "Oswald-500";
+  src: local("Oswald"), local("Oswald-500"),
+    url("../fonts/Oswald/oswald-v36-latin-500.woff2") format("woff2"),
+    url("../fonts/Oswald/oswald-v36-latin-500.woff") format("woff"),
+    url("../fonts/Oswald/oswald-v36-latin-500.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Calibre";
-  src: local("Calibre Medium Italic"), local("Calibre-MediumItalic"),
-    url("../fonts/Calibre/Calibre-MediumItalic.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-MediumItalic.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-MediumItalic.ttf") format("truetype");
-  font-weight: 500;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Calibre";
-  src: local("Calibre"), local("Calibre-Regular"),
-    url("../fonts/Calibre/Calibre-Regular.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-Regular.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-Regular.ttf") format("truetype");
-  font-weight: normal;
+  font-family: "Oswald-700";
+  src: local("Oswald"), local("Oswald-700"),
+    url("../fonts/Oswald/oswald-v36-latin-700.woff2") format("woff2"),
+    url("../fonts/Oswald/oswald-v36-latin-700.woff") format("woff"),
+    url("../fonts/Oswald/oswald-v36-latin-700.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
-}
-
-@font-face {
-  font-family: "Calibre";
-  src: local("Calibre Regular Italic"), local("Calibre-RegularItalic"),
-    url("../fonts/Calibre/Calibre-RegularItalic.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-RegularItalic.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-RegularItalic.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Calibre";
-  src: local("Calibre Semibold"), local("Calibre-Semibold"),
-    url("../fonts/Calibre/Calibre-Semibold.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-Semibold.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-Semibold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Calibre";
-  src: local("Calibre Semibold Italic"), local("Calibre-SemiboldItalic"),
-    url("../fonts/Calibre/Calibre-SemiboldItalic.woff2") format("woff2"),
-    url("../fonts/Calibre/Calibre-SemiboldItalic.woff") format("woff"),
-    url("../fonts/Calibre/Calibre-SemiboldItalic.ttf") format("truetype");
-  font-weight: 600;
-  font-style: italic;
 }
 
 :root {
@@ -206,7 +50,7 @@
   --clr-dark-opaque: rgba(52, 69, 73, 0.5);
   --clr-light-dark: rgb(90, 107, 110);
   --clr-triangle-nav-stroke: rgb(53, 160, 103);
-  --clr-green-major: rgb(53, 160, 103);
+  --clr-green-major: rgb(61, 139, 104);
   --clr-green-minor: rgb(61, 139, 104);
   --clr-magenta: rgb(118, 112, 129);
   --clr-sidebar-font-hover: rgb(181, 178, 166);
@@ -229,13 +73,15 @@
     var(--clr-background-minor)
   );
 
-  --ff-primary: "BNP Regular", "Calibre", Tahoma, sans-serif;
-  --ff-secondary: "Oswald", sans-serif;
+  --ff-primary: "Oswald-Regular", Helvetica, Trebuchet MS, sans-serif;
+  --ff-secondary: "Oswald-500", Helvetica, Trebuchet MS, sans-serif;
+  --ff-ternary: "Oswald-300", Helvetica, Trebuchet MS, sans-serif;
 
+  --font-size-scalar: 0.9;
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.5s ease;
   --transition-fast: all 0.3s ease;
-
+  --spacing: 0.07rem;
   --navbar-height: 5rem;
   --neg-page-top-space: -5rem;
 }
@@ -306,11 +152,11 @@ html {
 }
 
 body {
-  font-family: "BNP Bold", "SF Mono Regular", Tahoma, sans-serif;
+  font-family: var(--ff-secondary);
   background: var(--clr-background-major);
   color: var(--clr-dark);
   line-height: 1.5;
-  font-size: 0.875rem;
+  font-size: calc(var(--font-size-scalar) * 0.875rem);
   margin-top: var(--navbar-height);
   letter-spacing: 0.05rem;
 }
@@ -348,16 +194,16 @@ h4 {
   font-family: var(--ff-primary);
 }
 h1 {
-  font-size: 3rem;
+  font-size: calc(var(--font-size-scalar) * 3rem);
 }
 h2 {
-  font-size: 2rem;
+  font-size: calc(var(--font-size-scalar) * 2rem);
 }
 h3 {
-  font-size: 1.25rem;
+  font-size: calc(var(--font-size-scalar) * 1.25rem);
 }
 h4 {
-  font-size: 0.875rem;
+  font-size: calc(var(--font-size-scalar) * 0.875rem);
 }
 p {
   margin-bottom: 1.25rem;
@@ -392,19 +238,19 @@ p {
 
 @media screen and (min-width: 800px) {
   h1 {
-    font-size: 4rem;
+    font-size: calc(var(--font-size-scalar) * 4rem);
   }
   h2 {
-    font-size: 2.5rem;
+    font-size: calc(var(--font-size-scalar) * 2.5rem);
   }
   h3 {
-    font-size: 1.75rem;
+    font-size: calc(var(--font-size-scalar) * 1.75rem);
   }
   h4 {
-    font-size: 1rem;
+    font-size: calc(var(--font-size-scalar) * 1rem);
   }
   body {
-    font-size: 1rem;
+    font-size: calc(var(--font-size-scalar) * 1rem);
   }
   h1,
   h2,
@@ -426,7 +272,7 @@ p {
   font-weight: 700;
   -webkit-transition: var(--transition);
   transition: var(--transition);
-  font-size: 0.875rem;
+  font-size: calc(var(--font-size-scalar) * 0.875rem);
   border: 2px solid transparent;
   cursor: pointer;
   box-shadow: 1px 1px 2px var(--clr-light-dark);
@@ -587,6 +433,8 @@ NAVBAR
 }
 
 .navbar {
+  font-family: var(--ff-secondary);
+  font-size: 2rem;
   position: fixed;
   top: 0;
   left: 0;
@@ -632,7 +480,7 @@ NAVBAR
 }
 
 .toggle-btn {
-  font-size: 2rem;
+  font-size: calc(var(--font-size-scalar) * 2rem);
   background: transparent;
   border-color: transparent;
   color: var(--clr-background-minor);
@@ -664,7 +512,8 @@ NAVBAR
 }
 
 .nav-links {
-  font-size: 1.3rem;
+  font-size: calc(var(--font-size-scalar) * 1.3rem);
+  /* font-size: 1.3rem; */
   display: none;
 }
 
@@ -805,11 +654,11 @@ Sidebar
 .sidebar-links li a {
   display: block;
   text-align: center;
-  text-transform: capitalize;
+  text-transform: uppercase;
   color: var(--clr-dark);
   letter-spacing: var(--spacing);
   margin-bottom: 0.5rem;
-  font-size: 2rem;
+  font-size: calc(var(--font-size-scalar) * 2rem);
   width: 100vw;
   transition: var(--transition);
 }
@@ -831,7 +680,6 @@ Sidebar
 .sidebar-links svg {
   cursor: pointer;
 }
-
 @media screen and (min-width: 768px) {
   .sidebar {
     transform: translateY(-100%);
@@ -951,12 +799,21 @@ Hero
 
 .hero-info h4 {
   color: var(--clr-dark);
+  font-family: var(--ff-ternary);
+  text-transform: uppercase;
 }
 .hero-icons {
   justify-items: flex-start;
 }
 .hero .btn {
   margin-top: 1.25rem;
+  font-family: var(--ff-ternary);
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
 }
 
 @media screen and (min-width: 992px) {
@@ -974,7 +831,7 @@ Hero
   }
 
   .hero h4 {
-    font-size: 0.85rem;
+    font-size: calc(var(--font-size-scalar) * 0.85rem);
   }
   .hero-info {
     grid-row: 1/1;
@@ -992,7 +849,7 @@ Hero
 }
 @media screen and (min-width: 1170px) {
   .hero h4 {
-    font-size: 1rem;
+    font-size: calc(var(--font-size-scalar) * 1rem);
   }
 
   .hero-img {
