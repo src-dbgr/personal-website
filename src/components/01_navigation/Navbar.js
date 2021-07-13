@@ -7,8 +7,8 @@ const Navbar = (props) => {
   const [gradientTrigger, setGradientTrigger] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const animationDuration = 500;
-  const downSidePath = "M0,0,124.3,250,250,0Z";
-  const upSidePath = "M250,250,125.7,0,0,250Z";
+  const downTopPath = "M0,0,124.3,250,250,0Z";
+  const upTopPath = "M250,250,125.7,0,0,250Z";
   const isFirstRun = useRef(true);
   const animation = (params) => {
     return anime({
@@ -27,21 +27,21 @@ const Navbar = (props) => {
     } else {
       // Change only after first run is done.
       setTimeout(() => {
-        setGradientTrigger(props.sideBarIsOpen);
+        setGradientTrigger(props.topBarIsOpen);
       }, 250);
     }
     setTimeout(() => {
       setScaleTrigger(false);
     }, 500);
     return () => {
-      if (!props.sideBarIsOpen) {
-        animation(upSidePath).play();
+      if (!props.topBarIsOpen) {
+        animation(upTopPath).play();
       } else {
-        animation(downSidePath).play();
+        animation(downTopPath).play();
       }
       setScaleTrigger(true);
     };
-  }, [props.sideBarIsOpen]);
+  }, [props.topBarIsOpen]);
 
   let prevScrollpos = window.pageYOffset;
   const controlNavbarVisibility = () => {
@@ -67,7 +67,7 @@ const Navbar = (props) => {
   return (
     <nav
       className={`${
-        props.sideBarIsOpen
+        props.topBarIsOpen
           ? showNavbar
             ? "navbar navbar_open"
             : "navbar_disappear"
@@ -491,7 +491,7 @@ const Navbar = (props) => {
           <button
             type="button"
             className="toggle-btn"
-            onClick={props.toggleSideBar}
+            onClick={props.toggleTopBar}
           >
             <svg
               id="toggle"

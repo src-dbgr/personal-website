@@ -1,12 +1,12 @@
 import React from "react";
 import Links from "../../data/constants/Links";
 
-const Sidebar = (props) => {
+const Topbar = (props) => {
   return (
-    <aside className={`sidebar ${props.sideBarIsOpen ? "show-sidebar" : ""}`}>
-      <div className="side-container">
+    <aside className={`topbar ${props.topBarIsOpen ? "show-topbar" : ""}`}>
+      <div className="top-container">
         <Links
-          styleClass="sidebar-links"
+          styleClass="topbar-links"
           darkTheme={props.darkTheme}
           toggleDarkTheme={props.toggleDarkTheme}
         />
@@ -15,4 +15,4 @@ const Sidebar = (props) => {
   );
 };
 
-export default Sidebar;
+export default Topbar;

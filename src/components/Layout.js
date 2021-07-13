@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "./01_navigation/Navbar";
-import Sidebar from "./01_navigation/Sidebar";
+import Topbar from "./01_navigation/Topbar";
 import Launch from "./Launch";
 import { CSSTransition } from "react-transition-group";
 import { navDelay } from "@utils";
@@ -8,11 +8,10 @@ import { navDelay } from "@utils";
 const Layout = ({ children }) => {
   const isIndexPage = true; // TODO ==> Change, compare to location pathname or slug!
   const [isLaunching, setIsLaunching] = useState(isIndexPage);
-  const [sideBarIsOpen, setSideBarIsOpen] = React.useState(false);
+  const [topBarIsOpen, setTopBarIsOpen] = React.useState(false);
   const [darkTheme, setDarkTheme] = useState(false);
-  const toggleSideBar = () => {
-    console.log("toggle!")
-    setSideBarIsOpen(!sideBarIsOpen);
+  const toggleTopBar = () => {
+    setTopBarIsOpen(!topBarIsOpen);
   };
 
   useEffect(() => {
@@ -39,16 +38,16 @@ const Layout = ({ children }) => {
             classNames="fade"
           >
             <Navbar
-              toggleSideBar={toggleSideBar}
+              toggleTopBar={toggleTopBar}
               toggleDarkTheme={toggleDarkTheme}
               darkTheme={darkTheme}
-              sideBarIsOpen={sideBarIsOpen}
+              topBarIsOpen={topBarIsOpen}
             />
           </CSSTransition>
-          <Sidebar
-            toggleSideBar={toggleSideBar}
+          <Topbar
+            toggleTopBar={toggleTopBar}
             toggleDarkTheme={toggleDarkTheme}
-            sideBarIsOpen={sideBarIsOpen}
+            topBarIsOpen={topBarIsOpen}
             darkTheme={darkTheme}
           />
           {children}
