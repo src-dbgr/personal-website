@@ -7,22 +7,25 @@ const Hero = () => {
     <header className="hero">
       <div className="section-center hero-center">
         <article className="hero-info">
-          <div>
+          <div className="hero-description-wrapper">
             <div className="underline"></div>
-            <h4>Hi, my name is</h4>
+            <h4>HI, MY NAME IS</h4>
             <h1>
-              <span className="highlight">SAMUEL</span>
+              <span className="highlight">
+                <span>S</span>
+                <span>A</span>
+                <span>M</span>
+                <span>U</span>
+                <span>E</span>
+                <span>L</span>
+              </span>
             </h1>
             <h2>
               I BUILD <span className="highlight">IT</span> STUFF
             </h2>
             <div className="hero-description">
               I'm a software developer and machine learning enthusiast who
-              specializes in solving real world IT problems. In my last Job I
-              worked as a Cloud Platform engineer for{" "}
-              <span className="highlight">SAP</span> where I focussed on large
-              scale messaging systems. Owing to my passion and fascination for
-              Machine Learning I decided pursue a career in this area.
+              specializes in solving real world IT problems.
             </div>
             <Link to="/contact" className="btn">
               GET IN TOUCH
