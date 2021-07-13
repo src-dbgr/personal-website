@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../components/Layout";
-import Hero from "../components/02_hero/Hero";
+import Layout from "../components/general/Layout";
+import Hero from "../components/03_hero/Hero";
 import { CSSTransition } from "react-transition-group";
 import { loaderDelay } from "@utils";
 // import Sound from "../components/Sound";

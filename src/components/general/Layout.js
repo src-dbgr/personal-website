@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "./01_navigation/Navbar";
-import Topbar from "./01_navigation/Topbar";
-import Launch from "./Launch";
+import Navbar from "../02_navigation/Navbar";
+import Topbar from "../02_navigation/Topbar";
+import Launch from "../01_launch/Launch";
 import { CSSTransition } from "react-transition-group";
 import { navDelay } from "@utils";
 

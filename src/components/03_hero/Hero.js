@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import Threejsrender from "../Threejs/Threejsrender";
+import Threejsrender from "./Threejs/Threejsrender";
 
 const Hero = () => {
   return (
