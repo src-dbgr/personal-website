@@ -1,16 +1,7 @@
-import * as THREE from "three";
 import React, { useRef, useState, useEffect } from "react";
-import { useFrame, useLoader, useThree } from "@react-three/fiber";
-import { TextureLoader } from "three/src/loaders/TextureLoader";
-import normal from "./Textures/normal.jpg";
-import ThreejsRender from "./Threejsrender";
+import { useFrame, useThree } from "@react-three/fiber";
 
 const Tetrahedron = (props) => {
-  // This reference will give us direct access to the mesh so we can animate it
-
-  // This component creates a suspense block, blocking execution until
-  // all async tasks (in this case PositionAudio) have been resolved.
-
   const mesh = useRef();
 
   // Set up state for the hovered and active state
@@ -32,21 +23,10 @@ const Tetrahedron = (props) => {
     mesh.current.position.y = 0.9 * Math.abs(Math.sin(clock.elapsedTime / 5));
     mesh.current.material.emissiveIntensity = 6 * sin;
   });
-  const texture = useLoader(TextureLoader, normal);
 
   const {
-    // gl, // WebGL renderer
-    // scene, // Default scene
-    // camera, // Default camera
-    // raycaster, // Default raycaster
-    // size, // Bounds of the view (which stretches 100% and auto-adjusts)
-    // viewport, // Bounds of the viewport in 3d units + factor (size/viewport)
-    // aspect, // Aspect ratio (size.width / size.height)
     mouse, // Current, centered, normalized 2D mouse coordinates
     clock, // THREE.Clock (useful for useFrame deltas)
-    // invalidate, // Invalidates a single frame (for <Canvas invalidateFrameloop />)
-    // intersect, // Calls onMouseMove handlers for objects underneath the cursor
-    // setDefaultCamera, // Sets the default camera
   } = useThree();
 
   return (

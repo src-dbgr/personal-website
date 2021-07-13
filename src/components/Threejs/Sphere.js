@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { TextureLoader } from "three/src/loaders/TextureLoader";
-// import { useTexture } from "@react-three/drei";
 import nm from "./Textures/nm.jpg";
 import normal from "./Textures/normal.jpg";
 
@@ -18,11 +17,9 @@ const Sphere = (props) => {
   }, [hovered]);
 
   // Rotate mesh every frame, this is outside of React without overhead
-  let sigmoid = 0;
   let sin = 0;
   useFrame(() => {
     sin = Math.sin(clock.elapsedTime / 10);
-    sigmoid = 1 / (1 + Math.pow(Math.E, -sin));
     mesh.current.rotation.x = mesh.current.rotation.y +=
       0.003 + (mouse.x * mouse.y) / 80;
     mesh.current.position.y = 0.9 * Math.abs(Math.sin(clock.elapsedTime / 5));
@@ -35,21 +32,11 @@ const Sphere = (props) => {
   });
 
   const {
-    // gl, // WebGL renderer
-    // scene, // Default scene
-    // camera, // Default camera
-    // raycaster, // Default raycaster
-    // size, // Bounds of the view (which stretches 100% and auto-adjusts)
-    // viewport, // Bounds of the viewport in 3d units + factor (size/viewport)
-    // aspect, // Aspect ratio (size.width / size.height)
     mouse, // Current, centered, normalized 2D mouse coordinates
     clock, // THREE.Clock (useful for useFrame deltas)
-    // invalidate, // Invalidates a single frame (for <Canvas invalidateFrameloop />)
-    // intersect, // Calls onMouseMove handlers for objects underneath the cursor
-    // setDefaultCamera, // Sets the default camera
   } = useThree();
 
-  // const texture = useTexture("textures/nm.jpg");      <-- alternative, usiing "@react-three/drei" lib, image ist placed in static folder
+  // const texture = useTexture("textures/nm.jpg");      <-- alternative, using "@react-three/drei" lib, image ist placed in static folder
   // const texture = useLoader(TextureLoader, nm);       <-- alternative by using an import of a locally stored image
   // const textureMap = useLoader(TextureLoader, [nm]);    <-- alternative by using an array
   const textureMap = useLoader(TextureLoader, [nm, normal]);
@@ -63,13 +50,7 @@ const Sphere = (props) => {
       onPointerOver={(e) => setHover(true)}
       onPointerOut={(e) => setHover(false)}
     >
-      {/* <octahedronBufferGeometry attach="geometry" args={[0.8, 0]} /> */}
       <sphereBufferGeometry attach="geometry" args={[0.8, 32, 32]} />
-      {/* <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
-      <meshStandardMaterial
-        attach="material"
-        color={hovered ? "hotpink" : "orange"}
-      /> */}
       <meshStandardMaterial
         attach="material"
         roughness={0.5}
@@ -77,7 +58,6 @@ const Sphere = (props) => {
         fog={true}
         transparent={true}
         opacity={0.5}
-        // color={hovered ? "hotpink" : "orange"}
         wireframe={true}
         emissive={0x767081}
         emissiveIntensity={0.5}

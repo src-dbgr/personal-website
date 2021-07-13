@@ -1,44 +1,34 @@
 import React from "react";
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
 import Threejsrender from "../Threejs/Threejsrender";
-// import Image from "gatsby-image";
-
-const query = graphql`
-  {
-    file(relativePath: { eq: "hero/hero-img-sam.webp" }) {
-      childImageSharp {
-        gatsbyImageData
-      }
-    }
-  }
-`;
 
 const Hero = () => {
-  const data = useStaticQuery(query);
-  const image = getImage(data.file);
   return (
     <header className="hero">
       <div className="section-center hero-center">
         <article className="hero-info">
           <div>
             <div className="underline"></div>
-            <h1>I'm <span className="highlight">Samuel</span></h1>
-            <h4>developer and machine learning enthusiast</h4>
+            <h4>Hi, my name is</h4>
+            <h1>
+              <span className="highlight">SAMUEL</span>
+            </h1>
+            <h2>
+              I BUILD <span className="highlight">IT</span> STUFF
+            </h2>
+            <div className="hero-description">
+              I'm a software developer and machine learning enthusiast who
+              specializes in solving real world IT problems. In my last Job I
+              worked as a Cloud Platform engineer for{" "}
+              <span className="highlight">SAP</span> where I focussed on large
+              scale messaging systems. Owing to my passion and fascination for
+              Machine Learning I decided pursue a career in this area.
+            </div>
             <Link to="/contact" className="btn">
               GET IN TOUCH
             </Link>
           </div>
         </article>
-        {/* <GatsbyImage image={image} alt="" /> */}
-        {/* <StaticImage
-          src="../../assets/images/hero/hero-img-sam2.png"
-          alt="hero"
-          className="hero-img"
-          placeholder="blur-up"
-          formats={["auto", "webp", "avif"]}
-        /> */}
         <div className="hero-img">
           <Threejsrender />
         </div>

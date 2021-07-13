@@ -751,7 +751,7 @@ const Launch = (props) => {
             data-name="12hypen"
             d="M185.3,76.5V71.9h9.6v4.6Z"
             transform="translate(-40 -60)"
-            fill="#35a067"
+            fill="#3D8B68"
           />
           <path
             id="_13i"
