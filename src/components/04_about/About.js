@@ -18,9 +18,9 @@ const query = graphql`
 const About = () => {
   return (
     <section className="section about-component-section">
-      <Title title="About" />
+      <Title title="Info" />
       <div className="section-center about-component-center">
-        <article key="1" className="about-component">
+        <article key="1" className="about-component shadow-box">
           <BsCircleFill className="about-component-icon" />
           <h4>Who am I?</h4>
           <div className="underline"></div>
@@ -47,15 +47,16 @@ const About = () => {
             <div className="about-img">
               <StaticImage
                 // src="../../assets/images/about/hero-colors-dark-soft-edge.png"
-                src="../../assets/images/about/hero-colors-soft-edge.png"
+                src="../../assets/images/about/var_5.png"
                 alt="about-img"
                 className="about-default-img"
                 placeholder="blur-up"
                 formats={["auto", "webp", "avif"]}
-              />
+                />
               <StaticImage
-                src="../../assets/images/about/hero-colors-green-clean.png"
+                // src="../../assets/images/about/hero-colors-green-clean.png"
                 // src="../../assets/images/about/hero-no-fx-3.png"
+                src="../../assets/images/about/var_1.png"
                 alt="about-img"
                 className="about-hover-img"
                 placeholder="blur-up"

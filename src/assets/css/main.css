@@ -55,7 +55,7 @@
   --clr-magenta: rgb(118, 112, 129);
   --clr-topbar-font-hover: rgb(181, 178, 166);
   --clr-descr-animation-light: rgba(201, 201, 201, 0.5);
-  --clr-btn-text-on-hover: rgb(52, 69, 73);
+  --clr-btn-text-on-hover: rgb(181, 178, 166);
   --clr-about-img-background: linear-gradient(
     rgb(150, 149, 141),
     rgb(181, 178, 166)
@@ -108,7 +108,7 @@
   --clr-light-dark: rgb(46, 46, 46);
   --clr-green-major: rgb(137, 163, 149);
   --clr-magenta: rgb(53, 161, 105);
-  --clr-btn-text-on-hover: rgb(52, 69, 73);
+  --clr-btn-text-on-hover: rgb(46, 46, 46);
   --clr-about-img-border: rgb(46, 46, 46);
   --clr-about-img-border-hover: rgba(61, 139, 104, 0.3);
   --clr-about-img-background: linear-gradient(rgb(51, 51, 51), rgb(46, 46, 46));
@@ -129,7 +129,7 @@
   );
   --clr-topbar-font-hover: rgb(123, 99, 137);
   --clr-launch-body-background-radial-gradient: radial-gradient(
-    rgb(55, 55, 55),
+    rgb(59, 59, 59),
     var(--clr-background-major)
   );
   transition: var(--transition);
@@ -922,6 +922,10 @@ About Component
   background: var(--clr-launch-body-background-radial-gradient);
 }
 
+.shadow-box {
+  box-shadow: 1px 1px 2px var(--clr-background-minor);
+}
+
 .about-component {
   background: var(--clr-background-major);
   color: var(--clr-dark);
@@ -930,6 +934,11 @@ About Component
   text-align: center;
   -webkit-transition: var(--transition);
   transition: var(--transition);
+}
+
+.about-component p {
+  background: var(--clr-background-minor);
+  padding: 1rem;
 }
 
 .about-component-icon {
@@ -986,6 +995,7 @@ About Component
   position: relative;
   transition: var(--transition);
   border-radius: 50%;
+  box-shadow: 1px 1px 2px var(--clr-background-minor);
 }
 
 .about-img img {
@@ -998,7 +1008,7 @@ About Component
   top: 0;
   left: 0;
   position: relative;
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
 .about-hover-img {
@@ -1019,7 +1029,7 @@ About Component
 }
 
 .about-hover-img:hover {
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 .about-hover-wrapper:hover .about-img {
