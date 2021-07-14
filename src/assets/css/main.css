@@ -224,12 +224,12 @@ h3 {
   font-size: calc(var(--font-size-scalar) * 1.25rem);
 }
 h4 {
-  font-size: calc(var(--font-size-scalar) * 1.1rem);
+  font-size: calc(var(--font-size-scalar) * 1.3rem);
 }
 p {
   margin-bottom: 1.25rem;
   color: var(--clr-dark);
-  font-size: calc(var(--font-size-scalar) * 1.2rem);
+  font-size: calc(var(--font-size-scalar) * 1.3rem);
 }
 
 #sunmoon {

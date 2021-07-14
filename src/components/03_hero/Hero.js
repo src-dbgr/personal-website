@@ -24,8 +24,10 @@ const Hero = () => {
               I BUILD <span className="highlight">IT</span> STUFF
             </h2>
             <div className="hero-description">
-              I'm a software developer and machine learning enthusiast who
-              specializes in solving real world IT problems.
+              <p>
+                I'm a software developer and machine learning enthusiast who
+                specializes in solving real world IT problems.
+              </p>
             </div>
             <Link to="/contact" className="btn">
               GET IN TOUCH
