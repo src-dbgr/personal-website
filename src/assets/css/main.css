@@ -43,19 +43,29 @@
   --clr-background-major-opaque: rgba(181, 178, 166, 0.9);
   --clr-background-minor: rgb(150, 149, 141);
   --clr-background-minor-opaque: rgba(150, 149, 141, 0.9);
-  --clr-background-minor-opaque-strong: rgba(150, 149, 141, 0.2);
+  --clr-background-minor-opaque-strong: rgba(150, 149, 141, 0.6);
   --clr-very-dark: rgb(26, 26, 26);
   --clr-dark-strong: rgb(46, 46, 46);
   --clr-dark: rgb(52, 69, 73);
   --clr-dark-opaque: rgba(52, 69, 73, 0.5);
-  --clr-light-dark: rgb(90, 107, 110);
+  --clr-light-dark: rgb(86, 95, 97);
   --clr-triangle-nav-stroke: rgb(53, 160, 103);
   --clr-green-major: rgb(61, 139, 104);
   --clr-green-minor: rgb(61, 139, 104);
   --clr-magenta: rgb(118, 112, 129);
   --clr-topbar-font-hover: rgb(181, 178, 166);
   --clr-descr-animation-light: rgba(201, 201, 201, 0.5);
-  --clr-btn-text-on-hover: rgb(61, 139, 104);
+  --clr-btn-text-on-hover: rgb(52, 69, 73);
+  --clr-about-img-background: linear-gradient(
+    rgb(150, 149, 141),
+    rgb(181, 178, 166)
+  );
+  --clr-about-img-background-hover: linear-gradient(
+    rgb(181, 178, 166),
+    rgb(150, 149, 141)
+  );
+  --clr-about-img-border: rgb(181, 178, 166);
+  --clr-about-img-border-hover: rgba(150, 149, 141, 0.7);
 
   --clr-prisma-background-gradient: linear-gradient(
     270deg,
@@ -92,14 +102,20 @@
   --clr-background-major-opaque: rgba(46, 46, 46, 0.9);
   --clr-background-minor: rgb(51, 51, 51);
   --clr-background-minor-opaque: rgba(51, 51, 51, 0.9);
-  --clr-background-minor-opaque-strong: rgba(51, 51, 51, 0.2);
+  --clr-background-minor-opaque-strong: rgba(51, 51, 51, 0.8);
   --clr-very-dark: rgb(181, 178, 166);
   --clr-dark: rgb(61, 139, 104);
   --clr-light-dark: rgb(46, 46, 46);
   --clr-green-major: rgb(137, 163, 149);
   --clr-magenta: rgb(53, 161, 105);
-  --clr-btn-text-on-hover: rgb(200, 200, 200);
-
+  --clr-btn-text-on-hover: rgb(52, 69, 73);
+  --clr-about-img-border: rgb(46, 46, 46);
+  --clr-about-img-border-hover: rgba(61, 139, 104, 0.3);
+  --clr-about-img-background: linear-gradient(rgb(51, 51, 51), rgb(46, 46, 46));
+  --clr-about-img-background-hover: linear-gradient(
+    rgb(46, 46, 46),
+    rgb(51, 51, 51)
+  );
   --clr-green-minor: rgb(137, 163, 149);
   --clr-topbar-text-hover-linear-gradient: linear-gradient(
     270deg,
@@ -112,7 +128,10 @@
     rgb(46, 46, 46, 0.8)
   );
   --clr-topbar-font-hover: rgb(123, 99, 137);
-  --clr-launch-body-background-radial-gradient: var(--clr-background-minor);
+  --clr-launch-body-background-radial-gradient: radial-gradient(
+    rgb(55, 55, 55),
+    var(--clr-background-major)
+  );
   transition: var(--transition);
 }
 
@@ -276,8 +295,8 @@ p {
   letter-spacing: var(--spacing);
   display: inline-block;
   font-weight: 700;
-  -webkit-transition: var(--transition);
-  transition: var(--transition);
+  -webkit-transition: var(--transition-fast);
+  transition: var(--transition-fast);
   font-size: calc(var(--font-size-scalar) * 0.875rem);
   border: 2px solid transparent;
   cursor: pointer;
@@ -285,7 +304,9 @@ p {
 }
 .btn:hover {
   color: var(--clr-btn-text-on-hover);
-  box-shadow: 2px 2px 4px var(--clr-light-dark);
+  background: var(--clr-green-minor);
+  border-color: transparent;
+  opacity: 0.9;
 }
 
 .center-btn {
@@ -918,6 +939,7 @@ About Component
   padding-top: 1rem;
   padding-bottom: 1rem;
   background: var(--clr-background-minor);
+  color: var(--clr-dark);
 }
 .about-component .underline {
   width: 3rem;
@@ -940,28 +962,30 @@ About Component
 
 .about-img-container {
   background: transparent;
-  padding: 1rem;
-  /* padding-left: 2rem;
-  padding-right: 2rem; */
+  padding: 0;
+}
+
+.about-hover-wrapper {
+  max-width: 500px;
+  margin-top: 0;
+  display: table;
+  margin: 0 auto;
 }
 
 .about-img {
   display: inline-block;
   text-align: center;
   overflow: hidden;
-  background-color: var(--clr-background-major);
-  padding-top: 2rem;
-  max-width: 400px;
+  background: var(--clr-about-img-background);
+  padding-top: 3rem;
+  width: 100%;
   border: 1.5rem;
   border-style: solid;
-  border-color: var(--clr-background-minor);
+  border-color: var(--clr-about-img-border);
   width: 100%;
   position: relative;
-  border-radius: 50%;
   transition: var(--transition);
-  /* padding-bottom: 1.5rem; */
-  /* border: 1.5rem; */
-  /* border-style: solid; */
+  border-radius: 50%;
 }
 
 .about-img img {
@@ -974,40 +998,35 @@ About Component
   top: 0;
   left: 0;
   position: relative;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .about-hover-img {
   display: inline-block;
   text-align: center;
   overflow: hidden;
-  background-color: var(--clr-background-major);
-  padding-top: 2rem;
-  border: 2rem;
+  margin-top: 3rem;
   border-left: 0;
   border-right: 0;
   border-bottom: 0;
-  border-style: solid;
-  border-color: var(--clr-background-major);
   width: 100%;
   position: absolute;
-  top:0;
+  top: 0;
   bottom: 0;
   left: 0;
   opacity: 0;
   transition: var(--transition);
 }
 
-.about-hover-img:hover{
-  opacity: 0.5;
+.about-hover-img:hover {
+  opacity: 0.4;
 }
 
-.about-img-container:hover .about-img{
-  /* border-color: var(--clr-background-major); */
+.about-hover-wrapper:hover .about-img {
+  /* border-color: var(--clr-about-img-border-hover); */
   /* background-color: var(--clr-background-minor); */
-  background-color: var(--clr-background-minor);
+  background: var(--clr-about-img-background-hover);
 }
-
 
 @media screen and (min-width: 676px) {
   .about-component-center {

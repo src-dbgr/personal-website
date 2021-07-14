@@ -3,7 +3,7 @@ import Title from "../general/Title";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { FaSketch } from "react-icons/fa";
-import { RiAccountCircleFill } from "react-icons/ri";
+import { BsCircleFill } from "react-icons/bs";
 
 const query = graphql`
   {
@@ -21,7 +21,7 @@ const About = () => {
       <Title title="About" />
       <div className="section-center about-component-center">
         <article key="1" className="about-component">
-          <RiAccountCircleFill className="about-component-icon" />
+          <BsCircleFill className="about-component-icon" />
           <h4>Who am I?</h4>
           <div className="underline"></div>
           <p>
@@ -43,22 +43,25 @@ const About = () => {
           </p>
         </article>
         <article key="2" className="about-component about-img-container">
-          <div className="about-img">
-            <StaticImage
-              src="../../assets/images/about/hero-colors-dark-soft-edge.png"
-              alt="about-img"
-              className="about-default-img"
-              placeholder="blur-up"
-              formats={["auto", "webp", "avif"]}
-            />
-            <StaticImage
-            //   src="../../assets/images/about/hero-colors-green-clean.png"
-              src="../../assets/images/about/hero-no-fx-3.png"
-              alt="about-img"
-              className="about-hover-img"
-              placeholder="blur-up"
-              formats={["auto", "webp", "avif"]}
-            />
+          <div className="about-hover-wrapper">
+            <div className="about-img">
+              <StaticImage
+                // src="../../assets/images/about/hero-colors-dark-soft-edge.png"
+                src="../../assets/images/about/hero-colors-soft-edge.png"
+                alt="about-img"
+                className="about-default-img"
+                placeholder="blur-up"
+                formats={["auto", "webp", "avif"]}
+              />
+              <StaticImage
+                src="../../assets/images/about/hero-colors-green-clean.png"
+                // src="../../assets/images/about/hero-no-fx-3.png"
+                alt="about-img"
+                className="about-hover-img"
+                placeholder="blur-up"
+                formats={["auto", "webp", "avif"]}
+              />
+            </div>
           </div>
         </article>
       </div>
