@@ -26,7 +26,7 @@ const Hero = () => {
             >
               HI, MY NAME IS
             </h4>
-            <h1>
+            <h1 className="big-heading">
               <span
                 className="highlight"
                 data-aos="fade-zoom-in"
@@ -45,6 +45,7 @@ const Hero = () => {
               data-aos="fade-zoom-in"
               data-aos-delay="600"
               data-aos-once="true"
+              className="big-heading"
             >
               I BUILD <span className="highlight">IT</span> STUFF
             </h2>

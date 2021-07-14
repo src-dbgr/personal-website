@@ -801,6 +801,11 @@ Transition Styles
 Hero
 ===============
 */
+
+.big-heading {
+  font-size: clamp(60px, 8vw, 80px);
+}
+
 .hero {
   margin-top: -5rem;
   height: 100vh;
@@ -836,6 +841,9 @@ Hero
 }
 .hero .btn {
   margin-top: 1.25rem;
+  height: 2.7rem;
+  width: 9rem;
+  font-size: 1.1rem;
   font-family: var(--ff-primary);
   text-align: center;
 }
@@ -846,7 +854,7 @@ Hero
 
 .hero-description {
   font-family: var(--ff-ternary);
-  max-width: 250px;
+  max-width: 400px;
   hyphens: auto;
   text-align: justify;
   padding-top: 1rem;
