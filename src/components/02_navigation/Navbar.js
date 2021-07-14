@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import PageLinks from "../../data/constants/Links";
 import anime from "animejs";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const Navbar = (props) => {
   const [scaleTrigger, setScaleTrigger] = useState(false);
@@ -63,6 +65,9 @@ const Navbar = (props) => {
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    Aos.init({ duration: 1000, disable: "mobile" });
+  }, []);
 
   return (
     <nav
@@ -86,6 +91,9 @@ const Navbar = (props) => {
               height="208.1"
               viewBox="0 0 224.3 208.1"
               id="nav_main_logo"
+              data-aos="slide-down"
+              data-aos-once="true"
+              data-aos-delay="100"
             >
               <defs>
                 <radialGradient
@@ -367,12 +375,7 @@ const Navbar = (props) => {
                 ></linearGradient>
               </defs>
               <g id="light" opacity={`${props.darkTheme ? "0" : "1"}`}>
-                <circle
-                  cx="112.2"
-                  cy="128.9"
-                  r="78.4"
-                  fill="url(#UV)"
-                ></circle>
+                <circle cx="112.2" cy="128.9" r="78.4" fill="url(#UV)"></circle>
                 <path
                   fill="url(#2)"
                   d="M223.4 192.6L186.6 128.9 167.9 96.5 149 63.8 112.4 0.6 112.1 0 75.2 63.8 56.5 96.2 37.7 128.9 0.7 193 0.1 193.9 75.2 194 112.4 194 149 194 224.3 194 223.4 192.6z"
@@ -426,7 +429,7 @@ const Navbar = (props) => {
                   d="M149 63.8L112.4 0.6 112.4 63.8 149 63.8z"
                 ></path>
               </g>
-              <g id="dark" opacity={`${props.darkTheme ? "0.8" : "0"}`}>
+              <g id="dark" opacity={`${props.darkTheme ? "0.7" : "0"}`}>
                 <path
                   fill="url(#912)"
                   d="M223.3 193.4L186.5 129.8 167.8 97.3 148.9 64.7 112.3 1.4 112 0.8 75.1 64.7 56.4 97 37.6 129.8 0.6 193.8 0 194.8 75.1 194.8 112.3 194.8 148.9 194.8 224.2 194.8 223.3 193.4z"

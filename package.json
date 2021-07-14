@@ -17,6 +17,7 @@
   "dependencies": {
     "@react-three/fiber": "^7.0.2",
     "animejs": "^3.2.1",
+    "aos": "^2.3.4",
     "gatsby": "^3.6.2",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-react-helmet": "^4.8.0",

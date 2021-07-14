@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Title from "../general/Title";
 import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
-import { FaSketch } from "react-icons/fa";
 import { BsCircleFill } from "react-icons/bs";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const query = graphql`
   {
@@ -16,11 +17,20 @@ const query = graphql`
 `;
 
 const About = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000, disable: "mobile" });
+  }, []);
+
   return (
-    <section className="section about-component-section">
-      <Title title="Info" />
+    <section id="about" className="section about-component-section">
+      <Title title="About"/>
       <div className="section-center about-component-center">
-        <article key="1" className="about-component shadow-box">
+        <article
+          key="1"
+          className="about-component shadow-box"
+          data-aos="slide-right"
+          data-aos-once="true"
+        >
           <BsCircleFill className="about-component-icon" />
           <h4>Who am I?</h4>
           <div className="underline"></div>
@@ -42,7 +52,12 @@ const About = () => {
             I've been working with recently:
           </p>
         </article>
-        <article key="2" className="about-component about-img-container">
+        <article
+          key="2"
+          className="about-component about-img-container"
+          data-aos="slide-left"
+          data-aos-once="true"
+        >
           <div className="about-hover-wrapper">
             <div className="about-img">
               <StaticImage
@@ -52,7 +67,7 @@ const About = () => {
                 className="about-default-img"
                 placeholder="blur-up"
                 formats={["auto", "webp", "avif"]}
-                />
+              />
               <StaticImage
                 // src="../../assets/images/about/hero-colors-green-clean.png"
                 // src="../../assets/images/about/hero-no-fx-3.png"
