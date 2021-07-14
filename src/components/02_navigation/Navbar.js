@@ -366,7 +366,7 @@ const Navbar = (props) => {
                   xlinkHref="#912"
                 ></linearGradient>
               </defs>
-              <g id="light">
+              <g id="light" opacity={`${props.darkTheme ? "0" : "1"}`}>
                 <circle
                   cx="112.2"
                   cy="128.9"
@@ -426,7 +426,7 @@ const Navbar = (props) => {
                   d="M149 63.8L112.4 0.6 112.4 63.8 149 63.8z"
                 ></path>
               </g>
-              <g id="dark" opacity={`${props.darkTheme ? "1" : "0"}`}>
+              <g id="dark" opacity={`${props.darkTheme ? "0.8" : "0"}`}>
                 <path
                   fill="url(#912)"
                   d="M223.3 193.4L186.5 129.8 167.8 97.3 148.9 64.7 112.3 1.4 112 0.8 75.1 64.7 56.4 97 37.6 129.8 0.6 193.8 0 194.8 75.1 194.8 112.3 194.8 148.9 194.8 224.2 194.8 223.3 193.4z"
