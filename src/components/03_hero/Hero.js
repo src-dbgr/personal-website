@@ -60,14 +60,14 @@ const Hero = () => {
                 SPECIALIZES IN SOLVING REAL WORLD IT PROBLEMS.
               </p>
             </div>
+
             <Link
               to="/contact"
-              className="btn"
               data-aos="fade-zoom-in"
               data-aos-once="true"
               data-aos-delay="1000"
             >
-              GET IN TOUCH
+              <div className="btn">GET IN TOUCH</div>
             </Link>
           </div>
         </article>

@@ -317,19 +317,11 @@ p {
   cursor: pointer;
   box-shadow: 1px 1px 2px var(--clr-light-dark);
 }
+
 .btn:hover {
   color: var(--clr-btn-text-on-hover);
   background: var(--clr-green-minor);
-  border-color: transparent;
   opacity: 0.9;
-}
-
-.center-btn {
-  display: block;
-  width: 12rem;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 3rem;
 }
 
 /* section */
@@ -793,6 +785,7 @@ Hero
   display: table-cell;
   vertical-align: middle;
   letter-spacing: calc(var(--spacing) * 1.5);
+  border: none;
 }
 
 .hero h1 {
@@ -901,8 +894,8 @@ About Component
 
 .ball-icon-wrapper {
   position: relative;
-  height: calc(var(--border-thickness) * 1.2);
-  margin: 0.25rem;
+  height: calc(var(--border-thickness) * 1.5);
+  padding-top: 0.25rem;
   transition: var(--transition-fast);
   font-size: var(--border-thickness);
 }
@@ -1007,6 +1000,66 @@ About Component
 .about-img:hover {
   background: var(--clr-about-img-background-hover);
 }
+
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+.skill-set {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 200px));
+  padding: 0;
+  margin: 20px 0 0 0;
+  overflow: hidden;
+  list-style: none;
+}
+
+.skill-set li {
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px;
+  font-family: var(--clr-green-major);
+  font-size: 1rem;
+  text-align: left;
+}
+
+ul.skill-set li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 7px solid var(--clr-dark);
+}
+
+/* ul {
+  line-height: 1.5em;
+  margin: 5px 0 15px;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  position: relative;
+  padding: 0 0 0 20px;
+}
+
+li.triangle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 10px solid #f9dd94;
+  list-style-type: triangle;
+} */
 
 @media screen and (min-width: 676px) {
   .about-component-center {
