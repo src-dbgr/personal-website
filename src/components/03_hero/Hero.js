@@ -56,7 +56,7 @@ const Hero = () => {
               data-aos-delay="800"
             >
               <p>
-                SOFTWARE DEVELOPER AND MACHINE LEARNING ENTHUSIAST WHO
+                I AM A SOFTWARE DEVELOPER AND MACHINE LEARNING ENTHUSIAST WHO
                 SPECIALIZES IN SOLVING REAL WORLD IT PROBLEMS.
               </p>
             </div>

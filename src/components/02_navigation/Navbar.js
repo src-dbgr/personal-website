@@ -74,11 +74,11 @@ const Navbar = (props) => {
       className={`${
         props.topBarIsOpen
           ? showNavbar
-            ? "navbar navbar_open"
-            : "navbar_disappear"
+            ? "navbar navbar_open blurred-container"
+            : "navbar_disappear blurred-container"
           : showNavbar
-          ? "navbar navbar_closed"
-          : "navbar_disappear"
+          ? "navbar navbar_closed blurred-container"
+          : "navbar_disappear blurred-container"
       }`}
     >
       <div className="nav-center">
