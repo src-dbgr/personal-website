@@ -23,6 +23,20 @@ const Navbar = (props) => {
     });
   };
 
+  function disableScrolling() {
+    var x = window.scrollX;
+    var y = window.scrollY;
+    window.onscroll = function () {
+      window.scrollTo(x, y);
+    };
+    document.documentElement.style.overflow = "hidden";
+  }
+
+  function enableScrolling() {
+    window.onscroll = null;
+    document.documentElement.style.overflow = "visible";
+  }
+
   useEffect(() => {
     if (isFirstRun.current) {
       isFirstRun.current = false;
@@ -38,10 +52,10 @@ const Navbar = (props) => {
     return () => {
       if (!props.topBarIsOpen) {
         animation(upTopPath).play();
-        document.body.classList.toggle("fixed-position");
+        disableScrolling();
       } else {
         animation(downTopPath).play();
-        document.body.classList.toggle("fixed-position");
+        enableScrolling();
       }
       setScaleTrigger(true);
     };

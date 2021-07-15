@@ -186,9 +186,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* 
 .fixed-position {
   position: fixed;
+  overflow-y: scroll;
 }
+
+.dynamic-position {
+  position: static;
+  overflow-y: auto;
+} */
 
 ul {
   list-style-type: none;
