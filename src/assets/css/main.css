@@ -183,6 +183,11 @@ body {
   font-size: 0.7rem;
   margin-top: var(--navbar-height);
   letter-spacing: var(--spacing);
+  -webkit-font-smoothing: antialiased;
+}
+
+.fixed-position {
+  position: fixed;
 }
 
 ul {
@@ -674,7 +679,7 @@ Sidebar
   background: var(--clr-launch-body-background-radial-gradient);
   position: fixed;
   padding-top: var(--navbar-height);
-  left: 0;
+  right: 0;
   width: 100vw;
   height: 100vh;
   z-index: 199;
@@ -684,6 +689,7 @@ Sidebar
   transform: translateY(-100%);
   visibility: hidden;
 }
+
 .show-topbar {
   visibility: visible;
   transform: translateY(0);
@@ -774,8 +780,8 @@ Hero
   margin-top: 1.25rem;
   height: 3rem;
   width: 9rem;
-  font-size: 0.8rem;
-  font-family: var(--ff-ternary);
+  font-size: 0.9rem;
+  font-family: var(--ff-primary);
   text-align: center;
   display: table-cell;
   vertical-align: middle;

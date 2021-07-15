@@ -3,7 +3,7 @@ import Links from "../../data/constants/Links";
 
 const Topbar = (props) => {
   return (
-    <aside className={`topbar ${props.topBarIsOpen ? "show-topbar" : ""}`}>
+    <aside className={`topbar ${props.topBarIsOpen ? "show-topbar" : ""}`} onClick={props.toggleTopBar}>
       <div className="top-container">
         <Links
           styleClass="topbar-links"

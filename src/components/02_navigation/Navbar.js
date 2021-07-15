@@ -38,8 +38,10 @@ const Navbar = (props) => {
     return () => {
       if (!props.topBarIsOpen) {
         animation(upTopPath).play();
+        document.body.classList.toggle("fixed-position");
       } else {
         animation(downTopPath).play();
+        document.body.classList.toggle("fixed-position");
       }
       setScaleTrigger(true);
     };
@@ -67,7 +69,7 @@ const Navbar = (props) => {
 
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
-  }, []);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <nav
