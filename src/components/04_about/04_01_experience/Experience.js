@@ -39,7 +39,7 @@ const Experience = () => {
               <button
                 key={item.strapiId}
                 onClick={() => setValue(index)}
-                className={`job-btn 
+                className={`job-btn
         ${index === value ? "active-btn" : ""}
         `}
               >

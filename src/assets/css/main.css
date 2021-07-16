@@ -93,6 +93,7 @@
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition: all 0.5s ease;
   --transition-fast: all 0.3s ease;
+  --transition-very-fast: all 0.15s ease;
   --spacing: 0.09rem;
   --spacing-big: 0.135rem;
   --navbar-height: 4.5rem;
@@ -241,7 +242,7 @@ h2 {
   font-size: 1.6rem;
 }
 h3 {
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 h4 {
   font-size: 1.1rem;
@@ -286,7 +287,7 @@ p {
     font-size: 2rem;
   }
   h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
   }
   h4 {
     font-size: 1.1rem;
@@ -922,7 +923,7 @@ About Component
   position: relative;
   height: calc(var(--border-thickness) * 1.5);
   padding-top: 0.25rem;
-  transition: var(--transition-fast);
+  transition: var(--transition-very-fast);
   font-size: var(--border-thickness);
 }
 
@@ -1072,6 +1073,10 @@ ul.skill-set li::before {
     -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
+  .skill-set li {
+    font-size: 1.1rem;
+  }
+
 }
 
 /*
