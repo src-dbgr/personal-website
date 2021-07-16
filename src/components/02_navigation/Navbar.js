@@ -107,9 +107,9 @@ const Navbar = (props) => {
               height="208.1"
               viewBox="0 0 224.3 208.1"
               id="nav_main_logo"
-              data-aos="slide-down"
+              data-aos="fade"
               data-aos-once="true"
-              data-aos-delay="100"
+              data-aos-delay="1500"
             >
               <defs>
                 <radialGradient
