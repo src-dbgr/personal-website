@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Title from "../../general/Title";
 import { VscCircleFilled } from "react-icons/vsc";
 import { graphql, useStaticQuery } from "gatsby";
 import { Link } from "gatsby";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 const query = graphql`
   {
@@ -22,6 +24,10 @@ const query = graphql`
 `;
 
 const Experience = () => {
+  useEffect(() => {
+    Aos.init({ duration: 1000, disable: "mobile" });
+  }, []);
+
   const data = useStaticQuery(query);
   const {
     allStrapiJob: { nodes: jobs }, // jobs is an alias
@@ -32,7 +38,7 @@ const Experience = () => {
   return (
     <section className="section jobs">
       <Title title="experience" />
-      <div className="jobs-center">
+      <div className="jobs-center" data-aos="fade-up" data-aos-once="true">
         <div className="btn-container">
           {jobs.map((item, index) => {
             return (
@@ -60,8 +66,14 @@ const Experience = () => {
           ))}
         </article>
       </div>
-      <Link to="/about" className="btn center-btn">
-        <span>more info</span>
+      <Link
+        to="/about"
+        className="btn center-btn"
+        data-aos="zoom-in"
+        data-aos-once="true"
+        delay="300"
+      >
+        <span className="btn">more info</span>
       </Link>
     </section>
   );

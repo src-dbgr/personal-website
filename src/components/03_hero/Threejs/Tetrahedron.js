@@ -13,15 +13,13 @@ const Tetrahedron = (props) => {
   }, [hovered]);
 
   // Rotate mesh every frame, this is outside of React without overhead
-  let sin = 0;
   useFrame(() => {
-    sin = Math.sin(clock.elapsedTime);
     mesh.current.rotation.x = mesh.current.rotation.y +=
-      0.0025 - +(mouse.x * mouse.y) / 80;
+      0.0025 - (mouse.x * mouse.y) / 80;
     mesh.current.rotation.y = mesh.current.rotation.x +=
-      0.0025 - +(mouse.y * mouse.y) / 80;
+      0.0025 - (mouse.y * mouse.y) / 80;
     mesh.current.position.y = 0.9 * Math.abs(Math.sin(clock.elapsedTime / 5));
-    mesh.current.material.emissiveIntensity = 6 * sin;
+    mesh.current.material.emissiveIntensity = 6 * Math.sin(clock.elapsedTime);
   });
 
   const {

@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import Title from "../general/Title";
-import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
+// import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery } from "gatsby";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
-import { IoSquareSharp } from "react-icons/io5";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -17,12 +17,12 @@ const query = graphql`
     }
   }
 `;
-
 const About = () => {
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
-
+  // const background_img = useStaticQuery(query_background_img);
+  // const foreground_img = useStaticQuery(query_foreground_img);
   return (
     <section id="about" className="section about-component-section">
       <Title title="About" />
@@ -86,16 +86,20 @@ const About = () => {
               alt="about-img"
               className="about-default-img"
               placeholder="blur-up"
-              formats={["auto", "webp", "avif"]}
+              quality={90}
+              formats={["auto", "webp"]}
+              // avifOptions={{quality:80}} // use webp, tests have shown better performance
+              width={500}
             />
             <StaticImage
-              // src="../../assets/images/about/hero-colors-green-clean.png"
-              // src="../../assets/images/about/hero-no-fx-3.png"
               src="../../assets/images/about/var_1.png"
               alt="about-img"
               className="about-hover-img"
               placeholder="blur-up"
-              formats={["auto", "webp", "avif"]}
+              quality={90}
+              formats={["auto", "webp"]}
+              width={500}
+              // avifOptions={{quality:80}}
             />
           </div>
         </article>
