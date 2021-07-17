@@ -1241,7 +1241,11 @@ Projects
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom right, var(--clr-green-major), var(--clr-light-dark));
+  background: linear-gradient(
+    to bottom right,
+    var(--clr-green-major),
+    var(--clr-light-dark)
+  );
   opacity: 0.85;
   transition: var(--transition);
 }
@@ -1256,8 +1260,9 @@ Projects
 
 .project-number {
   display: inline-block;
-  font-size: 1.25rem;
-  color: var(--clr-primary-5);
+  /* font-size: 1.25rem; */
+  /* color: var(--clr-primary-5); */
+  height: calc(var(--border-thickness) * 1.5);
   margin-bottom: 0.75rem;
 }
 .project-info h3 {
