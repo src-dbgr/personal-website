@@ -95,7 +95,7 @@ export const query = graphql`
                 placeholder: BLURRED
                 formats: [AUTO, AVIF, WEBP]
                 blurredOptions: { width: 100 }
-                transformOptions: { cropFocus: ATTENTION }
+                transformOptions: { cropFocus: ENTROPY }
                 avifOptions: { quality: 85 }
                 quality: 90
                 height: 480

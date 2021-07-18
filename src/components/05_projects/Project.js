@@ -19,13 +19,13 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
       {image && (
         // <Image fluid={image.childImageSharp.fluid} className="project-img" />
         <div
-          className="project-img"
+          className="project-img shadow-box-dark"
           data-aos="fade-up"
           data-aos-once="true"
         >
           <GatsbyImage
             image={getImage(image.localFile)}
-            className="project-img-hover shadow-box-dark"
+            className="project-img-hover"
             alt={title}
             //   formats={["avif", "webp", "auto"]}
           />
