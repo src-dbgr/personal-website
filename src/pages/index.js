@@ -4,11 +4,13 @@ import Hero from "../components/03_hero/Hero";
 import About from "../components/04_about/About";
 import Experience from "../components/04_about/04_01_experience/Experience";
 import Projects from "../components/05_projects/Projects";
+import BlogsSection from "../components/06_blog/BlogSection";
 import { graphql } from "gatsby";
 // import Sound from "../components/Sound";
 const index = ({ data }) => {
   const {
     allStrapiProject: { nodes: projects },
+    allStrapiBlog: { nodes: blogs },
   } = data;
 
   return (
@@ -18,6 +20,7 @@ const index = ({ data }) => {
         <About />
         <Experience />
         <Projects projects={projects} title="Featured Projects" showLink />
+        <BlogsSection blogs={blogs} title="Latest Blog Articles" />
         {/* <Sound src="https://www.free-stock-music.com/music/punch-deck-brahe.mp3" /> */}
         <h1>Test</h1>
         <h1>Test</h1>
@@ -108,6 +111,34 @@ export const query = graphql`
         stack {
           id
           title
+        }
+      }
+    }
+    allStrapiBlog(sort: { order: DESC, fields: date }, limit: 3) {
+      nodes {
+        slug
+        content
+        desc
+        date(formatString: "MMMM Do, YYYY")
+        id
+        title
+        category
+        image {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(
+                placeholder: BLURRED
+                formats: [AUTO, AVIF, WEBP]
+                blurredOptions: { width: 100 }
+                transformOptions: { cropFocus: ENTROPY }
+                avifOptions: { quality: 85 }
+                quality: 90
+                width: 800
+                height: 300
+                backgroundColor: "transparent"
+              )
+            }
+          }
         }
       }
     }
