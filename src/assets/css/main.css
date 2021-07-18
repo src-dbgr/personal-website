@@ -100,6 +100,7 @@
   --spacing-big: 0.135rem;
   --navbar-height: 4.5rem;
   --neg-page-top-space: -4.5rem;
+  --button-space: 4rem;
   --border-thickness: 1.2rem;
   --max-width: 1170px;
   --fixed-width: 700px;
@@ -382,7 +383,7 @@ p {
   margin-right: auto;
 }
 .section-title {
-  margin-bottom: 4rem;
+  margin-bottom: var(--button-space);
   text-align: center;
 }
 
@@ -824,13 +825,18 @@ Hero
   font-family: var(--ff-secondary);
 }
 
+.hero p {
+  margin-bottom: 0;
+}
+
 .hero-description {
   font-family: var(--ff-ternary);
   max-width: 400px;
   hyphens: auto;
   text-align: justify;
   padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
+  margin-bottom: var(--button-space);
   text-transform: uppercase;
 }
 
@@ -1107,6 +1113,7 @@ Jobs
 .jobs-center {
   width: 80vw;
   margin: 0 auto;
+  margin-bottom: var(--button-space);
   max-width: var(--max-width);
 }
 
@@ -1114,7 +1121,8 @@ Jobs
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 4rem;
+  margin: 0;
+  margin-bottom: var(--button-space);
 }
 .job-btn {
   background: transparent;
@@ -1183,7 +1191,7 @@ Jobs
     width: 90vw;
     display: grid;
     grid-template-columns: 200px 1fr;
-    column-gap: 4rem;
+    column-gap: var(--button-space);
     padding-left: 26px;
     /* background: yellow; */
   }
@@ -1191,6 +1199,8 @@ Jobs
     flex-direction: column;
     justify-content: flex-start;
     width: 185px;
+    margin-right: 4rem;
+    margin-left: 1rem;
   }
   .job-btn {
     width: 185px;
@@ -1229,7 +1239,7 @@ Projects
 }
 .project {
   display: grid;
-  margin-bottom: 4rem;
+  margin-bottom: var(--button-space);
 }
 
 .project-img {
