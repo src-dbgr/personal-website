@@ -1202,6 +1202,7 @@ Jobs
 
   .job-info {
     max-width: 590px;
+    margin-top: 0;
     /* font-size: 1.1rem; */
   }
 
@@ -1230,10 +1231,25 @@ Projects
   display: grid;
   margin-bottom: 4rem;
 }
+
 .project-img {
-  height: 19rem;
-  z-index: 1;
+  margin-left: var(--border-thickness);
+  margin-right: var(--border-thickness);
 }
+
+.project-img-hover {
+  position: inherit;
+  z-index: 0;
+  margin-bottom: calc(var(--border-thickness) * -5);
+  transition: var(--transition);
+}
+
+.project-img:hover .project-img-hover {
+  height: 100%;
+  z-index: 0;
+  margin-bottom: 0;
+}
+
 .project-img::after {
   content: "";
   position: absolute;
@@ -1243,19 +1259,21 @@ Projects
   height: 100%;
   background: linear-gradient(
     to bottom right,
-    var(--clr-green-major),
+    var(--clr-passive),
     var(--clr-light-dark)
   );
   opacity: 0.85;
   transition: var(--transition);
 }
 .project:hover .project-img::after {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 .project-info {
   background: var(--clr-background-major);
   padding: var(--border-thickness);
   color: var(--clr-dark);
+  transition: var(--transition);
+  /* grid-row: 1 / 1; */
 }
 
 .project-number {
@@ -1302,14 +1320,9 @@ Projects
 .project-icon:hover {
   color: var(--clr-dark);
 }
-@media screen and (min-width: 576px) {
-  .project-img {
-    height: 19rem;
-  }
-}
 @media screen and (min-width: 768px) {
-  .project-img {
-    height: 22rem;
+  .project-img-hover {
+    margin-bottom: calc(var(--border-thickness) * -10);
   }
 }
 @media screen and (min-width: 992px) {
@@ -1323,6 +1336,9 @@ Projects
     grid-row: 1 / 1;
     height: 30rem;
     opacity: 0.8;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
   }
   .project-info {
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);

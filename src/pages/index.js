@@ -99,7 +99,7 @@ export const query = graphql`
                 avifOptions: { quality: 85 }
                 quality: 90
                 height: 480
-                width: 780
+                width: 900
                 backgroundColor: "transparent"
               )
             }

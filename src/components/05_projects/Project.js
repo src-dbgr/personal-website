@@ -15,18 +15,28 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
   // checks whether an image has been set, if noc image is set, don't render --> lines 9-11
   return (
     <article className="project">
+      {/* <div className="project-img-transition-wrapper"> */}
       {image && (
         // <Image fluid={image.childImageSharp.fluid} className="project-img" />
-        <div className="project-img" data-aos="slide-right" data-aos-once="true">
+        <div
+          className="project-img"
+          data-aos="fade-up"
+          data-aos-once="true"
+        >
           <GatsbyImage
             image={getImage(image.localFile)}
-            className="project-img shadow-box-dark"
+            className="project-img-hover shadow-box-dark"
             alt={title}
             //   formats={["avif", "webp", "auto"]}
           />
         </div>
       )}
-      <div className="project-info" data-aos="slide-left" data-aos-once="true">
+      {/* </div> */}
+      <div
+        className="project-info shadow-box-dark"
+        data-aos="fade-up"
+        data-aos-once="true"
+      >
         <span className="project-number">
           {index % 2 === 0 ? <BsCircleFill /> : <IoTriangleSharp />}
         </span>
