@@ -52,9 +52,7 @@ const Navbar = (props) => {
   }, [flip]);
 
   useEffect(() => {
-    setFlip(() => {
-      return !flip;
-    });
+    setFlip((flip) => !flip);
     return () => {
       setFlip(true);
     };

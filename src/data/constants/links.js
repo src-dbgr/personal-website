@@ -63,7 +63,10 @@ const Links = function (props) {
           props.toggleDarkTheme();
           dispatch({ type: "TOGGLE_THEME" });
         }}
-        onKeyDown={props.toggleDarkTheme}
+        onKeyDown={() => {
+          props.toggleDarkTheme();
+          dispatch({ type: "TOGGLE_THEME" });
+        }}
         role="button"
         tabIndex={0}
         data-aos="fade"

@@ -1,16 +1,17 @@
-import React, { Suspense, useState, useEffect } from "react";
+import React, { Suspense } from "react";
 import Sphere from "./Sphere";
 import Tetrahedron from "./Tetrahedron";
 import Plane from "./Plane";
-import { Canvas, useThree } from "@react-three/fiber";
+import { Canvas } from "@react-three/fiber";
 
 const ThreejsRender = () => {
-  const [display, setDisplay] = useState(true);
-
   return (
     <>
       <Suspense fallback={<h3>Loading...</h3>}>
-        <Canvas camera={{ fov: 75, near: 0.1, far: 500, position: [-2, 2, 3] }} className="trianglecanvas">
+        <Canvas
+          camera={{ fov: 75, near: 0.1, far: 500, position: [-2, 2, 3] }}
+          className="trianglecanvas"
+        >
           <ambientLight />
           <pointLight position={[-3, 3, -2]} intensity={20} color={0x767081} />
           <pointLight position={[1, 1.5, 3]} intensity={20} color={0x35a169} />

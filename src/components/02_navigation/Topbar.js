@@ -11,6 +11,10 @@ const Topbar = (props) => {
         props.toggleTopBar();
         dispatch({ type: "NAV_TOGGLE_LOGO" });
       }}
+      onKeyDown={() => {
+        dispatch({ type: "NAV_TOGGLE_LOGO" });
+      }}
+      role="presentation"
     >
       <div className="top-container">
         <PageLinks
