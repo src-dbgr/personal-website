@@ -1,7 +1,7 @@
 import React from "react";
 import Title from "../general/Title";
-import Blog from "./Blog";
-import { Link } from "gatsby";
+import loadable from "@loadable/component";
+const Blog = loadable(() => import("./Blog"));
 export const BlogPage = ({ blogs, title, showLink }) => {
   return (
     <section className="section">

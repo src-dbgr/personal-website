@@ -1,28 +1,15 @@
 import React, { useEffect } from "react";
 import Title from "../general/Title";
-// import { GatsbyImage, StaticImage, getImage } from "gatsby-plugin-image";
-import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image";
-import { graphql, useStaticQuery } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
-const query = graphql`
-  {
-    file(relativePath: { eq: "hero/hero-img-sam.webp" }) {
-      childImageSharp {
-        gatsbyImageData
-      }
-    }
-  }
-`;
 const About = () => {
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
-  // const background_img = useStaticQuery(query_background_img);
-  // const foreground_img = useStaticQuery(query_foreground_img);
   return (
     <section id="about" className="section about-component-section">
       <Title title="About" />
@@ -81,14 +68,12 @@ const About = () => {
         >
           <div className="about-img">
             <StaticImage
-              // src="../../assets/images/about/hero-colors-dark-soft-edge.png"
               src="../../assets/images/about/var_5.png"
               alt="about-img"
               className="about-default-img"
               placeholder="blur-up"
               quality={90}
               formats={["auto", "webp"]}
-              // avifOptions={{quality:80}} // use webp, tests have shown better performance
               width={500}
             />
             <StaticImage
@@ -99,7 +84,6 @@ const About = () => {
               quality={90}
               formats={["auto", "webp"]}
               width={500}
-              // avifOptions={{quality:80}}
             />
           </div>
         </article>

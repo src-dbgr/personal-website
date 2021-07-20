@@ -1,9 +1,10 @@
 import React, { useEffect } from "react";
 import Title from "../general/Title";
-import Blog from "./Blog";
+import loadable from "@loadable/component";
 import { Link } from "gatsby";
 import Aos from "aos";
 import "aos/dist/aos.css";
+const Blog = loadable(() => import("./Blog"));
 
 export const BlogsSection = ({ blogs, title, showLink }) => {
   useEffect(() => {

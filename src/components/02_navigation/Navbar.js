@@ -1,17 +1,20 @@
-import React, { useState, useRef, useEffect } from "react";
-import PageLinks from "../../data/constants/Links";
+import {
+  GlobalStateContext,
+  GlobalDispatchContext,
+} from "../../context/GlobalContextProvider";
+import React, { useState, useEffect, useContext } from "react";
 import anime from "animejs";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import PageLinks from "../../data/constants/Links";
 
 const Navbar = (props) => {
-  const [scaleTrigger, setScaleTrigger] = useState(false);
-  const [gradientTrigger, setGradientTrigger] = useState(false);
+  const [flip, setFlip] = useState(true);
   const [showNavbar, setShowNavbar] = useState(true);
   const animationDuration = 500;
   const downTopPath = "M0,0,124.3,250,250,0Z";
   const upTopPath = "M250,250,125.7,0,0,250Z";
-  const isFirstRun = useRef(true);
+  const navopen = useContext(GlobalStateContext).navopen;
   const animation = (params) => {
     return anime({
       targets: "#triangle_nav",
@@ -38,28 +41,24 @@ const Navbar = (props) => {
   }
 
   useEffect(() => {
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
+    if (flip) {
+      animation(upTopPath).play();
+      disableScrolling();
     } else {
-      // Change only after first run is done.
-      setTimeout(() => {
-        setGradientTrigger(props.topBarIsOpen);
-      }, 250);
+      animation(downTopPath).play();
+      enableScrolling();
     }
-    setTimeout(() => {
-      setScaleTrigger(false);
-    }, 500);
+    return () => {};
+  }, [flip]);
+
+  useEffect(() => {
+    setFlip(() => {
+      return !flip;
+    });
     return () => {
-      if (!props.topBarIsOpen) {
-        animation(upTopPath).play();
-        disableScrolling();
-      } else {
-        animation(downTopPath).play();
-        enableScrolling();
-      }
-      setScaleTrigger(true);
+      setFlip(true);
     };
-  }, [props.topBarIsOpen]);
+  }, [navopen]);
 
   let prevScrollpos = window.pageYOffset;
   const controlNavbarVisibility = () => {
@@ -84,6 +83,8 @@ const Navbar = (props) => {
   useEffect(() => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const dispatch = useContext(GlobalDispatchContext);
 
   return (
     <nav
@@ -390,7 +391,12 @@ const Navbar = (props) => {
                   xlinkHref="#912"
                 ></linearGradient>
               </defs>
-              <g id="light" opacity={`${props.darkTheme ? "0" : "1"}`}>
+              <g
+                id="light"
+                opacity={`${
+                  useContext(GlobalStateContext).theme === "dark" ? "0" : "1"
+                }`}
+              >
                 <circle cx="112.2" cy="128.9" r="78.4" fill="url(#UV)"></circle>
                 <path
                   fill="url(#2)"
@@ -445,7 +451,12 @@ const Navbar = (props) => {
                   d="M149 63.8L112.4 0.6 112.4 63.8 149 63.8z"
                 ></path>
               </g>
-              <g id="dark" opacity={`${props.darkTheme ? "0.7" : "0"}`}>
+              <g
+                id="dark"
+                opacity={`${
+                  useContext(GlobalStateContext).theme === "dark" ? "0.7" : "0"
+                }`}
+              >
                 <path
                   fill="url(#912)"
                   d="M223.3 193.4L186.5 129.8 167.8 97.3 148.9 64.7 112.3 1.4 112 0.8 75.1 64.7 56.4 97 37.6 129.8 0.6 193.8 0 194.8 75.1 194.8 112.3 194.8 148.9 194.8 224.2 194.8 223.3 193.4z"
@@ -510,7 +521,10 @@ const Navbar = (props) => {
           <button
             type="button"
             className="toggle-btn"
-            onClick={props.toggleTopBar}
+            onClick={() => {
+              props.toggleTopBar();
+              dispatch({ type: "NAV_TOGGLE_LOGO" });
+            }}
           >
             <svg
               id="toggle"
@@ -576,15 +590,15 @@ const Navbar = (props) => {
                 id="circle_nav"
                 d="M125,0A125,125,0,1,0,250,125,125,125,0,0,0,125,0Z"
                 fill="url(#circle_gradient)"
-                className={`${scaleTrigger ? "scale" : ""}`}
+                className={`${
+                  useContext(GlobalStateContext).navopen ? "scale" : ""
+                }`}
               ></path>
               <path
                 id="triangle_nav"
                 d="M0,0,124.3,250,250,0Z"
                 fill={`${
-                  isFirstRun.current
-                    ? "url(#triangle_gradient)"
-                    : gradientTrigger
+                  useContext(GlobalStateContext).navopen
                     ? "url(#circle_gradient_magenta)"
                     : "url(#circle_gradient_green)"
                 }`}

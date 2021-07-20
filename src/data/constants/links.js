@@ -1,6 +1,9 @@
-import React, { useEffect } from "react";
+import {
+  GlobalDispatchContext,
+  GlobalStateContext,
+} from "../../context/GlobalContextProvider";
+import React, { useEffect, useContext } from "react";
 import { Link } from "gatsby";
-import { navDelay } from "@utils";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const data = [
@@ -49,12 +52,17 @@ const Links = function (props) {
     Aos.init({ duration: 400, disable: "mobile" });
   }, []);
 
+  const dispatch = useContext(GlobalDispatchContext);
+
   return (
     <ul className={`page-links ${props.styleClass ? props.styleClass : ""}`}>
       {tempLinks}
       <div
         id="themeiconwrapper"
-        onClick={props.toggleDarkTheme}
+        onClick={() => {
+          props.toggleDarkTheme();
+          dispatch({ type: "TOGGLE_THEME" });
+        }}
         onKeyDown={props.toggleDarkTheme}
         role="button"
         tabIndex={0}
@@ -73,9 +81,16 @@ const Links = function (props) {
             id="moon"
             d="M166.8,151.4C81.7,152.9,51.7,39.8,125.2,1.9,61.2-10.3-.7,38.3,0,100.6c-1.8,105,154.3,137.9,200,44.3A86.9,86.9,0,0,1,166.8,151.4Z"
             fill="#34464a"
-            opacity={`${props.darkTheme ? "1" : "0"}`}
+            opacity={`${
+              useContext(GlobalStateContext).theme === "dark" ? "1" : "0"
+            }`}
           />
-          <g fill="#34464a" opacity={`${props.darkTheme ? "0" : "1"}`}>
+          <g
+            fill="#34464a"
+            opacity={`${
+              useContext(GlobalStateContext).theme === "dark" ? "0" : "1"
+            }`}
+          >
             <path d="M.4,99.6C10.3,94.2,19.9,89,29.8,83.4v33.1C20.3,110.8,8.6,105.9.4,99.6Z" />
             <path d="M157.8,100c.9,75.4-117.2,75.1-116.1-.1C41,24.6,158.9,25,157.8,100Z" />
             <path d="M116.4,30.1H83.1L99.8.2Z" />
