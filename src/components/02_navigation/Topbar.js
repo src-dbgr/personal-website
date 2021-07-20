@@ -1,14 +1,14 @@
-import { GlobalDispatchContext } from "../../context/GlobalContextProvider";
+import { GlobalDispatchContext,  GlobalStateContext } from "../../context/GlobalContextProvider";
 import React, { useContext } from "react";
 import PageLinks from "../../data/constants/Links";
 
 const Topbar = (props) => {
   const dispatch = useContext(GlobalDispatchContext);
+  const navopen = useContext(GlobalStateContext).navopen;
   return (
     <aside
-      className={`topbar ${props.topBarIsOpen ? "show-topbar" : ""}`}
+      className={`topbar ${navopen ? "show-topbar" : ""}`}
       onClick={() => {
-        props.toggleTopBar();
         dispatch({ type: "NAV_TOGGLE_LOGO" });
       }}
       onKeyDown={() => {
@@ -17,11 +17,7 @@ const Topbar = (props) => {
       role="presentation"
     >
       <div className="top-container">
-        <PageLinks
-          styleClass="topbar-links"
-          darkTheme={props.darkTheme}
-          toggleDarkTheme={props.toggleDarkTheme}
-        />
+        <PageLinks styleClass="topbar-links" />
       </div>
     </aside>
   );

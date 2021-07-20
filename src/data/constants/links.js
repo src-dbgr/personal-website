@@ -60,11 +60,9 @@ const Links = function (props) {
       <div
         id="themeiconwrapper"
         onClick={() => {
-          props.toggleDarkTheme();
           dispatch({ type: "TOGGLE_THEME" });
         }}
         onKeyDown={() => {
-          props.toggleDarkTheme();
           dispatch({ type: "TOGGLE_THEME" });
         }}
         role="button"
