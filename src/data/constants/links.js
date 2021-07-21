@@ -66,7 +66,7 @@ const Links = function (props) {
           dispatch({ type: "TOGGLE_THEME" });
         }}
         role="button"
-        tabIndex={0}
+        tabIndex={-1}
         data-aos="fade"
         data-aos-once="true"
         data-aos-delay="1500"
