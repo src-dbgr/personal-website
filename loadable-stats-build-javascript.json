@@ -1,0 +1,344 @@
+{
+  "hash": "66e1fbe8a349530bfe72",
+  "publicPath": "/",
+  "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
+  "assetsByChunkName": {
+    "polyfill": [
+      "polyfill.js",
+      "polyfill.c0531ccbd66df8798952.hot-update.js"
+    ],
+    "commons": [
+      "commons.css",
+      "commons.js",
+      "commons.c0531ccbd66df8798952.hot-update.js"
+    ],
+    "component---cache-dev-404-page-js": [
+      "component---cache-dev-404-page-js.js"
+    ],
+    "component---src-pages-404-js": [
+      "component---src-pages-404-js.js"
+    ],
+    "component---src-pages-index-js": [
+      "component---src-pages-index-js.js",
+      "component---src-pages-index-js.c0531ccbd66df8798952.hot-update.js"
+    ],
+    "component---src-pages-projects-js": [
+      "component---src-pages-projects-js.js",
+      "component---src-pages-projects-js.c0531ccbd66df8798952.hot-update.js"
+    ],
+    "01_launch-Launch": [
+      "01_launch-Launch.js"
+    ],
+    "Project": [
+      "Project.js"
+    ],
+    "Blog": [
+      "Blog.js"
+    ],
+    "framework": [
+      "framework.js"
+    ]
+  },
+  "assets": [
+    {
+      "type": "assets by status",
+      "cached": true,
+      "filteredChildren": 38,
+      "size": 23707567
+    }
+  ],
+  "namedChunkGroups": {
+    "polyfill": {
+      "name": "polyfill",
+      "chunks": [
+        "polyfill"
+      ],
+      "assets": [
+        {
+          "name": "polyfill.js"
+        },
+        {
+          "name": "polyfill.c0531ccbd66df8798952.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    },
+    "commons": {
+      "name": "commons",
+      "chunks": [
+        "framework",
+        "commons"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.c0531ccbd66df8798952.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---cache-dev-404-page-js": {
+      "name": "component---cache-dev-404-page-js",
+      "chunks": [
+        "component---cache-dev-404-page-js"
+      ],
+      "assets": [
+        {
+          "name": "component---cache-dev-404-page-js.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-404-js": {
+      "name": "component---src-pages-404-js",
+      "chunks": [
+        "component---src-pages-404-js"
+      ],
+      "assets": [
+        {
+          "name": "component---src-pages-404-js.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-index-js": {
+      "name": "component---src-pages-index-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-index-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.c0531ccbd66df8798952.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-index-js.js"
+        },
+        {
+          "name": "component---src-pages-index-js.c0531ccbd66df8798952.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 17,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-projects-js": {
+      "name": "component---src-pages-projects-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-projects-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.c0531ccbd66df8798952.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-projects-js.js"
+        },
+        {
+          "name": "component---src-pages-projects-js.c0531ccbd66df8798952.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "01_launch-Launch": {
+      "name": "01_launch-Launch",
+      "chunks": [
+        "01_launch-Launch"
+      ],
+      "assets": [
+        {
+          "name": "01_launch-Launch.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    },
+    "Project": {
+      "name": "Project",
+      "chunks": [
+        "Project"
+      ],
+      "assets": [
+        {
+          "name": "Project.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    },
+    "Blog": {
+      "name": "Blog",
+      "chunks": [
+        "Blog"
+      ],
+      "assets": [
+        {
+          "name": "Blog.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 0,
+      "auxiliaryAssetsSize": 0,
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "generator": "loadable-components",
+  "chunks": [
+    {
+      "id": "polyfill",
+      "files": [
+        "polyfill.js",
+        "polyfill.c0531ccbd66df8798952.hot-update.js"
+      ]
+    },
+    {
+      "id": "commons",
+      "files": [
+        "commons.css",
+        "commons.js",
+        "commons.c0531ccbd66df8798952.hot-update.js"
+      ]
+    },
+    {
+      "id": "_cache_dummy_js",
+      "files": [
+        "_cache_dummy_js.js"
+      ]
+    },
+    {
+      "id": "node_modules_objectFitPolyfill_dist_objectFitPolyfill_min_js",
+      "files": [
+        "node_modules_objectFitPolyfill_dist_objectFitPolyfill_min_js.js"
+      ]
+    },
+    {
+      "id": "node_modules_gatsby-plugin-image_dist_lazy-hydrate-9f0721eb_js",
+      "files": [
+        "node_modules_gatsby-plugin-image_dist_lazy-hydrate-9f0721eb_js.js"
+      ]
+    },
+    {
+      "id": "node_modules_gatsby-plugin-image_dist_intersection-observer-6b794dd8_js",
+      "files": [
+        "node_modules_gatsby-plugin-image_dist_intersection-observer-6b794dd8_js.js"
+      ]
+    },
+    {
+      "id": "component---cache-dev-404-page-js",
+      "files": [
+        "component---cache-dev-404-page-js.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-404-js",
+      "files": [
+        "component---src-pages-404-js.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-index-js",
+      "files": [
+        "component---src-pages-index-js.js",
+        "component---src-pages-index-js.c0531ccbd66df8798952.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-projects-js",
+      "files": [
+        "component---src-pages-projects-js.js",
+        "component---src-pages-projects-js.c0531ccbd66df8798952.hot-update.js"
+      ]
+    },
+    {
+      "id": "01_launch-Launch",
+      "files": [
+        "01_launch-Launch.js"
+      ]
+    },
+    {
+      "id": "Project",
+      "files": [
+        "Project.js"
+      ]
+    },
+    {
+      "id": "Blog",
+      "files": [
+        "Blog.js"
+      ]
+    },
+    {
+      "id": "framework",
+      "files": [
+        "framework.js"
+      ]
+    }
+  ]
+}
