@@ -11,325 +11,352 @@ const Launch = (props) => {
     }
 
     function clickIE(e) {
-      document.querySelector("#triangle").removeEventListener("click", clickIE);
-      document.body.removeChild(document.getElementById("imagewrapper"));
+      try {
+        document
+          .querySelector("#triangle")
+          .removeEventListener("click", clickIE);
+        document.body.removeChild(document.getElementById("imagewrapper"));
+      } catch (err) {
+        console.log("issue occured checking for internet explorer");
+        console.error(err);
+      }
     }
 
     if (isIE()) {
-      document.querySelector("#logo").style.opacity = 1;
-      document.getElementById("triangle").onclick = clickIE; //onclick event
+      try {
+        document.querySelector("#logo").style.opacity = 1;
+        document.getElementById("triangle").onclick = clickIE; //onclick event
+      } catch (err) {
+        console.log("issue occured selecting document elements");
+        console.error(err);
+      }
     } else {
       let launchAnimation = function () {
-        let logoEl = document.querySelector("#logo");
-        let trianglePathEls = logoEl.querySelectorAll(
-          "#triangle polygon:not(#_12triangleback)"
-        );
-        let pathLength = trianglePathEls.length;
-        let aimations = [];
+        try {
+          let logoEl = document.querySelector("#logo");
+          let trianglePathEls = logoEl.querySelectorAll(
+            "#triangle polygon:not(#_12triangleback)"
+          );
+          let pathLength = trianglePathEls.length;
+          let aimations = [];
 
-        let breathAnimation = anime({
-          begin: function () {
-            for (let i = 0; i < pathLength; i++) {
-              aimations.push(
-                anime({
-                  targets: trianglePathEls[i],
-                  stroke: {
-                    value: ["rgba(150, 149, 141, 0.8)"],
-                    duration: 1000,
-                  },
-                  strokeWidth: [0, 1.5],
-                  translateX: [2, -4],
-                  translateY: [2, -4],
-                  opacity: [0.3, 1],
-                  easing: "easeOutQuad",
-                  autoplay: false,
-                })
-              );
-            }
-          },
-          update: function (ins) {
-            aimations.forEach(function (animation, i) {
-              let percent =
-                (1 - Math.sin(i * 0.35 + 0.0022 * ins.currentTime)) / 2;
-              animation.seek(animation.duration * percent);
-            });
-          },
-          duration: Infinity,
-          autoplay: false,
-        });
-
-        let introAnimation = anime
-          .timeline({
+          let breathAnimation = anime({
+            begin: function () {
+              for (let i = 0; i < pathLength; i++) {
+                aimations.push(
+                  anime({
+                    targets: trianglePathEls[i],
+                    stroke: {
+                      value: ["rgba(150, 149, 141, 0.8)"],
+                      duration: 1000,
+                    },
+                    strokeWidth: [0, 1.5],
+                    translateX: [2, -4],
+                    translateY: [2, -4],
+                    opacity: [0.3, 1],
+                    easing: "easeOutQuad",
+                    autoplay: false,
+                  })
+                );
+              }
+            },
+            update: function (ins) {
+              aimations.forEach(function (animation, i) {
+                let percent =
+                  (1 - Math.sin(i * 0.35 + 0.0022 * ins.currentTime)) / 2;
+                animation.seek(animation.duration * percent);
+              });
+            },
+            duration: Infinity,
             autoplay: false,
-          })
-          .add({
-            targets: trianglePathEls,
-            strokeDashoffset: {
-              value: [anime.setDashoffset, 0],
-              duration: 3900,
-              easing: "easeInOutCirc",
-              delay: anime.stagger(190, { direction: "reverse" }),
-            },
-
-            duration: 2000,
-            delay: anime.stagger(60, { direction: "reverse" }),
-            easing: "linear",
-            complete: function (anim) {
-              introAnimation.remove();
-            },
           });
 
-        function startElementMotion() {
-          introAnimation.play();
-          breathAnimation.play();
-        }
-
-        function pauseElementMotion() {
-          introAnimation.pause();
-          breathAnimation.pause();
-        }
-
-        let tl_stop = anime.timeline({
-          easing: "easeOutExpo",
-          duration: 500,
-          autoplay: false,
-        });
-
-        tl_stop
-          .add({
-            targets: "#description, #outercircle",
-            rotate: [0, 360],
-            transformOrigin: ["50% 50% 0", "50% 60% 0"],
-            scale: 0.5,
-            opacity: 0,
-          })
-          .add({
-            targets: "#innercircle",
-            opacity: 0,
-            scale: 1.4,
-            transformOrigin: ["50% 50% 0", "50% 50% 0"],
-          })
-          .add({
-            targets: "#triangle polygon",
-            translateX: anime.stagger(10, {
-              grid: [1, -150],
-              from: "center",
-              axis: "x",
-            }),
-            translateY: anime.stagger(10, {
-              grid: [1, -150],
-              from: "center",
-              axis: "y",
-            }),
-            rotateZ: anime.stagger([0, 90], {
-              grid: [14, 5],
-              from: "center",
-              axis: "x",
-            }),
-            delay: function (el, i) {
-              return i * 100;
-            },
-            easing: "easeInOutSine",
-            complete: function (anim) {
-              tl_stop.remove();
-            },
-          });
-
-        let animTimeout = 1000;
-        let killAnimationTriggered = false;
-
-        function killAnimation(e) {
-          if (!killAnimationTriggered) {
-            document.querySelector(
-              "#triangle #_12triangleback"
-            ).style.opacity = 0;
-            tl_stop.play();
-            pauseElementMotion();
-            document
-              .querySelector("#triangle")
-              .removeEventListener("click", killAnimation);
-            document.body.removeEventListener("keydown", killAnimation);
-            if (e instanceof Event && e.code !== "customIdentifier") {
-              // this section stops the animation immediately since
-              // the user killed the animation
-              props.finishLaunching();
-            } else {
-              // this section ends the animation smoothly with polygon decay
-              // applies when everything runs without user interruption
-              setTimeout(function () {
-                props.finishLaunching();
-              }, animTimeout * 3);
-            }
-            killAnimationTriggered = !killAnimationTriggered;
-          }
-        }
-
-        function startAnimation() {
-          let tl_start = anime.timeline({
-            easing: "easeOutExpo",
-            duration: animTimeout,
-          });
-
-          tl_start
-            .add({
-              targets: "#outercircle",
-              opacity: 1,
-              transformOrigin: ["50% 50% 0", "50% 50% 0"],
-              scale: [0, 0.5, 1],
+          let introAnimation = anime
+            .timeline({
+              autoplay: false,
             })
             .add({
-              targets: "#triangle,#innercircle",
-              transformOrigin: ["50% 50% 0", "50% 50% 0"],
-              opacity: [0, 0.2, 0.5, 0.95],
-              rotate: [0, 1080],
-              scale: [0, 0.2, 1.1, 1],
-            })
-            .add({
-              targets: "#description",
-              opacity: [0, 1],
-            })
-            .add({
-              targets: "#triangle",
-              transformOrigin: ["50% 55% 0", "50% 55% 0"],
-              rotate: [0, 720],
+              targets: trianglePathEls,
+              strokeDashoffset: {
+                value: [anime.setDashoffset, 0],
+                duration: 3900,
+                easing: "easeInOutCirc",
+                delay: anime.stagger(190, { direction: "reverse" }),
+              },
+
+              duration: 2000,
+              delay: anime.stagger(60, { direction: "reverse" }),
+              easing: "linear",
               complete: function (anim) {
-                tl_start.remove();
+                introAnimation.remove();
               },
             });
 
-          return tl_start;
-        }
+          function startElementMotion() {
+            introAnimation.play();
+            breathAnimation.play();
+          }
 
-        // kick off animation
-        function initialAnimation() {
-          // make background layer invisible
-          let nodes = document.querySelectorAll(
-            "#description,#outercircle,#innercircle,#triangle,#_12triangleback"
-          );
+          function pauseElementMotion() {
+            introAnimation.pause();
+            breathAnimation.pause();
+          }
 
-          document.querySelector("#_12triangleback").style.opacity = 0;
-          Array.from(nodes).forEach(function (item) {
-            item.style.opacity = 0;
+          let tl_stop = anime.timeline({
+            easing: "easeOutExpo",
+            duration: 500,
+            autoplay: false,
           });
 
-          // in order to not render on load up make logo visible later
-          document.querySelector("#logo").style.opacity = 1;
-          let startAnim = startAnimation();
-          startAnim.play();
-          // delayed start of polygon motion
-          setTimeout(startElementMotion, animTimeout * 3);
+          tl_stop
+            .add({
+              targets: "#description, #outercircle",
+              rotate: [0, 360],
+              transformOrigin: ["50% 50% 0", "50% 60% 0"],
+              scale: 0.5,
+              opacity: 0,
+            })
+            .add({
+              targets: "#innercircle",
+              opacity: 0,
+              scale: 1.4,
+              transformOrigin: ["50% 50% 0", "50% 50% 0"],
+            })
+            .add({
+              targets: "#triangle polygon",
+              translateX: anime.stagger(10, {
+                grid: [1, -150],
+                from: "center",
+                axis: "x",
+              }),
+              translateY: anime.stagger(10, {
+                grid: [1, -150],
+                from: "center",
+                axis: "y",
+              }),
+              rotateZ: anime.stagger([0, 90], {
+                grid: [14, 5],
+                from: "center",
+                axis: "x",
+              }),
+              delay: function (el, i) {
+                return i * 100;
+              },
+              easing: "easeInOutSine",
+              complete: function (anim) {
+                tl_stop.remove();
+              },
+            });
+
+          let animTimeout = 1000;
+          let killAnimationTriggered = false;
+
+          function killAnimation(e) {
+            if (!killAnimationTriggered) {
+              document.querySelector(
+                "#triangle #_12triangleback"
+              ).style.opacity = 0;
+              tl_stop.play();
+              pauseElementMotion();
+              document
+                .querySelector("#triangle")
+                .removeEventListener("click", killAnimation);
+              document.body.removeEventListener("keydown", killAnimation);
+              if (e instanceof Event && e.code !== "customIdentifier") {
+                // this section stops the animation immediately since
+                // the user killed the animation
+                props.finishLaunching();
+              } else {
+                // this section ends the animation smoothly with polygon decay
+                // applies when everything runs without user interruption
+                setTimeout(function () {
+                  props.finishLaunching();
+                }, animTimeout * 3);
+              }
+              killAnimationTriggered = !killAnimationTriggered;
+            }
+          }
+
+          function startAnimation() {
+            let tl_start = anime.timeline({
+              easing: "easeOutExpo",
+              duration: animTimeout,
+            });
+
+            tl_start
+              .add({
+                targets: "#outercircle",
+                opacity: 1,
+                transformOrigin: ["50% 50% 0", "50% 50% 0"],
+                scale: [0, 0.5, 1],
+              })
+              .add({
+                targets: "#triangle,#innercircle",
+                transformOrigin: ["50% 50% 0", "50% 50% 0"],
+                opacity: [0, 0.2, 0.5, 0.95],
+                rotate: [0, 1080],
+                scale: [0, 0.2, 1.1, 1],
+              })
+              .add({
+                targets: "#description",
+                opacity: [0, 1],
+              })
+              .add({
+                targets: "#triangle",
+                transformOrigin: ["50% 55% 0", "50% 55% 0"],
+                rotate: [0, 720],
+                complete: function (anim) {
+                  tl_start.remove();
+                },
+              });
+
+            return tl_start;
+          }
+
+          // kick off animation
+          function initialAnimation() {
+            // make background layer invisible
+            let nodes = document.querySelectorAll(
+              "#description,#outercircle,#innercircle,#triangle,#_12triangleback"
+            );
+
+            document.querySelector("#_12triangleback").style.opacity = 0;
+            Array.from(nodes).forEach(function (item) {
+              item.style.opacity = 0;
+            });
+
+            // in order to not render on load up make logo visible later
+            document.querySelector("#logo").style.opacity = 1;
+            let startAnim = startAnimation();
+            startAnim.play();
+            // delayed start of polygon motion
+            setTimeout(startElementMotion, animTimeout * 3);
+          }
+
+          let triangleElement = document.querySelector("#triangle");
+          triangleElement.onclick = killAnimation;
+          document.body.addEventListener(
+            "keydown",
+            function (event) {
+              if (event.defaultPrevented) {
+                return;
+              }
+              var handled = false;
+              // if (event.keyCode === 13) {
+              //   killAnimation();
+              // }
+
+              if (event.key !== undefined) {
+                // Handle the event with KeyboardEvent.key and set handled true.
+                if (event.key === "Enter") {
+                  killAnimation(event);
+                  handled = true;
+                }
+              } else if (event.keyIdentifier !== undefined) {
+                // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
+                if (event.key === "Enter") {
+                  killAnimation(event);
+                  handled = true;
+                }
+              } else if (event.keyCode !== undefined) {
+                if (event.key === "Enter") {
+                  killAnimation(event);
+                  handled = true;
+                }
+                // Handle the event with KeyboardEvent.keyCode and set handled true.
+              }
+
+              if (handled) {
+                event.preventDefault();
+              }
+            },
+            true
+          );
+
+          return initialAnimation;
+        } catch (err) {
+          console.log("issue occured during launch animation setup");
+          console.error(err);
         }
-
-        let triangleElement = document.querySelector("#triangle");
-        triangleElement.onclick = killAnimation;
-        document.body.addEventListener(
-          "keydown",
-          function (event) {
-            if (event.defaultPrevented) {
-              return;
-            }
-            var handled = false;
-            // if (event.keyCode === 13) {
-            //   killAnimation();
-            // }
-
-            if (event.key !== undefined) {
-              // Handle the event with KeyboardEvent.key and set handled true.
-              if (event.key === "Enter") {
-                killAnimation(event);
-                handled = true;
-              }
-            } else if (event.keyIdentifier !== undefined) {
-              // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
-              if (event.key === "Enter") {
-                killAnimation(event);
-                handled = true;
-              }
-            } else if (event.keyCode !== undefined) {
-              if (event.key === "Enter") {
-                killAnimation(event);
-                handled = true;
-              }
-              // Handle the event with KeyboardEvent.keyCode and set handled true.
-            }
-
-            if (handled) {
-              event.preventDefault();
-            }
-          },
-          true
-        );
-
-        return initialAnimation;
       };
       launchAnimation()();
 
       function descriptionAnimation() {
-        let letters = document.querySelectorAll("#description path");
-        let printSpeed = 100; // ms
-        let startDelay = 2000; // ms
-        Array.from(letters).forEach(function (letter) {
-          letter.style.opacity = "0";
-        });
-
-        function enableDescriptionLetters(letter, callback) {
-          letter.style.opacity = "1";
-          if (callback && typeof callback === "function") {
-            setTimeout(callback, printSpeed * 5); // set little timeout to print final letter.
-          }
-        }
-
-        // function colorizeDescriptionLetters(letter, color) {
-        //   letter.style.fill = color;
-        // }
-
-        function makeDescriptionVisible(
-          callback,
-          execDelay,
-          execStartDelay,
-          color
-        ) {
-          let delay = execDelay;
-          let startDelay = execStartDelay;
-          Array.from(letters).forEach(function (letter, index) {
-            // delay typing at the following letter indizes
-            startDelay +=
-              index === 3 || index === 13 || index === 12 ? delay * 5 : 0;
-            // return setTimeout(callback, (startDelay += delay), letter, color);
-            if (index === letters.length - 1) {
-              return setTimeout(callback, (startDelay += delay), letter, () => {
-                // anonymous inner callback, simulates a key down event to stop animation and launch page
-                document.body.dispatchEvent(
-                  new KeyboardEvent("keydown", {
-                    key: "Enter",
-                    keyCode: 13, // Enter keyCode
-                    code: "customIdentifier", // identify that this keystroke is triggered automatically
-                    which: 13,
-                    shiftKey: false,
-                    ctrlKey: false,
-                    metaKey: false,
-                  })
-                );
-              });
-            } else {
-              return setTimeout(callback, (startDelay += delay), letter);
-            }
+        try {
+          let letters = document.querySelectorAll("#description path");
+          let printSpeed = 100; // ms
+          let startDelay = 2000; // ms
+          Array.from(letters).forEach(function (letter) {
+            letter.style.opacity = "0";
           });
+
+          function enableDescriptionLetters(letter, callback) {
+            letter.style.opacity = "1";
+            if (callback && typeof callback === "function") {
+              setTimeout(callback, printSpeed * 5); // set little timeout to print final letter.
+            }
+          }
+
+          // function colorizeDescriptionLetters(letter, color) {
+          //   letter.style.fill = color;
+          // }
+
+          function makeDescriptionVisible(
+            callback,
+            execDelay,
+            execStartDelay,
+            color
+          ) {
+            let delay = execDelay;
+            let startDelay = execStartDelay;
+            Array.from(letters).forEach(function (letter, index) {
+              // delay typing at the following letter indizes
+              startDelay +=
+                index === 3 || index === 13 || index === 12 ? delay * 5 : 0;
+              // return setTimeout(callback, (startDelay += delay), letter, color);
+              if (index === letters.length - 1) {
+                return setTimeout(
+                  callback,
+                  (startDelay += delay),
+                  letter,
+                  () => {
+                    // anonymous inner callback, simulates a key down event to stop animation and launch page
+                    document.body.dispatchEvent(
+                      new KeyboardEvent("keydown", {
+                        key: "Enter",
+                        keyCode: 13, // Enter keyCode
+                        code: "customIdentifier", // identify that this keystroke is triggered automatically
+                        which: 13,
+                        shiftKey: false,
+                        ctrlKey: false,
+                        metaKey: false,
+                      })
+                    );
+                  }
+                );
+              } else {
+                return setTimeout(callback, (startDelay += delay), letter);
+              }
+            });
+          }
+
+          makeDescriptionVisible(
+            enableDescriptionLetters,
+            printSpeed,
+            startDelay
+          );
+
+          // colorization also possible, turn off css keyframe animation beforehand
+          // makeDescriptionVisible(
+          //   colorizeDescriptionLetters,
+          //   printSpeed,
+          //   startDelay + 100,
+          //   "rgb(181, 178, 166)"
+          // );
+        } catch (err) {
+          console.log("issue occured during animation description launch");
+          console.error(err);
         }
-
-        makeDescriptionVisible(
-          enableDescriptionLetters,
-          printSpeed,
-          startDelay
-        );
-
-        // colorization also possible, turn off css keyframe animation beforehand
-        // makeDescriptionVisible(
-        //   colorizeDescriptionLetters,
-        //   printSpeed,
-        //   startDelay + 100,
-        //   "rgb(181, 178, 166)"
-        // );
       }
 
       descriptionAnimation();
