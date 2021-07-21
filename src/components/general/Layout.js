@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import Navbar from "../02_navigation/Navbar";
 import Topbar from "../02_navigation/Topbar";
 import loadable from "@loadable/component";
@@ -10,19 +10,26 @@ const Launch = loadable(() => import("../01_launch/Launch"));
 
 const Layout = ({ children }) => {
   const isIndexPage = true; // TODO ==> Change, compare to location pathname or slug!
-  const isFirstRun = useRef(true);
 
   const theme = useContext(GlobalStateContext).theme;
 
   useEffect(() => {
-    if (isFirstRun.current) {
-      isFirstRun.current = false;
+    if (document.body.classList.contains("dark-theme")) {
+      if (theme === "light") {
+        toggleDarkTheme();
+      }
     } else {
-      document.body.classList.toggle("dark-theme");
-      document.documentElement.classList.toggle("htmlScrollbarDarkMode");
+      if (theme === "dark") {
+        toggleDarkTheme();
+      }
     }
     return () => {};
   }, [theme]);
+
+  function toggleDarkTheme() {
+    document.body.classList.toggle("dark-theme");
+    document.documentElement.classList.toggle("htmlScrollbarDarkMode");
+  }
 
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);

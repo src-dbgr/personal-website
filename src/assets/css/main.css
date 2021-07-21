@@ -273,10 +273,6 @@ p {
   cursor: pointer;
 }
 
-#sunmoon path {
-  fill: var(--clr-passive);
-}
-
 #themeiconwrapper:hover #sunmoon path {
   transition: var(--transition);
   fill: var(--clr-dark);
@@ -1129,7 +1125,7 @@ About Page
 Jobs
 ===============
 */
-.jobs{
+.jobs {
   /* min-height: 100vh; */
 }
 
@@ -1416,6 +1412,7 @@ Projects Page
 .projects-page .projects {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
+  min-height: 100vh;
 }
 
 /*

@@ -66,7 +66,7 @@ const Links = function (props) {
           dispatch({ type: "TOGGLE_THEME" });
         }}
         role="button"
-        tabIndex={0}
+        tabIndex={-1}
         data-aos="fade"
         data-aos-once="true"
         data-aos-delay="1500"
@@ -81,13 +81,14 @@ const Links = function (props) {
           <path
             id="moon"
             d="M166.8,151.4C81.7,152.9,51.7,39.8,125.2,1.9,61.2-10.3-.7,38.3,0,100.6c-1.8,105,154.3,137.9,200,44.3A86.9,86.9,0,0,1,166.8,151.4Z"
-            fill="#34464a"
+            fill="#212121"
             opacity={`${
               useContext(GlobalStateContext).theme === "dark" ? "1" : "0"
             }`}
           />
           <g
-            fill="#34464a"
+            id="sun"
+            fill="#565f61"
             opacity={`${
               useContext(GlobalStateContext).theme === "dark" ? "0" : "1"
             }`}

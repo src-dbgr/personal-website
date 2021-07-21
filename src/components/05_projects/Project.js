@@ -16,11 +16,11 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
   return (
     <article className="project" data-aos="fade-up" data-aos-once="true">
       {image && (
-          <GatsbyImage
-            image={getImage(image.localFile)}
-            className="project-img shadow-box-dark"
-            alt={title}
-          />
+        <GatsbyImage
+          image={getImage(image.localFile)}
+          className="project-img shadow-box-dark"
+          alt={title}
+        />
       )}
       <div className="project-info shadow-box-dark">
         <span className="project-number">

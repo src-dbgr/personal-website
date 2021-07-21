@@ -2,18 +2,29 @@ import {
   GlobalStateContext,
   GlobalDispatchContext,
 } from "../../context/GlobalContextProvider";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useRef } from "react";
 import anime from "animejs";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import PageLinks from "../../data/constants/Links";
 
 const Navbar = (props) => {
+  const [scaleTrigger, setScaleTrigger] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
+  const mounted = useRef(false);
+  const firstrender = useRef(true);
   const animationDuration = 500;
   const downTopPath = "M0,0,124.3,250,250,0Z";
   const upTopPath = "M250,250,125.7,0,0,250Z";
   const navopen = useContext(GlobalStateContext).navopen;
+
+  useEffect(() => {
+    mounted.current = true;
+    return () => {
+      mounted.current = false;
+    };
+  }, []);
+
   const animation = (params) => {
     return anime({
       targets: "#triangle_nav",
@@ -40,15 +51,36 @@ const Navbar = (props) => {
   }
 
   useEffect(() => {
+    let isactive = true;
     if (navopen) {
-      animation(upTopPath).play();
-      disableScrolling();
+      if (mounted.current && isactive) {
+        animation(upTopPath).play();
+      }
+      if (isactive) {
+        disableScrolling();
+      }
     } else {
-      animation(downTopPath).play();
-      enableScrolling();
+      if (mounted.current && isactive) {
+        animation(downTopPath).play();
+      }
+      if (isactive) {
+        enableScrolling();
+      }
     }
+    if (!firstrender.current) {
+      if (mounted.current && isactive) {
+        setScaleTrigger(true);
+      }
+      setTimeout(() => {
+        if (mounted.current && isactive) {
+          setScaleTrigger(false);
+        }
+      }, 500);
+    }
+    firstrender.current = false;
     return () => {
       enableScrolling();
+      isactive = false;
     };
   }, [navopen]);
 
@@ -572,7 +604,7 @@ const Navbar = (props) => {
                 id="circle_nav"
                 d="M125,0A125,125,0,1,0,250,125,125,125,0,0,0,125,0Z"
                 fill="url(#circle_gradient)"
-                className={`${navopen ? "scale" : ""}`}
+                className={`${scaleTrigger ? "scale" : ""}`}
               ></path>
               <path
                 id="triangle_nav"
