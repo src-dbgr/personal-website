@@ -1,16 +1,14 @@
 {
-  "hash": "5b52d2342dde9c74aec0",
+  "hash": "bebf9a8b78b786e39496",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
-      "polyfill.js",
-      "polyfill.1889a1abd1b4e9b3c310.hot-update.js"
+      "polyfill.js"
     ],
     "commons": [
       "commons.css",
-      "commons.js",
-      "commons.1889a1abd1b4e9b3c310.hot-update.js"
+      "commons.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
@@ -41,8 +39,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 36,
-      "size": 26012851
+      "filteredChildren": 32,
+      "size": 26007743
     }
   ],
   "namedChunkGroups": {
@@ -54,9 +52,6 @@
       "assets": [
         {
           "name": "polyfill.js"
-        },
-        {
-          "name": "polyfill.1889a1abd1b4e9b3c310.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -81,9 +76,6 @@
         },
         {
           "name": "commons.js"
-        },
-        {
-          "name": "commons.1889a1abd1b4e9b3c310.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -145,9 +137,6 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.1889a1abd1b4e9b3c310.hot-update.js"
-        },
-        {
           "name": "component---src-pages-index-js.js"
         }
       ],
@@ -174,9 +163,6 @@
         },
         {
           "name": "commons.js"
-        },
-        {
-          "name": "commons.1889a1abd1b4e9b3c310.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
@@ -246,16 +232,14 @@
     {
       "id": "polyfill",
       "files": [
-        "polyfill.js",
-        "polyfill.1889a1abd1b4e9b3c310.hot-update.js"
+        "polyfill.js"
       ]
     },
     {
       "id": "commons",
       "files": [
         "commons.css",
-        "commons.js",
-        "commons.1889a1abd1b4e9b3c310.hot-update.js"
+        "commons.js"
       ]
     },
     {
