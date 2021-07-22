@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import Title from "../general/Title";
-import loadable from "@loadable/component";
 import { Link } from "gatsby";
 import Aos from "aos";
 import "aos/dist/aos.css";
-const Project = loadable(() => import("./Project"));
+import Project from "./Project";
 
 const Projects = ({ projects, title, showLink }) => {
   useEffect(() => {

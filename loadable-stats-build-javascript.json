@@ -1,5 +1,5 @@
 {
-  "hash": "bebf9a8b78b786e39496",
+  "hash": "7f5fc643c1cf606ec172",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
@@ -22,15 +22,6 @@
     "component---src-pages-projects-js": [
       "component---src-pages-projects-js.js"
     ],
-    "01_launch-Launch": [
-      "01_launch-Launch.js"
-    ],
-    "Project": [
-      "Project.js"
-    ],
-    "Blog": [
-      "Blog.js"
-    ],
     "framework": [
       "framework.js"
     ]
@@ -39,8 +30,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 32,
-      "size": 26007743
+      "filteredChildren": 29,
+      "size": 29443436
     }
   ],
   "namedChunkGroups": {
@@ -174,57 +165,6 @@
       "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
-    },
-    "01_launch-Launch": {
-      "name": "01_launch-Launch",
-      "chunks": [
-        "01_launch-Launch"
-      ],
-      "assets": [
-        {
-          "name": "01_launch-Launch.js"
-        }
-      ],
-      "filteredAssets": 0,
-      "assetsSize": null,
-      "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 0,
-      "children": {},
-      "childAssets": {}
-    },
-    "Project": {
-      "name": "Project",
-      "chunks": [
-        "Project"
-      ],
-      "assets": [
-        {
-          "name": "Project.js"
-        }
-      ],
-      "filteredAssets": 0,
-      "assetsSize": null,
-      "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 0,
-      "children": {},
-      "childAssets": {}
-    },
-    "Blog": {
-      "name": "Blog",
-      "chunks": [
-        "Blog"
-      ],
-      "assets": [
-        {
-          "name": "Blog.js"
-        }
-      ],
-      "filteredAssets": 0,
-      "assetsSize": null,
-      "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 0,
-      "children": {},
-      "childAssets": {}
     }
   },
   "generator": "loadable-components",
@@ -288,24 +228,6 @@
       "id": "component---src-pages-projects-js",
       "files": [
         "component---src-pages-projects-js.js"
-      ]
-    },
-    {
-      "id": "01_launch-Launch",
-      "files": [
-        "01_launch-Launch.js"
-      ]
-    },
-    {
-      "id": "Project",
-      "files": [
-        "Project.js"
-      ]
-    },
-    {
-      "id": "Blog",
-      "files": [
-        "Blog.js"
       ]
     },
     {

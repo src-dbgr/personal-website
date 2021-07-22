@@ -2,12 +2,11 @@ import React, { useEffect, useContext } from "react";
 import { motion } from "framer-motion";
 import Navbar from "../02_navigation/Navbar";
 import Topbar from "../02_navigation/Topbar";
-import loadable from "@loadable/component";
+import Launch from "../01_launch/Launch";
 import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../context/GlobalContextProvider";
-const Launch = loadable(() => import("../01_launch/Launch"));
 
 const Layout = ({ children }) => {
   const isIndexPage = true; // TODO ==> Change, compare to location pathname or slug!
@@ -34,6 +33,28 @@ const Layout = ({ children }) => {
 
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);
+
+  useEffect(() => {
+    let isactive = true;
+    let hash = window.location.hash;
+    // !!"" === false // empty string is falsy
+    // !!"foo" === true  // non-empty string is truthy
+    if (!!hash) {
+      let id = hash.replace("#", "");
+      try {
+        let node = document.getElementById(id);
+        if (isactive) {
+          node.scrollIntoView();
+        }
+      } catch (err) {
+        console.log("issue occured scrolling into node");
+        console.error(err);
+      }
+    }
+    return () => {
+      isactive = false;
+    };
+  }, []);
 
   // disable in production
   // disabling on first render

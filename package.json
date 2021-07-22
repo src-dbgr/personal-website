@@ -15,7 +15,6 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@loadable/component": "^5.15.0",
     "@react-three/fiber": "^7.0.2",
     "@trysound/sax": "^0.1.1",
     "animejs": "^3.2.1",
@@ -27,7 +26,6 @@
     "gatsby-plugin-react-helmet": "^4.8.0",
     "gatsby-plugin-sharp": "^3.8.0",
     "gatsby-plugin-sitemap": "^4.4.0",
-    "gatsby-plugin-transition-link": "^1.20.5",
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-source-strapi": "^1.0.2",
     "gatsby-transformer-sharp": "^3.8.0",
@@ -36,7 +34,6 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
-    "react-transition-group": "^4.4.2",
     "three": "^0.130.1"
   },
   "devDependencies": {
