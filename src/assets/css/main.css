@@ -174,7 +174,7 @@ html {
   scrollbar-color: var(--clr-dark) var(--clr-background-minor);
   scrollbar-width: thin;
   overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   font-size: 100%;
 }
 

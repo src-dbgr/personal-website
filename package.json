@@ -20,6 +20,7 @@
     "@trysound/sax": "^0.1.1",
     "animejs": "^3.2.1",
     "aos": "^2.3.4",
+    "framer-motion": "^4.1.17",
     "gatsby": "^3.6.2",
     "gatsby-plugin-image": "^1.8.0",
     "gatsby-plugin-loadable-components-ssr": "^3.2.0",
