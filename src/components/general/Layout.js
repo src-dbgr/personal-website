@@ -34,8 +34,7 @@ const Layout = ({ children }) => {
   const dispatch = useContext(GlobalDispatchContext);
   const state = useContext(GlobalStateContext);
 
-  useEffect(() => {
-    let isactive = true;
+  function navigateToHash(isActive) {
     let hash = window.location.hash;
     // !!"" === false // empty string is falsy
     // !!"foo" === true  // non-empty string is truthy
@@ -43,7 +42,7 @@ const Layout = ({ children }) => {
       let id = hash.replace("#", "");
       try {
         let node = document.getElementById(id);
-        if (isactive) {
+        if (isActive) {
           node.scrollIntoView();
         }
       } catch (err) {
@@ -51,10 +50,18 @@ const Layout = ({ children }) => {
         console.error(err);
       }
     }
+  }
+
+  useEffect(() => {
+    let isActive = true;
+    // skip if animation has not yet finished
+    if (!state.animation) {
+      navigateToHash(isActive);
+    }
     return () => {
-      isactive = false;
+      isActive = false;
     };
-  }, []);
+  }, [state.animation]);
 
   // disable in production
   // disabling on first render
