@@ -14,14 +14,19 @@ const Layout = ({ children }) => {
   const theme = useContext(GlobalStateContext).theme;
 
   useEffect(() => {
-    if (document.body.classList.contains("dark-theme")) {
-      if (theme === "light") {
-        toggleDarkTheme();
+    try {
+      if (document.body.classList.contains("dark-theme")) {
+        if (theme === "light") {
+          toggleDarkTheme();
+        }
+      } else {
+        if (theme === "dark") {
+          toggleDarkTheme();
+        }
       }
-    } else {
-      if (theme === "dark") {
-        toggleDarkTheme();
-      }
+    } catch (err) {
+      console.log("issue occured assigning theme");
+      console.error(err);
     }
     return () => {};
   }, [theme]);
@@ -35,18 +40,20 @@ const Layout = ({ children }) => {
   const state = useContext(GlobalStateContext);
 
   function navigateToHash(isActive) {
-    let hash = window.location.hash;
+    const isBrowser = () => typeof window !== "undefined";
+    let hash = isBrowser() && window.location.hash;
     // !!"" === false // empty string is falsy
     // !!"foo" === true  // non-empty string is truthy
     if (!!hash) {
       let id = hash.replace("#", "");
       try {
         let node = document.getElementById(id);
-        if (isActive) {
+        if (node === null) {
+          console.log("Location anchor: " + hash + " could not be found");
+        } else if (isActive) {
           node.scrollIntoView();
         }
       } catch (err) {
-        console.log("issue occured scrolling into node");
         console.error(err);
       }
     }

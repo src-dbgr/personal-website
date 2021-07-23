@@ -11,7 +11,7 @@ const Projects = ({ projects, title, showLink }) => {
   }, []);
 
   return (
-    <section className="section projects">
+    <section id="sctn_projects" className="section projects">
       <Title title={title} />
       <div className="section-center projects-center">
         {projects
@@ -36,7 +36,7 @@ const Projects = ({ projects, title, showLink }) => {
         <Link
           to="projects"
           className="btn center-btn"
-          data-aos="zoom-in"
+          data-aos="fade"
           data-aos-once="true"
         >
           <span className="btn">all projects</span>

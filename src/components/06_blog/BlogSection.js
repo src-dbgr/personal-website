@@ -10,11 +10,11 @@ export const BlogsSection = ({ blogs, title, showLink }) => {
     Aos.init({ duration: 1000, disable: "mobile" });
   }, []);
   return (
-    <section className="section">
+    <section id="sctn_blog" className="section">
       <Title title={title} />
       <div
         className="section-center blogs-center"
-        data-aos="zoom-in"
+        data-aos="fade"
         data-aos-once="true"
       >
         {blogs.map((blog) => {
@@ -24,7 +24,7 @@ export const BlogsSection = ({ blogs, title, showLink }) => {
       <Link
         to="/blogs"
         className="btn center-btn"
-        data-aos="zoom-in"
+        data-aos="fade"
         data-aos-once="true"
       >
         <span className="btn">All Blog Articles</span>

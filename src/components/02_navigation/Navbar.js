@@ -105,11 +105,25 @@ const Navbar = (props) => {
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    let alive = true;
+    if (navanimation) {
+      Aos.init({ duration: 1000, disable: "mobile" });
+      setTimeout(() => {
+        if (alive) {
+          dispatch({ type: "NAV_ANIMATION" });
+        }
+      }, 1200);
+    }
+    return () => {
+      // Disable Animation afer initial execution
+      Aos.init({ duration: 0, disable: "mobile" });
+      alive = false;
+    };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   const dispatch = useContext(GlobalDispatchContext);
   const theme = useContext(GlobalStateContext).theme;
+  const navanimation = useContext(GlobalStateContext).navanimation;
 
   return (
     <nav
@@ -133,9 +147,9 @@ const Navbar = (props) => {
               height="208.1"
               viewBox="0 0 224.3 208.1"
               id="nav_main_logo"
-              data-aos="fade"
+              data-aos={`${navanimation ? "fade" : ""}`}
               data-aos-once="true"
-              data-aos-delay="1500"
+              data-aos-delay={`${navanimation ? "1500" : ""}`}
             >
               <defs>
                 <radialGradient
