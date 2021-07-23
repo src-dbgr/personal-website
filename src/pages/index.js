@@ -95,7 +95,7 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                placeholder: BLURRED
+                placeholder: DOMINANT_COLOR
                 formats: [AUTO, WEBP]
                 blurredOptions: { width: 100 }
                 transformOptions: { cropFocus: ENTROPY }
@@ -127,7 +127,7 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                placeholder: BLURRED
+                placeholder: DOMINANT_COLOR
                 formats: [AUTO, WEBP]
                 blurredOptions: { width: 100 }
                 transformOptions: { cropFocus: ENTROPY }

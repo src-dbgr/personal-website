@@ -47,9 +47,7 @@ const CookieConsent = () => {
     } catch (err) {
       console.log("issue resolving consent checkbox status");
     }
-    console.log("checkbox status: " + checkbox);
     if (checkbox) {
-      //   document.cookie = "sb-google-analytics-ecuosp=true";
       setCookie("sb-google-analytics-ecuosp", true, 30);
     }
     setBannerHidden(true);
