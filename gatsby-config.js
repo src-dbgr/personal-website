@@ -27,5 +27,25 @@ module.exports = {
         collectionTypes: [`job`, `project`, `blog`],
       },
     },
+{
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID', // leave empty if you want to disable the tracker
+          cookieName: 'sb-google-analytics-ecuosp', // default
+          anonymize: true, // default
+          allowAdFeatures: false // default
+        },
+      },
+    },
+    // enable if neccessary 
+    // {
+    //   resolve: `gatsby-plugin-osano`,
+    //   options: {
+    //     customerId: '4E7BSdzBNik66VN',
+    //     ccid: 'c66d08c0-a736-4292-9eae-bf8b6e68a601',
+    //     includeInDevelopment: true,
+    //   },
+    // },
   ],
 };

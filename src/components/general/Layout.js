@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "../02_navigation/Navbar";
 import Topbar from "../02_navigation/Topbar";
 import Launch from "../01_launch/Launch";
+import CookieConsent from "./CookieConsent";
 import {
   GlobalDispatchContext,
   GlobalStateContext,
@@ -131,6 +132,7 @@ const Layout = ({ children }) => {
           </motion.main>
         </>
       )}
+      <CookieConsent />
     </>
   );
 };
