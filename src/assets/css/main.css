@@ -188,6 +188,7 @@ Cookie Consent
   align-items: center;
   box-shadow: var(--default-nav-shadow);
   opacity: 0.8;
+  z-index: 201;
 }
 
 .cookie-consent,
@@ -230,7 +231,7 @@ Cookie Consent
 
 .cookie-text {
   min-height: 80px;
-  margin-right: 1rem;
+  margin-right: 10px;
 }
 
 .customizeCookies {
@@ -266,10 +267,12 @@ Cookie Consent
 
 .row {
   flex-direction: row !important;
-  width: 28rem !important;
-  max-width: 90vw !important;
+  /* width: 28rem !important; */
+  width: 95vw !important;
+  /* max-width: 95vw !important; */
   justify-content: center;
   align-items: center;
+  margin-top: 8px !important;
 }
 
 .cookie-buttons {
@@ -277,7 +280,6 @@ Cookie Consent
   flex-direction: column;
   justify-content: bottom;
   align-items: left;
-  min-height: 80px;
   width: 9rem;
   margin-top: auto;
 }
@@ -398,7 +400,7 @@ input:checked,
   right: 0;
   /* background: blue; */
   background-color: var(--clr-background-major-opaque);
-  z-index: 201 !important;
+  z-index: 202;
 }
 
 .cookie-info-child {
@@ -411,13 +413,13 @@ input:checked,
   right: 0;
   bottom: 0;
   padding: 0.25rem;
-  box-shadow: var(--default-nav-shadow);
+  box-shadow: var(--default-btn-shadow);
   background: var(--clr-background-major);
 }
 
 .cookie-info-box {
   width: 100%;
-  height: 94%;
+  height: 93.5%;
   padding: 0.5rem;
   background: var(--clr-background-minor);
   overflow-x: hidden;
@@ -426,12 +428,13 @@ input:checked,
 
 .cookie-info-box-btn {
   width: 100%;
-  height: 30px;
+  height: 2rem;
   text-align: center;
 }
 
 @media screen and (max-width: 992px) {
   .cookie-consent {
+    flex-direction: column;
     opacity: 0.95;
   }
 
@@ -441,6 +444,25 @@ input:checked,
 
   .cookie-allow-analytics-toggle {
     padding-left: 0;
+  }
+
+  .cookie-buttons {
+    margin-top: 8px;
+    min-height: 1rem;
+    width: 95.5vw;
+    flex-direction: row;
+  }
+
+  .cookie-buttons .btn {
+    font-size: 9pt;
+    max-width: 31.5vw;
+    width: calc(95vw / 3);
+  }
+
+  .cookie-text {
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    margin-right: 0;
   }
 }
 
@@ -453,11 +475,6 @@ input:checked,
 
   .cookie-consent button {
     max-width: 100%;
-  }
-
-  .cookie-text {
-    margin-right: 0.5rem;
-    padding: 0.5rem;
   }
 }
 

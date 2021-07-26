@@ -257,7 +257,7 @@ const CookieConsent = () => {
                   customize ? "cookie-buttons row" : "cookie-buttons"
                 }`}
               >
-                <button className="btn" onClick={EnableAnalytics}>
+                <button className={"btn"} onClick={EnableAnalytics}>
                   OK
                 </button>
                 {!customize && (
@@ -265,7 +265,7 @@ const CookieConsent = () => {
                     Decline
                   </button>
                 )}
-                <button className="btn" onClick={toggleCustomization}>
+                <button className={"btn"} onClick={toggleCustomization}>
                   {!customize ? "CUSTOMIZE" : "CLOSE"}
                 </button>
               </div>

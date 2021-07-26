@@ -107,6 +107,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <CookieConsent />
       {isIndexPage && state.animation ? (
         <Launch
           finishLaunching={() => {
@@ -132,7 +133,6 @@ const Layout = ({ children }) => {
           </motion.main>
         </>
       )}
-      <CookieConsent />
     </>
   );
 };
