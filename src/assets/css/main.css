@@ -221,7 +221,7 @@ Cookie Consent
   align-items: center;
   width: 95vw;
   max-width: 1170px;
-  padding: 1rem;
+  padding: 10px;
   border: 2px solid var(--clr-passive);
   min-height: 80px;
   /* padding-top: 0.5; */
@@ -230,7 +230,7 @@ Cookie Consent
 }
 
 .cookie-text {
-  min-height: 80px;
+  min-height: 105px;
   margin-right: 10px;
 }
 
@@ -289,8 +289,10 @@ Cookie Consent
   width: 9rem;
   max-width: 9rem;
   height: 2rem;
-  margin: 0.15rem;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
   cursor: pointer;
+  border: 0 !important;
 }
 
 /* The switch - the box around the slider */
@@ -432,6 +434,10 @@ input:checked,
   text-align: center;
 }
 
+.row button {
+  margin: 0.15rem;
+}
+
 @media screen and (max-width: 992px) {
   .cookie-consent {
     flex-direction: column;
@@ -444,6 +450,10 @@ input:checked,
 
   .cookie-allow-analytics-toggle {
     padding-left: 0;
+  }
+
+  .cookie-buttons button {
+    margin: 0.15rem;
   }
 
   .cookie-buttons {

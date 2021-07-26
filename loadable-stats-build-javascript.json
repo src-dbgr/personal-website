@@ -1,16 +1,16 @@
 {
-  "hash": "0478d5f8fe1263125185",
+  "hash": "af4d93a62391e7516266",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.797d4d6196c46832ae4b.hot-update.js"
+      "polyfill.b3de737ca276b7ea2452.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.797d4d6196c46832ae4b.hot-update.js"
+      "commons.b3de737ca276b7ea2452.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
@@ -33,7 +33,7 @@
       "type": "assets by status",
       "cached": true,
       "filteredChildren": 33,
-      "size": 29826588
+      "size": 29826732
     }
   ],
   "namedChunkGroups": {
@@ -47,7 +47,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.797d4d6196c46832ae4b.hot-update.js"
+          "name": "polyfill.b3de737ca276b7ea2452.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -74,7 +74,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.797d4d6196c46832ae4b.hot-update.js"
+          "name": "commons.b3de737ca276b7ea2452.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -136,7 +136,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.797d4d6196c46832ae4b.hot-update.js"
+          "name": "commons.b3de737ca276b7ea2452.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
@@ -167,7 +167,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.797d4d6196c46832ae4b.hot-update.js"
+          "name": "commons.b3de737ca276b7ea2452.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
@@ -187,7 +187,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.797d4d6196c46832ae4b.hot-update.js"
+        "polyfill.b3de737ca276b7ea2452.hot-update.js"
       ]
     },
     {
@@ -195,7 +195,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.797d4d6196c46832ae4b.hot-update.js"
+        "commons.b3de737ca276b7ea2452.hot-update.js"
       ]
     },
     {
