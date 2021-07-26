@@ -8,6 +8,7 @@ const initialState = {
   animation: true,
   navopen: false,
   navlogoscale: false,
+  navanimation: true,
 };
 
 function reducer(state, action) {
@@ -30,10 +31,10 @@ function reducer(state, action) {
         navopen: state.navopen ? false : true,
       };
     }
-    case "NAV_SCALE_TRIGGER": {
+    case "NAV_ANIMATION": {
       return {
         ...state,
-        navlogoscale: state.navlogoscale ? false : true,
+        navanimation: false,
       };
     }
     default:

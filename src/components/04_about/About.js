@@ -17,7 +17,7 @@ const About = () => {
         <article
           key="1"
           className="about-component shadow-box"
-          data-aos="slide-right"
+          data-aos="fade"
           data-aos-once="true"
         >
           <div className="ball-icon-wrapper">
@@ -63,7 +63,7 @@ const About = () => {
         <article
           key="2"
           className="about-component about-img-container"
-          data-aos="slide-left"
+          data-aos="fade"
           data-aos-once="true"
         >
           <div className="about-img">

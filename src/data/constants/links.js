@@ -6,46 +6,46 @@ import React, { useEffect, useContext } from "react";
 import { Link } from "gatsby";
 import Aos from "aos";
 import "aos/dist/aos.css";
-const data = [
-  {
-    id: 1,
-    text: "home",
-    url: "/",
-  },
-  {
-    id: 2,
-    text: "about",
-    url: "/#about",
-  },
-  {
-    id: 3,
-    text: "projects",
-    url: "/projects/",
-  },
-  {
-    id: 4,
-    text: "blog",
-    url: "/blog/",
-  },
-  {
-    id: 5,
-    text: "contact",
-    url: "/contact/",
-  },
-];
+// const data = [
+//   {
+//     id: 1,
+//     text: "home",
+//     url: "/",
+//   },
+//   {
+//     id: 2,
+//     text: "about",
+//     url: "/#about",
+//   },
+//   {
+//     id: 3,
+//     text: "projects",
+//     url: "/projects/",
+//   },
+//   {
+//     id: 4,
+//     text: "blog",
+//     url: "/blog/",
+//   },
+//   {
+//     id: 5,
+//     text: "contact",
+//     url: "/contact/",
+//   },
+// ];
 
-const tempLinks = data.map((link) => {
-  return (
-    <li
-      key={link.id}
-      data-aos="fade-down"
-      data-aos-once="true"
-      data-aos-delay={`${(link.id - 1) * 150}`}
-    >
-      <Link to={link.url}>{link.text}</Link>
-    </li>
-  );
-});
+// const tempLinks = data.map((link) => {
+//   return (
+//     <li
+//       key={link.id}
+//       data-aos="fade"
+//       data-aos-once="true"
+//       data-aos-delay={`${(link.id - 1) * 150}`}
+//     >
+//       <Link to={link.url}>{link.text}</Link>
+//     </li>
+//   );
+// });
 
 const Links = function (props) {
   useEffect(() => {
@@ -53,10 +53,51 @@ const Links = function (props) {
   }, []);
 
   const dispatch = useContext(GlobalDispatchContext);
-
+  const navanimation = useContext(GlobalStateContext).navanimation;
   return (
     <ul className={`page-links ${props.styleClass ? props.styleClass : ""}`}>
-      {tempLinks}
+      {/* {tempLinks} */}
+      <li
+        key="1"
+        data-aos={`${navanimation ? "fade-down" : ""}`}
+        data-aos-once="true"
+        data-aos-delay="0"
+      >
+        <Link to="/">home</Link>
+      </li>
+      <li
+        key="2"
+        data-aos={`${navanimation ? "fade-down" : ""}`}
+        data-aos-once="true"
+        data-aos-delay={`${navanimation ? "150" : "0"}`}
+      >
+        <Link to="/#about">about</Link>
+      </li>
+      <li
+        key="3"
+        data-aos={`${navanimation ? "fade-down" : ""}`}
+        data-aos-once="true"
+        data-aos-delay={`${navanimation ? "300" : "0"}`}
+      >
+        <Link to="/projects">projects</Link>
+      </li>
+      <li
+        key="4"
+        data-aos={`${navanimation ? "fade-down" : ""}`}
+        data-aos-once="true"
+        data-aos-delay={`${navanimation ? "450" : "0"}`}
+      >
+        <Link to="/blog">blog</Link>
+      </li>
+      <li
+        key="5"
+        data-aos={`${navanimation ? "fade-down" : ""}`}
+        data-aos-once="true"
+        data-aos-delay={`${navanimation ? "600" : "0"}`}
+      >
+        <Link to="/contact">contact</Link>
+      </li>
+
       <div
         id="themeiconwrapper"
         onClick={() => {
@@ -67,9 +108,9 @@ const Links = function (props) {
         }}
         role="button"
         tabIndex={-1}
-        data-aos="fade"
+        data-aos={`${navanimation ? "fade-down" : ""}`}
         data-aos-once="true"
-        data-aos-delay="1500"
+        data-aos-delay={`${navanimation ? "1500" : "0"}`}
       >
         <svg
           id="sunmoon"

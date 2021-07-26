@@ -36,7 +36,7 @@ const Experience = () => {
   const { company, position, date, desc } = jobs[value]; // take react state value to choose the element
 
   return (
-    <section className="section jobs">
+    <section id="sctn_experience" className="section jobs">
       <Title title="experience" />
       <div className="jobs-center" data-aos="fade-up" data-aos-once="true">
         <div className="btn-container">
@@ -69,9 +69,8 @@ const Experience = () => {
       <Link
         to="/about"
         className="btn center-btn"
-        data-aos="zoom-in"
+        data-aos="fade"
         data-aos-once="true"
-        delay="300"
       >
         <span className="btn">more info</span>
       </Link>
