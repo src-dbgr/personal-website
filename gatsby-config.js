@@ -27,18 +27,36 @@ module.exports = {
         collectionTypes: [`job`, `project`, `blog`],
       },
     },
-{
+    {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID', // leave empty if you want to disable the tracker
-          cookieName: 'sb-google-analytics-ecuosp', // default
+          trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID", // leave empty if you want to disable the tracker
+          cookieName: "sb-ggl-anlytcs-ecuosp", // default
           anonymize: true, // default
-          allowAdFeatures: false // default
+          allowAdFeatures: false, // default
+        },
+        googleTagManager: {
+          trackingId: "YOUR_GOOGLE_TAG_MANAGER_TRACKING_ID", // leave empty if you want to disable the tracker
+          cookieName: "sb-google-tagmanager", // default
+          dataLayerName: "dataLayer", // default
+        },
+        facebookPixel: {
+          pixelId: "YOUR_FACEBOOK_PIXEL_ID", // leave empty if you want to disable the tracker
+          cookieName: "sb-facebook-pixel", // default
+        },
+        tikTokPixel: {
+          pixelId: "YOUR_TIKTOK_PIXEL_ID", // leave empty if you want to disable the tracker
+          cookieName: "sb-tiktok-pixel", // default
+        },
+        hotjar: {
+          hjid: "YOUR_HOTJAR_ID",
+          hjsv: "YOUR_HOTJAR_SNIPPET_VERSION",
+          cookieName: "sb-hotjar", // default
         },
       },
     },
-    // enable if neccessary 
+    // enable if neccessary
     // {
     //   resolve: `gatsby-plugin-osano`,
     //   options: {
