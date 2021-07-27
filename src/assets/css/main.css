@@ -329,6 +329,11 @@ Cookie Consent
   font-size: 8pt !important;
 }
 
+.switch-content-wrapper button {
+  width: 4rem;
+  font-size: 9pt;
+}
+
 .switch-title {
   margin-top: 0.25rem;
   margin-left: 85px;
@@ -373,11 +378,15 @@ input:checked,
   transform: translateX(16px);
 }
 
+.enableallslider {
+  background-color: var(--clr-magenta) !important;
+}
 .sliderChecked {
   background-color: var(--clr-green-major) !important;
 }
 
-.sliderChecked::before {
+.sliderChecked::before,
+.enableallslider::before {
   background-color: var(--clr-dark) !important;
   -webkit-transform: translateX(16px) !important;
   -ms-transform: translateX(16px) !important;
@@ -414,7 +423,7 @@ input:checked,
   left: 0;
   right: 0;
   bottom: 0;
-  padding: 0.25rem;
+  padding: 0.5rem;
   box-shadow: var(--default-btn-shadow);
   background: var(--clr-background-major);
 }
@@ -422,20 +431,26 @@ input:checked,
 .cookie-info-box {
   width: 100%;
   height: 93.5%;
-  padding: 0.5rem;
+  padding: 1.5rem;
   background: var(--clr-background-minor);
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
+.cookie-info-box p {
+  font-size: 10pt;
+}
+
 .cookie-info-box-btn {
-  width: 100%;
+  width: 100% !important;
   height: 2rem;
   text-align: center;
+  box-shadow: none !important;
 }
 
 .row button {
   margin: 0.15rem;
+  font-size: 9pt;
 }
 
 @media screen and (max-width: 992px) {

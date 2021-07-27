@@ -12,6 +12,10 @@ const SwitchToggle = ({
   vendor,
   type,
   expiration,
+  name,
+  purpose,
+  url,
+  enablealltoggle,
 }) => {
   return (
     <div className="switch-content-wrapper">
@@ -24,7 +28,13 @@ const SwitchToggle = ({
               onClick={toggleHandler}
             />
             <span
-              className={`${checkBoxState ? "slider sliderChecked" : "slider"}`}
+              className={`${
+                checkBoxState
+                  ? enablealltoggle
+                    ? "slider enableallslider"
+                    : "slider sliderChecked"
+                  : "slider"
+              }`}
             >
               <span
                 className={`${
@@ -58,15 +68,20 @@ const SwitchToggle = ({
         </>
       )}
       <div className="switch-title">{title}</div>
-      <CookieInfo
-        key={id}
-        title={title}
-        vendor={vendor}
-        category={category}
-        description={description}
-        type={type}
-        expiration={expiration}
-      />
+      {!enablealltoggle && (
+        <CookieInfo
+          key={id}
+          title={title}
+          vendor={vendor}
+          category={category}
+          description={description}
+          type={type}
+          expiration={expiration}
+          name={name}
+          purpose={purpose}
+          url={url}
+        />
+      )}
     </div>
   );
 };
