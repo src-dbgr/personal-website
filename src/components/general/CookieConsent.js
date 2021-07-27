@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "@reach/router";
 import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies";
-import { Link } from "gatsby";
+import { Link, graphql, useStaticQuery } from "gatsby";
 import SwitchToggle from "./SwitchToggle";
-import cookiedata from "../../data/cookies/cookiedata";
 
 function isBrowser() {
   return typeof window !== "undefined";
 }
 
+// checks whether this key 'CONSENTRXCSQECJWXXK' is stored in client's window
+// if true, won't ask again for banner, else will show banner
 function getValue(key, defaultValue) {
   return isBrowser() && window.localStorage.getItem(key)
     ? JSON.parse(window.localStorage.getItem(key))
@@ -31,7 +32,37 @@ function useStickyState(defaultValue, key) {
   return [value, setter];
 }
 
+const query = graphql`
+  {
+    allStrapiCookie(filter: { active: { eq: true } }) {
+      nodes {
+        identifier
+        name
+        purpose
+        selectable
+        title
+        type
+        url
+        vendor
+        description
+        expiration
+        enablealltoggle
+        category {
+          category
+        }
+      }
+    }
+  }
+`;
+
 const CookieConsent = () => {
+  const data = useStaticQuery(query);
+  data.allStrapiCookie.nodes.sort(function (a, b) {
+    return b.identifier - a.identifier;
+  });
+  const {
+    allStrapiCookie: { nodes: cookies },
+  } = data;
   const location = useLocation();
   if (isBrowser()) {
     initializeAndTrack(location);
@@ -50,15 +81,15 @@ const CookieConsent = () => {
     hotjar: "sb-hotjarCheckboxState",
   });
   const onMount = useRef(false);
-  const [toggleAllState, setToggleAllState] = useState(true);
+  const [toggleAllState, setToggleAllState] = useState(false);
   const [customize, setCustomize] = useState(false);
   const [gglAnalyticsCheckboxState, setGglAnalyticsCheckboxState] =
-    useState(true);
-  const [gglTagmgrCheckboxState, setGglTagmgrCheckboxState] = useState(true);
-  const [fbPixelCheckboxState, setFbCheckboxPixelState] = useState(true);
+    useState(false);
+  const [gglTagmgrCheckboxState, setGglTagmgrCheckboxState] = useState(false);
+  const [fbPixelCheckboxState, setFbCheckboxPixelState] = useState(false);
   const [tiktokPixelCheckboxState, setTiktokCheckboxPixelState] =
-    useState(true);
-  const [hotjarCheckboxState, setHotjarCheckboxState] = useState(true);
+    useState(false);
+  const [hotjarCheckboxState, setHotjarCheckboxState] = useState(false);
 
   const toggleGglAnalytics = () => {
     setGglAnalyticsCheckboxState(
@@ -110,6 +141,15 @@ const CookieConsent = () => {
 
   const toggleCustomization = () => {
     setCustomize((customize) => !customize);
+  };
+
+  const EnableAllAnalytics = () => {
+    setCookie(cookieNames.current.gglanalytics, true, 365);
+    setCookie(cookieNames.current.ggltagmgr, true, 365);
+    setCookie(cookieNames.current.fbpixel, true, 365);
+    setCookie(cookieNames.current.tiktokpixel, true, 365);
+    setCookie(cookieNames.current.hotjar, true, 365);
+    setBannerHidden(true);
   };
 
   const EnableAnalytics = () => {
@@ -166,34 +206,52 @@ const CookieConsent = () => {
     );
   }
 
+  function gaOptout() {
+    try {
+      let gaProperty = "XXXXXX";
+      let disableStr = "ga-disable-" + gaProperty;
+      if (document.cookie.indexOf(disableStr + "=true") > -1) {
+        window[disableStr] = true;
+      }
+      document.cookie =
+        disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+      window[disableStr] = true;
+    } catch (err) {
+      console.log("issue setting opt out cookie for google analytics");
+      console.error(err);
+    }
+  }
+
   const DeclineAnalytics = () => {
     try {
       removeAllCookies();
+      gaOptout();
     } catch (err) {
       console.log("could not invalidate cookie");
+      console.error(err);
     }
     setBannerHidden(true);
   };
 
   // index of array entries must map with id's of 'cookiedat.js' entries
   const toggleHandler = [
+    toggleAll,
     null,
-    toggleGglAnalytics,
     toggleGglTagMgr,
     toggleFbPixel,
     toggleTiktokPixel,
     toggleHotjar,
-    toggleAll,
+    toggleGglAnalytics,
   ];
   // index of array entries must map with id's of 'cookiedat.js' entries
   const checkBoxState = [
+    toggleAllState,
     null,
-    gglAnalyticsCheckboxState,
     gglTagmgrCheckboxState,
     fbPixelCheckboxState,
     tiktokPixelCheckboxState,
     hotjarCheckboxState,
-    toggleAllState,
+    gglAnalyticsCheckboxState,
   ];
 
   return (
@@ -208,29 +266,42 @@ const CookieConsent = () => {
             {customize ? (
               <div className="customizeCookies">
                 <div className="cookie-allow-analytics-toggle">
-                  {cookiedata.map((cookie) => {
+                  {cookies.map((cookie) => {
                     const {
-                      id,
-                      vendor,
-                      category,
+                      identifier,
+                      name,
+                      purpose,
                       selectable,
                       title,
+                      type,
+                      url,
+                      vendor,
                       description,
                       expiration,
-                      type,
+                      enablealltoggle,
+                      category,
                     } = cookie;
+                    let catogories = "";
+                    category.map((nested_category) => {
+                      return (catogories += nested_category.category + ", ");
+                    });
+                    catogories = catogories.substring(0, catogories.length - 2);
                     return (
                       <SwitchToggle
-                        key={id}
-                        toggleHandler={toggleHandler[id]}
-                        checkBoxState={checkBoxState[id]}
+                        key={identifier}
+                        toggleHandler={toggleHandler[identifier]}
+                        checkBoxState={checkBoxState[identifier]}
                         vendor={vendor}
-                        category={category}
+                        category={catogories}
                         title={title}
                         selectable={selectable}
                         description={description}
                         type={type}
                         expiration={expiration}
+                        name={name}
+                        purpose={purpose}
+                        url={url}
+                        enablealltoggle={enablealltoggle}
                       />
                     );
                   })}
@@ -239,12 +310,14 @@ const CookieConsent = () => {
             ) : (
               <div className="cookie-text">
                 <span>
-                  This website uses cookies and other tracking technologies.
-                  Google Analytics is active only if "Statistics" is set
-                  "enabled". If "Statistics" remains disabled no tracking is in
-                  place. Google Analytics helps to analyze this website's
-                  traffic, and to understand where visitors are coming from.
-                  Your Identity remains anonymous.
+                  This website uses cookies and other tracking technologies. By
+                  accepting all cookies you consent to this websistes use of all
+                  cookies. You can also activate only specific cookies or
+                  decline the entire usage of cookies. Declining stops all
+                  tracking cookies but will use window local storage to not show
+                  the banner again on revisit. Usage of cookies helps to analyze
+                  this website's traffic, and to understand where visitors are
+                  coming from. Your Identity remains always anonymous.
                   <Link className="link" to="/privacy">
                     Learn more
                   </Link>
@@ -257,9 +330,15 @@ const CookieConsent = () => {
                   customize ? "cookie-buttons row" : "cookie-buttons"
                 }`}
               >
-                <button className={"btn"} onClick={EnableAnalytics}>
-                  OK
-                </button>
+                {customize ? (
+                  <button className={"btn"} onClick={EnableAnalytics}>
+                    ACCEPT CUSTOM
+                  </button>
+                ) : (
+                  <button className={"btn"} onClick={EnableAllAnalytics}>
+                    ACCEPT ALL
+                  </button>
+                )}
                 {!customize && (
                   <button className="btn" onClick={DeclineAnalytics}>
                     Decline
