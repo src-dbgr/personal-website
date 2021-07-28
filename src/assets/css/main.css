@@ -529,7 +529,14 @@ Section Triangle Transitions
   bottom: -1px;
 }
 
-.triangle-one path,
+.triangle-gradient-one {
+  stop-color: var(--clr-background-minor);
+}
+
+.triangle-gradient-two {
+  stop-color: var(--clr-background-major);
+}
+
 .triangle-three path {
   fill: var(--clr-background-minor);
 }
@@ -1801,7 +1808,8 @@ Projects Page
 =============== 
 */
 
-.projects-page .projects {
+.projects-page .projects,
+.blog-page {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
   min-height: 100vh;

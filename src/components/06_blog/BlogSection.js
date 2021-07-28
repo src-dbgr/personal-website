@@ -22,7 +22,7 @@ export const BlogsSection = ({ blogs, title, showLink }) => {
         })}
       </div>
       <Link
-        to="/blogs"
+        to="/blog"
         className="btn center-btn"
         data-aos="fade"
         data-aos-once="true"

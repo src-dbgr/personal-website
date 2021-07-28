@@ -34,7 +34,10 @@ function useStickyState(defaultValue, key) {
 
 const query = graphql`
   {
-    allStrapiCookie(filter: { active: { eq: true } }) {
+    allStrapiCookie(
+      filter: { active: { eq: true } }
+      sort: { fields: identifier, order: DESC }
+    ) {
       nodes {
         identifier
         name
@@ -57,9 +60,6 @@ const query = graphql`
 
 const CookieConsent = () => {
   const data = useStaticQuery(query);
-  data.allStrapiCookie.nodes.sort(function (a, b) {
-    return b.identifier - a.identifier;
-  });
   const {
     allStrapiCookie: { nodes: cookies },
   } = data;

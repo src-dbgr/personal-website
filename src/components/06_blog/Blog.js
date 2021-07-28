@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 const Blog = ({ id, title, desc, slug, date, category, image }) => {
   return (
-    <Link to={`/blogs/${slug}`} className="blog shadow-box-dark" key={id}>
+    <Link to={`/blog/${slug}`} className="blog shadow-box-dark" key={id}>
       <article>
         {image && (
           <GatsbyImage

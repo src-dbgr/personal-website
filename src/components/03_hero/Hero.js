@@ -93,7 +93,28 @@ const Hero = () => {
         data-aos={`${navanimation ? "fade-up" : ""}`}
         data-aos-once="true"
       >
-        <path d="M4323 250L0 0 0 250 4323 250z"></path>
+        <defs>
+          <linearGradient
+            id="a"
+            x1="2161.5"
+            x2="2161.5"
+            y1="250"
+            data-name="Unbenannter Verlauf 28"
+            gradientUnits="userSpaceOnUse"
+          >
+            <stop
+              className="triangle-gradient-one"
+              offset="0"
+              stopColor="#96948d"
+            ></stop>
+            <stop
+              className="triangle-gradient-two"
+              offset="1"
+              stopColor="#b5b2a6"
+            ></stop>
+          </linearGradient>
+        </defs>
+        <path fill="url(#a)" d="M4323 250L0 0v250z"></path>
       </svg>
     </header>
   );
