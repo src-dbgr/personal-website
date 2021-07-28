@@ -29,6 +29,16 @@ export const BlogsSection = ({ blogs, title, showLink }) => {
       >
         <span className="btn">All Blog Articles</span>
       </Link>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="4323"
+        height="250"
+        fill="none"
+        className="triangle-three"
+        viewBox="0 0 4323 250"
+      >
+        <path d="M4323 250L0 0 0 250 4323 250z"></path>
+      </svg>
     </section>
   );
 };

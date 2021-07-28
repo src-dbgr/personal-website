@@ -37,6 +37,16 @@ const Experience = () => {
 
   return (
     <section id="sctn_experience" className="section jobs">
+      {/* <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="4323"
+        height="250"
+        fill="none"
+        className="wave_four"
+        viewBox="0 0 4323 250"
+      >
+        <path d="M0 250L4323 0 4323 250 0 250z"></path>
+      </svg> */}
       <Title title="experience" />
       <div className="jobs-center" data-aos="fade-up" data-aos-once="true">
         <div className="btn-container">
@@ -74,6 +84,16 @@ const Experience = () => {
       >
         <span className="btn">more info</span>
       </Link>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="4323"
+        height="250"
+        fill="none"
+        className="triangle-three"
+        viewBox="0 0 4323 250"
+      >
+        <path d="M4323 250L0 0 0 250 4323 250z"></path>
+      </svg>
     </section>
   );
 };

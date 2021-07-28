@@ -83,6 +83,18 @@ const Hero = () => {
           <Threejsrender />
         </div>
       </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="4323"
+        height="250"
+        fill="none"
+        className="triangle-one"
+        viewBox="0 0 4323 250"
+        data-aos={`${navanimation ? "fade-up" : ""}`}
+        data-aos-once="true"
+      >
+        <path d="M4323 250L0 0 0 250 4323 250z"></path>
+      </svg>
     </header>
   );
 };

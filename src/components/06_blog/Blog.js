@@ -1,13 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
+import React from "react";
+import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 const Blog = ({ id, title, desc, slug, date, category, image }) => {
   return (
     <Link to={`/blogs/${slug}`} className="blog shadow-box-dark" key={id}>
       <article>
         {image && (
-          <GatsbyImage image={getImage(image.localFile)} className="blog-img" alt={title} />
+          <GatsbyImage
+            image={getImage(image.localFile)}
+            className="blog-img"
+            alt={title}
+          />
         )}
         <div className="blog-card">
           <h4>{title}</h4>
@@ -19,8 +23,8 @@ const Blog = ({ id, title, desc, slug, date, category, image }) => {
         </div>
       </article>
     </Link>
-  )
-}
+  );
+};
 
 Blog.propTypes = {
   id: PropTypes.string.isRequired,
@@ -30,6 +34,6 @@ Blog.propTypes = {
   date: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
-}
+};
 
-export default Blog
+export default Blog;

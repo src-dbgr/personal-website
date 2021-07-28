@@ -88,6 +88,15 @@ const About = () => {
           </div>
         </article>
       </div>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="4323"
+        height="250"
+        className="triangle-two"
+        viewBox="0 0 4323 250"
+      >
+        <path d="M0 250L4323 0 4323 250 0 250z"></path>
+      </svg>
     </section>
   );
 };
