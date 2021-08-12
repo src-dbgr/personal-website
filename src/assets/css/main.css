@@ -568,7 +568,7 @@ Section Triangle Transitions
     stroke-width: 0;
   }
   50% {
-    fill: var(--clr-background-minor);
+    fill: var(--clr-background-major);
     stroke-width: 0.5;
   }
   80% {
@@ -577,7 +577,7 @@ Section Triangle Transitions
     stroke-width: 0.5;
   }
   100% {
-    fill: var(--clr-background-major);
+    fill: var(--clr-background-minor);
     stroke: var(--clr-topbar-font-hover);
     stroke-width: 2;
   }
@@ -1880,6 +1880,7 @@ Blog
   background: var(--clr-background-major);
   padding: var(--border-thickness);
   margin-bottom: 0;
+  text-align: justify;
 }
 .blog-img {
   height: 15rem;
