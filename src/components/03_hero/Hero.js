@@ -107,14 +107,18 @@ const Hero = () => {
           >
             <stop
               className="triangle-gradient-one"
-              offset="0.2"
+              offset="25%"
               stopColor="#96948d"
-            ></stop>
+              stopOpacity="1"
+            >
+            </stop>
             <stop
               className="triangle-gradient-two"
-              offset="1"
+              offset="80%"
               stopColor="#b5b2a6"
-            ></stop>
+              stopOpacity="0.1"
+            >
+            </stop>
           </linearGradient>
           <linearGradient
             id="c"
@@ -123,7 +127,8 @@ const Hero = () => {
             y1="250.68"
             y2="0.68"
             xlinkHref="#a"
-          ></linearGradient>
+          >
+          </linearGradient>
         </defs>
         <path
           fill="url(#c)"
