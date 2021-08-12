@@ -1626,7 +1626,7 @@ Jobs
 }
 .job-info h4 {
   text-transform: uppercase;
-  color: var(--clr-grey-5);
+  color: var(--clr-passive);
   background: var(--clr-grey-9);
   display: inline-block;
   padding: 0.375rem 0.75rem;
