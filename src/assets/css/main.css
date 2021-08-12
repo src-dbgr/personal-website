@@ -580,7 +580,6 @@ Section Triangle Transitions
   }
 }
 
-
 /*
 =============== 
 Global Styles
@@ -1701,9 +1700,9 @@ Projects
 */
 
 #sctn_projects {
-  position: absolute !important;
+  position: relative !important;
   width: 100%;
-  z-index: 1;
+  z-index: 2;
 }
 
 .projects {
@@ -1873,6 +1872,14 @@ Projects Page
 Blog
 ===============
 */
+
+#sctn_blog {
+  position: relative !important;
+  width: 100%;
+  z-index: 2;
+  background: var(--clr-background-major);
+}
+
 .blog {
   display: block;
   margin-bottom: 2rem;
