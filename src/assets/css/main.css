@@ -91,7 +91,7 @@
   --clr-section-radial-gradient: radial-gradient(
     circle,
     var(--clr-background-major) 0%,
-    var(--clr-background-minor) 40%
+    var(--clr-background-minor) 30%
   );
 
   --ff-primary: "Oswald-Regular", Helvetica, Trebuchet MS, sans-serif;
@@ -158,7 +158,7 @@
   --clr-section-radial-gradient: radial-gradient(
     circle,
     var(--clr-background-major) 0%,
-    var(--clr-background-minor) 40%
+    var(--clr-background-minor) 30%
   );
   transition: var(--transition);
 }
@@ -522,6 +522,7 @@ Section Triangle Transitions
   width: 100vw;
   min-width: 1400px;
   height: auto;
+  transition: none !important;
 }
 
 .triangle-one {
@@ -549,6 +550,37 @@ Section Triangle Transitions
 .triangle-three {
   position: relative;
   margin-bottom: -5.01rem;
+}
+
+.g-stroke {
+  stroke: var(--clr-passive);
+  animation-name: mountain_anim;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+/* The animation code */
+@keyframes mountain_anim {
+  0% {
+    fill: var(--clr-background-major);
+    stroke-width: 0;
+  }
+  50% {
+    fill: var(--clr-background-minor);
+    stroke-width: 0.5;
+  }
+  80% {
+    fill: var(--clr-background-minor);
+    stroke: var(--clr-dark-opaque);
+    stroke-width: 0.5;
+  }
+  100% {
+    fill: var(--clr-background-major);
+    stroke: var(--clr-topbar-font-hover);
+    stroke-width: 2;
+  }
 }
 
 /*
@@ -1869,6 +1901,7 @@ Blog
 .blog-footer p {
   color: var(--clr-passive);
   background: var(--clr-background-minor);
+  padding-right: 0.5rem;
 }
 .blog-footer p:first-of-type {
   display: inline-block;
