@@ -572,7 +572,7 @@ Section Triangle Transitions
     stroke-width: 0.5;
   }
   80% {
-    fill: var(--clr-background-minor);
+    fill: var(--clr-background-major);
     stroke: var(--clr-dark-opaque);
     stroke-width: 0.5;
   }
@@ -1700,7 +1700,7 @@ Projects
   margin-right: var(--border-thickness);
   z-index: -1;
   margin-bottom: calc(var(--border-thickness) * -5);
-  border: 0px solid transparent;
+  border: 0.25rem solid transparent;
   transition: var(--transition-fast);
 }
 
