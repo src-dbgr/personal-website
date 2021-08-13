@@ -574,11 +574,8 @@ Section Triangle Transitions
   0% {
     stop-color: var(--clr-topbar-font-hover);
   }
-  50% {
-    stop-color: var(--clr-background-minor);
-  }
   100% {
-    stop-color:var(--clr-background-major);
+    stop-color: var(--clr-background-major);
   }
 }
 /* The animation code */
@@ -589,12 +586,12 @@ Section Triangle Transitions
   }
   80% {
     stroke: var(--clr-mountain-stroke);
-    stroke-width: 0.7;
+    stroke-width: 0.5;
   }
   100% {
     fill: var(--clr-background-minor);
     stroke: var(--clr-topbar-font-hover);
-    stroke-width: 1.3;
+    stroke-width: 1;
   }
 }
 
@@ -629,7 +626,7 @@ body {
   /* margin-top: 0; */
   color: var(--clr-dark);
   line-height: 1.5;
-  font-size: 0.7rem;
+  font-size: 1rem;
   margin-top: var(--navbar-height);
   letter-spacing: var(--spacing);
   -webkit-font-smoothing: antialiased;
@@ -655,21 +652,27 @@ a {
 }
 
 body::-webkit-scrollbar,
-.cookie-info-box::-webkit-scrollbar {
+.cookie-info-box::-webkit-scrollbar,
+.blog-template pre::-webkit-scrollbar {
   width: 9px;
+  height: 9px;
   left: -100px;
 }
 
 body::-webkit-scrollbar-track,
-.cookie-info-box::-webkit-scrollbar-track {
+.cookie-info-box::-webkit-scrollbar-track,
+.blog-template pre::-webkit-scrollbar-track {
   background: var(--clr-background-minor);
+  height: 9px;
 }
 
 body::-webkit-scrollbar-thumb,
-.cookie-info-box::-webkit-scrollbar-thumb {
+.cookie-info-box::-webkit-scrollbar-thumb,
+.blog-template pre::-webkit-scrollbar-thumb {
   background-color: var(--clr-dark);
   border-top: 0px;
   border-bottom: 0px;
+  width: 20% !important;
 }
 
 h1,
@@ -1975,4 +1978,101 @@ Blog
   .blog-img {
     height: 13.75rem;
   }
+}
+
+/*
+=============== 
+Pages
+=============== 
+*/
+
+.blog-template,
+.projects-page,
+.blog-page,
+.error-page,
+.about-page,
+.contact-page {
+  background: var(--clr-background-major);
+  min-height: calc(100vh - 5rem - 9rem);
+}
+
+.blog-content p {
+  display: grid;
+  justify-content: center;
+  text-align: justify;
+}
+
+/*
+===============
+Blog Template
+===============
+*/
+.blog-template {
+  padding: 5rem 0;
+}
+
+.blog-template h1,
+.blog-template h2 {
+  text-align: center;
+}
+
+.blog-template h2 {
+  color: var(--clr-green-major);
+}
+
+.blog-template ul {
+  width: 100%;
+  margin-top: 2rem;
+  display: inline-block;
+}
+.blog-template ul li {
+  background: var(--clr-background-minor);
+  padding: var(--border-thickness);
+  margin: 1rem 0;
+  text-transform: uppercase;
+}
+
+.blog-template blockquote {
+  background: var(--clr-background-major);
+  padding: var(--border-thickness);
+  line-height: 2;
+  margin: var(--border-thickness) 0;
+}
+
+.blog-template blockquote p {
+  color: var(--clr-dark);
+  font-family: "Oswald-300";
+  margin: 0;
+  text-transform: none;
+}
+
+.blog-template pre {
+  font-size: large;
+  background: rgb(40, 40, 40);
+  color: rgb(150, 100, 180);
+  overflow-x: scroll;
+  margin-top: var(--border-thickness);
+  padding: var(--border-thickness);
+  border: solid var(--border-thickness) var(--clr-background-minor);
+  border-bottom: solid calc(var(--border-thickness) - 9px)
+    var(--clr-background-minor);
+  scrollbar-width: thin;
+}
+
+.blog-template img {
+  width: 30rem;
+  height: 30rem;
+  margin: 2rem 0;
+  object-fit: cover;
+  object-position: 100% 70%;
+  border-radius: 50%;
+  border: solid var(--border-thickness) var(--clr-background-minor);
+  opacity: 0.6;
+  transition: var(--transition);
+}
+
+.blog-template img:hover {
+  opacity: 1;
+  border-radius: 0%;
+  transition: var(--transition);
 }

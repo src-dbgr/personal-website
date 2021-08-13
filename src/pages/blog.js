@@ -3,7 +3,7 @@ import Title from "../components/general/Title";
 import Blog from "../components/06_blog/Blog";
 import Layout from "../components/general/Layout";
 import { graphql } from "gatsby";
-export const BlogPage = ({
+const BlogPage = ({
   data: {
     allStrapiBlog: { nodes: blogs },
   },
