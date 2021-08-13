@@ -107,27 +107,39 @@ const Hero = () => {
           >
             <stop
               className="triangle-gradient-one"
-              offset="25%"
+              offset="30%"
               stopColor="#96948d"
               stopOpacity="1"
-            >
-            </stop>
+            ></stop>
             <stop
               className="triangle-gradient-two"
-              offset="80%"
+              offset="100%"
               stopColor="#b5b2a6"
               stopOpacity="0.1"
-            >
-            </stop>
+            ></stop>
           </linearGradient>
           <linearGradient
             id="c"
             x1="2162.09"
-            x2="2162.09"
-            y1="250.68"
-            y2="0.68"
+            x2="2165"
+            y1="240"
+            y2="0"
             xlinkHref="#a"
           >
+            <animate
+              attributeType="XML"
+              attributeName="y1"
+              values="70%;100%;70%"
+              dur="20s"
+              repeatCount="indefinite"
+            />
+            <animate
+              attributeType="XML"
+              attributeName="x2"
+              values="2162;2165;2162"
+              dur="20s"
+              repeatCount="indefinite"
+            />
           </linearGradient>
         </defs>
         <path

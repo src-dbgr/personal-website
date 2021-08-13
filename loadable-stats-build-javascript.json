@@ -1,14 +1,16 @@
 {
-  "hash": "c34caff781045f04b43f",
+  "hash": "0180ed926855738d86a5",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
-      "polyfill.js"
+      "polyfill.js",
+      "polyfill.462d98c7e99566f9a8e3.hot-update.js"
     ],
     "commons": [
       "commons.css",
-      "commons.js"
+      "commons.js",
+      "commons.462d98c7e99566f9a8e3.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
@@ -33,8 +35,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 30,
-      "size": 31480353
+      "filteredChildren": 34,
+      "size": 31487786
     }
   ],
   "namedChunkGroups": {
@@ -46,6 +48,9 @@
       "assets": [
         {
           "name": "polyfill.js"
+        },
+        {
+          "name": "polyfill.462d98c7e99566f9a8e3.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -70,6 +75,9 @@
         },
         {
           "name": "commons.js"
+        },
+        {
+          "name": "commons.462d98c7e99566f9a8e3.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -131,6 +139,9 @@
           "name": "commons.js"
         },
         {
+          "name": "commons.462d98c7e99566f9a8e3.hot-update.js"
+        },
+        {
           "name": "component---src-pages-blog-js.js"
         }
       ],
@@ -157,6 +168,9 @@
         },
         {
           "name": "commons.js"
+        },
+        {
+          "name": "commons.462d98c7e99566f9a8e3.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
@@ -187,6 +201,9 @@
           "name": "commons.js"
         },
         {
+          "name": "commons.462d98c7e99566f9a8e3.hot-update.js"
+        },
+        {
           "name": "component---src-pages-projects-js.js"
         }
       ],
@@ -203,14 +220,16 @@
     {
       "id": "polyfill",
       "files": [
-        "polyfill.js"
+        "polyfill.js",
+        "polyfill.462d98c7e99566f9a8e3.hot-update.js"
       ]
     },
     {
       "id": "commons",
       "files": [
         "commons.css",
-        "commons.js"
+        "commons.js",
+        "commons.462d98c7e99566f9a8e3.hot-update.js"
       ]
     },
     {
