@@ -46,13 +46,15 @@
   --clr-background-minor-light: rgb(170, 168, 163);
   --clr-navbar-fallback: rgba(150, 149, 141, 0.8);
   --clr-very-dark: rgb(26, 26, 26);
-  --clr-dark-strong: rgb(46, 46, 46);
+  --clr-dark-strong: rgb(33, 33, 33);
   --clr-dark: rgb(52, 69, 73);
+  --clr-dark-transparent: rgb(52, 69, 73);
   --clr-dark-opaque: rgba(52, 69, 73, 0.5);
   --clr-light-dark: rgb(86, 95, 97);
   --clr-triangle-nav-stroke: rgb(53, 160, 103);
   --clr-green-major: rgb(61, 139, 104);
   --clr-green-minor: rgb(61, 139, 104);
+  --clr-green-everywhere: rgb(74, 177, 130);
   --clr-magenta: rgb(118, 112, 129);
   --clr-topbar-font-hover: rgb(181, 178, 166);
   --clr-mountain-stroke: rgb(181, 178, 166);
@@ -126,7 +128,9 @@
   --clr-navbar-fallback: rgba(51, 51, 51, 0.8);
   --clr-very-dark: rgb(181, 178, 166);
   --clr-dark: rgb(61, 139, 104);
+  --clr-dark-transparent: transparent;
   --clr-light-dark: rgb(46, 46, 46);
+  --clr-green-everywhere: rgb(120, 170, 143);
   --clr-green-major: rgb(137, 163, 149);
   --clr-magenta: rgb(53, 161, 105);
   --clr-btn-text-on-hover: rgb(46, 46, 46);
@@ -556,6 +560,8 @@ Section Triangle Transitions
 
 .triangle-two,
 .triangle-three {
+  /* background: yellow; */
+  padding-top: 5rem;
   position: relative;
   margin-bottom: -5.01rem;
 }
@@ -567,6 +573,7 @@ Section Triangle Transitions
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
   animation-direction: alternate;
+  opacity: 0.7;
 }
 
 /* The animation code */
@@ -584,14 +591,17 @@ Section Triangle Transitions
     fill: var(--clr-background-major);
     stroke-width: 0;
   }
+  50% {
+    stroke-width: 0;
+  }
   80% {
     stroke: var(--clr-mountain-stroke);
-    stroke-width: 0.5;
+    stroke-width: 0.3;
   }
   100% {
     fill: var(--clr-background-minor);
     stroke: var(--clr-topbar-font-hover);
-    stroke-width: 1;
+    stroke-width: 3;
   }
 }
 
