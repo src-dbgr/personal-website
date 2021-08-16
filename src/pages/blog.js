@@ -9,7 +9,7 @@ const BlogPage = ({
   },
 }) => {
   return (
-    <Layout>
+    <Layout darkFooter={true}>
       <section className="blog-page">
         <Title title="All Blog Articles" />
         <div className="section-center blogs-center">

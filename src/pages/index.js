@@ -15,68 +15,13 @@ const index = ({ data }) => {
 
   return (
     <>
-      <Layout>
+      <Layout darkFooter={true}>
         <Hero />
         <About />
         <Experience />
         <Projects projects={projects} title="Featured Projects" showLink />
         <BlogsSection blogs={blogs} title="Latest Blog Articles" />
         {/* <Sound src="https://www.free-stock-music.com/music/punch-deck-brahe.mp3" /> */}
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
-        <h1>Test</h1>
       </Layout>
     </>
   );

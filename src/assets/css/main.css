@@ -1898,6 +1898,16 @@ Projects Page
   min-height: 100vh;
 }
 
+.blog-page {
+  position: relative;
+  width: 100%;
+  margin-bottom: var(--navbar-height);
+  z-index: 2;
+}
+
+.projects-page {
+  background: var(--clr-background-major) !important;
+}
 /*
 =============== 
 Blog
@@ -2084,5 +2094,83 @@ Blog Template
 .blog-template img:hover {
   opacity: 1;
   border-radius: 0%;
+  transition: var(--transition);
+}
+
+/* social links */
+.social-links {
+  margin-top: 2rem;
+  width: 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+.social-link {
+  font-size: 1.5rem;
+  color: var(--clr-passive);
+  transition: var(--transition);
+}
+
+.social-icon {
+  color: var(--clr-passive);
+  transition: var(--transition);
+}
+
+.social-link:hover .social-icon {
+  color: var(--clr-green-major);
+  transition: var(--transition);
+}
+
+/*
+===============
+Footer
+===============
+*/
+.footer {
+  height: 9rem;
+  background: var(--clr-background-minor);
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+
+.light-footer {
+  background: var(--clr-background-major) !important;
+}
+
+.footer h4 {
+  font-size: 8pt;
+  margin-top: 0.5rem;
+  color: var(--clr-passive);
+  font-weight: normal;
+  text-transform: uppercase;
+}
+.footer h4 span {
+  color: var(--clr-passive);
+}
+.footer-links {
+  margin: 0 auto 1rem auto;
+}
+.footer .social-link {
+  color: var(--clr-dark);
+}
+.footer .social-link:hover {
+  color: var(--clr-dark);
+}
+.legal-disclosure {
+  color: var(--clr-passive);
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 8pt;
+  transition: var(--transition);
+}
+
+.legal-disclosure:hover {
+  color: var(--clr-dark);
+  text-decoration: none;
+  color: var(--clr-green-major);
+  font-size: 8pt;
   transition: var(--transition);
 }

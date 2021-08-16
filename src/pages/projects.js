@@ -9,7 +9,7 @@ const ProjectsPage = ({
   },
 }) => {
   return (
-    <Layout>
+    <Layout darkFooter={false}>
       <section className="projects-page">
         <Projects projects={projects} title="all projects" />
       </section>

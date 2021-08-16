@@ -3,6 +3,7 @@ import Title from "../general/Title";
 import { StaticImage } from "gatsby-plugin-image";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
+import { Link } from "gatsby";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -88,6 +89,14 @@ const About = () => {
           </div>
         </article>
       </div>
+      <Link
+        to="/vita"
+        className="btn center-btn"
+        data-aos="fade"
+        data-aos-once="true"
+      >
+        <span className="btn">vita</span>
+      </Link>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="4323"

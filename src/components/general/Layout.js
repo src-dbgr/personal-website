@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import Navbar from "../02_navigation/Navbar";
 import Topbar from "../02_navigation/Topbar";
 import Launch from "../01_launch/Launch";
+import Footer from "../07_footer/footer";
 import CookieConsent from "./CookieConsent";
 import {
   GlobalDispatchContext,
   GlobalStateContext,
 } from "../../context/GlobalContextProvider";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, darkFooter }) => {
   const isIndexPage = true; // TODO ==> Change, compare to location pathname or slug!
 
   const theme = useContext(GlobalStateContext).theme;
@@ -131,6 +132,7 @@ const Layout = ({ children }) => {
           >
             {children}
           </motion.main>
+          <Footer darkFooter={darkFooter} />
         </>
       )}
     </>
