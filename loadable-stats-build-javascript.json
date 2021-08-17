@@ -1,22 +1,23 @@
 {
-  "hash": "534bdaf9b5b7c054322a",
+  "hash": "baaa5cb85cd4a8088050",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.66c3cbe499225166b2e9.hot-update.js"
+      "polyfill.9354467df3fbdaa6f46b.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.66c3cbe499225166b2e9.hot-update.js"
+      "commons.9354467df3fbdaa6f46b.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js.js"
+      "component---src-pages-404-js.js",
+      "component---src-pages-404-js.9354467df3fbdaa6f46b.hot-update.js"
     ],
     "component---src-pages-blog-js": [
       "component---src-pages-blog-js.js"
@@ -28,8 +29,7 @@
       "component---src-pages-projects-js.js"
     ],
     "component---src-templates-blog-template-js": [
-      "component---src-templates-blog-template-js.js",
-      "component---src-templates-blog-template-js.66c3cbe499225166b2e9.hot-update.js"
+      "component---src-templates-blog-template-js.js"
     ],
     "framework": [
       "framework.js"
@@ -40,7 +40,7 @@
       "type": "assets by status",
       "cached": true,
       "filteredChildren": 36,
-      "size": 46811427
+      "size": 54045386
     }
   ],
   "namedChunkGroups": {
@@ -54,7 +54,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.66c3cbe499225166b2e9.hot-update.js"
+          "name": "polyfill.9354467df3fbdaa6f46b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -81,7 +81,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.66c3cbe499225166b2e9.hot-update.js"
+          "name": "commons.9354467df3fbdaa6f46b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -111,17 +111,34 @@
     "component---src-pages-404-js": {
       "name": "component---src-pages-404-js",
       "chunks": [
+        "framework",
+        "commons",
         "component---src-pages-404-js"
       ],
       "assets": [
         {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.9354467df3fbdaa6f46b.hot-update.js"
+        },
+        {
           "name": "component---src-pages-404-js.js"
+        },
+        {
+          "name": "component---src-pages-404-js.9354467df3fbdaa6f46b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
       "assetsSize": null,
-      "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 0,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
     },
@@ -143,7 +160,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.66c3cbe499225166b2e9.hot-update.js"
+          "name": "commons.9354467df3fbdaa6f46b.hot-update.js"
         },
         {
           "name": "component---src-pages-blog-js.js"
@@ -174,7 +191,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.66c3cbe499225166b2e9.hot-update.js"
+          "name": "commons.9354467df3fbdaa6f46b.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
@@ -205,7 +222,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.66c3cbe499225166b2e9.hot-update.js"
+          "name": "commons.9354467df3fbdaa6f46b.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
@@ -236,13 +253,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.66c3cbe499225166b2e9.hot-update.js"
+          "name": "commons.9354467df3fbdaa6f46b.hot-update.js"
         },
         {
           "name": "component---src-templates-blog-template-js.js"
-        },
-        {
-          "name": "component---src-templates-blog-template-js.66c3cbe499225166b2e9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -259,7 +273,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.66c3cbe499225166b2e9.hot-update.js"
+        "polyfill.9354467df3fbdaa6f46b.hot-update.js"
       ]
     },
     {
@@ -267,7 +281,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.66c3cbe499225166b2e9.hot-update.js"
+        "commons.9354467df3fbdaa6f46b.hot-update.js"
       ]
     },
     {
@@ -303,7 +317,8 @@
     {
       "id": "component---src-pages-404-js",
       "files": [
-        "component---src-pages-404-js.js"
+        "component---src-pages-404-js.js",
+        "component---src-pages-404-js.9354467df3fbdaa6f46b.hot-update.js"
       ]
     },
     {
@@ -327,8 +342,7 @@
     {
       "id": "component---src-templates-blog-template-js",
       "files": [
-        "component---src-templates-blog-template-js.js",
-        "component---src-templates-blog-template-js.66c3cbe499225166b2e9.hot-update.js"
+        "component---src-templates-blog-template-js.js"
       ]
     },
     {

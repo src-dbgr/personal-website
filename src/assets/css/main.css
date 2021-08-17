@@ -65,6 +65,8 @@
   --clr-about-img-border-hover: rgba(150, 149, 141, 0.7);
   --clr-passive: rgb(86, 95, 97);
   --clr-dark-shadow: rgb(128, 128, 123);
+  --clr-dark-four-o-four: rgb(52, 69, 73);
+  --clr-lighthouse: rgb(150, 149, 141);
   --clr-about-img-background: linear-gradient(
     rgb(150, 149, 141),
     rgb(181, 178, 166)
@@ -115,7 +117,7 @@
   --max-width: 1170px;
   --fixed-width: 700px;
   --default-box-shadow: 1px 1px 2px var(--clr-dark-shadow);
-  --default-btn-shadow: 0px 1px 3px rgba(17, 17, 17, 0.3);
+  --default-btn-shadow: 0px 1px 2px rgba(17, 17, 17, 0.3);
   --default-nav-shadow: 2px 0px 4px var(--clr-dark-strong);
 }
 
@@ -139,6 +141,8 @@
   --clr-about-img-background: linear-gradient(rgb(51, 51, 51), rgb(46, 46, 46));
   --clr-text-quiet: rgb(137, 163, 149);
   --clr-dark-shadow: rgb(40, 40, 40);
+  --clr-dark-four-o-four: rgb(37, 37, 37);
+  --clr-lighthouse: rgb(137, 163, 149);
   --clr-topbar-font-hover: rgb(123, 99, 137);
   --clr-mountain-stroke: rgb(137, 163, 149);
   --default-box-shadow: 1px 1px 3px var(--clr-dark-shadow);
@@ -556,6 +560,10 @@ Section Triangle Transitions
 
 .triangle-two path {
   fill: var(--clr-background-major);
+}
+
+#transition-gradient-dark {
+  stop-color: var(--clr-background-major);
 }
 
 .triangle-two,
@@ -2009,11 +2017,11 @@ Pages
 .blog-template,
 .projects-page,
 .blog-page,
-.error-page,
+.error-section,
 .about-page,
 .contact-page {
   background: var(--clr-background-major);
-  min-height: calc(100vh - 5rem - 9rem);
+  min-height: calc(100vh - 4.5rem - 9rem);
 }
 
 .blog-content p {
@@ -2022,6 +2030,14 @@ Pages
   text-align: justify;
 }
 
+.error-page {
+  display: grid;
+  place-items: center;
+}
+
+.error-page .section-title {
+  margin-bottom: 0;
+}
 /*
 ===============
 Blog Template
@@ -2173,4 +2189,20 @@ Footer
   color: var(--clr-green-major);
   font-size: 8pt;
   transition: var(--transition);
+}
+
+.fourofour {
+  max-height: 300px;
+}
+
+.nf-clr {
+  fill: var(--clr-dark-four-o-four);
+}
+
+.nfh-clr {
+  fill: var(--clr-lighthouse);
+}
+
+.nft-clr {
+  fill: var(--clr-passive);
 }
