@@ -5,11 +5,13 @@ import Layout from "../components/general/Layout";
 import Title from "../components/general/Title";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
+import Stations from "../components/04_about/04_02_stations/Stations";
 import Aos from "aos";
 import "aos/dist/aos.css";
 const VitaPage = ({
   data: {
     allStrapiAbout: { nodes: about },
+    allStrapiStation: { nodes: stations },
   },
 }) => {
   useEffect(() => {
@@ -20,6 +22,7 @@ const VitaPage = ({
   console.log("title: " + title);
   console.log("stack: " + stack);
   console.log("image: " + image);
+  console.log(stations);
   return (
     <Layout darkFooter={false}>
       <section className="about-page padding-top">
@@ -65,144 +68,7 @@ const VitaPage = ({
             </div>
           </article>
         </div>
-        <div className="section section-center ">
-          <section class="timeline">
-            <div className="timeline-heading-wrapper">
-              <div
-                className="timeline-heading"
-                data-aos="fade"
-                data-aos-once="true"
-              >
-                <time>STATIONS</time>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1934</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium At vero
-                    eos et accusamus et iusto odio dignissimos ducimus qui
-                    blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1937</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1940</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1943</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1946</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1956</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1957</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1967</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1977</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>1985</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>2000</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-              <li>
-                <div data-aos="fade" data-aos-once="true">
-                  <time>2005</time>
-                  <p>
-                    At vero eos et accusamus et iusto odio dignissimos ducimus
-                    qui blanditiis praesentium At vero eos et accusamus et iusto
-                    odio dignissimos ducimus qui blanditiis praesentium
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </section>
-        </div>
+        <Stations stations={stations} />
       </section>
     </Layout>
   );
@@ -222,7 +88,7 @@ export const query = graphql`
           localFile {
             childImageSharp {
               gatsbyImageData(
-                placeholder: DOMINANT_COLOR
+                placeholder: BLURRED
                 formats: [AUTO, WEBP]
                 quality: 80
                 blurredOptions: { width: 100 }
@@ -231,6 +97,20 @@ export const query = graphql`
               )
             }
           }
+        }
+      }
+    }
+    allStrapiStation(sort: { order: DESC, fields: Order_Id }) {
+      nodes {
+        Date
+        Description
+        From_Month
+        From_Year
+        Order_Id
+        To_Month
+        To_Year
+        cvcategory {
+          cvcategory
         }
       }
     }

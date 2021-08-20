@@ -2225,9 +2225,32 @@ Timeline
   margin-bottom: 100px;
 }
 
+.timeline h4 {
+  margin: 0;
+}
+
+.timeline div {
+  align-items: center;
+  min-height: 25px;
+}
+
+.timeline-width-two,
+.timeline-width {
+  display: flex;
+  align-items: center;
+}
+
+.timeline-width {
+  width: 80px;
+}
+
 .timeline-heading-wrapper {
   display: flex;
   justify-content: center;
+}
+
+.timeline-meta-head {
+  margin-bottom: var(--border-thickness);
 }
 
 .timeline-heading {
@@ -2237,6 +2260,22 @@ Timeline
   padding-top: var(--border-thickness);
   padding-bottom: calc(var(--border-thickness) - 13px);
   border-bottom: 5px solid var(--clr-passive);
+}
+
+.timeline-from-to-category {
+  margin-top: 0.5rem;
+}
+
+.timeline-from-to,
+.timeline-from-to-category {
+  font-size: 1rem;
+  display: flex;
+  text-transform: capitalize;
+}
+
+.timeline-from-to div,
+.timeline-from-to-category div {
+  padding-right: 5px;
 }
 
 .timeline ul {
@@ -2258,19 +2297,14 @@ Timeline
   left: 50%;
   top: 70px;
   transform: translateX(-50%);
-  border-left: 15px solid transparent;
-  border-right: 15px solid transparent;
-  border-top: 25px solid transparent;
-  border-bottom: 25px solid transparent;
-  border-top: 0;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  display: block;
-  border-bottom-color: var(--clr-passive);
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background: var(--clr-background-major);
   z-index: 1;
 }
 
-.timeline ul li div {
+.timeline ul li .timeline-node {
   position: relative;
   top: -30px;
   width: 400px;
@@ -2281,9 +2315,9 @@ Timeline
 .timeline ul li div::before {
   content: "";
   position: absolute;
-  top: 55px;
-  width: 0;
-  height: 0;
+  top: 57px;
+  width: 3px;
+  height: 3px;
   border-style: solid;
 }
 
@@ -2292,9 +2326,9 @@ Timeline
 }
 
 .timeline ul li:nth-child(odd) div::before {
-  left: -15px;
-  border-width: 8px 16px 8px 0;
-  border-color: transparent var(--clr-background-major) transparent transparent;
+  left: -35px;
+  border-width: 3px 20px;
+  border-color: var(--clr-background-major);
 }
 
 .timeline ul li:nth-child(even) div {
@@ -2302,9 +2336,9 @@ Timeline
 }
 
 .timeline ul li:nth-child(even) div::before {
-  right: -15px;
-  border-width: 8px 0 8px 16px;
-  border-color: transparent transparent transparent var(--clr-background-major);
+  right: -35px;
+  border-width: 3px 20px;
+  border-color: var(--clr-background-major);
 }
 
 time {
@@ -2319,6 +2353,7 @@ time {
   background: var(--clr-background-minor);
   padding: var(--border-thickness);
   text-align: justify;
+  margin-bottom: 0;
 }
 
 /* EFFECTS
@@ -2339,29 +2374,29 @@ time {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 @media screen and (max-width: 992px) {
-  .timeline ul li div {
-    width: 250px;
+  .timeline-node {
+    max-width: calc((100vw / 2) - 85px);
   }
   .timeline ul li:nth-child(even) div {
-    left: -289px;
-    /*250+45-6*/
+    left: calc(((100vw / 2) - 50px) * -1);
   }
 }
 
 @media screen and (max-width: 676px) {
+  .timeline-meta-head {
+    width: 100%;
+  }
+
   .timeline ul li {
     margin-left: 20px;
   }
-  .timeline ul li div {
-    width: calc(100vw - 130px);
+  .timeline ul li .timeline-node {
+    min-width: 72vw;
   }
   .timeline ul li:nth-child(even) div {
     left: 45px;
   }
   .timeline ul li:nth-child(even) div::before {
-    left: -15px;
-    border-width: 8px 16px 8px 0;
-    border-color: transparent var(--clr-background-major) transparent
-      transparent;
+    left: -35px;
   }
 }
