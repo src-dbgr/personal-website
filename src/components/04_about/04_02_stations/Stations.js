@@ -1,8 +1,12 @@
 import React from "react";
-import { BsCircleFill } from "react-icons/bs";
 import { MdWork } from "react-icons/md";
-import { ImBooks } from "react-icons/im";
-import { FaUniversity, FaSchool, FaPencilRuler } from "react-icons/fa";
+import {
+  FaUniversity,
+  FaSchool,
+  FaPencilRuler,
+  FaGraduationCap,
+} from "react-icons/fa";
+import { HiIdentification } from "react-icons/hi";
 
 const Stations = ({ stations }) => {
   return (
@@ -32,6 +36,12 @@ const Stations = ({ stations }) => {
                         <MdWork />
                       ) : station.cvcategory.cvcategory === "school" ? (
                         <FaSchool />
+                      ) : station.cvcategory.cvcategory === "internship" ? (
+                        <HiIdentification />
+                      ) : station.cvcategory.cvcategory === "university" ? (
+                        <FaUniversity />
+                      ) : station.cvcategory.cvcategory === "education" ? (
+                        <FaGraduationCap />
                       ) : (
                         <FaPencilRuler />
                       )}
@@ -39,7 +49,17 @@ const Stations = ({ stations }) => {
                         <div className="timeline-width">
                           <h4>Category:</h4>
                         </div>
-                        <div>{station.cvcategory.cvcategory}</div>
+                        <div className="timeline-div-text">
+                          {station.cvcategory.cvcategory}
+                        </div>
+                      </div>
+                      <div className="timeline-from-to">
+                        <div className="timeline-from-to">
+                          <div className="timeline-width">
+                            <h4>Institution:</h4>
+                          </div>
+                          <div>{station.Institution}</div>
+                        </div>
                       </div>
                       <div className="timeline-from-to">
                         <div className="timeline-from-to">
@@ -59,9 +79,24 @@ const Stations = ({ stations }) => {
                           </div>
                         </div>
                       </div>
+                      {station.Graduation != null && (
+                        <div className="timeline-from-to">
+                          <div className="timeline-from-to">
+                            <div className="timeline-width">
+                              <h4>Graduation:</h4>
+                            </div>
+                            <div>{station.Graduation}</div>
+                          </div>
+                        </div>
+                      )}
                     </div>
                   </div>
                   <p>{station.Description}</p>
+                  <div className="about-stack">
+                    {station.stack.map((item) => {
+                      return <span key={item.id}>{item.title}</span>;
+                    })}
+                  </div>
                 </div>
               </li>
             );

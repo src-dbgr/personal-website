@@ -109,6 +109,12 @@ export const query = graphql`
         Order_Id
         To_Month
         To_Year
+        Graduation
+        Institution
+        stack {
+          id
+          title
+        }
         cvcategory {
           cvcategory
         }
