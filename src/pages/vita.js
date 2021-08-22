@@ -15,14 +15,13 @@ const VitaPage = ({
   },
 }) => {
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    Aos.init({
+      duration: 1000,
+      disable: "mobile",
+      startEvent: "DOMContentLoaded",
+    });
   }, []);
   const { title, stack, image, info } = about[0];
-  stack.forEach((item) => console.log(item.title));
-  console.log("title: " + title);
-  console.log("stack: " + stack);
-  console.log("image: " + image);
-  console.log(stations);
   return (
     <Layout darkFooter={false}>
       <section className="about-page padding-top">
@@ -117,6 +116,11 @@ export const query = graphql`
         }
         cvcategory {
           cvcategory
+        }
+        urls {
+          id
+          title
+          url
         }
       }
     }
