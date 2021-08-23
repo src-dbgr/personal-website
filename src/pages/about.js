@@ -8,10 +8,12 @@ import { IoTriangleSharp } from "react-icons/io5";
 import Stations from "../components/04_about/04_02_stations/Stations";
 import Aos from "aos";
 import "aos/dist/aos.css";
-const VitaPage = ({
+const AboutPage = ({
   data: {
     allStrapiAbout: { nodes: about },
     allStrapiStation: { nodes: stations },
+    // allStrapiStation: { distinct: categories },
+    allStrapiStationctgry: { nodes: categories },
   },
 }) => {
   useEffect(() => {
@@ -67,7 +69,7 @@ const VitaPage = ({
             </div>
           </article>
         </div>
-        <Stations stations={stations} />
+        <Stations stations={stations} categories={categories} />
       </section>
     </Layout>
   );
@@ -122,9 +124,29 @@ export const query = graphql`
           title
           url
         }
+        stationctgry {
+          title
+          description
+          icon {
+            id
+            url
+            mime
+          }
+        }
+      }
+    }
+    allStrapiStationctgry {
+      nodes {
+        title
+        description
+        icon {
+          id
+          url
+          mime
+        }
       }
     }
   }
 `;
 
-export default VitaPage;
+export default AboutPage;

@@ -13,7 +13,7 @@ const About = () => {
   }, []);
   return (
     <section id="about" className="section about-component-section">
-      <Title title="About" />
+      <Title title="Welcome" />
       <div className="section-center about-component-center">
         <article
           key="1"
@@ -90,12 +90,12 @@ const About = () => {
         </article>
       </div>
       <Link
-        to="/vita"
+        to="/about"
         className="btn center-btn"
         data-aos="fade"
         data-aos-once="true"
       >
-        <span className="btn">vita</span>
+        <span className="btn">about</span>
       </Link>
     </section>
   );

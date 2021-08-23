@@ -71,7 +71,7 @@ const Links = function (props) {
         data-aos-once="true"
         data-aos-delay={`${navanimation ? "150" : "0"}`}
       >
-        <Link to="/#about">about</Link>
+        <Link to="/about">about</Link>
       </li>
       <li
         key="3"

@@ -7,12 +7,18 @@ import {
   FaGraduationCap,
   FaLink,
 } from "react-icons/fa";
-import { HiIdentification } from "react-icons/hi";
+import {
+  HiIdentification,
+  HiOutlineChevronDoubleDown,
+  HiOutlineChevronDoubleUp,
+} from "react-icons/hi";
 
-const Stations = ({ stations }) => {
+const Stations = ({ stations, categories }) => {
   const [inViewCount, setInViewCount] = useState(0);
   const [nodes, setNodes] = useState(null);
+  const [legendCollapsed, setLegendCollapsed] = useState(true);
   const initialRun = useRef(true);
+
 
   useEffect(() => {
     return () => {
@@ -25,9 +31,12 @@ const Stations = ({ stations }) => {
     window.addEventListener("scroll", check);
   }
 
+  function collapseLegend() {
+    setLegendCollapsed((legendCollapsed) => !legendCollapsed);
+  }
+
   useEffect(() => {
     if (nodes !== null && inViewCount >= nodes.length) {
-      console.log("remove event listener");
       window.removeEventListener("scroll", check);
     }
     return () => {};
@@ -96,7 +105,63 @@ const Stations = ({ stations }) => {
   })();
 
   return (
-    <div className="section section-center ">
+    <div className="section section-center stations">
+      <div
+        className={
+          legendCollapsed
+            ? "timeline-legend-table-wrapper"
+            : "timeline-legend-table-wrapper timeline-legend-table-open"
+        }
+      >
+        <div className="timeline-flex-header">
+          <div onClick={collapseLegend}>
+            {legendCollapsed ? (
+              <>
+                <HiOutlineChevronDoubleDown className="timeline-flex-collapsible-icon" />
+                <h4>Stations Legend</h4>
+              </>
+            ) : (
+              <>
+                <HiOutlineChevronDoubleUp className="timeline-flex-collapsible-icon" />
+                <h4 className="timeline-flex-title-dark">Stations Legend</h4>
+              </>
+            )}
+          </div>
+        </div>
+        <table className="timeline-legend-table">
+          <tbody className="tablebody">
+            <tr>
+              <th>Symbol</th>
+              <th>Category</th>
+              <th>Description</th>
+            </tr>
+            {categories.map((category, i) => {
+              return (
+                <tr key={i}>
+                  <td>
+                    {category.title === "Work" ? (
+                      <MdWork />
+                    ) : category.title === "School" ? (
+                      <FaSchool />
+                    ) : category.title === "Internship" ? (
+                      <HiIdentification />
+                    ) : category.title === "University" ? (
+                      <FaUniversity />
+                    ) : category.title === "Education" ? (
+                      <FaGraduationCap />
+                    ) : (
+                      <FaPencilRuler />
+                    )}
+                  </td>
+                  <td>{category.title}</td>
+                  <td>{category.description}</td>
+                  {/* <FaLink className="timeline-link-icon" /> */}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <section className="timeline">
         <div className="timeline-heading-wrapper">
           <div className="timeline-heading">
@@ -110,15 +175,15 @@ const Stations = ({ stations }) => {
                 <div className="timeline-node shadow-box">
                   <div className="timeline-meta-head">
                     <div>
-                      {station.cvcategory.cvcategory === "work" ? (
+                      {station.stationctgry.title === "Work" ? (
                         <MdWork />
-                      ) : station.cvcategory.cvcategory === "school" ? (
+                      ) : station.stationctgry.title === "School" ? (
                         <FaSchool />
-                      ) : station.cvcategory.cvcategory === "internship" ? (
+                      ) : station.stationctgry.title === "Internship" ? (
                         <HiIdentification />
-                      ) : station.cvcategory.cvcategory === "university" ? (
+                      ) : station.stationctgry.title === "University" ? (
                         <FaUniversity />
-                      ) : station.cvcategory.cvcategory === "education" ? (
+                      ) : station.stationctgry.title === "Education" ? (
                         <FaGraduationCap />
                       ) : (
                         <FaPencilRuler />
