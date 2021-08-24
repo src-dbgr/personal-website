@@ -116,9 +116,6 @@ export const query = graphql`
           id
           title
         }
-        cvcategory {
-          cvcategory
-        }
         urls {
           id
           title

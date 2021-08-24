@@ -193,7 +193,7 @@ const Stations = ({ stations, categories }) => {
                           <h4>Category:</h4>
                         </div>
                         <div className="timeline-div-text">
-                          {station.cvcategory.cvcategory}
+                          {station.stationctgry.title}
                         </div>
                       </div>
                       <div className="timeline-from-to">

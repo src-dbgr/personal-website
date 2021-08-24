@@ -2484,7 +2484,7 @@ time {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .timeline-node {
-  top: 500px;
+  top: 300px;
   opacity: 0;
   transition: var(--transition);
 }
