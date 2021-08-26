@@ -1608,10 +1608,6 @@ Jobs
   background: var(--clr-background-major);
 }
 
-.jobs {
-  /* min-height: 100vh; */
-}
-
 .jobs-center {
   width: 80vw;
   margin: 0 auto;
