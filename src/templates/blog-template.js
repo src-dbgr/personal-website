@@ -1,13 +1,15 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
 import Layout from "../components/general/Layout";
+import Title from "../components/general/Title";
 import ReactMarkdown from "react-markdown";
 
 const ComponentName = ({ data }) => {
-  const { content, title, desc } = data.blog;
+  const { content, title } = data.blog;
   return (
     <Layout darkFooter={true}>
       <section className="blog-template">
+        <Title title={title} />
         <div className="section-center">
           <article className="blog-content">
             <ReactMarkdown children={content} />

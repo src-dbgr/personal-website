@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { graphql } from "gatsby";
 import Layout from "../components/general/Layout";
 import Title from "../components/general/Title";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
+import { MdFileDownload } from "react-icons/md";
 import Stations from "../components/04_about/04_02_stations/Stations";
-import Aos from "aos";
-import "aos/dist/aos.css";
+// import Aos from "aos";
+// import "aos/dist/aos.css";
 const AboutPage = ({
   data: {
     allStrapiAbout: { nodes: about },
@@ -16,13 +17,19 @@ const AboutPage = ({
     allStrapiStationctgry: { nodes: categories },
   },
 }) => {
-  useEffect(() => {
-    Aos.init({
-      duration: 1000,
-      disable: "mobile",
-      startEvent: "DOMContentLoaded",
-    });
-  }, []);
+  const [isDefault, setDefault] = useState(true);
+
+  function flipRadioButton() {
+    setDefault((isDefault) => !isDefault);
+  }
+
+  // useEffect(() => {
+  //   Aos.init({
+  //     duration: 1000,
+  //     disable: "mobile",
+  //     startEvent: "DOMContentLoaded",
+  //   });
+  // }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
   const { title, stack, image, info } = about[0];
   return (
     <Layout darkFooter={false}>
@@ -68,6 +75,43 @@ const AboutPage = ({
               />
             </div>
           </article>
+        </div>
+        <div className="about-download" data-aos="fade" data-aos-once="true">
+          <a
+            href={
+              isDefault
+                ? "/resume_samuel_blehm_std.pdf"
+                : "/resume_samuel_blehm_white.pdf"
+            }
+            className="btn center-btn"
+          >
+            <span className="btn">
+              <MdFileDownload className="icon-margin" />
+              RÉSUMÉ
+            </span>
+          </a>
+          <div className="about-download-radio-wrapper">
+            <div>
+              <input
+                type="radio"
+                value="Default"
+                name="resume"
+                checked={isDefault}
+                onChange={flipRadioButton}
+              />
+              default
+            </div>
+            <div>
+              <input
+                type="radio"
+                value="White"
+                name="resume"
+                checked={!isDefault}
+                onChange={flipRadioButton}
+              />
+              white
+            </div>
+          </div>
         </div>
         <Stations stations={stations} categories={categories} />
       </section>

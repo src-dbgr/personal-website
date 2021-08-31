@@ -19,11 +19,10 @@ const Stations = ({ stations, categories }) => {
   const [legendCollapsed, setLegendCollapsed] = useState(true);
   const initialRun = useRef(true);
 
-
   useEffect(() => {
     return () => {
       window.removeEventListener("scroll", check);
-    };
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function refreshEventListener() {
@@ -39,7 +38,7 @@ const Stations = ({ stations, categories }) => {
     if (nodes !== null && inViewCount >= nodes.length) {
       window.removeEventListener("scroll", check);
     }
-    return () => {};
+    return () => {}; // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [inViewCount]);
 
   // trigger once station nodes are loaded
@@ -49,9 +48,7 @@ const Stations = ({ stations, categories }) => {
       return;
     }
     refreshEventListener();
-    return () => {
-      //
-    };
+    return () => {}; // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [nodes]);
 
   function check() {
@@ -114,7 +111,12 @@ const Stations = ({ stations, categories }) => {
         }
       >
         <div className="timeline-flex-header">
-          <div onClick={collapseLegend}>
+          <div
+            onClick={collapseLegend}
+            onKeyDown={collapseLegend}
+            role="button"
+            tabIndex={0}
+          >
             {legendCollapsed ? (
               <>
                 <HiOutlineChevronDoubleDown className="timeline-flex-collapsible-icon" />

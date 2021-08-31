@@ -1,18 +1,12 @@
 import React from "react";
-import {
-  FaGithubAlt,
-  FaLinkedinIn,
-  FaTwitter,
-  FaBehanceSquare,
-  FaTwitterSquare,
-} from "react-icons/fa";
+import { FaGithubAlt, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { IoIosPaperPlane } from "react-icons/io";
 
 const data = [
   {
     id: 1,
     icon: <FaGithubAlt className="social-icon"></FaGithubAlt>,
-    url: "https://www.github.com",
+    url: "https://www.github.com/src-dbgr",
   },
   {
     id: 2,
@@ -22,7 +16,7 @@ const data = [
   {
     id: 3,
     icon: <FaTwitter className="social-icon"></FaTwitter>,
-    url: "https://www.twitter.com",
+    url: "https://www.twitter.com/smlblm",
   },
   {
     id: 4,
@@ -40,8 +34,10 @@ const links = data.map((link) => {
   );
 });
 
-export default ({ styleClass }) => {
+const socialLinks = ({ styleClass }) => {
   return (
     <ul className={`social-links ${styleClass ? styleClass : ""}`}>{links}</ul>
   );
 };
+
+export default socialLinks;

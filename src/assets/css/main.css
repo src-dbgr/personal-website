@@ -1571,6 +1571,17 @@ ul.skill-set li::before {
   border-bottom: 7px solid var(--clr-dark);
 }
 
+.about-component-center {
+  padding: 0;
+}
+
+.icon-margin {
+  margin-right: 0.8rem;
+  padding-top: 0.2rem;
+  height: 100%;
+  width: 1.6rem;
+}
+
 @media screen and (min-width: 676px) {
   .about-component-center {
     display: grid;
@@ -1593,6 +1604,63 @@ About Page
 .about-text .section-title {
   margin-bottom: 2rem;
   text-align: left;
+}
+
+.about-download {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-download-radio-wrapper {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 9rem;
+  font-family: var(--ff-ternary);
+  letter-spacing: 0.1rem;
+}
+
+.about-download-radio-wrapper div {
+  padding-left: 2rem;
+  min-width: 100%;
+}
+
+.about-download-radio-wrapper input,
+.about-download-radio-wrapper input:checked {
+  margin-right: 1.2rem;
+  transform: translateX(0);
+  cursor: pointer;
+}
+
+.about-download a {
+  margin-top: 0;
+}
+
+.about-download-radio-wrapper input[type="radio"]:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  background-color: var(--clr-background-minor);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid var(--clr-passive);
+}
+
+.about-download-radio-wrapper input[type="radio"]:checked:after {
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  position: relative;
+  background-color: var(--clr-green-major);
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 2px solid var(--clr-passive);
 }
 
 /*
@@ -1626,9 +1694,13 @@ Jobs
   background: transparent;
   border-color: transparent;
   text-transform: capitalize;
+  height: 100%;
+  width: 100%;
+  min-height: 50px;
+  max-width: 185px;
   font-family: var(--ff-secondary);
   color: var(--clr-passive);
-  font-size: 1.1rem;
+  font-size: 1rem;
   letter-spacing: var(--spacing);
   margin: 0 0.5rem;
   transition: var(--transition-fast);
@@ -1814,6 +1886,7 @@ Projects
   padding: var(--border-thickness);
   margin-bottom: calc(var(--border-thickness) - 0.5rem);
 }
+
 .project-stack {
   margin-bottom: 1rem;
 }
@@ -1912,6 +1985,7 @@ Projects Page
   position: relative;
   width: 100%;
   margin-bottom: var(--navbar-height);
+  font-family: var(--ff-ternary);
   z-index: 2;
 }
 
@@ -2064,7 +2138,7 @@ Blog Template
 }
 
 .blog-template h2 {
-  color: var(--clr-green-major);
+  /* color: var(--clr-green-major); */
 }
 
 .blog-template ul {
@@ -2229,6 +2303,7 @@ Timeline
 
 .stations {
   padding-top: 0;
+  margin-top: var(--navbar-height);
 }
 
 .timeline-legend-table-wrapper {
@@ -2268,6 +2343,7 @@ Timeline
   color: var(--clr-passive);
   margin-bottom: 0;
   min-height: 37px;
+  font-family: var(--ff-ternary);
 }
 
 .timeline-flex-collapsible-icon {
