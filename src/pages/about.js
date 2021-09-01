@@ -7,8 +7,6 @@ import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
 import { MdFileDownload } from "react-icons/md";
 import Stations from "../components/04_about/04_02_stations/Stations";
-// import Aos from "aos";
-// import "aos/dist/aos.css";
 const AboutPage = ({
   data: {
     allStrapiAbout: { nodes: about },
@@ -23,17 +21,10 @@ const AboutPage = ({
     setDefault((isDefault) => !isDefault);
   }
 
-  // useEffect(() => {
-  //   Aos.init({
-  //     duration: 1000,
-  //     disable: "mobile",
-  //     startEvent: "DOMContentLoaded",
-  //   });
-  // }, []); // eslint-disable-next-line react-hooks/exhaustive-deps
   const { title, stack, image, info } = about[0];
   return (
     <Layout darkFooter={false}>
-      <section className="about-page padding-top">
+      <section className="about-page">
         <Title title={title} />
         <div className="section section-center about-component-center">
           <article
@@ -76,7 +67,12 @@ const AboutPage = ({
             </div>
           </article>
         </div>
-        <div className="about-download" data-aos="fade" data-aos-once="true">
+        <div
+          id="resume"
+          className="about-download"
+          data-aos="fade"
+          data-aos-once="true"
+        >
           <a
             href={
               isDefault

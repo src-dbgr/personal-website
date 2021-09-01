@@ -55,8 +55,8 @@ const About = () => {
           <ul className="skill-set">
             <li>Java</li>
             <li>Python</li>
-            <li>Kubernetes</li>
-            <li>JavaScript</li>
+            <li>K8s</li>
+            <li>JS</li>
             <li>Tensorflow</li>
             <li>Go</li>
           </ul>

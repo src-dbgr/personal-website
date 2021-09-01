@@ -1543,7 +1543,7 @@ About Component
 
 .skill-set {
   display: grid;
-  grid-template-columns: repeat(3, minmax(140px, 200px));
+  grid-template-columns: repeat(3, minmax(100px, 200px));
   padding: 0;
   margin: 20px 0 0 0;
   overflow: hidden;
@@ -2103,6 +2103,11 @@ Pages
   background: var(--clr-background-minor);
 }
 
+.about-page .section-title {
+  margin-top: var(--neg-page-top-space);
+  padding-top: calc(var(--navbar-height) * 2);
+}
+
 .blog-content p {
   display: grid;
   justify-content: center;
@@ -2643,4 +2648,89 @@ ul li:nth-child(even) .timeline-node {
   .timeline p {
     font-size: 0.9rem;
   }
+}
+/*
+===============
+Contact Page
+===============
+*/
+.contact-page {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
+
+.contact-page .section-title {
+  margin-top: 5rem;
+}
+
+.contact-form {
+  background: var(--clr-background-minor);
+  text-align: center;
+  box-shadow: var(--light-shadow);
+  transition: var(--transition);
+  width: 90vw;
+  max-width: 35rem;
+}
+
+.contact-form h3 {
+  padding-top: 1.25rem;
+}
+.form-group {
+  padding: 1rem 1.5rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  margin-bottom: 1.25rem;
+  background: var(--clr-background-major);
+  letter-spacing: var(--spacing);
+  resize: vertical;
+  color: var(--clr-dark);
+}
+.form-control::placeholder {
+  font-family: var(--ff-primary);
+  color: var(--clr-passive);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+}
+
+#send-status {
+  display: flex;
+  flex-direction: column;
+  color: var(--clr-green-major);
+}
+
+#send-issue,
+#send-status {
+  padding-top: 0.5rem;
+  padding-bottom: 3.5rem;
+  background: var(--clr-background-major);
+  font-size: small;
+  height: 0;
+}
+
+#send-issue,
+.invalid p {
+  color: brown;
+  text-align: left;
+}
+
+.invalid p {
+  padding: 0.5rem 1.5rem;
+  margin-top: -1.5rem;
+  margin-bottom: 0.2rem;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.invalid-header p {
+  color: var(--clr-dark);
 }

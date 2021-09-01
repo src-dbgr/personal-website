@@ -161,7 +161,12 @@ const Launch = (props) => {
               document
                 .querySelector("#triangle")
                 .removeEventListener("click", killAnimation);
-              document.body.removeEventListener("keydown", killAnimation);
+              document.body.removeEventListener(
+                "keydown",
+                keyDownEnterEvent,
+                true
+              );
+              // document.body.removeEventListener("keydown", killAnimation, true);
               if (e instanceof Event && e.code !== "customIdentifier") {
                 // this section stops the animation immediately since
                 // the user killed the animation
@@ -235,43 +240,40 @@ const Launch = (props) => {
 
           let triangleElement = document.querySelector("#triangle");
           triangleElement.onclick = killAnimation;
-          document.body.addEventListener(
-            "keydown",
-            function (event) {
-              if (event.defaultPrevented) {
-                return;
-              }
-              var handled = false;
-              // if (event.keyCode === 13) {
-              //   killAnimation();
-              // }
+          function keyDownEnterEvent(event) {
+            if (event.defaultPrevented) {
+              return;
+            }
+            var handled = false;
+            // if (event.keyCode === 13) {
+            //   killAnimation();
+            // }
 
-              if (event.key !== undefined) {
-                // Handle the event with KeyboardEvent.key and set handled true.
-                if (event.key === "Enter") {
-                  killAnimation(event);
-                  handled = true;
-                }
-              } else if (event.keyIdentifier !== undefined) {
-                // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
-                if (event.key === "Enter") {
-                  killAnimation(event);
-                  handled = true;
-                }
-              } else if (event.keyCode !== undefined) {
-                if (event.key === "Enter") {
-                  killAnimation(event);
-                  handled = true;
-                }
-                // Handle the event with KeyboardEvent.keyCode and set handled true.
+            if (event.key !== undefined) {
+              // Handle the event with KeyboardEvent.key and set handled true.
+              if (event.key === "Enter") {
+                killAnimation(event);
+                handled = true;
               }
+            } else if (event.keyIdentifier !== undefined) {
+              // Handle the event with KeyboardEvent.keyIdentifier and set handled true.
+              if (event.key === "Enter") {
+                killAnimation(event);
+                handled = true;
+              }
+            } else if (event.keyCode !== undefined) {
+              if (event.key === "Enter") {
+                killAnimation(event);
+                handled = true;
+              }
+              // Handle the event with KeyboardEvent.keyCode and set handled true.
+            }
 
-              if (handled) {
-                event.preventDefault();
-              }
-            },
-            true
-          );
+            if (handled) {
+              event.preventDefault();
+            }
+          }
+          document.body.addEventListener("keydown", keyDownEnterEvent, true);
 
           return initialAnimation;
         } catch (err) {

@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithubAlt, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import { IoIosPaperPlane } from "react-icons/io";
+import { Link } from "gatsby";
 
 const data = [
   {
@@ -25,13 +26,23 @@ const data = [
   },
 ];
 const links = data.map((link) => {
-  return (
-    <li key={link.id}>
-      <a href={link.url} className="social-link">
-        {link.icon}
-      </a>
-    </li>
-  );
+  if (link.id === 4) {
+    return (
+      <li key={link.id}>
+        <Link className="social-link" to="/contact">
+          {link.icon}
+        </Link>
+      </li>
+    );
+  } else {
+    return (
+      <li key={link.id}>
+        <a href={link.url} className="social-link">
+          {link.icon}
+        </a>
+      </li>
+    );
+  }
 });
 
 const socialLinks = ({ styleClass }) => {
