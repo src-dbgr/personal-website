@@ -96,7 +96,7 @@ const AboutPage = ({
                 onChange={flipRadioButton}
               />
               <span className="overlay"></span>
-              <span className="text">default</span>
+              <span className="text-radio">default</span>
             </label>
             <label>
               <input
@@ -107,7 +107,7 @@ const AboutPage = ({
                 onChange={flipRadioButton}
               />
               <span className="overlay"></span>
-              <span className="text">white</span>
+              <span className="text-radio">white</span>
             </label>
           </div>
         </div>

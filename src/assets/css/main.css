@@ -109,7 +109,7 @@
   --transition: all 0.5s ease;
   --transition-fast: all 0.3s ease;
   --transition-very-fast: all 0.15s ease;
-  --spacing: 0.09rem;
+  --spacing: 0.07rem;
   --spacing-big: 0.135rem;
   --navbar-height: 4.5rem;
   --neg-page-top-space: -4.5rem;
@@ -213,7 +213,7 @@ Cookie Consent
   justify-content: center;
   align-items: center;
   box-shadow: var(--default-nav-shadow);
-  opacity: 0.8;
+  opacity: 0.95;
   z-index: 201;
 }
 
@@ -390,7 +390,10 @@ Cookie Consent
 
 input:checked,
 .slider-enabled::before {
-  background-color: var(--clr-dark);
+  background-color: var(--clr-dark) !important;
+  border-radius: 0 !important;
+  width: 13px !important;
+  height: 13px !important;
   -webkit-transform: translateX(16px);
   -ms-transform: translateX(16px);
   transform: translateX(16px);
@@ -409,6 +412,9 @@ input:checked,
   -webkit-transform: translateX(16px) !important;
   -ms-transform: translateX(16px) !important;
   transform: translateX(16px) !important;
+  height: 13px !important;
+  width: 13px !important;
+  border-radius: 0 !important;
 }
 
 .enableText {
@@ -1636,7 +1642,7 @@ About Page
 }
 
 .overlay,
-.text {
+.text-radio {
   cursor: pointer;
 }
 
@@ -1979,13 +1985,15 @@ Projects Page
 */
 
 .projects-page .projects,
-.blog-page {
+.blog-page,
+.legal-page {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
   min-height: 100vh;
 }
 
-.blog-page {
+.blog-page,
+.legal-page {
   position: relative;
   width: 100%;
   margin-bottom: var(--navbar-height);
@@ -2096,6 +2104,7 @@ Pages
 
 .blog-template,
 .projects-page,
+.legal-page,
 .blog-page,
 .error-section,
 .contact-page {
@@ -2246,6 +2255,11 @@ Footer
   place-items: center;
 }
 
+.footer div div {
+  display: flex;
+  flex-direction: column;
+}
+
 .light-footer {
   background: var(--clr-background-major) !important;
 }
@@ -2272,7 +2286,6 @@ Footer
 .legal-disclosure {
   color: var(--clr-passive);
   text-transform: uppercase;
-  text-decoration: underline;
   font-size: 8pt;
   transition: var(--transition);
 }
@@ -2379,6 +2392,7 @@ Timeline
 
 .timeline-legend-table td {
   padding: calc(var(--border-thickness) / 2) var(--border-thickness);
+  color: var(--clr-text-quiet);
 }
 
 .timeline-legend-table tr:nth-child(even) {
@@ -2428,12 +2442,14 @@ Timeline
   width: 10px;
 }
 
-.timeline-link-element a {
+.timeline-link-element a,
+.cookie-info-box a {
   color: var(--clr-dark);
   transition: var(--transition);
 }
 
-.timeline-link-element a:hover {
+.timeline-link-element a:hover,
+.cookie-info-box a:hover {
   color: var(--clr-green-minor);
   text-decoration: underline;
 }
@@ -2455,6 +2471,7 @@ Timeline
 
 .timeline-meta-head {
   margin-bottom: var(--border-thickness);
+  color: var(--clr-text-quiet);
 }
 
 .timeline-heading {
@@ -2675,6 +2692,7 @@ Contact Page
   transition: var(--transition);
   width: 90vw;
   max-width: 35rem;
+  margin-bottom: 2rem;
 }
 
 .contact-form h3 {
@@ -2687,8 +2705,7 @@ Contact Page
 input:focus,
 textarea:focus {
   outline: none !important;
-  border: 1px solid var(--clr-green-everywhere);
-  box-shadow: 0 0 10px var(--clr-passive);
+  box-shadow: var(--default-btn-shadow);
 }
 
 .form-control {
@@ -2745,4 +2762,50 @@ textarea:focus {
 
 .invalid-header p {
   color: var(--clr-dark);
+}
+
+/*
+===============
+Legal
+===============
+*/
+
+.legal-page {
+  text-align: justify;
+}
+
+.legal-page h3 {
+  margin: 0.2rem 0;
+}
+
+.impressum-name {
+  display: flex;
+  flex-direction: row;
+}
+.impressum-name p {
+  margin: 0;
+}
+
+/*
+===============
+Privacy Policy
+===============
+*/
+
+.privacy-policy p,
+.privacy-policy div,
+.impressum-name {
+  color: var(--clr-text-quiet);
+}
+
+.privacy-policy h1,
+h2,
+h3,
+h4 {
+  color: var(--clr-dark);
+}
+
+.privacy-policy a {
+  color: var(--clr-green-major);
+  text-decoration: underline;
 }

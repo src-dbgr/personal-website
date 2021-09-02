@@ -103,7 +103,7 @@ const Contact = () => {
     <Layout darkFooter={true}>
       <section className="contact-page">
         <Title title="Contact" />
-        <article className="contact-form">
+        <article className="contact-form shadow-box-dark">
           <h3>get in touch</h3>
           <form id="mailForm" onSubmit={checkData}>
             <div className="form-group">

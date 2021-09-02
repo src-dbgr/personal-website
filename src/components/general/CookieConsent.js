@@ -317,9 +317,9 @@ const CookieConsent = () => {
                   tracking cookies but will use window local storage to not show
                   the banner again on revisit. Usage of cookies helps to analyze
                   this website's traffic, and to understand where visitors are
-                  coming from. Your Identity remains always anonymous.
+                  coming from. Your Identity remains always anonymous.&nbsp;
                   <Link className="link" to="/privacy">
-                    Learn more
+                  Learn more
                   </Link>
                 </span>
               </div>

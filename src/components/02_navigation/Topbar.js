@@ -1,6 +1,7 @@
 import { GlobalDispatchContext,  GlobalStateContext } from "../../context/GlobalContextProvider";
 import React, { useContext } from "react";
 import PageLinks from "../../data/constants/Links";
+import SocialLinks from "../../data/constants/socialLinks";
 
 const Topbar = (props) => {
   const dispatch = useContext(GlobalDispatchContext);
@@ -18,6 +19,7 @@ const Topbar = (props) => {
     >
       <div className="top-container">
         <PageLinks styleClass="topbar-links" />
+        <SocialLinks styleClass="footer-links"></SocialLinks>
       </div>
     </aside>
   );

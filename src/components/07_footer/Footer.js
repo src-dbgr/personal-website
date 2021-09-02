@@ -8,9 +8,14 @@ const Footer = ({ darkFooter }) => {
       <div>
         <SocialLinks styleClass="footer-links"></SocialLinks>
         <h4>copyright&copy;{new Date().getFullYear()}</h4>
-        <Link to="/legal" className="legal-disclosure">
-          Legal Disclosure
-        </Link>
+        <div>
+          <Link to="/legal" className="legal-disclosure">
+            Legal Disclosure / Impressum
+          </Link>
+          <Link to="/privacy" className="legal-disclosure">
+            Privacy Policy / Datenschutzerklärung
+          </Link>
+        </div>
       </div>
     </div>
   );

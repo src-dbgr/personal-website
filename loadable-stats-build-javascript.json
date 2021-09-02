@@ -1,16 +1,16 @@
 {
-  "hash": "a2c85e93b35afda17df2",
+  "hash": "b5534857216cb9a010d6",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.bfcd8596f9531419a995.hot-update.js"
+      "polyfill.e75962e92d277b197979.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.bfcd8596f9531419a995.hot-update.js"
+      "commons.e75962e92d277b197979.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
@@ -30,6 +30,12 @@
     "component---src-pages-index-js": [
       "component---src-pages-index-js.js"
     ],
+    "component---src-pages-legal-js": [
+      "component---src-pages-legal-js.js"
+    ],
+    "component---src-pages-privacy-js": [
+      "component---src-pages-privacy-js.js"
+    ],
     "component---src-pages-projects-js": [
       "component---src-pages-projects-js.js"
     ],
@@ -44,8 +50,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 37,
-      "size": 70890670
+      "filteredChildren": 39,
+      "size": 83644618
     }
   ],
   "namedChunkGroups": {
@@ -59,7 +65,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.bfcd8596f9531419a995.hot-update.js"
+          "name": "polyfill.e75962e92d277b197979.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -86,7 +92,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -131,7 +137,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-pages-404-js.js"
@@ -162,7 +168,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-pages-about-js.js"
@@ -193,7 +199,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-pages-blog-js.js"
@@ -224,7 +230,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-pages-contact-js.js"
@@ -255,7 +261,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
@@ -264,6 +270,68 @@
       "filteredAssets": 0,
       "assetsSize": null,
       "filteredAuxiliaryAssets": 17,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-legal-js": {
+      "name": "component---src-pages-legal-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-legal-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.e75962e92d277b197979.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-legal-js.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-privacy-js": {
+      "name": "component---src-pages-privacy-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-privacy-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.e75962e92d277b197979.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-privacy-js.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
       "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
@@ -286,7 +354,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
@@ -317,7 +385,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.bfcd8596f9531419a995.hot-update.js"
+          "name": "commons.e75962e92d277b197979.hot-update.js"
         },
         {
           "name": "component---src-templates-blog-template-js.js"
@@ -337,7 +405,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.bfcd8596f9531419a995.hot-update.js"
+        "polyfill.e75962e92d277b197979.hot-update.js"
       ]
     },
     {
@@ -345,7 +413,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.bfcd8596f9531419a995.hot-update.js"
+        "commons.e75962e92d277b197979.hot-update.js"
       ]
     },
     {
@@ -406,6 +474,18 @@
       "id": "component---src-pages-index-js",
       "files": [
         "component---src-pages-index-js.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-legal-js",
+      "files": [
+        "component---src-pages-legal-js.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-privacy-js",
+      "files": [
+        "component---src-pages-privacy-js.js"
       ]
     },
     {
