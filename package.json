@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@react-three/fiber": "^7.0.2",
@@ -32,6 +33,7 @@
     "gatsby-source-filesystem": "^3.8.0",
     "gatsby-source-strapi": "^1.0.2",
     "gatsby-transformer-sharp": "^3.8.0",
+    "patch-package": "^6.4.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

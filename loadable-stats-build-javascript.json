@@ -1,47 +1,40 @@
 {
-  "hash": "e057c4af0fa07acbca28",
+  "hash": "a2c85e93b35afda17df2",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.3a8acb431869bebd691b.hot-update.js"
+      "polyfill.bfcd8596f9531419a995.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.3a8acb431869bebd691b.hot-update.js"
+      "commons.bfcd8596f9531419a995.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js.js",
-      "component---src-pages-404-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-pages-404-js.js"
     ],
     "component---src-pages-about-js": [
-      "component---src-pages-about-js.js",
-      "component---src-pages-about-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-pages-about-js.js"
     ],
     "component---src-pages-blog-js": [
-      "component---src-pages-blog-js.js",
-      "component---src-pages-blog-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-pages-blog-js.js"
     ],
     "component---src-pages-contact-js": [
-      "component---src-pages-contact-js.js",
-      "component---src-pages-contact-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-pages-contact-js.js"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js.js",
-      "component---src-pages-index-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-pages-index-js.js"
     ],
     "component---src-pages-projects-js": [
-      "component---src-pages-projects-js.js",
-      "component---src-pages-projects-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-pages-projects-js.js"
     ],
     "component---src-templates-blog-template-js": [
-      "component---src-templates-blog-template-js.js",
-      "component---src-templates-blog-template-js.3a8acb431869bebd691b.hot-update.js"
+      "component---src-templates-blog-template-js.js"
     ],
     "framework": [
       "framework.js"
@@ -51,8 +44,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 44,
-      "size": 70957802
+      "filteredChildren": 37,
+      "size": 70890670
     }
   ],
   "namedChunkGroups": {
@@ -66,7 +59,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.3a8acb431869bebd691b.hot-update.js"
+          "name": "polyfill.bfcd8596f9531419a995.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -93,7 +86,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -138,13 +131,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-pages-404-js.js"
-        },
-        {
-          "name": "component---src-pages-404-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -172,13 +162,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-pages-about-js.js"
-        },
-        {
-          "name": "component---src-pages-about-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -206,13 +193,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-pages-blog-js.js"
-        },
-        {
-          "name": "component---src-pages-blog-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -240,13 +224,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-pages-contact-js.js"
-        },
-        {
-          "name": "component---src-pages-contact-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -274,13 +255,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
-        },
-        {
-          "name": "component---src-pages-index-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -308,13 +286,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
-        },
-        {
-          "name": "component---src-pages-projects-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -342,13 +317,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a8acb431869bebd691b.hot-update.js"
+          "name": "commons.bfcd8596f9531419a995.hot-update.js"
         },
         {
           "name": "component---src-templates-blog-template-js.js"
-        },
-        {
-          "name": "component---src-templates-blog-template-js.3a8acb431869bebd691b.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -365,7 +337,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.3a8acb431869bebd691b.hot-update.js"
+        "polyfill.bfcd8596f9531419a995.hot-update.js"
       ]
     },
     {
@@ -373,7 +345,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.3a8acb431869bebd691b.hot-update.js"
+        "commons.bfcd8596f9531419a995.hot-update.js"
       ]
     },
     {
@@ -409,50 +381,43 @@
     {
       "id": "component---src-pages-404-js",
       "files": [
-        "component---src-pages-404-js.js",
-        "component---src-pages-404-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-pages-404-js.js"
       ]
     },
     {
       "id": "component---src-pages-about-js",
       "files": [
-        "component---src-pages-about-js.js",
-        "component---src-pages-about-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-pages-about-js.js"
       ]
     },
     {
       "id": "component---src-pages-blog-js",
       "files": [
-        "component---src-pages-blog-js.js",
-        "component---src-pages-blog-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-pages-blog-js.js"
       ]
     },
     {
       "id": "component---src-pages-contact-js",
       "files": [
-        "component---src-pages-contact-js.js",
-        "component---src-pages-contact-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-pages-contact-js.js"
       ]
     },
     {
       "id": "component---src-pages-index-js",
       "files": [
-        "component---src-pages-index-js.js",
-        "component---src-pages-index-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-pages-index-js.js"
       ]
     },
     {
       "id": "component---src-pages-projects-js",
       "files": [
-        "component---src-pages-projects-js.js",
-        "component---src-pages-projects-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-pages-projects-js.js"
       ]
     },
     {
       "id": "component---src-templates-blog-template-js",
       "files": [
-        "component---src-templates-blog-template-js.js",
-        "component---src-templates-blog-template-js.3a8acb431869bebd691b.hot-update.js"
+        "component---src-templates-blog-template-js.js"
       ]
     },
     {

@@ -174,11 +174,20 @@ const Launch = (props) => {
               } else {
                 // this section ends the animation smoothly with polygon decay
                 // applies when everything runs without user interruption
-                setTimeout(function () {
-                  props.finishLaunching();
-                }, animTimeout * 3);
+                finishLaunchWrapper(0);
               }
               killAnimationTriggered = !killAnimationTriggered;
+            }
+          }
+
+          // Wrap Exit Function in order to avoid timout browser violation
+          function finishLaunchWrapper(counter) {
+            counter = counter + 1;
+            if (counter === 3) {
+              // has the effect that the timout is divided by
+              setTimeout(props.finishLaunching, animTimeout);
+            } else {
+              setTimeout(finishLaunchWrapper, animTimeout, counter);
             }
           }
 

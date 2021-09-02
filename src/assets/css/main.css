@@ -178,9 +178,9 @@
   --clr-background-minor: rgb(51, 51, 51);
   --clr-dark: rgb(61, 139, 104);
   --clr-magenta: rgb(53, 161, 105);
-  scrollbar-face-color: var(--clr-dark);
-  scrollbar-shadow-color: var(--clr-magenta);
-  scrollbar-highlight-color: var(--clr-magenta);
+  /* scrollbar-face-color: var(--clr-dark); */
+  /* scrollbar-shadow-color: var(--clr-magenta); */
+  /* scrollbar-highlight-color: var(--clr-magenta); */
   scrollbar-color: var(--clr-dark) var(--clr-background-minor);
   scrollbar-width: thin;
   overflow-y: scroll;
@@ -277,7 +277,7 @@ Cookie Consent
   flex-direction: column;
   justify-content: left;
   width: 100%;
-  align-items: left;
+  /* align-items: left; */
   padding-top: 0;
 }
 
@@ -296,8 +296,8 @@ Cookie Consent
 .cookie-buttons {
   display: flex;
   flex-direction: column;
-  justify-content: bottom;
-  align-items: left;
+  /* justify-content: bottom; */
+  /* align-items: left; */
   width: 9rem;
   margin-top: auto;
 }
@@ -339,8 +339,8 @@ Cookie Consent
 .switch-content-wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: bottom;
-  align-items: left;
+  /* justify-content: bottom; */
+  /* align-items: left; */
   border: 1px solid var(--clr-passive);
   padding-left: 0.25rem;
   margin-top: 0.25rem;
@@ -453,6 +453,7 @@ input:checked,
   background: var(--clr-background-minor);
   overflow-x: hidden;
   overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
 .cookie-info-box p {
@@ -621,9 +622,9 @@ Global Styles
 */
 
 html {
-  scrollbar-face-color: var(--clr-dark);
+  /* scrollbar-face-color: var(--clr-dark);
   scrollbar-shadow-color: var(--clr-magenta);
-  scrollbar-highlight-color: var(--clr-magenta);
+  scrollbar-highlight-color: var(--clr-magenta); */
   scrollbar-color: var(--clr-dark) var(--clr-background-minor);
   scrollbar-width: thin;
   overflow-y: scroll;
@@ -1623,8 +1624,8 @@ About Page
   letter-spacing: 0.1rem;
 }
 
-.about-download-radio-wrapper div {
-  padding-left: 2rem;
+.about-download-radio-wrapper label {
+  padding-left: 1.95rem;
   min-width: 100%;
 }
 
@@ -1632,6 +1633,10 @@ About Page
 .about-download-radio-wrapper input:checked {
   margin-right: 1.2rem;
   transform: translateX(0);
+}
+
+.overlay,
+.text {
   cursor: pointer;
 }
 
@@ -1639,28 +1644,27 @@ About Page
   margin-top: 0;
 }
 
-.about-download-radio-wrapper input[type="radio"]:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  position: relative;
-  background-color: var(--clr-background-minor);
-  content: "";
+label .overlay {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 1rem;
   display: inline-block;
-  visibility: visible;
+  position: relative;
+  top: -1px;
   border: 2px solid var(--clr-passive);
+  border-radius: 50%;
+  vertical-align: middle;
 }
-
-.about-download-radio-wrapper input[type="radio"]:checked:after {
-  width: 15px;
-  height: 15px;
-  border-radius: 15px;
-  position: relative;
-  background-color: var(--clr-green-major);
+label input {
+  display: none;
+}
+label input:checked + span:before {
+  height: 100%;
+  width: 100%;
+  display: block;
   content: "";
-  display: inline-block;
-  visibility: visible;
-  border: 2px solid var(--clr-passive);
+  background-color: var(--clr-green-major);
+  border-radius: 50%;
 }
 
 /*
@@ -2316,7 +2320,7 @@ Timeline
   align-items: center;
   flex-direction: column;
   height: 40px;
-  overflow-y: clip;
+  overflow-y: hidden;
   font-size: 1rem;
   transition: var(--transition-fast);
 }
@@ -2679,6 +2683,14 @@ Contact Page
 .form-group {
   padding: 1rem 1.5rem;
 }
+
+input:focus,
+textarea:focus {
+  outline: none !important;
+  border: 1px solid var(--clr-green-everywhere);
+  box-shadow: 0 0 10px var(--clr-passive);
+}
+
 .form-control {
   display: block;
   width: 100%;

@@ -87,7 +87,7 @@ const AboutPage = ({
             </span>
           </a>
           <div className="about-download-radio-wrapper">
-            <div>
+            <label>
               <input
                 type="radio"
                 value="Default"
@@ -95,9 +95,10 @@ const AboutPage = ({
                 checked={isDefault}
                 onChange={flipRadioButton}
               />
-              default
-            </div>
-            <div>
+              <span className="overlay"></span>
+              <span className="text">default</span>
+            </label>
+            <label>
               <input
                 type="radio"
                 value="White"
@@ -105,8 +106,9 @@ const AboutPage = ({
                 checked={!isDefault}
                 onChange={flipRadioButton}
               />
-              white
-            </div>
+              <span className="overlay"></span>
+              <span className="text">white</span>
+            </label>
           </div>
         </div>
         <Stations stations={stations} categories={categories} />
