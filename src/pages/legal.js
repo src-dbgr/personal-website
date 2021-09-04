@@ -6,7 +6,7 @@ const legal = () => {
   return (
     <Layout darkFooter={true}>
       <section className="legal-page">
-        <Title title="Legal Disclosure / Impressum" />
+        <Title title="Legal Notice / Impressum" />
         <div className="section-center">
           <h1>Impressum</h1>
           <h2>Angaben gemäß § 5 TMG:</h2>

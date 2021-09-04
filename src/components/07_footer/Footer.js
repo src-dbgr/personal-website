@@ -10,10 +10,10 @@ const Footer = ({ darkFooter }) => {
         <h4>copyright&copy;{new Date().getFullYear()}</h4>
         <div>
           <Link to="/legal" className="legal-disclosure">
-            Legal Disclosure / Impressum
+            Legal Notice | Impressum
           </Link>
           <Link to="/privacy" className="legal-disclosure">
-            Privacy Policy / Datenschutzerklärung
+            Privacy Policy | Datenschutzerklärung
           </Link>
         </div>
       </div>
