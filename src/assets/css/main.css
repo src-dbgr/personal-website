@@ -2030,7 +2030,8 @@ Projects Page
 
 .projects-page .projects,
 .blog-page,
-.legal-page {
+.legal-page,
+.contact-page {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
   min-height: 100vh;
@@ -2723,10 +2724,7 @@ Contact Page
   display: flex;
   flex-direction: column;
   place-items: center;
-}
-
-.contact-page .section-title {
-  margin-top: 5rem;
+  min-height: calc(100vh - 9rem);
 }
 
 .contact-form {
@@ -2736,6 +2734,7 @@ Contact Page
   transition: var(--transition);
   width: 90vw;
   max-width: 35rem;
+  margin-top: -1.25rem;
   margin-bottom: 2rem;
 }
 
