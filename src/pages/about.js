@@ -6,6 +6,7 @@ import Title from "../components/general/Title";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
 import { MdFileDownload } from "react-icons/md";
+import Technologies from "../components/04_about/04_03_tech/Technologies";
 import Stations from "../components/04_about/04_02_stations/Stations";
 const AboutPage = ({
   data: {
@@ -75,11 +76,7 @@ const AboutPage = ({
         >
           <div className="resume-wrapper">
             <a
-              href={
-                isDefault
-                  ? "/resume_sb_df.pdf"
-                  : "/resume_sb_wh.pdf"
-              }
+              href={isDefault ? "/resume_sb_df.pdf" : "/resume_sb_wh.pdf"}
               className="btn center-btn"
             >
               <span className="btn">
@@ -114,6 +111,7 @@ const AboutPage = ({
             </div>
           </div>
         </div>
+        <Technologies />
         <Stations stations={stations} categories={categories} />
       </section>
     </Layout>

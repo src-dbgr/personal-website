@@ -2425,6 +2425,36 @@ Timeline
   transition: var(--transition-fast);
 }
 
+caption {
+  /* background: var(--clr-passive); */
+  /* padding-left: calc(var(--border-thickness)/2); */
+  height: 37px;
+  line-height: 37px;
+  font-family: var(--ff-secondary);
+  text-align: left;
+}
+
+.tech-table-comp {
+  padding-bottom: 0;
+}
+
+.tech-table {
+  padding-bottom: 1rem;
+}
+
+.tech-table td:first-child img {
+  font-size: 3rem;
+  min-width: 2rem;
+  min-height: 2rem;
+  max-width: 3rem;
+  max-height: 3rem;
+}
+
+.tech-table-open {
+  height: 100%;
+  transition: var(--transition-fast);
+}
+
 .timeline-legend-table,
 .timeline-flex-header {
   max-width: 890px;
