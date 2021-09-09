@@ -10,3 +10,9 @@ export const wrapRootElement = ({ element }) => {
 export const wrapPageElement = ({ element }) => (
   <AnimatePresence exitBeforeEnter>{element}</AnimatePresence>
 );
+
+export const onClientEntry = () => {
+  if (!!window.MSCompatibleInfo) {
+    window.location.replace("/ie-err.html");
+  }
+};

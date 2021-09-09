@@ -38,10 +38,9 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP]
+                formats: [WEBP, PNG]
                 blurredOptions: { width: 100 }
                 transformOptions: { cropFocus: ENTROPY }
-                avifOptions: { quality: 75 }
                 quality: 80
                 width: 800
                 height: 300

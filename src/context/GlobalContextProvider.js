@@ -9,6 +9,7 @@ const initialState = {
   navopen: false,
   navlogoscale: false,
   navanimation: true,
+  cookieconsentopen: true,
 };
 
 function reducer(state, action) {
@@ -35,6 +36,12 @@ function reducer(state, action) {
       return {
         ...state,
         navanimation: false,
+      };
+    }
+    case "COOKIE_CONSENT": {
+      return {
+        ...state,
+        cookieconsentopen: false,
       };
     }
     default:

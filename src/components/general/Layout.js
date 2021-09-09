@@ -15,6 +15,24 @@ const Layout = ({ children, darkFooter }) => {
 
   const theme = useContext(GlobalStateContext).theme;
 
+  function disableCookieConsent() {
+    dispatch({ type: "COOKIE_CONSENT" });
+  }
+
+  function checkCookieState() {
+    let myStorage = window.localStorage;
+
+    if (
+      state.cookieconsentopen &&
+      typeof window !== "undefined" &&
+      myStorage.getItem("CONSENTRXCSQECJWXXK")
+    ) {
+      if (JSON.parse(myStorage.getItem("CONSENTRXCSQECJWXXK"))) {
+        disableCookieConsent();
+      }
+    }
+  }
+
   useEffect(() => {
     try {
       if (document.body.classList.contains("dark-theme")) {
@@ -63,13 +81,14 @@ const Layout = ({ children, darkFooter }) => {
 
   useEffect(() => {
     let isActive = true;
+    checkCookieState(); // on mount check
     // skip if animation has not yet finished
     if (!state.animation) {
       navigateToHash(isActive);
     }
     return () => {
       isActive = false;
-    };
+    }; // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state.animation]);
 
   // disable in production
@@ -108,7 +127,7 @@ const Layout = ({ children, darkFooter }) => {
 
   return (
     <>
-      <CookieConsent />
+      {state.cookieconsentopen && <CookieConsent />}
       {isIndexPage && state.animation ? (
         <Launch
           finishLaunching={() => {
@@ -120,14 +139,14 @@ const Layout = ({ children, darkFooter }) => {
           <Navbar />
           <Topbar />
           <motion.main
-            initial={{ opacity: 0, x: -200 }}
+            initial={{ opacity: 0, x: 0 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: 200 }}
+            exit={{ opacity: 0, x: 0 }}
             transition={{
               type: "spring",
               mass: 0.35,
               stiffness: 75,
-              duration: 0.3,
+              duration: 0.1,
             }}
           >
             {children}

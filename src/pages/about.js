@@ -73,42 +73,45 @@ const AboutPage = ({
           data-aos="fade"
           data-aos-once="true"
         >
-          <a
-            href={
-              isDefault
-                ? "/resume_samuel_blehm_std.pdf"
-                : "/resume_samuel_blehm_white.pdf"
-            }
-            className="btn center-btn"
-          >
-            <span className="btn">
-              <MdFileDownload className="icon-margin" />
-              RÉSUMÉ
-            </span>
-          </a>
-          <div className="about-download-radio-wrapper">
-            <label>
-              <input
-                type="radio"
-                value="Default"
-                name="resume"
-                checked={isDefault}
-                onChange={flipRadioButton}
-              />
-              <span className="overlay"></span>
-              <span className="text-radio">default</span>
-            </label>
-            <label>
-              <input
-                type="radio"
-                value="White"
-                name="resume"
-                checked={!isDefault}
-                onChange={flipRadioButton}
-              />
-              <span className="overlay"></span>
-              <span className="text-radio">white</span>
-            </label>
+          <div className="resume-wrapper">
+            <a
+              href={
+                isDefault
+                  ? "/resume_sb_df.pdf"
+                  : "/resume_sb_wh.pdf"
+              }
+              className="btn center-btn"
+            >
+              <span className="btn">
+                <MdFileDownload className="icon-margin" />
+                RÉSUMÉ
+              </span>
+            </a>
+            <div className="about-download-radio-wrapper">
+              <p>RÉSUMÉ BACKGROUND:</p>
+              <label>
+                <input
+                  type="radio"
+                  value="Default"
+                  name="resume"
+                  checked={isDefault}
+                  onChange={flipRadioButton}
+                />
+                <span className="overlay"></span>
+                <span className="text-radio">DEFAULT</span>
+              </label>
+              <label>
+                <input
+                  type="radio"
+                  value="White"
+                  name="resume"
+                  checked={!isDefault}
+                  onChange={flipRadioButton}
+                />
+                <span className="overlay"></span>
+                <span className="text-radio">WHITE</span>
+              </label>
+            </div>
           </div>
         </div>
         <Stations stations={stations} categories={categories} />
@@ -132,7 +135,7 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: BLURRED
-                formats: [AUTO, WEBP]
+                formats: [WEBP, PNG]
                 quality: 80
                 blurredOptions: { width: 100 }
                 backgroundColor: "transparent"

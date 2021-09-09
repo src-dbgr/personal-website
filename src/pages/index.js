@@ -14,16 +14,14 @@ const index = ({ data }) => {
   } = data;
 
   return (
-    <>
-      <Layout darkFooter={true}>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects projects={projects} title="Featured Projects" showLink />
-        <BlogsSection blogs={blogs} title="Latest Blog Articles" />
-        {/* <Sound src="https://www.free-stock-music.com/music/punch-deck-brahe.mp3" /> */}
-      </Layout>
-    </>
+    <Layout darkFooter={true}>
+      <Hero />
+      <About />
+      <Experience />
+      <Projects projects={projects} title="Featured Projects" showLink />
+      <BlogsSection blogs={blogs} title="Latest Blog Articles" />
+      {/* <Sound src="https://www.free-stock-music.com/music/punch-deck-brahe.mp3" /> */}
+    </Layout>
   );
 };
 
@@ -41,10 +39,9 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP]
+                formats: [WEBP, PNG]
                 blurredOptions: { width: 100 }
                 transformOptions: { cropFocus: ENTROPY }
-                avifOptions: { quality: 85 }
                 quality: 90
                 height: 480
                 width: 900
@@ -72,10 +69,9 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP]
+                formats: [WEBP, PNG]
                 blurredOptions: { width: 100 }
                 transformOptions: { cropFocus: ENTROPY }
-                avifOptions: { quality: 75 }
                 quality: 80
                 width: 800
                 height: 300

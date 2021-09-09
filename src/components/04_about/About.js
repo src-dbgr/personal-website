@@ -3,7 +3,6 @@ import Title from "../general/Title";
 import { StaticImage } from "gatsby-plugin-image";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
-import { Link } from "gatsby";
 import Aos from "aos";
 import "aos/dist/aos.css";
 
@@ -53,11 +52,11 @@ const About = () => {
             Here are a few technologies I've been working with recently:
           </p>
           <ul className="skill-set">
-            <li>Java</li>
             <li>Python</li>
+            <li>Java</li>
             <li>K8s</li>
-            <li>JS</li>
             <li>Tensorflow</li>
+            <li>JS</li>
             <li>Go</li>
           </ul>
         </article>
@@ -89,14 +88,6 @@ const About = () => {
           </div>
         </article>
       </div>
-      <Link
-        to="/about"
-        className="btn center-btn"
-        data-aos="fade"
-        data-aos-once="true"
-      >
-        <span className="btn">about</span>
-      </Link>
     </section>
   );
 };

@@ -1320,6 +1320,11 @@ Hero
   margin-bottom: 0;
 }
 
+.hero p span {
+  font-family: var(--ff-secondary);
+  color: var(--clr-green-major);
+}
+
 .hero-description {
   font-family: var(--ff-ternary);
   max-width: 400px;
@@ -1535,6 +1540,7 @@ About Component
   transition: var(--transition);
   border-radius: 50%;
   box-shadow: 1px 1px 2px var(--clr-dark-shadow);
+  z-index: 100;
 }
 
 /* .about-img img {
@@ -1548,7 +1554,9 @@ About Component
   bottom: 0;
   left: 0;
   position: relative;
+  border-radius: 50%;
   opacity: 0.8;
+  z-index: 98;
 }
 
 .about-hover-img {
@@ -1565,7 +1573,9 @@ About Component
   bottom: 0;
   left: 0;
   opacity: 0;
+  border-radius: 50%;
   transition: var(--transition);
+  z-index: 99;
 }
 
 .about-hover-img:hover {
@@ -1660,6 +1670,12 @@ About Page
   align-items: center;
 }
 
+.resume-wrapper {
+  background: var(--clr-background-major);
+  padding: 1rem;
+  border: 3px dashed var(--clr-passive);
+}
+
 .about-download-radio-wrapper {
   margin-top: 0.5rem;
   display: flex;
@@ -1681,8 +1697,14 @@ About Page
   transform: translateX(0);
 }
 
+.about-download-radio-wrapper p {
+  font-size: 8pt;
+  margin-bottom: 0.2rem;
+}
+
 .overlay,
 .text-radio {
+  font-size: 8pt;
   cursor: pointer;
 }
 
@@ -1886,10 +1908,11 @@ Projects
 .project-img:active,
 .project-img-active {
   border: 0.25rem solid var(--clr-background-major-opaque) !important;
-  border-bottom: none !important;
+  border-bottom: none;
   margin-bottom: 0 !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  z-index: -1 !important;
   transition: var(--transition-fast) !important;
 }
 
@@ -1908,7 +1931,7 @@ Projects
   opacity: 0.85;
   transition: var(--transition-fast);
 }
-.project:hover .project-img::after {
+.project-img:hover::after {
   opacity: 0.2;
 }
 .project-info {
@@ -2020,6 +2043,12 @@ Projects
     grid-row: 1 / 1;
     text-align: left;
   }
+
+  .project-img:hover,
+  .project-img-active:hover {
+    z-index: 2 !important;
+    opacity: 1;
+  }
 }
 
 /*
@@ -2031,7 +2060,8 @@ Projects Page
 .projects-page .projects,
 .blog-page,
 .legal-page,
-.contact-page {
+.contact-page,
+.error-section {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
   min-height: 100vh;
@@ -2400,6 +2430,7 @@ Timeline
 }
 
 .timeline-flex-header div {
+  width: 190px;
   display: flex;
   cursor: pointer;
 }
@@ -2411,6 +2442,8 @@ Timeline
   margin-bottom: 0;
   min-height: 37px;
   font-family: var(--ff-ternary);
+  width: 100%;
+  text-align: center;
 }
 
 .timeline-flex-collapsible-icon {
@@ -2466,8 +2499,7 @@ Timeline
 
 .timeline-width-two,
 .timeline-width,
-.timeline-links,
-.timeline-flex-header {
+.timeline-links {
   display: flex;
 }
 
@@ -2714,13 +2746,31 @@ ul li:nth-child(even) .timeline-node {
   .timeline p {
     font-size: 0.9rem;
   }
+  .timeline-legend-table td,
+  .timeline-legend-table th {
+    font-size: small;
+    padding: 0.3rem calc(var(--border-thickness) / 3);
+  }
+
+  .timeline-legend-table td:first-of-type {
+    text-align: center;
+  }
 }
+
+@media screen and (max-width: 270px) {
+  .timeline-legend-table td,
+  .timeline-legend-table th {
+    word-break: break-all;
+  }
+}
+
 /*
 ===============
 Contact Page
 ===============
 */
-.contact-page {
+.contact-page,
+.error-section {
   display: flex;
   flex-direction: column;
   place-items: center;

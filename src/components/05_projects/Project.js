@@ -19,11 +19,13 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
 
   // checks whether an image has been set, if noc image is set, don't render --> lines 9-11
   return (
-    <article
+    <div
       className="project"
       data-aos="fade-up"
       data-aos-once="true"
       onClick={flipActivation}
+      onKeyDown={flipActivation}
+      role="presentation"
     >
       {image && (
         <GatsbyImage
@@ -56,7 +58,7 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
           </a>
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 

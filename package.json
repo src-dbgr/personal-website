@@ -16,6 +16,7 @@
     "postinstall": "patch-package"
   },
   "dependencies": {
+    "@juggle/resize-observer": "^3.3.1",
     "@react-three/fiber": "^7.0.2",
     "@trysound/sax": "^0.1.1",
     "animejs": "^3.2.1",
@@ -35,6 +36,7 @@
     "gatsby-transformer-sharp": "^3.8.0",
     "patch-package": "^6.4.7",
     "react": "^17.0.1",
+    "react-device-detect": "^1.17.0",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.2.0",

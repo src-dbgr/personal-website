@@ -72,6 +72,7 @@ const CookieConsent = () => {
     false,
     "CONSENTRXCSQECJWXXK"
   );
+
   // cookie name definitions in file gatsby-config.js
   const cookieNames = useRef({
     gglanalytics: "sb-ggl-anlytcs-ecuosp",
