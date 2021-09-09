@@ -3,6 +3,7 @@ import Sphere from "./Sphere";
 import Tetrahedron from "./Tetrahedron";
 import Plane from "./Plane";
 import { Canvas } from "@react-three/fiber";
+import { ResizeObserver } from "@juggle/resize-observer";
 
 const ThreejsRender = () => {
   return (
@@ -11,6 +12,7 @@ const ThreejsRender = () => {
         <Canvas
           camera={{ fov: 75, near: 0.1, far: 500, position: [-2, 2, 3] }}
           className="trianglecanvas"
+          resize={{ polyfill: ResizeObserver }}
         >
           <ambientLight />
           <pointLight position={[-3, 3, -2]} intensity={20} color={0x767081} />

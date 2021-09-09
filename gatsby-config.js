@@ -24,7 +24,15 @@ module.exports = {
       options: {
         apiURL: `http://localhost:1337`,
         queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`job`, `project`, `blog`, `cookie`],
+        collectionTypes: [
+          `job`,
+          `project`,
+          `blog`,
+          `cookie`,
+          `station`,
+          `stationctgry`,
+        ],
+        singleTypes: [`about`],
       },
     },
     {
@@ -56,14 +64,5 @@ module.exports = {
         },
       },
     },
-    // enable if neccessary
-    // {
-    //   resolve: `gatsby-plugin-osano`,
-    //   options: {
-    //     customerId: '4E7BSdzBNik66VN',
-    //     ccid: 'c66d08c0-a736-4292-9eae-bf8b6e68a601',
-    //     includeInDevelopment: true,
-    //   },
-    // },
   ],
 };

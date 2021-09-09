@@ -12,7 +12,7 @@ const About = () => {
   }, []);
   return (
     <section id="about" className="section about-component-section">
-      <Title title="About" />
+      <Title title="Welcome" />
       <div className="section-center about-component-center">
         <article
           key="1"
@@ -52,11 +52,11 @@ const About = () => {
             Here are a few technologies I've been working with recently:
           </p>
           <ul className="skill-set">
-            <li>Java</li>
             <li>Python</li>
-            <li>Kubernetes</li>
-            <li>JavaScript</li>
+            <li>Java</li>
+            <li>K8s</li>
             <li>Tensorflow</li>
+            <li>JS</li>
             <li>Go</li>
           </ul>
         </article>

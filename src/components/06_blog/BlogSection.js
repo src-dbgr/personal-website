@@ -21,12 +21,7 @@ export const BlogsSection = ({ blogs, title, showLink }) => {
           return <Blog key={blog.id} {...blog} />;
         })}
       </div>
-      <Link
-        to="/blogs"
-        className="btn center-btn"
-        data-aos="fade"
-        data-aos-once="true"
-      >
+      <Link to="/blog" className="btn center-btn">
         <span className="btn">All Blog Articles</span>
       </Link>
     </section>

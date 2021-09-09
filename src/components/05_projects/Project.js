@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
@@ -8,17 +8,33 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 
 const Project = ({ image, title, description, github, stack, url, index }) => {
+  const [active, setActive] = useState(false);
   useEffect(() => {
     Aos.init({ duration: 500, disable: "mobile" });
   }, []);
 
+  function flipActivation() {
+    setActive((active) => !active);
+  }
+
   // checks whether an image has been set, if noc image is set, don't render --> lines 9-11
   return (
-    <article className="project" data-aos="fade-up" data-aos-once="true">
+    <div
+      className="project"
+      data-aos="fade-up"
+      data-aos-once="true"
+      onClick={flipActivation}
+      onKeyDown={flipActivation}
+      role="presentation"
+    >
       {image && (
         <GatsbyImage
           image={getImage(image.localFile)}
-          className="project-img shadow-box-dark"
+          className={
+            active
+              ? "project-img-active shadow-box-dark"
+              : "project-img shadow-box-dark"
+          }
           alt={title}
         />
       )}
@@ -42,7 +58,7 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
           </a>
         </div>
       </div>
-    </article>
+    </div>
   );
 };
 

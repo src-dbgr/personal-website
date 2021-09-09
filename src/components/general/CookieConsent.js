@@ -34,7 +34,10 @@ function useStickyState(defaultValue, key) {
 
 const query = graphql`
   {
-    allStrapiCookie(filter: { active: { eq: true } }) {
+    allStrapiCookie(
+      filter: { active: { eq: true } }
+      sort: { fields: identifier, order: DESC }
+    ) {
       nodes {
         identifier
         name
@@ -57,9 +60,6 @@ const query = graphql`
 
 const CookieConsent = () => {
   const data = useStaticQuery(query);
-  data.allStrapiCookie.nodes.sort(function (a, b) {
-    return b.identifier - a.identifier;
-  });
   const {
     allStrapiCookie: { nodes: cookies },
   } = data;
@@ -72,6 +72,7 @@ const CookieConsent = () => {
     false,
     "CONSENTRXCSQECJWXXK"
   );
+
   // cookie name definitions in file gatsby-config.js
   const cookieNames = useRef({
     gglanalytics: "sb-ggl-anlytcs-ecuosp",
@@ -81,6 +82,7 @@ const CookieConsent = () => {
     hotjar: "sb-hotjarCheckboxState",
   });
   const onMount = useRef(false);
+  const [intialInvisible, setInitialInvisible] = useState(true);
   const [toggleAllState, setToggleAllState] = useState(false);
   const [customize, setCustomize] = useState(false);
   const [gglAnalyticsCheckboxState, setGglAnalyticsCheckboxState] =
@@ -124,6 +126,7 @@ const CookieConsent = () => {
   useEffect(() => {
     let active = true;
     if (!onMount.current) {
+      setInitialInvisible(false);
       onMount.current = true;
     } else {
       if (active) {
@@ -256,111 +259,108 @@ const CookieConsent = () => {
 
   return (
     <>
-      {!bannerHidden && (
-        <>
-          <div
-            className={`${
-              customize ? "cookie-consent no-opacity" : "cookie-consent"
-            }`}
-          >
-            {customize ? (
-              <div className="customizeCookies">
-                <div className="cookie-allow-analytics-toggle">
-                  {cookies.map((cookie) => {
-                    const {
-                      identifier,
-                      name,
-                      purpose,
-                      selectable,
-                      title,
-                      type,
-                      url,
-                      vendor,
-                      description,
-                      expiration,
-                      enablealltoggle,
-                      category,
-                    } = cookie;
-                    let catogories = "";
-                    category.map((nested_category) => {
-                      return (catogories += nested_category.category + ", ");
-                    });
-                    catogories = catogories.substring(0, catogories.length - 2);
-                    return (
-                      <SwitchToggle
-                        key={identifier}
-                        toggleHandler={toggleHandler[identifier]}
-                        checkBoxState={checkBoxState[identifier]}
-                        vendor={vendor}
-                        category={catogories}
-                        title={title}
-                        selectable={selectable}
-                        description={description}
-                        type={type}
-                        expiration={expiration}
-                        name={name}
-                        purpose={purpose}
-                        url={url}
-                        enablealltoggle={enablealltoggle}
-                      />
-                    );
-                  })}
+      <div className={`${intialInvisible ? "empty" : "_"}`}>
+        {!bannerHidden && (
+          <>
+            <div
+              className={`${
+                customize ? "cookie-consent no-opacity" : "cookie-consent"
+              }`}
+            >
+              {customize ? (
+                <div className="customizeCookies">
+                  <div className="cookie-allow-analytics-toggle">
+                    {cookies.map((cookie) => {
+                      const {
+                        identifier,
+                        name,
+                        purpose,
+                        selectable,
+                        title,
+                        type,
+                        url,
+                        vendor,
+                        description,
+                        expiration,
+                        enablealltoggle,
+                        category,
+                      } = cookie;
+                      let catogories = "";
+                      category.map((nested_category) => {
+                        return (catogories += nested_category.category + ", ");
+                      });
+                      catogories = catogories.substring(
+                        0,
+                        catogories.length - 2
+                      );
+                      return (
+                        <SwitchToggle
+                          key={identifier}
+                          toggleHandler={toggleHandler[identifier]}
+                          checkBoxState={checkBoxState[identifier]}
+                          vendor={vendor}
+                          category={catogories}
+                          title={title}
+                          selectable={selectable}
+                          description={description}
+                          type={type}
+                          expiration={expiration}
+                          name={name}
+                          purpose={purpose}
+                          url={url}
+                          enablealltoggle={enablealltoggle}
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              ) : (
+                <div className="cookie-text">
+                  <span>
+                    This website uses cookies and other tracking technologies.
+                    By accepting all cookies you consent to this websistes use
+                    of all cookies. You can also activate only specific cookies
+                    or decline the entire usage of cookies. Declining stops all
+                    tracking cookies but will use window local storage to not
+                    show the banner again on revisit. Usage of cookies helps to
+                    analyze this website's traffic, and to understand where
+                    visitors are coming from. Your Identity remains always
+                    anonymous.&nbsp;
+                    <Link className="link" to="/privacy">
+                      Learn more
+                    </Link>
+                  </span>
+                </div>
+              )}
+              <div className="cookie-interactives">
+                <div
+                  className={`${
+                    customize ? "cookie-buttons row" : "cookie-buttons"
+                  }`}
+                >
+                  {customize ? (
+                    <button className={"btn"} onClick={EnableAnalytics}>
+                      ACCEPT CUSTOM
+                    </button>
+                  ) : (
+                    <button className={"btn"} onClick={EnableAllAnalytics}>
+                      ACCEPT ALL
+                    </button>
+                  )}
+                  {!customize && (
+                    <button className="btn" onClick={DeclineAnalytics}>
+                      Decline
+                    </button>
+                  )}
+                  <button className={"btn"} onClick={toggleCustomization}>
+                    {!customize ? "CUSTOMIZE" : "CLOSE"}
+                  </button>
                 </div>
               </div>
-            ) : (
-              <div className="cookie-text">
-                <span>
-                  This website uses cookies and other tracking technologies. By
-                  accepting all cookies you consent to this websistes use of all
-                  cookies. You can also activate only specific cookies or
-                  decline the entire usage of cookies. Declining stops all
-                  tracking cookies but will use window local storage to not show
-                  the banner again on revisit. Usage of cookies helps to analyze
-                  this website's traffic, and to understand where visitors are
-                  coming from. Your Identity remains always anonymous.
-                  <Link className="link" to="/privacy">
-                    Learn more
-                  </Link>
-                </span>
-              </div>
-            )}
-            <div className="cookie-interactives">
-              <div
-                className={`${
-                  customize ? "cookie-buttons row" : "cookie-buttons"
-                }`}
-              >
-                {customize ? (
-                  <button className={"btn"} onClick={EnableAnalytics}>
-                    ACCEPT CUSTOM
-                  </button>
-                ) : (
-                  <button className={"btn"} onClick={EnableAllAnalytics}>
-                    ACCEPT ALL
-                  </button>
-                )}
-                {!customize && (
-                  <button className="btn" onClick={DeclineAnalytics}>
-                    Decline
-                  </button>
-                )}
-                <button className={"btn"} onClick={toggleCustomization}>
-                  {!customize ? "CUSTOMIZE" : "CLOSE"}
-                </button>
-              </div>
             </div>
-          </div>
-        </>
-      )}
-      {/* <div className="cookie-interactives">
-        <div
-          className={`${customize ? "cookie-buttons row" : "cookie-buttons"}`}
-        >
-          <button className="btn" onClick={DeclineAnalytics}>
-            Decline
-          </button>
-        </div>
-      </div> */}
+          </>
+        )}
+      </div>
     </>
   );
 };

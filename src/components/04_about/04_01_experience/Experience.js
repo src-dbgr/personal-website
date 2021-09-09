@@ -67,7 +67,7 @@ const Experience = () => {
         </article>
       </div>
       <Link
-        to="/about"
+        to="/about#resume"
         className="btn center-btn"
         data-aos="fade"
         data-aos-once="true"

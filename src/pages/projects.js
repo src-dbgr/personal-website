@@ -9,7 +9,7 @@ const ProjectsPage = ({
   },
 }) => {
   return (
-    <Layout>
+    <Layout darkFooter={false}>
       <section className="projects-page">
         <Projects projects={projects} title="all projects" />
       </section>
@@ -31,10 +31,9 @@ export const query = graphql`
             childImageSharp {
               gatsbyImageData(
                 placeholder: DOMINANT_COLOR
-                formats: [AUTO, WEBP]
+                formats: [WEBP, PNG]
                 blurredOptions: { width: 100 }
                 transformOptions: { cropFocus: ENTROPY }
-                avifOptions: { quality: 85 }
                 quality: 90
                 height: 480
                 width: 900

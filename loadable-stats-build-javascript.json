@@ -1,28 +1,55 @@
 {
-  "hash": "bfed0755d661c08e9f00",
+  "hash": "7d9cf00a54aa2c116589",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.ac86bf578abdf1208635.hot-update.js"
+      "polyfill.422af2f32346cf6f5278.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.ac86bf578abdf1208635.hot-update.js"
+      "commons.422af2f32346cf6f5278.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js.js"
+      "component---src-pages-404-js.js",
+      "component---src-pages-404-js.422af2f32346cf6f5278.hot-update.js"
+    ],
+    "component---src-pages-about-js": [
+      "component---src-pages-about-js.js",
+      "component---src-pages-about-js.422af2f32346cf6f5278.hot-update.js"
+    ],
+    "component---src-pages-blog-js": [
+      "component---src-pages-blog-js.js",
+      "component---src-pages-blog-js.422af2f32346cf6f5278.hot-update.js"
+    ],
+    "component---src-pages-contact-js": [
+      "component---src-pages-contact-js.js",
+      "component---src-pages-contact-js.422af2f32346cf6f5278.hot-update.js"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js.js"
+      "component---src-pages-index-js.js",
+      "component---src-pages-index-js.422af2f32346cf6f5278.hot-update.js"
+    ],
+    "component---src-pages-legal-js": [
+      "component---src-pages-legal-js.js",
+      "component---src-pages-legal-js.422af2f32346cf6f5278.hot-update.js"
+    ],
+    "component---src-pages-privacy-js": [
+      "component---src-pages-privacy-js.js",
+      "component---src-pages-privacy-js.422af2f32346cf6f5278.hot-update.js"
     ],
     "component---src-pages-projects-js": [
-      "component---src-pages-projects-js.js"
+      "component---src-pages-projects-js.js",
+      "component---src-pages-projects-js.422af2f32346cf6f5278.hot-update.js"
+    ],
+    "component---src-templates-blog-template-js": [
+      "component---src-templates-blog-template-js.js",
+      "component---src-templates-blog-template-js.422af2f32346cf6f5278.hot-update.js"
     ],
     "framework": [
       "framework.js"
@@ -32,8 +59,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 33,
-      "size": 29797203
+      "filteredChildren": 48,
+      "size": 83951502
     }
   ],
   "namedChunkGroups": {
@@ -47,7 +74,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.ac86bf578abdf1208635.hot-update.js"
+          "name": "polyfill.422af2f32346cf6f5278.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -74,7 +101,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.ac86bf578abdf1208635.hot-update.js"
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -104,17 +131,136 @@
     "component---src-pages-404-js": {
       "name": "component---src-pages-404-js",
       "chunks": [
+        "framework",
+        "commons",
         "component---src-pages-404-js"
       ],
       "assets": [
         {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
           "name": "component---src-pages-404-js.js"
+        },
+        {
+          "name": "component---src-pages-404-js.422af2f32346cf6f5278.hot-update.js"
         }
       ],
       "filteredAssets": 0,
       "assetsSize": null,
-      "filteredAuxiliaryAssets": 0,
-      "auxiliaryAssetsSize": 0,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-about-js": {
+      "name": "component---src-pages-about-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-about-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-about-js.js"
+        },
+        {
+          "name": "component---src-pages-about-js.422af2f32346cf6f5278.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-blog-js": {
+      "name": "component---src-pages-blog-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-blog-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-blog-js.js"
+        },
+        {
+          "name": "component---src-pages-blog-js.422af2f32346cf6f5278.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-contact-js": {
+      "name": "component---src-pages-contact-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-contact-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-contact-js.js"
+        },
+        {
+          "name": "component---src-pages-contact-js.422af2f32346cf6f5278.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
     },
@@ -136,15 +282,86 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.ac86bf578abdf1208635.hot-update.js"
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
+        },
+        {
+          "name": "component---src-pages-index-js.422af2f32346cf6f5278.hot-update.js"
         }
       ],
       "filteredAssets": 0,
       "assetsSize": null,
       "filteredAuxiliaryAssets": 17,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-legal-js": {
+      "name": "component---src-pages-legal-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-legal-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-legal-js.js"
+        },
+        {
+          "name": "component---src-pages-legal-js.422af2f32346cf6f5278.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-pages-privacy-js": {
+      "name": "component---src-pages-privacy-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-pages-privacy-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
+          "name": "component---src-pages-privacy-js.js"
+        },
+        {
+          "name": "component---src-pages-privacy-js.422af2f32346cf6f5278.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
       "auxiliaryAssetsSize": null,
       "children": {},
       "childAssets": {}
@@ -167,10 +384,47 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.ac86bf578abdf1208635.hot-update.js"
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
+        },
+        {
+          "name": "component---src-pages-projects-js.422af2f32346cf6f5278.hot-update.js"
+        }
+      ],
+      "filteredAssets": 0,
+      "assetsSize": null,
+      "filteredAuxiliaryAssets": 12,
+      "auxiliaryAssetsSize": null,
+      "children": {},
+      "childAssets": {}
+    },
+    "component---src-templates-blog-template-js": {
+      "name": "component---src-templates-blog-template-js",
+      "chunks": [
+        "framework",
+        "commons",
+        "component---src-templates-blog-template-js"
+      ],
+      "assets": [
+        {
+          "name": "framework.js"
+        },
+        {
+          "name": "commons.css"
+        },
+        {
+          "name": "commons.js"
+        },
+        {
+          "name": "commons.422af2f32346cf6f5278.hot-update.js"
+        },
+        {
+          "name": "component---src-templates-blog-template-js.js"
+        },
+        {
+          "name": "component---src-templates-blog-template-js.422af2f32346cf6f5278.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -187,7 +441,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.ac86bf578abdf1208635.hot-update.js"
+        "polyfill.422af2f32346cf6f5278.hot-update.js"
       ]
     },
     {
@@ -195,7 +449,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.ac86bf578abdf1208635.hot-update.js"
+        "commons.422af2f32346cf6f5278.hot-update.js"
       ]
     },
     {
@@ -231,19 +485,64 @@
     {
       "id": "component---src-pages-404-js",
       "files": [
-        "component---src-pages-404-js.js"
+        "component---src-pages-404-js.js",
+        "component---src-pages-404-js.422af2f32346cf6f5278.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-about-js",
+      "files": [
+        "component---src-pages-about-js.js",
+        "component---src-pages-about-js.422af2f32346cf6f5278.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-blog-js",
+      "files": [
+        "component---src-pages-blog-js.js",
+        "component---src-pages-blog-js.422af2f32346cf6f5278.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-contact-js",
+      "files": [
+        "component---src-pages-contact-js.js",
+        "component---src-pages-contact-js.422af2f32346cf6f5278.hot-update.js"
       ]
     },
     {
       "id": "component---src-pages-index-js",
       "files": [
-        "component---src-pages-index-js.js"
+        "component---src-pages-index-js.js",
+        "component---src-pages-index-js.422af2f32346cf6f5278.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-legal-js",
+      "files": [
+        "component---src-pages-legal-js.js",
+        "component---src-pages-legal-js.422af2f32346cf6f5278.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-pages-privacy-js",
+      "files": [
+        "component---src-pages-privacy-js.js",
+        "component---src-pages-privacy-js.422af2f32346cf6f5278.hot-update.js"
       ]
     },
     {
       "id": "component---src-pages-projects-js",
       "files": [
-        "component---src-pages-projects-js.js"
+        "component---src-pages-projects-js.js",
+        "component---src-pages-projects-js.422af2f32346cf6f5278.hot-update.js"
+      ]
+    },
+    {
+      "id": "component---src-templates-blog-template-js",
+      "files": [
+        "component---src-templates-blog-template-js.js",
+        "component---src-templates-blog-template-js.422af2f32346cf6f5278.hot-update.js"
       ]
     },
     {

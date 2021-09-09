@@ -89,3 +89,11 @@ HTML.propTypes = {
 ## Page transition
 
 - adopted implementation recommendation from [Gatsby Transition with Gatsby + Framer Motion](https://janessagarrow.com/blog/gatsby-framer-motion-page-transitions/)
+
+## REACT Markdown
+- Added [REACT Markdown](https://github.com/remarkjs/react-markdown) for dynamic page rendering.
+- Markdown [Documentation Reference](https://commonmark.org/help/)
+- Markdown [Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)
+- Markdown [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
+- Markdown [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
+- Markdown [Online Tool Collection](https://www.markdownguide.org/tools/)
