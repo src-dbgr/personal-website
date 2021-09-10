@@ -31,6 +31,7 @@ module.exports = {
           `cookie`,
           `station`,
           `stationctgry`,
+          `techstack`,
         ],
         singleTypes: [`about`],
       },

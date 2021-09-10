@@ -5,8 +5,31 @@ import {
   HiOutlineChevronDoubleUp,
 } from "react-icons/hi";
 import { FaJava } from "react-icons/fa";
+import { graphql, useStaticQuery } from "gatsby";
+import ProgrammingLangs from "./04_03_01_categories/ProgrammingLangs";
+import LibsFrameworks from "./04_03_01_categories/LibsFrameworks";
+import ToolsPlatforms from "./04_03_01_categories/ToolsPlatforms";
+import DataDesign from "./04_03_01_categories/DataDesign";
+
+const query = graphql`
+  {
+    allStrapiTechstack(
+      filter: { active: { eq: true } }
+      sort: { order: ASC, fields: categorylabel }
+    ) {
+      distinct(field: categorylabel)
+    }
+  }
+`;
 
 const Technologies = () => {
+  const data = useStaticQuery(query);
+  const {
+    allStrapiTechstack: { distinct: categories },
+  } = data;
+
+  console.log(categories);
+
   return (
     <div className="section section-center tech-table-comp">
       <div className="timeline-legend-table-wrapper tech-table-open">
@@ -16,79 +39,10 @@ const Technologies = () => {
             <h4>Technologies</h4>
           </div>
         </div>
-        <table className="timeline-legend-table tech-table">
-          <caption>Programming Languages</caption>
-          <tbody className="tablebody">
-            <tr>
-              <th>Technology</th>
-              <th></th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>
-                {/* <FaJava /> */}
-                <img src="https://upload.wikimedia.org/wikiversity/de/b/b8/Java_cup.svg"/>
-              </td>
-              <td>Java</td>
-              <td>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
-                quidem ipsum, optio iure sed quis esse! Aliquam esse dolores
-                numquam! Numquam natus impedit obcaecati facere cum nisi
-                voluptas voluptatem labore.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table className="timeline-legend-table tech-table">
-          <caption>Libraries / Frameworks</caption>
-          <tbody className="tablebody">
-            <tr>
-              <th>Technology</th>
-              <th></th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>Java</td>
-              <td>symbol</td>
-              <td>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
-                quidem ipsum, optio iure sed quis esse! Aliquam esse dolores
-                numquam! Numquam natus impedit obcaecati facere cum nisi
-                voluptas voluptatem labore.
-              </td>
-            </tr>
-            <tr>
-              <td>Java</td>
-              <td>symbol</td>
-              <td>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
-                quidem ipsum, optio iure sed quis esse! Aliquam esse dolores
-                numquam! Numquam natus impedit obcaecati facere cum nisi
-                voluptas voluptatem labore.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <table className="timeline-legend-table tech-table">
-          <caption>Tools / Platforms</caption>
-          <tbody className="tablebody">
-            <tr>
-              <th>Technology</th>
-              <th></th>
-              <th>Description</th>
-            </tr>
-            <tr>
-              <td>Java</td>
-              <td>symbol</td>
-              <td>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum
-                quidem ipsum, optio iure sed quis esse! Aliquam esse dolores
-                numquam! Numquam natus impedit obcaecati facere cum nisi
-                voluptas voluptatem labore.
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <ProgrammingLangs />
+        <LibsFrameworks />
+        <ToolsPlatforms />
+        <DataDesign />
       </div>
     </div>
   );

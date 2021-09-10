@@ -2442,12 +2442,16 @@ caption {
   padding-bottom: 1rem;
 }
 
+.tech-table td:first-child {
+  /* background: var(--clr-dark-shadow); */
+}
+
 .tech-table td:first-child img {
-  font-size: 3rem;
+  font-size: 2rem;
   min-width: 2rem;
   min-height: 2rem;
-  max-width: 3rem;
-  max-height: 3rem;
+  max-width: 2rem;
+  max-height: 2rem;
 }
 
 .tech-table-open {
