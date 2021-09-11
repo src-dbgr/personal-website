@@ -29,8 +29,6 @@ const ProgrammingLangs = () => {
   const {
     allStrapiTechstack: { nodes: proglangs },
   } = data;
-
-  console.log(proglangs);
   return <TechTable caption="Programming Languages" technologies={proglangs} />;
 };
 

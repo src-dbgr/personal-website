@@ -102,7 +102,11 @@ const Stations = ({ stations, categories }) => {
   })();
 
   return (
-    <div className="section section-center stations">
+    <div
+      className="section section-center stations"
+      data-aos="fade"
+      data-aos-once="true"
+    >
       <div
         className={
           legendCollapsed

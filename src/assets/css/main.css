@@ -1367,6 +1367,10 @@ Hero
     margin: 0;
   }
 
+  .section-title h2 {
+    margin-bottom: 0.5rem;
+  }
+
   .hero-description {
     padding-top: 0;
     margin-bottom: 1rem;
@@ -2063,7 +2067,8 @@ Projects Page
 .blog-page,
 .legal-page,
 .contact-page,
-.error-section {
+.error-section,
+.blog-template {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
   min-height: 100vh;
@@ -2435,28 +2440,83 @@ caption {
 }
 
 .tech-table-comp {
-  padding-bottom: 0;
+  margin-top: var(--navbar-height);
+  padding: 10px;
+  padding-bottom: 5px;
+  max-width: 905px;
+  border: 3px dashed var(--clr-passive);
+}
+
+.tech-button-wrapper {
+  margin-bottom: 5px;
 }
 
 .tech-table {
+  margin-top: -10px;
   padding-bottom: 1rem;
+  font-size: 0.9rem !important;
+  /* min-height: 350px;
+  height: 500px;
+  max-height: 350px; */
+  opacity: 1;
+  overflow: scroll;
+  transition: var(--transition);
 }
 
-.tech-table td:first-child {
+.tech-table-collapsed {
+  margin-top: -5px;
+  display: block;
+  font-size: 0.9rem !important;
+  opacity: 0;
+  overflow: hidden;
+  height: 0px;
+  visibility: collapse;
+  transition: var(--transition);
+}
+
+.tech-table td:first-child,
+.tech-table-collapsed td:first-child {
+  width: 90px !important;
+  height: 60px;
+  padding: 10px;
+  text-align: center;
+  flex-direction: column;
+  vertical-align: middle;
   /* background: var(--clr-dark-shadow); */
 }
 
-.tech-table td:first-child img {
-  font-size: 2rem;
-  min-width: 2rem;
-  min-height: 2rem;
-  max-width: 2rem;
-  max-height: 2rem;
+.tech-table td:nth-child(2),
+.tech-table-collapsed td:nth-child(2) {
+  max-width: 80px;
+  padding: 0 5px;
+  vertical-align: middle;
+}
+
+.tech-table td:last-child,
+.tech-table-collapsed td:last-child {
+  text-align: justify;
+  padding: 5px var(--border-thickness);
+}
+
+.tech-table td:first-child img,
+.tech-table-collapsed td:first-child img {
+  max-width: 100%;
+  height: 100%;
 }
 
 .tech-table-open {
   height: 100%;
   transition: var(--transition-fast);
+  overflow: hidden;
+}
+
+.tech-caption {
+  margin-bottom: 5px;
+}
+
+.tech-caption h4 {
+  color: var(--clr-background-major) !important;
+  background: var(--clr-passive) !important;
 }
 
 .timeline-legend-table,
@@ -2466,7 +2526,7 @@ caption {
 }
 
 .timeline-flex-header div {
-  width: 190px;
+  width: 100%;
   display: flex;
   cursor: pointer;
 }
@@ -2791,6 +2851,11 @@ ul li:nth-child(even) .timeline-node {
   .timeline-legend-table td:first-of-type {
     text-align: center;
   }
+
+  .tech-table td:last-child,
+  .tech-table-collapsed td:last-child {
+    padding: 5px 5px;
+  }
 }
 
 @media screen and (max-width: 270px) {
@@ -2802,11 +2867,61 @@ ul li:nth-child(even) .timeline-node {
 
 /*
 ===============
+Skill Level Tech Table
+===============
+*/
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centering y-axis */
+  align-items: center; /* Centering x-axis */
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.skills-wrapper:hover span {
+  transform: scale(1.2);
+}
+.skills-wrapper svg {
+  height: 45px;
+  width: 45px;
+  fill: transparent;
+  transform: rotate(-90deg);
+}
+.skills-wrapper svg circle {
+  stroke-width: 3px;
+  stroke: var(--clr-passive);
+}
+.skills-wrapper svg .cbar {
+  stroke-width: 8px;
+  stroke: var(--clr-dark);
+  stroke-linecap: butt;
+}
+.skills-wrapper small {
+  position: absolute;
+  font-family: var(--ff-secondary);
+  transition-duration: 0.3s;
+}
+.skills-wrapper:hover small {
+  transform: scale(1.1);
+  color: var(--clr-green-minor);
+}
+
+/*
+===============
 Contact Page
 ===============
 */
 .contact-page,
-.error-section {
+.error-section,
+.blog-template {
   display: flex;
   flex-direction: column;
   place-items: center;

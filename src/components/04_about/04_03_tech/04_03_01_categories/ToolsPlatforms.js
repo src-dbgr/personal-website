@@ -29,8 +29,6 @@ const ToolsPlatforms = () => {
   const {
     allStrapiTechstack: { nodes: toolsplats },
   } = data;
-
-  console.log(toolsplats);
   return (
     <TechTable
       caption="

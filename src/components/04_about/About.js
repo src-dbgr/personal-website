@@ -33,12 +33,7 @@ const About = () => {
           <h4>Who am I?</h4>
           <div className="underline"></div>
           <p>
-            My name is <span>S</span>
-            <span>a</span>
-            <span>m</span>
-            <span>u</span>
-            <span>e</span>
-            <span>l</span> and I enjoy creating things in the digital space. My
+            I am a developer who enjoys creating things in the digital space. My
             deep interest in information technology started back in 2011 when I
             decided to study Business Informatics at the University of Mannheim.
             This kicked-off my journey exploring the binary landscape.

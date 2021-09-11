@@ -26,8 +26,6 @@ const DataDesign = () => {
   const {
     allStrapiTechstack: { nodes: datades },
   } = data;
-
-  console.log(datades);
   return <TechTable caption="Data / Design" technologies={datades} />;
 };
 

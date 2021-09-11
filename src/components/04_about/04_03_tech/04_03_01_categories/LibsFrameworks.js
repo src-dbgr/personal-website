@@ -29,8 +29,6 @@ const LibsFrameworks = () => {
   const {
     allStrapiTechstack: { nodes: libsfames },
   } = data;
-
-  console.log(libsfames);
   return (
     <TechTable caption="Libraries / Frameworks" technologies={libsfames} />
   );
