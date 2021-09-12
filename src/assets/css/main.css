@@ -67,7 +67,7 @@
   --clr-dark-shadow: rgb(128, 128, 123);
   --clr-dark-four-o-four: rgb(52, 69, 73);
   --clr-lighthouse: rgb(150, 149, 141);
-  --clr-sunmoon-topbar: rgb(86, 95, 97);
+  --clr-sunmoon-topbar: rgb(48, 48, 48);
   --clr-about-img-background: linear-gradient(
     rgb(150, 149, 141),
     rgb(181, 178, 166)
@@ -512,9 +512,10 @@ Cookie Consent
   }
 
   .cookie-buttons .btn {
-    font-size: 9pt;
+    font-size: 8pt;
     max-width: 31.5vw;
     width: calc(95vw / 3);
+    padding: 3px;
   }
 
   .cookie-text {
@@ -534,6 +535,11 @@ Cookie Consent
   .cookie-consent button {
     max-width: 100%;
   }
+
+  .switch-content-wrapper button, .cookie-buttons button {
+    font-size: 8pt;
+  }
+
 }
 
 /*
@@ -1236,6 +1242,10 @@ Sidebar
 
 .topbar-links svg {
   cursor: pointer;
+}
+
+#sun path {
+  fill: var(--clr-sunmoon-topbar);
 }
 
 aside #sunmoon path {
@@ -2229,7 +2239,7 @@ Blog Template
 ===============
 */
 .blog-template {
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 
 .blog-template h1,
@@ -2281,13 +2291,14 @@ Blog Template
 }
 
 .blog-template img {
+  max-width: 90vw;
   width: 30rem;
-  height: 30rem;
+  max-height: 30rem;
   margin: 2rem 0;
   object-fit: cover;
-  object-position: 100% 70%;
   border-radius: 50%;
-  border: solid var(--border-thickness) var(--clr-background-minor);
+  object-position: 100% 70%;
+  border: solid calc(var(--border-thickness) / 2) var(--clr-background-minor);
   opacity: 0.6;
   transition: var(--transition);
 }
@@ -2319,6 +2330,14 @@ Blog Template
 .social-link:hover .social-icon {
   color: var(--clr-green-major);
   transition: var(--transition);
+}
+
+@media screen and (max-width: 676px) {
+  .blog-template img {
+    max-width: 90vw;
+    width: 18rem;
+    max-height: 18rem;
+  }
 }
 
 /*
@@ -2789,6 +2808,11 @@ ul li:nth-child(even) .timeline-node {
   .timeline ul li:nth-child(even) div {
     left: calc(((100vw / 2) - 50px) * -1);
   }
+  
+  .timeline p {
+    padding: calc(var(--border-thickness)/2);
+  }
+
 }
 
 @media screen and (max-width: 676px) {
@@ -2821,6 +2845,7 @@ ul li:nth-child(even) .timeline-node {
   .timeline ul li:nth-child(even) div::before {
     left: -35px;
   }
+  
 }
 
 @media screen and (max-width: 400px) {
@@ -2854,8 +2879,22 @@ ul li:nth-child(even) .timeline-node {
 
   .tech-table td:last-child,
   .tech-table-collapsed td:last-child {
-    padding: 5px 5px;
+    padding: 4px 7px;
   }
+
+  .tech-table td:first-child,
+  .tech-table-collapsed td:first-child {
+    max-width: 40px !important;
+    /* padding: 7px; */
+    /* font-size: 8pt; */
+    text-align: center;
+    flex-direction: column;
+    vertical-align: middle;
+    /* background: yellow; */
+  }
+
+
+
 }
 
 @media screen and (max-width: 270px) {
@@ -2936,7 +2975,7 @@ Contact Page
   width: 90vw;
   max-width: 35rem;
   margin-top: -1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .contact-form h3 {
@@ -3039,18 +3078,31 @@ Privacy Policy
 
 .privacy-policy p,
 .privacy-policy div,
-.impressum-name {
+.impressum-name,
+.legal-page p {
   color: var(--clr-text-quiet);
 }
 
 .privacy-policy h1,
-h2,
-h3,
-h4 {
+.privacy-policy h2,
+.privacy-policy h3,
+.privacy-policy h4 {
   color: var(--clr-dark);
 }
 
 .privacy-policy a {
   color: var(--clr-green-major);
   text-decoration: underline;
+}
+
+.privacy_item h1, .legal-page .section-center h1{
+  font-size: 20pt;
+}
+
+.privacy_item h2, .privacy_item h3, .privacy_policy h2, .privacy_policy h3, .legal-page .section-center h2, .legal-page .section-center h3{
+  font-size: 14pt;
+}
+
+.privacy_item p, .privacy-policy p, .legal-page p, .privacy_item li, .privacy-policy li, .impressum-name{
+  font-size: 11pt;
 }

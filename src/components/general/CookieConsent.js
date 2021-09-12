@@ -147,11 +147,11 @@ const CookieConsent = () => {
   };
 
   const EnableAllAnalytics = () => {
-    setCookie(cookieNames.current.gglanalytics, true, 365);
-    setCookie(cookieNames.current.ggltagmgr, true, 365);
-    setCookie(cookieNames.current.fbpixel, true, 365);
-    setCookie(cookieNames.current.tiktokpixel, true, 365);
-    setCookie(cookieNames.current.hotjar, true, 365);
+    cookies.forEach((cookie) => {
+      if (cookie.name !== "none") {
+        setCookie(cookie.name, true, 365);
+      }
+    });
     setBannerHidden(true);
   };
 
@@ -178,7 +178,8 @@ const CookieConsent = () => {
     let date = new Date();
     date.setTime(date.getTime() + expDays * 24 * 60 * 60 * 1000);
     const expires = "expires=" + date.toUTCString();
-    document.cookie = cName + "=" + cValue + "; " + expires + "; path=/";
+    document.cookie =
+      cName + "=" + cValue + ";" + expires + ";path=/;secure;samesite=none";
   }
 
   function isCookieInPlace(cName) {
@@ -318,7 +319,7 @@ const CookieConsent = () => {
                 <div className="cookie-text">
                   <span>
                     This website uses cookies and other tracking technologies.
-                    By accepting all cookies you consent to this websistes use
+                    By accepting all cookies you consent to this websiste's use
                     of all cookies. You can also activate only specific cookies
                     or decline the entire usage of cookies. Declining stops all
                     tracking cookies but will use window local storage to not

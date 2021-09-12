@@ -67,10 +67,10 @@ const legal = () => {
               <div className="impressum-name">le</div>
               <div className="impressum-name">hm</div>
               <div className="impressum-name">@</div>
-              <div className="impressum-name">g</div>
-              <div className="impressum-name">mai</div>
-              <div className="impressum-name">l.c</div>
-              <div className="impressum-name">om</div>
+              <div className="impressum-name">sb</div>
+              <div className="impressum-name">lm</div>
+              <div className="impressum-name">.m</div>
+              <div className="impressum-name">e</div>
             </div>
           </div>
           <p>
