@@ -7,16 +7,12 @@ import Blog from "./Blog";
 
 export const BlogsSection = ({ blogs, title, showLink }) => {
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <section id="sctn_blog" className="section">
       <Title title={title} />
-      <div
-        className="section-center blogs-center"
-        data-aos="fade"
-        data-aos-once="true"
-      >
+      <div className="section-center blogs-center">
         {blogs.map((blog) => {
           return <Blog key={blog.id} {...blog} />;
         })}

@@ -7,7 +7,7 @@ import Project from "./Project";
 
 const Projects = ({ projects, title, showLink }) => {
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    Aos.init({ duration: 1000 });
   }, []);
 
   return (

@@ -1,10 +1,12 @@
 import React from "react";
 import Title from "../components/general/Title";
 import Layout from "../components/general/Layout";
+import Seo from "../components/general/Seo";
 
 const legal = () => {
   return (
     <Layout darkFooter={true}>
+      <Seo title="Legal Notice | Impressum" />
       <section className="legal-page">
         <Title title="Legal Notice / Impressum" />
         <div className="section-center">

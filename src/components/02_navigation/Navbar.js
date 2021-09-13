@@ -107,7 +107,7 @@ const Navbar = (props) => {
   useEffect(() => {
     let alive = true;
     if (navanimation) {
-      Aos.init({ duration: 1000, disable: "mobile" });
+      Aos.init({ duration: 1000 });
       setTimeout(() => {
         if (alive) {
           dispatch({ type: "NAV_ANIMATION" });
@@ -116,7 +116,7 @@ const Navbar = (props) => {
     }
     return () => {
       // Disable Animation afer initial execution
-      Aos.init({ duration: 0, disable: "mobile" });
+      Aos.init({ duration: 0 });
       alive = false;
     };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps

@@ -8,6 +8,8 @@ import { IoTriangleSharp } from "react-icons/io5";
 import { MdFileDownload } from "react-icons/md";
 import Technologies from "../components/04_about/04_03_tech/Technologies";
 import Stations from "../components/04_about/04_02_stations/Stations";
+import Seo from "../components/general/Seo";
+
 const AboutPage = ({
   data: {
     allStrapiAbout: { nodes: about },
@@ -25,6 +27,7 @@ const AboutPage = ({
   const { title, stack, image, info } = about[0];
   return (
     <Layout darkFooter={false}>
+      <Seo title="About" />
       <section className="about-page">
         <Title title={title} />
         <div className="section section-center about-component-center">

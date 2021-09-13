@@ -212,13 +212,14 @@ const CookieConsent = () => {
 
   function gaOptout() {
     try {
-      let gaProperty = "XXXXXX";
+      let gaProperty = "G-ET703HRR3G";
       let disableStr = "ga-disable-" + gaProperty;
       if (document.cookie.indexOf(disableStr + "=true") > -1) {
         window[disableStr] = true;
       }
       document.cookie =
-        disableStr + "=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/";
+        disableStr +
+        "=true;expires=Thu, 31 Dec 2099 23:59:59 UTC;path=/;secure;samesite=none";
       window[disableStr] = true;
     } catch (err) {
       console.log("issue setting opt out cookie for google analytics");

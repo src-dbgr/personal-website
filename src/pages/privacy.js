@@ -1,10 +1,12 @@
 import React from "react";
 import Title from "../components/general/Title";
 import Layout from "../components/general/Layout";
+import Seo from "../components/general/Seo";
 
 const privacy = () => {
   return (
     <Layout darkFooter={true}>
+      <Seo title="Privacy Policy | Datenschutz" />
       <section className="legal-page">
         <Title title="Privacy Policy / Datenschutzerklärung" />
         <div className="section-center privacy-policy">

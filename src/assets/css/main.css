@@ -1046,7 +1046,9 @@ NAVBAR
 #nav_main_logo {
   height: 100%;
   width: calc(var(--navbar-height) * 0.7);
+  opacity: 0;
   visibility: hidden;
+  transition: none;
 }
 
 .toggle-btn {
@@ -1170,6 +1172,7 @@ NAVBAR
   }
 
   #nav_main_logo {
+    opacity: 1;
     visibility: visible;
   }
 
@@ -1182,6 +1185,7 @@ NAVBAR
 
 @media screen and (min-width: 992px) {
   #nav_main_logo {
+    opacity: 1;
     visibility: visible;
   }
 }

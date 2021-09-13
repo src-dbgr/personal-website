@@ -5,8 +5,8 @@ import About from "../components/04_about/About";
 import Experience from "../components/04_about/04_01_experience/Experience";
 import Projects from "../components/05_projects/Projects";
 import BlogsSection from "../components/06_blog/BlogSection";
+import Seo from "../components/general/Seo";
 import { graphql } from "gatsby";
-// import Sound from "../components/Sound";
 const index = ({ data }) => {
   const {
     allStrapiProject: { nodes: projects },
@@ -15,12 +15,12 @@ const index = ({ data }) => {
 
   return (
     <Layout darkFooter={true}>
+      <Seo title="Home" />
       <Hero />
       <About />
       <Experience />
       <Projects projects={projects} title="Featured Projects" showLink />
       <BlogsSection blogs={blogs} title="Latest Blog Articles" />
-      {/* <Sound src="https://www.free-stock-music.com/music/punch-deck-brahe.mp3" /> */}
     </Layout>
   );
 };

@@ -25,7 +25,7 @@ const query = graphql`
 
 const Experience = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    Aos.init({ duration: 1000 });
   }, []);
 
   const data = useStaticQuery(query);

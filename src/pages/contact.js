@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/general/Layout";
 import Title from "../components/general/Title";
+import Seo from "../components/general/Seo";
 
 const Contact = () => {
   const [isMailValid, setMailValid] = useState(true);
@@ -35,7 +36,7 @@ const Contact = () => {
     if (nameValidity && messageValidity && emailValidity) {
       let form = document.getElementById("mailForm");
       form.method = "post";
-      form.action = "https://formspree.io/f/mknkzwqn"
+      form.action = "https://formspree.io/f/mknkzwqn";
       form.submit();
     }
   }
@@ -101,6 +102,10 @@ const Contact = () => {
 
   return (
     <Layout darkFooter={true}>
+      <Seo
+        title="Contact"
+        description="Samuel IT - Get in touch by sending a message."
+      />
       <section className="contact-page">
         <Title title="Contact" />
         <article className="contact-form shadow-box-dark">

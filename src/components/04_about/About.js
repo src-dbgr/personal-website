@@ -8,7 +8,7 @@ import "aos/dist/aos.css";
 
 const About = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    Aos.init({ duration: 1000 });
   }, []);
   return (
     <section id="about" className="section about-component-section">

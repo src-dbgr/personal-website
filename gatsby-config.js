@@ -2,7 +2,13 @@ module.exports = {
   // In your gatsby-config.js
   siteMetadata: {
     // If you didn't use the resolveSiteUrl option this needs to be set
-    siteUrl: `https://www.example.com`,
+    title: "Samuel IT",
+    description:
+      "Samuel is a software engineer who specializes in solving real world IT problems.",
+    siteUrl: "https://www.sblm.me",
+    author: "@sblm",
+    image: "/og.png",
+    twitterUsername: "@smlblm",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -44,6 +50,7 @@ module.exports = {
           cookieName: "sb-ggl-anlytcs-ecuosp", // default
           anonymize: true, // default
           allowAdFeatures: false, // default
+          cookieFlags: "samesite=none;secure",
         },
         // googleTagManager: {
         //   trackingId: "GTM-57K3LVT", // leave empty if you want to disable the tracker
@@ -76,9 +83,9 @@ module.exports = {
         background_color: `#b5aba6`,
         theme_color: `#3d8b68`,
         display: `standalone`,
-        icon: `src/assets/images/icons/fav.png`
+        icon: `src/assets/images/icons/fav.png`,
       },
     },
-    // `gatsby-plugin-offline`, // this must be placed AFTER gatsby-plugin-manifest!!!  
+    // `gatsby-plugin-offline`, // this must be placed AFTER gatsby-plugin-manifest!!!
   ],
 };
