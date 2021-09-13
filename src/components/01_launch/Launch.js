@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import anime from "animejs";
+import Seo from "../general/Seo";
 
 const Launch = (props) => {
   useEffect(() => {
@@ -380,6 +381,7 @@ const Launch = (props) => {
 
   return (
     <>
+      <Seo title="Launch" />
       <div className="imagewrapper">
         <svg
           id="logo"

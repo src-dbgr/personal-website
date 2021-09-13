@@ -67,7 +67,7 @@
   --clr-dark-shadow: rgb(128, 128, 123);
   --clr-dark-four-o-four: rgb(52, 69, 73);
   --clr-lighthouse: rgb(150, 149, 141);
-  --clr-sunmoon-topbar: rgb(86, 95, 97);
+  --clr-sunmoon-topbar: rgb(231, 230, 213);
   --clr-about-img-background: linear-gradient(
     rgb(150, 149, 141),
     rgb(181, 178, 166)
@@ -512,9 +512,10 @@ Cookie Consent
   }
 
   .cookie-buttons .btn {
-    font-size: 9pt;
+    font-size: 8pt;
     max-width: 31.5vw;
     width: calc(95vw / 3);
+    padding: 3px;
   }
 
   .cookie-text {
@@ -533,6 +534,11 @@ Cookie Consent
 
   .cookie-consent button {
     max-width: 100%;
+  }
+
+  .switch-content-wrapper button,
+  .cookie-buttons button {
+    font-size: 8pt;
   }
 }
 
@@ -1040,7 +1046,9 @@ NAVBAR
 #nav_main_logo {
   height: 100%;
   width: calc(var(--navbar-height) * 0.7);
+  opacity: 0;
   visibility: hidden;
+  transition: none;
 }
 
 .toggle-btn {
@@ -1164,6 +1172,7 @@ NAVBAR
   }
 
   #nav_main_logo {
+    opacity: 1;
     visibility: visible;
   }
 
@@ -1176,6 +1185,7 @@ NAVBAR
 
 @media screen and (min-width: 992px) {
   #nav_main_logo {
+    opacity: 1;
     visibility: visible;
   }
 }
@@ -1236,6 +1246,10 @@ Sidebar
 
 .topbar-links svg {
   cursor: pointer;
+}
+
+#sun path {
+  fill: var(--clr-sunmoon-topbar);
 }
 
 aside #sunmoon path {
@@ -1365,6 +1379,10 @@ Hero
   h2,
   h3 {
     margin: 0;
+  }
+
+  .section-title h2 {
+    margin-bottom: 0.5rem;
   }
 
   .hero-description {
@@ -2063,7 +2081,8 @@ Projects Page
 .blog-page,
 .legal-page,
 .contact-page,
-.error-section {
+.error-section,
+.blog-template {
   margin-top: var(--neg-page-top-space);
   padding-top: calc(var(--navbar-height) * 2);
   min-height: 100vh;
@@ -2224,7 +2243,7 @@ Blog Template
 ===============
 */
 .blog-template {
-  padding: 5rem 0;
+  padding-bottom: 5rem;
 }
 
 .blog-template h1,
@@ -2276,13 +2295,14 @@ Blog Template
 }
 
 .blog-template img {
+  max-width: 90vw;
   width: 30rem;
-  height: 30rem;
+  max-height: 30rem;
   margin: 2rem 0;
   object-fit: cover;
-  object-position: 100% 70%;
   border-radius: 50%;
-  border: solid var(--border-thickness) var(--clr-background-minor);
+  object-position: 100% 70%;
+  border: solid calc(var(--border-thickness) / 2) var(--clr-background-minor);
   opacity: 0.6;
   transition: var(--transition);
 }
@@ -2314,6 +2334,14 @@ Blog Template
 .social-link:hover .social-icon {
   color: var(--clr-green-major);
   transition: var(--transition);
+}
+
+@media screen and (max-width: 676px) {
+  .blog-template img {
+    max-width: 90vw;
+    width: 18rem;
+    max-height: 18rem;
+  }
 }
 
 /*
@@ -2425,6 +2453,95 @@ Timeline
   transition: var(--transition-fast);
 }
 
+caption {
+  /* background: var(--clr-passive); */
+  /* padding-left: calc(var(--border-thickness)/2); */
+  height: 37px;
+  line-height: 37px;
+  font-family: var(--ff-secondary);
+  text-align: left;
+}
+
+.tech-table-comp {
+  margin-top: var(--navbar-height);
+  padding: 10px;
+  padding-bottom: 5px;
+  max-width: 905px;
+  border: 3px dashed var(--clr-passive);
+}
+
+.tech-button-wrapper {
+  margin-bottom: 5px;
+}
+
+.tech-table {
+  margin-top: -10px;
+  padding-bottom: 1rem;
+  font-size: 0.9rem !important;
+  /* min-height: 350px;
+  height: 500px;
+  max-height: 350px; */
+  opacity: 1;
+  overflow: scroll;
+  transition: var(--transition);
+}
+
+.tech-table-collapsed {
+  margin-top: -5px;
+  display: block;
+  font-size: 0.9rem !important;
+  opacity: 0;
+  overflow: hidden;
+  height: 0px;
+  visibility: collapse;
+  transition: var(--transition);
+}
+
+.tech-table td:first-child,
+.tech-table-collapsed td:first-child {
+  width: 90px !important;
+  height: 60px;
+  padding: 10px;
+  text-align: center;
+  flex-direction: column;
+  vertical-align: middle;
+  /* background: var(--clr-dark-shadow); */
+}
+
+.tech-table td:nth-child(2),
+.tech-table-collapsed td:nth-child(2) {
+  max-width: 80px;
+  padding: 0 5px;
+  vertical-align: middle;
+}
+
+.tech-table td:last-child,
+.tech-table-collapsed td:last-child {
+  text-align: justify;
+  padding: 5px var(--border-thickness);
+}
+
+.tech-table td:first-child img,
+.tech-table-collapsed td:first-child img {
+  max-width: 100%;
+  height: 100%;
+}
+
+.tech-table-open {
+  height: 100%;
+  transition: var(--transition-fast);
+  overflow: hidden;
+}
+
+.tech-caption {
+  margin-bottom: 5px;
+}
+
+.tech-caption h4 {
+  color: var(--clr-background-major) !important;
+  background: var(--clr-passive) !important;
+}
+
 .timeline-legend-table,
 .timeline-flex-header {
   max-width: 890px;
@@ -2432,7 +2549,7 @@ Timeline
 }
 
 .timeline-flex-header div {
-  width: 190px;
+  width: 100%;
   display: flex;
   cursor: pointer;
 }
@@ -2695,6 +2812,10 @@ ul li:nth-child(even) .timeline-node {
   .timeline ul li:nth-child(even) div {
     left: calc(((100vw / 2) - 50px) * -1);
   }
+
+  .timeline p {
+    padding: calc(var(--border-thickness) / 2);
+  }
 }
 
 @media screen and (max-width: 676px) {
@@ -2757,6 +2878,22 @@ ul li:nth-child(even) .timeline-node {
   .timeline-legend-table td:first-of-type {
     text-align: center;
   }
+
+  .tech-table td:last-child,
+  .tech-table-collapsed td:last-child {
+    padding: 4px 7px;
+  }
+
+  .tech-table td:first-child,
+  .tech-table-collapsed td:first-child {
+    max-width: 40px !important;
+    /* padding: 7px; */
+    /* font-size: 8pt; */
+    text-align: center;
+    flex-direction: column;
+    vertical-align: middle;
+    /* background: yellow; */
+  }
 }
 
 @media screen and (max-width: 270px) {
@@ -2768,11 +2905,61 @@ ul li:nth-child(even) .timeline-node {
 
 /*
 ===============
+Skill Level Tech Table
+===============
+*/
+
+.skills-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centering y-axis */
+  align-items: center; /* Centering x-axis */
+  overflow: hidden;
+  visibility: visible;
+  opacity: 1;
+}
+
+.invisible {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.skills-wrapper:hover span {
+  transform: scale(1.2);
+}
+.skills-wrapper svg {
+  height: 45px;
+  width: 45px;
+  fill: transparent;
+  transform: rotate(-90deg);
+}
+.skills-wrapper svg circle {
+  stroke-width: 3px;
+  stroke: var(--clr-passive);
+}
+.skills-wrapper svg .cbar {
+  stroke-width: 8px;
+  stroke: var(--clr-dark);
+  stroke-linecap: butt;
+}
+.skills-wrapper small {
+  position: absolute;
+  font-family: var(--ff-secondary);
+  transition-duration: 0.3s;
+}
+.skills-wrapper:hover small {
+  transform: scale(1.1);
+  color: var(--clr-green-minor);
+}
+
+/*
+===============
 Contact Page
 ===============
 */
 .contact-page,
-.error-section {
+.error-section,
+.blog-template {
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -2787,7 +2974,7 @@ Contact Page
   width: 90vw;
   max-width: 35rem;
   margin-top: -1.25rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
 }
 
 .contact-form h3 {
@@ -2890,18 +3077,42 @@ Privacy Policy
 
 .privacy-policy p,
 .privacy-policy div,
-.impressum-name {
+.impressum-name,
+.legal-page p {
   color: var(--clr-text-quiet);
 }
 
 .privacy-policy h1,
-h2,
-h3,
-h4 {
+.privacy-policy h2,
+.privacy-policy h3,
+.privacy-policy h4 {
   color: var(--clr-dark);
 }
 
 .privacy-policy a {
   color: var(--clr-green-major);
   text-decoration: underline;
+}
+
+.privacy_item h1,
+.legal-page .section-center h1 {
+  font-size: 20pt;
+}
+
+.privacy_item h2,
+.privacy_item h3,
+.privacy_policy h2,
+.privacy_policy h3,
+.legal-page .section-center h2,
+.legal-page .section-center h3 {
+  font-size: 14pt;
+}
+
+.privacy_item p,
+.privacy-policy p,
+.legal-page p,
+.privacy_item li,
+.privacy-policy li,
+.impressum-name {
+  font-size: 11pt;
 }

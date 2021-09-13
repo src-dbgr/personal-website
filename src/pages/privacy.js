@@ -1,10 +1,12 @@
 import React from "react";
 import Title from "../components/general/Title";
 import Layout from "../components/general/Layout";
+import Seo from "../components/general/Seo";
 
 const privacy = () => {
   return (
     <Layout darkFooter={true}>
+      <Seo title="Privacy Policy | Datenschutz" />
       <section className="legal-page">
         <Title title="Privacy Policy / Datenschutzerklärung" />
         <div className="section-center privacy-policy">
@@ -78,8 +80,8 @@ const privacy = () => {
             </div>
             <div className="impressum-name">
               <div className="impressum-name">https://www.</div>
-              <div className="impressum-name">mywebsite.</div>
-              <div className="impressum-name">com/</div>
+              <div className="impressum-name">sb</div>
+              <div className="impressum-name">lm.me/</div>
               <div className="impressum-name">con</div>
               <div className="impressum-name">tact</div>
             </div>
@@ -93,16 +95,16 @@ const privacy = () => {
               <div className="impressum-name">le</div>
               <div className="impressum-name">hm</div>
               <div className="impressum-name">@</div>
-              <div className="impressum-name">g</div>
-              <div className="impressum-name">mai</div>
-              <div className="impressum-name">l.c</div>
-              <div className="impressum-name">om</div>
+              <div className="impressum-name">s</div>
+              <div className="impressum-name">bl</div>
+              <div className="impressum-name">m.m</div>
+              <div className="impressum-name">e</div>
             </div>
             <div className="impressum-name">
               <div className="impressum-name">https://www.</div>
-              <div className="impressum-name">my</div>
-              <div className="impressum-name">website</div>
-              <div className="impressum-name">.com/</div>
+              <div className="impressum-name">sb</div>
+              <div className="impressum-name">lm.</div>
+              <div className="impressum-name">me/</div>
               <div className="impressum-name">privacy</div>
             </div>
             <br />
@@ -725,7 +727,7 @@ const privacy = () => {
                 </p>
               </div>
             </div>
-            <div className="ce_text privacy_item adobeanalytics block">
+            {/* <div className="ce_text privacy_item adobeanalytics block">
               <div className="text">
                 <p>
                   <strong>Adobe Analytics (Omniture)</strong>
@@ -764,7 +766,7 @@ const privacy = () => {
                   </a>
                 </p>
               </div>
-            </div>
+            </div> */}
             <div className="ce_text privacy_item googleanalytics block">
               <div className="text">
                 <p>
@@ -1154,7 +1156,7 @@ const privacy = () => {
                 </p>
               </div>
             </div>
-            <div className="ce_text privacy_item googlemaps block">
+            {/* <div className="ce_text privacy_item googlemaps block">
               <div className="text">
                 <p>
                   <strong>Google Maps</strong>
@@ -1202,7 +1204,7 @@ const privacy = () => {
                   </a>
                 </p>
               </div>
-            </div>
+            </div> */}
             <div className="ce_text privacy_item google_webfonts block">
               <div className="text">
                 <p>

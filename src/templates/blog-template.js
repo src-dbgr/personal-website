@@ -3,11 +3,13 @@ import { graphql, Link } from "gatsby";
 import Layout from "../components/general/Layout";
 import Title from "../components/general/Title";
 import ReactMarkdown from "react-markdown";
+import Seo from "../components/general/Seo";
 
 const ComponentName = ({ data }) => {
-  const { content, title } = data.blog;
+  const { content, title, desc } = data.blog;
   return (
     <Layout darkFooter={true}>
+      <Seo title={title} description={desc} />
       <section className="blog-template">
         <Title title={title} />
         <div className="section-center">

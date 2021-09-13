@@ -49,7 +49,7 @@ import "aos/dist/aos.css";
 
 const Links = function (props) {
   useEffect(() => {
-    Aos.init({ duration: 400, disable: "mobile" });
+    Aos.init({ duration: 400 });
   }, []);
 
   const dispatch = useContext(GlobalDispatchContext);

@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 
 const Hero = () => {
   useEffect(() => {
-    Aos.init({ duration: 1000, disable: "mobile" });
+    Aos.init({ duration: 1000});
   }, []);
 
   const navanimation = useContext(GlobalStateContext).navanimation;

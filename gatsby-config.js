@@ -2,7 +2,13 @@ module.exports = {
   // In your gatsby-config.js
   siteMetadata: {
     // If you didn't use the resolveSiteUrl option this needs to be set
-    siteUrl: `https://www.example.com`,
+    title: "Samuel IT",
+    description:
+      "Samuel is a software engineer who specializes in solving real world IT problems.",
+    siteUrl: "https://www.sblm.me",
+    author: "@sblm",
+    image: "/og.png",
+    twitterUsername: "@smlblm",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,6 +37,7 @@ module.exports = {
           `cookie`,
           `station`,
           `stationctgry`,
+          `techstack`,
         ],
         singleTypes: [`about`],
       },
@@ -39,30 +46,46 @@ module.exports = {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: "YOUR_GOOGLE_ANALYTICS_TRACKING_ID", // leave empty if you want to disable the tracker
+          trackingId: "G-ET703HRR3G", // leave empty if you want to disable the tracker
           cookieName: "sb-ggl-anlytcs-ecuosp", // default
           anonymize: true, // default
           allowAdFeatures: false, // default
+          cookieFlags: "samesite=none;secure",
         },
-        googleTagManager: {
-          trackingId: "YOUR_GOOGLE_TAG_MANAGER_TRACKING_ID", // leave empty if you want to disable the tracker
-          cookieName: "sb-google-tagmanager", // default
-          dataLayerName: "dataLayer", // default
-        },
-        facebookPixel: {
-          pixelId: "YOUR_FACEBOOK_PIXEL_ID", // leave empty if you want to disable the tracker
-          cookieName: "sb-facebook-pixel", // default
-        },
-        tikTokPixel: {
-          pixelId: "YOUR_TIKTOK_PIXEL_ID", // leave empty if you want to disable the tracker
-          cookieName: "sb-tiktok-pixel", // default
-        },
-        hotjar: {
-          hjid: "YOUR_HOTJAR_ID",
-          hjsv: "YOUR_HOTJAR_SNIPPET_VERSION",
-          cookieName: "sb-hotjar", // default
-        },
+        // googleTagManager: {
+        //   trackingId: "GTM-57K3LVT", // leave empty if you want to disable the tracker
+        //   cookieName: "sb-google-tagmanager", // default
+        //   dataLayerName: "dataLayer", // default
+        // },
+        // facebookPixel: {
+        //   pixelId: "YOUR_FACEBOOK_PIXEL_ID", // leave empty if you want to disable the tracker
+        //   cookieName: "sb-facebook-pixel", // default
+        // },
+        // tikTokPixel: {
+        //   pixelId: "YOUR_TIKTOK_PIXEL_ID", // leave empty if you want to disable the tracker
+        //   cookieName: "sb-tiktok-pixel", // default
+        // },
+        // hotjar: {
+        //   hjid: "YOUR_HOTJAR_ID",
+        //   hjsv: "YOUR_HOTJAR_SNIPPET_VERSION",
+        //   cookieName: "sb-hotjar", // default
+        // },
+        // defines the environments where the tracking should be available  - default is ["production"]
+        environments: ["production", "development"],
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Samuel B`,
+        short_name: `SBLM`,
+        start_url: `/`,
+        background_color: `#b5aba6`,
+        theme_color: `#3d8b68`,
+        display: `standalone`,
+        icon: `src/assets/images/icons/fav.png`,
+      },
+    },
+    // `gatsby-plugin-offline`, // this must be placed AFTER gatsby-plugin-manifest!!!
   ],
 };

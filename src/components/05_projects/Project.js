@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 const Project = ({ image, title, description, github, stack, url, index }) => {
   const [active, setActive] = useState(false);
   useEffect(() => {
-    Aos.init({ duration: 500, disable: "mobile" });
+    Aos.init({ duration: 500});
   }, []);
 
   function flipActivation() {
