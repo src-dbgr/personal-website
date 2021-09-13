@@ -110,7 +110,7 @@ const TechTable = ({ caption, technologies }) => {
       return;
     }
     anim();
-    return () => {};// eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => {}; // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableCollapsed]);
 
   return (
@@ -153,7 +153,12 @@ const TechTable = ({ caption, technologies }) => {
               return (
                 <tr key={i}>
                   <td>
-                    <img src={technology.imgurl} alt={technology.skilltitle}/>
+                    <a href={technology.techurl}>
+                      <img
+                        src={technology.imgurl}
+                        alt={technology.skilltitle}
+                      />
+                    </a>
                     <br />
                     {technology.skilltitle}
                   </td>

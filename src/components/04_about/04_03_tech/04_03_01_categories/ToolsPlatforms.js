@@ -19,6 +19,7 @@ const query = graphql`
         skillleveltag
         skilltitle
         skilltype
+        techurl
       }
     }
   }

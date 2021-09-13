@@ -66,6 +66,19 @@ module.exports = {
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ["production", "development"],
       },
-    }, 
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Samuel B`,
+        short_name: `SBLM`,
+        start_url: `/`,
+        background_color: `#b5aba6`,
+        theme_color: `#3d8b68`,
+        display: `standalone`,
+        icon: `src/assets/images/icons/fav.png`
+      },
+    },
+    // `gatsby-plugin-offline`, // this must be placed AFTER gatsby-plugin-manifest!!!  
   ],
 };
