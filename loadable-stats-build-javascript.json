@@ -1,55 +1,47 @@
 {
-  "hash": "4d9ea4275bd39493a9e5",
+  "hash": "1eaf0b545bff8ebeb22c",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "polyfill.b6ddc17579c7c7d735f8.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "commons.b6ddc17579c7c7d735f8.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
     ],
     "component---src-pages-404-js": [
-      "component---src-pages-404-js.js",
-      "component---src-pages-404-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-404-js.js"
     ],
     "component---src-pages-about-js": [
       "component---src-pages-about-js.js",
-      "component---src-pages-about-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-about-js.b6ddc17579c7c7d735f8.hot-update.js"
     ],
     "component---src-pages-blog-js": [
-      "component---src-pages-blog-js.js",
-      "component---src-pages-blog-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-blog-js.js"
     ],
     "component---src-pages-contact-js": [
-      "component---src-pages-contact-js.js",
-      "component---src-pages-contact-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-contact-js.js"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js.js",
-      "component---src-pages-index-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-index-js.js"
     ],
     "component---src-pages-legal-js": [
-      "component---src-pages-legal-js.js",
-      "component---src-pages-legal-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-legal-js.js"
     ],
     "component---src-pages-privacy-js": [
-      "component---src-pages-privacy-js.js",
-      "component---src-pages-privacy-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-privacy-js.js"
     ],
     "component---src-pages-projects-js": [
-      "component---src-pages-projects-js.js",
-      "component---src-pages-projects-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-pages-projects-js.js"
     ],
     "component---src-templates-blog-template-js": [
-      "component---src-templates-blog-template-js.js",
-      "component---src-templates-blog-template-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+      "component---src-templates-blog-template-js.js"
     ],
     "framework": [
       "framework.js"
@@ -59,8 +51,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 48,
-      "size": 85962856
+      "filteredChildren": 40,
+      "size": 85080656
     }
   ],
   "namedChunkGroups": {
@@ -74,7 +66,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "polyfill.b6ddc17579c7c7d735f8.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -101,7 +93,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -146,13 +138,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-404-js.js"
-        },
-        {
-          "name": "component---src-pages-404-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -180,13 +169,13 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-about-js.js"
         },
         {
-          "name": "component---src-pages-about-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "component---src-pages-about-js.b6ddc17579c7c7d735f8.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -214,13 +203,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-blog-js.js"
-        },
-        {
-          "name": "component---src-pages-blog-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -248,13 +234,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-contact-js.js"
-        },
-        {
-          "name": "component---src-pages-contact-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -282,13 +265,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
-        },
-        {
-          "name": "component---src-pages-index-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -316,13 +296,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-legal-js.js"
-        },
-        {
-          "name": "component---src-pages-legal-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -350,13 +327,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-privacy-js.js"
-        },
-        {
-          "name": "component---src-pages-privacy-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -384,13 +358,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
-        },
-        {
-          "name": "component---src-pages-projects-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -418,13 +389,10 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+          "name": "commons.b6ddc17579c7c7d735f8.hot-update.js"
         },
         {
           "name": "component---src-templates-blog-template-js.js"
-        },
-        {
-          "name": "component---src-templates-blog-template-js.01c6c4ee9f6b6a818cc9.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -441,7 +409,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "polyfill.b6ddc17579c7c7d735f8.hot-update.js"
       ]
     },
     {
@@ -449,7 +417,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "commons.b6ddc17579c7c7d735f8.hot-update.js"
       ]
     },
     {
@@ -485,64 +453,56 @@
     {
       "id": "component---src-pages-404-js",
       "files": [
-        "component---src-pages-404-js.js",
-        "component---src-pages-404-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-404-js.js"
       ]
     },
     {
       "id": "component---src-pages-about-js",
       "files": [
         "component---src-pages-about-js.js",
-        "component---src-pages-about-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-about-js.b6ddc17579c7c7d735f8.hot-update.js"
       ]
     },
     {
       "id": "component---src-pages-blog-js",
       "files": [
-        "component---src-pages-blog-js.js",
-        "component---src-pages-blog-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-blog-js.js"
       ]
     },
     {
       "id": "component---src-pages-contact-js",
       "files": [
-        "component---src-pages-contact-js.js",
-        "component---src-pages-contact-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-contact-js.js"
       ]
     },
     {
       "id": "component---src-pages-index-js",
       "files": [
-        "component---src-pages-index-js.js",
-        "component---src-pages-index-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-index-js.js"
       ]
     },
     {
       "id": "component---src-pages-legal-js",
       "files": [
-        "component---src-pages-legal-js.js",
-        "component---src-pages-legal-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-legal-js.js"
       ]
     },
     {
       "id": "component---src-pages-privacy-js",
       "files": [
-        "component---src-pages-privacy-js.js",
-        "component---src-pages-privacy-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-privacy-js.js"
       ]
     },
     {
       "id": "component---src-pages-projects-js",
       "files": [
-        "component---src-pages-projects-js.js",
-        "component---src-pages-projects-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-pages-projects-js.js"
       ]
     },
     {
       "id": "component---src-templates-blog-template-js",
       "files": [
-        "component---src-templates-blog-template-js.js",
-        "component---src-templates-blog-template-js.01c6c4ee9f6b6a818cc9.hot-update.js"
+        "component---src-templates-blog-template-js.js"
       ]
     },
     {
