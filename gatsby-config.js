@@ -7,7 +7,7 @@ module.exports = {
       "Samuel is a software engineer who specializes in solving real world IT problems.",
     siteUrl: "https://www.sblm.me",
     author: "@sblm",
-    image: "/og.png",
+    image: "/og2.png",
     twitterUsername: "@smlblm",
   },
   plugins: [

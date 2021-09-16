@@ -9,14 +9,15 @@ const query = graphql`
       sort: { fields: skilllevel, order: DESC }
     ) {
       nodes {
-        imgurl
-        skillcategory
         skilldescription
-        skilllevel
         skillleveltag
+        skillcategory
+        imgfilename
         skilltitle
+        skilllevel
         skilltype
         techurl
+        imgurl
       }
     }
   }

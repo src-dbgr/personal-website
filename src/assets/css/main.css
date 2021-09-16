@@ -1924,6 +1924,17 @@ Projects
   transition: var(--transition-fast);
 }
 
+.project-links, .project-links a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.project-links p {
+  font-size: 0.9rem;
+  padding-bottom: 1px;
+  margin: 0;
+}
+
 .project-img:hover,
 .project-img:active,
 .project-img-active {

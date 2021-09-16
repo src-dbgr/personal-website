@@ -154,6 +154,15 @@ const TechTable = ({ caption, technologies }) => {
                 <tr key={i}>
                   <td>
                     <a href={technology.techurl}>
+                      {/* In case cloudinary fails to serve the images 
+                      copy the images in path src/assets/images/technologies to the static folder
+                      create your desired path structure there, for instance => assets/img/tech/<filename>
+                      and change the src part of the image tag.
+                      use the following commented out lines instead*/}
+                      {/* <img
+                        // src={`assets/img/tech/${technology.imgfilename}`}
+                        alt={technology.skilltitle}
+                      /> */}
                       <img
                         src={technology.imgurl}
                         alt={technology.skilltitle}

@@ -36,7 +36,7 @@ const Contact = () => {
     if (nameValidity && messageValidity && emailValidity) {
       let form = document.getElementById("mailForm");
       form.method = "post";
-      form.action = "https://formspree.io/f/mknkzwqn";
+      form.action = `${process.env.FS_API_URL}`;
       form.submit();
     }
   }
