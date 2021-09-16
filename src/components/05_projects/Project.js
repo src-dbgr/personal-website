@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import { FaGithubSquare, FaShareSquare } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
 import { BsCircleFill } from "react-icons/bs";
 import { IoTriangleSharp } from "react-icons/io5";
 import Aos from "aos";
@@ -10,7 +10,7 @@ import "aos/dist/aos.css";
 const Project = ({ image, title, description, github, stack, url, index }) => {
   const [active, setActive] = useState(false);
   useEffect(() => {
-    Aos.init({ duration: 500});
+    Aos.init({ duration: 500 });
   }, []);
 
   function flipActivation() {
@@ -52,11 +52,27 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
         <div className="project-links">
           <a href={github}>
             <FaGithubSquare className="project-icon" />
-          </a>
-          <a href={url}>
-            <FaShareSquare className="project-icon" />
+            <p>
+              GITHUB{" "}
+              {String(github.match("[^/]+(?=/$|$)"))
+                .replace(/-/g, " ")
+                .toUpperCase()}
+            </p>
           </a>
         </div>
+        {url.includes("github") && (
+          <div className="project-links">
+            <a href={url}>
+              <FaGithubSquare className="project-icon" />
+              <p>
+                GITHUB{" "}
+                {String(url.match("[^/]+(?=/$|$)"))
+                  .replace(/-/g, " ")
+                  .toUpperCase()}
+              </p>
+            </a>
+          </div>
+        )}
       </div>
     </div>
   );
