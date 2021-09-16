@@ -27,10 +27,13 @@ const index = ({ data }) => {
 
 export const query = graphql`
   {
-    allStrapiProject(filter: { featured: { eq: true } }) {
+    allStrapiProject(
+      filter: { featured: { eq: true } }
+      sort: { fields: orderid, order: ASC }
+    ) {
       nodes {
         github
-        id
+        orderid
         description
         title
         url
@@ -41,9 +44,9 @@ export const query = graphql`
                 placeholder: DOMINANT_COLOR
                 formats: [WEBP, PNG]
                 blurredOptions: { width: 100 }
-                transformOptions: { cropFocus: ENTROPY }
+                transformOptions: { cropFocus: ENTROPY, fit: COVER }
                 quality: 90
-                height: 480
+                height: 550
                 width: 900
                 backgroundColor: "transparent"
               )

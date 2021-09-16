@@ -1,5 +1,5 @@
 {
-  "hash": "bf7345346d9ad5168123",
+  "hash": "7531d4817f2287f6ed72",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
@@ -49,7 +49,7 @@
       "type": "assets by status",
       "cached": true,
       "filteredChildren": 35,
-      "size": 85054527
+      "size": 85050426
     }
   ],
   "namedChunkGroups": {
