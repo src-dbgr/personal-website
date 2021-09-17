@@ -2234,6 +2234,15 @@ Pages
   text-align: justify;
 }
 
+.blog-content p img{
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.blog-content blockquote {
+  border: 3px dashed var(--clr-passive);
+}
+
 .error-page {
   display: grid;
   place-items: center;
@@ -2255,6 +2264,7 @@ Blog Template
 */
 .blog-template {
   padding-bottom: 5rem;
+  background: var(--clr-background-minor);
 }
 
 .blog-template h1,
@@ -2271,14 +2281,14 @@ Blog Template
   margin-top: 2rem;
   display: inline-block;
 }
-.blog-template ul li {
+.blog-template ul li{
   background: var(--clr-background-minor);
   padding: var(--border-thickness);
   margin: 1rem 0;
   text-transform: uppercase;
 }
 
-.blog-template blockquote {
+.blog-template blockquote{
   background: var(--clr-background-major);
   padding: var(--border-thickness);
   line-height: 2;

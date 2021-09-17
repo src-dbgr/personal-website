@@ -1,35 +1,40 @@
-import React from "react";
-import { FaGithubAlt, FaLinkedinIn, FaTwitter } from "react-icons/fa";
-import { IoIosPaperPlane } from "react-icons/io";
 import { Link } from "gatsby";
+import React from "react";
+import { FaGithubAlt, FaTwitter } from "react-icons/fa";
+import { ImSoundcloud } from "react-icons/im";
+import { IoIosPaperPlane } from "react-icons/io";
 
 const data = [
   {
     id: 1,
     icon: <FaGithubAlt className="social-icon"></FaGithubAlt>,
     url: "https://www.github.com/src-dbgr",
+    type: "external",
   },
   {
     id: 2,
-    icon: <FaLinkedinIn className="social-icon"></FaLinkedinIn>,
-    url: "https://www.linkedin.com",
+    icon: <FaTwitter className="social-icon"></FaTwitter>,
+    url: "https://www.twitter.com/smlblm",
+    type: "external",
   },
   {
     id: 3,
-    icon: <FaTwitter className="social-icon"></FaTwitter>,
-    url: "https://www.twitter.com/smlblm",
+    icon: <IoIosPaperPlane className="social-icon"></IoIosPaperPlane>,
+    url: "/contact",
+    type: "internal",
   },
   {
     id: 4,
-    icon: <IoIosPaperPlane className="social-icon"></IoIosPaperPlane>,
-    url: "https://www.twitter.com",
+    icon: <ImSoundcloud className="social-icon"></ImSoundcloud>,
+    url: "https://soundcloud.com/ivorycone",
+    type: "external",
   },
 ];
 const links = data.map((link) => {
-  if (link.id === 4) {
+  if (link.type === "internal") {
     return (
       <li key={link.id}>
-        <Link className="social-link" to="/contact">
+        <Link className="social-link" to={link.url}>
           {link.icon}
         </Link>
       </li>

@@ -45,10 +45,10 @@ export const query = graphql`
                 placeholder: DOMINANT_COLOR
                 formats: [WEBP, PNG]
                 blurredOptions: { width: 100 }
-                transformOptions: { cropFocus: ENTROPY }
+                transformOptions: { cropFocus: NORTH, fit: COVER }
                 quality: 80
                 width: 800
-                height: 300
+                height: 500
                 backgroundColor: "transparent"
               )
             }

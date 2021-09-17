@@ -8,7 +8,7 @@ import Seo from "../components/general/Seo";
 const ComponentName = ({ data }) => {
   const { content, title, desc } = data.blog;
   return (
-    <Layout darkFooter={true}>
+    <Layout darkFooter={false}>
       <Seo title={title} description={desc} />
       <section className="blog-template">
         <Title title={title} />
