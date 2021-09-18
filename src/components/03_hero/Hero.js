@@ -61,7 +61,7 @@ const Hero = () => {
               >
                 <p>
                   I AM A SOFTWARE DEVELOPER AND MACHINE LEARNING ENTHUSIAST WHO
-                  SPECIALIZES IN SOLVING REAL WORLD <span>IT</span> PROBLEMS.
+                  SPECIALIZES IN SOLVING REAL-WORLD <span>IT</span> PROBLEMS.
                 </p>
               </div>
 

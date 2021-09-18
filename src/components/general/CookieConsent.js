@@ -320,13 +320,13 @@ const CookieConsent = () => {
                 <div className="cookie-text">
                   <span>
                     This website uses cookies and other tracking technologies.
-                    By accepting all cookies you consent to this websiste's use
+                    By accepting all cookies, you consent to this website's use
                     of all cookies. You can also activate only specific cookies
                     or decline the entire usage of cookies. Declining stops all
-                    tracking cookies but will use window local storage to not
+                    tracking cookies but will use local window storage to not
                     show the banner again on revisit. Usage of cookies helps to
-                    analyze this website's traffic, and to understand where
-                    visitors are coming from. Your Identity remains always
+                    analyze this website's traffic and understand where visitors
+                    are coming from. Your Identity always remains
                     anonymous.&nbsp;
                     <Link className="link" to="/privacy">
                       Learn more
