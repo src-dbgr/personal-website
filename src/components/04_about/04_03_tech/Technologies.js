@@ -6,11 +6,7 @@ import DataDesign from "./04_03_01_categories/DataDesign";
 
 const Technologies = () => {
   return (
-    <div
-      className="section section-center tech-table-comp"
-      data-aos="fade"
-      data-aos-once="true"
-    >
+    <div className="section section-center tech-table-comp">
       <div className="timeline-legend-table-wrapper tech-table-open">
         <div className="timeline-flex-header tech-caption">
           <h4>Technology Experience</h4>

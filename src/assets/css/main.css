@@ -108,6 +108,7 @@
   --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
   --transition-slow: all 2.5s ease;
   --transition: all 0.5s ease;
+  --transition-medium: all 0.6s ease;
   --transition-fast: all 0.3s ease;
   --transition-very-fast: all 0.15s ease;
   --spacing: 0.07rem;
@@ -188,6 +189,26 @@
   overflow-y: scroll;
   overflow-x: hidden;
 }
+
+/*
+===============
+Fade In Effect
+===============
+*/
+
+.fade-in-section {
+  display: inherit;
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: var(--transition-medium);
+}
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}
+
 /*
 =============== 
 Cookie Consent
@@ -1924,7 +1945,8 @@ Projects
   transition: var(--transition-fast);
 }
 
-.project-links, .project-links a {
+.project-links,
+.project-links a {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -2234,7 +2256,7 @@ Pages
   text-align: justify;
 }
 
-.blog-content p img{
+.blog-content p img {
   max-height: 300px;
   max-width: 300px;
 }
@@ -2281,14 +2303,14 @@ Blog Template
   margin-top: 2rem;
   display: inline-block;
 }
-.blog-template ul li{
+.blog-template ul li {
   background: var(--clr-background-minor);
   padding: var(--border-thickness);
   margin: 1rem 0;
   text-transform: uppercase;
 }
 
-.blog-template blockquote{
+.blog-template blockquote {
   background: var(--clr-background-major);
   padding: var(--border-thickness);
   line-height: 2;
