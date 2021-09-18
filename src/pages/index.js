@@ -11,13 +11,14 @@ const index = ({ data }) => {
   const {
     allStrapiProject: { nodes: projects },
     allStrapiBlog: { nodes: blogs },
+    strapiAbout: { infomain: about },
   } = data;
 
   return (
     <Layout darkFooter={true}>
       <Seo title="Home" />
       <Hero />
-      <About />
+      <About infomain={about} />
       <Experience />
       <Projects projects={projects} title="Featured Projects" showLink />
       <BlogsSection blogs={blogs} title="Latest Blog Articles" />
@@ -84,6 +85,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    strapiAbout {
+      infomain
     }
   }
 `;
