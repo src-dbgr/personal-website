@@ -2220,6 +2220,10 @@ Blog
   }
 }
 @media screen and (min-width: 850px) {
+  .blog-content {
+    padding: 2.5rem 200px;
+  }
+
   .blog-img {
     height: 13.75rem;
   }
@@ -2250,21 +2254,6 @@ Pages
   padding-top: calc(var(--navbar-height) * 2);
 }
 
-.blog-content p {
-  display: grid;
-  justify-content: center;
-  text-align: justify;
-}
-
-.blog-content p img {
-  max-height: 300px;
-  max-width: 300px;
-}
-
-.blog-content blockquote {
-  border: 3px dashed var(--clr-passive);
-}
-
 .error-page {
   display: grid;
   place-items: center;
@@ -2284,6 +2273,30 @@ Pages
 Blog Template
 ===============
 */
+
+.blog-content {
+  padding: 2.5rem 180px;
+  background: var(--clr-background-minor);
+  border: solid calc(var(--border-thickness) / 2) var(--clr-background-major);
+  box-shadow: var(--default-box-shadow)
+}
+
+.blog-content p {
+  display: grid;
+  justify-content: center;
+  text-align: justify;
+}
+
+.blog-content p img {
+  max-height: 300px;
+  max-width: 300px;
+}
+
+.blog-content blockquote {
+  border: 3px dashed var(--clr-passive);
+  box-shadow: var(--default-box-shadow);
+}
+
 .blog-template {
   padding-bottom: 5rem;
   background: var(--clr-background-minor);
@@ -2345,7 +2358,7 @@ Blog Template
   object-fit: cover;
   border-radius: 50%;
   object-position: 100% 70%;
-  border: solid calc(var(--border-thickness) / 2) var(--clr-background-minor);
+  border: solid calc(var(--border-thickness) / 2) var(--clr-background-major);
   opacity: 0.6;
   transition: var(--transition);
 }
@@ -2377,6 +2390,12 @@ Blog Template
 .social-link:hover .social-icon {
   color: var(--clr-green-major);
   transition: var(--transition);
+}
+
+@media screen and (max-width: 992px) {
+  .blog-content {
+    padding: 2.5rem calc(var(--border-thickness) / 2);
+  }
 }
 
 @media screen and (max-width: 676px) {

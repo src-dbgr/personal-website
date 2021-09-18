@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Title from "../general/Title";
 import { Link } from "gatsby";
 import Blog from "./Blog";
