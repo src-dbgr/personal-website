@@ -4,6 +4,7 @@ import Layout from "../components/general/Layout";
 import Title from "../components/general/Title";
 import ReactMarkdown from "react-markdown";
 import Seo from "../components/general/Seo";
+import FadeInSection from "../hooks/FadeInSection";
 
 const ComponentName = ({ data }) => {
   const { content, title, desc } = data.blog;
@@ -12,14 +13,16 @@ const ComponentName = ({ data }) => {
       <Seo title={title} description={desc} />
       <section className="blog-template">
         <Title title={title} />
-        <div className="section-center">
-          <article className="blog-content">
-            <ReactMarkdown children={content} />
-            <Link to="/blog" className="btn center-btn">
-              <span className="btn">all blogs</span>
-            </Link>
-          </article>
-        </div>
+        <FadeInSection>
+          <div className="section-center">
+            <article className="blog-content">
+              <ReactMarkdown children={content} />
+              <Link to="/blog" className="btn center-btn">
+                <span className="btn">all blogs</span>
+              </Link>
+            </article>
+          </div>
+        </FadeInSection>
       </section>
     </Layout>
   );

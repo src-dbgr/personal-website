@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Layout from "../components/general/Layout";
 import Title from "../components/general/Title";
 import Seo from "../components/general/Seo";
+import FadeInSection from "../hooks/FadeInSection";
 
 const Contact = () => {
   const [isMailValid, setMailValid] = useState(true);
@@ -40,49 +41,6 @@ const Contact = () => {
       form.submit();
     }
   }
-  // comment in the form action path for mail transfer
-  // async function submitForm(
-  //   nameValidity,
-  //   messageValidity,
-  //   emailValidity,
-  //   event
-  // ) {
-  //   if (nameValidity && messageValidity && emailValidity) {
-  //     event.preventDefault();
-  //     let form = document.getElementById("mailForm");
-  //     form.method = "post";
-  //     form.action = "https://formspree.io/f/mknkzwqn";
-  //     let status = document.getElementById("send-status");
-  //     let statusIssue = document.getElementById("send-issue");
-  //     let data = new FormData(event.target);
-  //     fetch(form.action, {
-  //       method: form.method,
-  //       body: data,
-  //       headers: {
-  //         Accept: "application/json",
-  //       },
-  //     })
-  //       .then((response) => {
-  //         if (!response.ok) {
-  //           let mailcontact =
-  //             "<br>Please reach out to me via mail: samuel.blehm@gmail.com";
-  //           statusIssue.innerHTML =
-  //             "Issue occured. Server Response: " +
-  //             response.statusText +
-  //             ". Status: " +
-  //             response.status +
-  //             mailcontact;
-  //         } else {
-  //           status.innerHTML =
-  //             "Thanks for your Message, I will get back to you asap.";
-  //           form.reset();
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         statusIssue.innerHTML = "There was a problem submitting your form";
-  //       });
-  //   }
-  // }
 
   function validateEmail(inputText) {
     var emailformat =
@@ -108,63 +66,65 @@ const Contact = () => {
       />
       <section className="contact-page">
         <Title title="Contact" />
-        <article className="contact-form shadow-box-dark">
-          <h3>get in touch</h3>
-          <form id="mailForm" onSubmit={checkData}>
-            <div className="form-group">
-              <input
-                id="name"
-                type="text"
-                placeholder="name"
-                name="name"
-                className="form-control"
-                required
-              />
-              <input
-                id="email"
-                type="email"
-                placeholder="email"
-                name="email"
-                className="form-control"
-                required
-              />
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                placeholder="message"
-                className="form-control"
-                required
-              ></textarea>
-            </div>
-            {!(isNameValid && isMessageValid && isMailValid) && (
-              <div className="invalid invalid-header">
-                <p>MAIL NOT SENT</p>
+        <FadeInSection>
+          <article className="contact-form shadow-box-dark">
+            <h3>get in touch</h3>
+            <form id="mailForm" onSubmit={checkData}>
+              <div className="form-group">
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="name"
+                  name="name"
+                  className="form-control"
+                  required
+                />
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="email"
+                  name="email"
+                  className="form-control"
+                  required
+                />
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  placeholder="message"
+                  className="form-control"
+                  required
+                ></textarea>
               </div>
-            )}
-            {!isNameValid && (
-              <div className="invalid">
-                <p>- NAME BLANK</p>
-              </div>
-            )}
-            {!isMessageValid && (
-              <div className="invalid">
-                <p>- MESSAGE BLANK</p>
-              </div>
-            )}
-            {!isMailValid && (
-              <div className="invalid">
-                <p>- INVALID EMAIL</p>
-              </div>
-            )}
-            <button type="submit" className="submit-btn btn">
-              SUBMIT
-            </button>
-          </form>
-          {/* <div id="send-status">
+              {!(isNameValid && isMessageValid && isMailValid) && (
+                <div className="invalid invalid-header">
+                  <p>MAIL NOT SENT</p>
+                </div>
+              )}
+              {!isNameValid && (
+                <div className="invalid">
+                  <p>- NAME BLANK</p>
+                </div>
+              )}
+              {!isMessageValid && (
+                <div className="invalid">
+                  <p>- MESSAGE BLANK</p>
+                </div>
+              )}
+              {!isMailValid && (
+                <div className="invalid">
+                  <p>- INVALID EMAIL</p>
+                </div>
+              )}
+              <button type="submit" className="submit-btn btn">
+                SUBMIT
+              </button>
+            </form>
+            {/* <div id="send-status">
             <div id="send-issue"></div>
           </div> */}
-        </article>
+          </article>
+        </FadeInSection>
       </section>
     </Layout>
   );
