@@ -2282,13 +2282,12 @@ Blog Template
 */
 
 .blog-content {
-  display: grid;
+  display: block;
   padding: 2.5rem 180px;
   background: var(--clr-background-minor);
   border: solid calc(var(--border-thickness) / 2) var(--clr-background-major);
   box-shadow: var(--default-box-shadow);
-  text-align: justify;
-  justify-content: center;
+  overflow: hidden;
 }
 
 .blog-content blockquote p {
@@ -2302,9 +2301,14 @@ Blog Template
   justify-content: center;
 }
 
+.blog-content a {
+  font-family: var(--ff-primary);
+  color: var(--clr-green-major);
+}
+
 .blog-content p img {
-  max-height: 300px;
-  max-width: 300px;
+  max-height: 400px;
+  max-width: 400px;
 }
 
 .blog-content blockquote {
@@ -2415,6 +2419,12 @@ Blog Template
 }
 
 @media screen and (max-width: 676px) {
+
+  .blog-content p img {
+    max-height: 300px;
+    max-width: 300px;
+  }
+
   .blog-template img {
     max-width: 90vw;
     width: 18rem;
