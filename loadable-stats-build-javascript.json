@@ -1,16 +1,16 @@
 {
-  "hash": "0f55f3c794b908322e7f",
+  "hash": "f62fa5be749a88167b25",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.3a3363987f7f0e2abdb8.hot-update.js"
+      "polyfill.dd99140ead431025c073.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.3a3363987f7f0e2abdb8.hot-update.js"
+      "commons.dd99140ead431025c073.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
@@ -28,7 +28,8 @@
       "component---src-pages-contact-js.js"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js.js"
+      "component---src-pages-index-js.js",
+      "component---src-pages-index-js.dd99140ead431025c073.hot-update.js"
     ],
     "component---src-pages-legal-js": [
       "component---src-pages-legal-js.js"
@@ -37,7 +38,8 @@
       "component---src-pages-privacy-js.js"
     ],
     "component---src-pages-projects-js": [
-      "component---src-pages-projects-js.js"
+      "component---src-pages-projects-js.js",
+      "component---src-pages-projects-js.dd99140ead431025c073.hot-update.js"
     ],
     "component---src-templates-blog-template-js": [
       "component---src-templates-blog-template-js.js"
@@ -50,8 +52,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 39,
-      "size": 93134873
+      "filteredChildren": 41,
+      "size": 93150191
     }
   ],
   "namedChunkGroups": {
@@ -65,7 +67,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "polyfill.dd99140ead431025c073.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -92,7 +94,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -137,7 +139,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-404-js.js"
@@ -168,7 +170,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-about-js.js"
@@ -199,7 +201,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-blog-js.js"
@@ -230,7 +232,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-contact-js.js"
@@ -261,10 +263,13 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
+        },
+        {
+          "name": "component---src-pages-index-js.dd99140ead431025c073.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -292,7 +297,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-legal-js.js"
@@ -323,7 +328,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-privacy-js.js"
@@ -354,10 +359,13 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
+        },
+        {
+          "name": "component---src-pages-projects-js.dd99140ead431025c073.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -385,7 +393,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.3a3363987f7f0e2abdb8.hot-update.js"
+          "name": "commons.dd99140ead431025c073.hot-update.js"
         },
         {
           "name": "component---src-templates-blog-template-js.js"
@@ -405,7 +413,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.3a3363987f7f0e2abdb8.hot-update.js"
+        "polyfill.dd99140ead431025c073.hot-update.js"
       ]
     },
     {
@@ -413,7 +421,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.3a3363987f7f0e2abdb8.hot-update.js"
+        "commons.dd99140ead431025c073.hot-update.js"
       ]
     },
     {
@@ -473,7 +481,8 @@
     {
       "id": "component---src-pages-index-js",
       "files": [
-        "component---src-pages-index-js.js"
+        "component---src-pages-index-js.js",
+        "component---src-pages-index-js.dd99140ead431025c073.hot-update.js"
       ]
     },
     {
@@ -491,7 +500,8 @@
     {
       "id": "component---src-pages-projects-js",
       "files": [
-        "component---src-pages-projects-js.js"
+        "component---src-pages-projects-js.js",
+        "component---src-pages-projects-js.dd99140ead431025c073.hot-update.js"
       ]
     },
     {

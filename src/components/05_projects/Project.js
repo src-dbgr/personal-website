@@ -16,23 +16,29 @@ const Project = ({ image, title, description, github, stack, url, index }) => {
   // checks whether an image has been set, if noc image is set, don't render --> lines 9-11
   return (
     <FadeInSection>
-      <div
-        className="project"
-        onClick={flipActivation}
-        onKeyDown={flipActivation}
-        role="presentation"
-      >
-        {image && (
-          <GatsbyImage
-            image={getImage(image.localFile)}
-            className={
-              active
-                ? "project-img-active shadow-box-dark"
-                : "project-img shadow-box-dark"
-            }
-            alt={title}
-          />
-        )}
+      <div className={index % 2 === 0 ? "project" : "project even"}>
+        <div
+          className={
+            active
+              ? "project-img-wrapper project-z-index"
+              : "project-img-wrapper"
+          }
+          onClick={flipActivation}
+          onKeyDown={flipActivation}
+          role="presentation"
+        >
+          {image && (
+            <GatsbyImage
+              image={getImage(image.localFile)}
+              className={
+                active
+                  ? "project-img-active shadow-box-dark"
+                  : "project-img shadow-box-dark"
+              }
+              alt={title}
+            />
+          )}
+        </div>
         <div className="project-info shadow-box-dark">
           <span className="project-number">
             {index % 2 === 0 ? <BsCircleFill /> : <IoTriangleSharp />}
