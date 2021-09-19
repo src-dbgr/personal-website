@@ -2282,16 +2282,24 @@ Blog Template
 */
 
 .blog-content {
+  display: grid;
   padding: 2.5rem 180px;
   background: var(--clr-background-minor);
   border: solid calc(var(--border-thickness) / 2) var(--clr-background-major);
   box-shadow: var(--default-box-shadow);
+  text-align: justify;
+  justify-content: center;
+}
+
+.blog-content blockquote p {
+  display: block;
+  text-align: justify;
 }
 
 .blog-content p {
   display: grid;
-  justify-content: center;
   text-align: justify;
+  justify-content: center;
 }
 
 .blog-content p img {
@@ -2320,14 +2328,15 @@ Blog Template
 
 .blog-template ul {
   width: 100%;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
+  margin-left: 50px;
   display: inline-block;
 }
 .blog-template ul li {
-  background: var(--clr-background-minor);
-  padding: var(--border-thickness);
-  margin: 1rem 0;
-  text-transform: uppercase;
+  /* background: var(--clr-background-minor); */
+  /* padding: var(--border-thickness); */
+  /* margin: 1rem 0; */
+  /* text-transform: uppercase; */
 }
 
 .blog-template blockquote {
