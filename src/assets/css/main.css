@@ -2304,6 +2304,12 @@ Blog Template
 .blog-content a {
   font-family: var(--ff-primary);
   color: var(--clr-green-major);
+  background: var(--clr-background-major);
+  padding: 0 10px;
+}
+
+.blog-content .btn{
+  padding: 0;
 }
 
 .blog-content p img {
@@ -2419,7 +2425,6 @@ Blog Template
 }
 
 @media screen and (max-width: 676px) {
-
   .blog-content p img {
     max-height: 300px;
     max-width: 300px;
