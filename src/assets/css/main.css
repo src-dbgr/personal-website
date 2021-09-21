@@ -2019,6 +2019,7 @@ Projects
 }
 .project-desc {
   word-spacing: 15px;
+  text-align: justify;
   color: var(--clr-grey-3);
   background: var(--clr-background-minor);
   padding: var(--border-thickness);
@@ -2336,17 +2337,14 @@ Blog Template
   /* color: var(--clr-green-major); */
 }
 
-.blog-template ul {
-  width: 100%;
-  /* margin-top: 2rem; */
-  margin-left: 50px;
-  display: inline-block;
+.blog-content ul{
+  font-size: 0.9rem;
+  padding-left: 1.4rem;
 }
-.blog-template ul li {
-  /* background: var(--clr-background-minor); */
-  /* padding: var(--border-thickness); */
-  /* margin: 1rem 0; */
-  /* text-transform: uppercase; */
+.blog-content ul li {
+  display: list-item; 
+  list-style-position: outside;
+  list-style-type: square;
 }
 
 .blog-template blockquote {
