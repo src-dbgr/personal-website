@@ -1,6 +1,55 @@
 # Personal website
 
-- run with `gatsby develop`
+This project hosts the code base for my personal web application develop in Gatsby.js
+
+Note:
+- Text content is administered separately from this application via Strapi API
+  - [strapi plugin](https://www.gatsbyjs.com/plugins/gatsby-source-strapi/)
+  - Data access is performed via GraphiQL
+
+## Local Development
+
+### Installation & Set Up
+
+0. Make sure you have Node installed
+   - I developed this app with 
+     - Node v14.17.0
+     -  NPM 6.14.13
+
+1. Install the Gatsby CLI
+
+   ```sh
+   npm install -g gatsby-cli
+   ```
+
+2. Remove the following block from gatsby-config.js - otherwise it will fail to run since it is looking for the data resources, consider replacing it with your custom data if you want to use this code base
+
+   ```sh
+   {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Defaults to 100
+        collectionTypes: [
+          `job`,
+          `project`,
+          `blog`,
+          `cookie`,
+          `station`,
+          `stationctgry`,
+          `techstack`,
+        ],
+        singleTypes: [`about`],
+      },
+    },
+   ```
+
+3. Local development with ``
+
+   ```sh
+   gatsby develop
+   ```
+
 - if gatsby is not recognize, check the following: [github](https://github.com/nodejs/node/issues/29287#issuecomment-524859390)
 - using npx is suboptimal since it will not make the Gatsby CLI globally available see [Using npx to install Gatsby](https://www.gatsbyjs.com/docs/glossary/npm/#using-npx-to-install-gatsby)
 
