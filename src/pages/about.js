@@ -152,6 +152,7 @@ export const query = graphql`
         Order_Id
         To_Month
         To_Year
+        To_Text
         Graduation
         Institution
         stack {

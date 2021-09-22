@@ -1,16 +1,16 @@
 {
-  "hash": "dff964c8571bd1887948",
+  "hash": "f21cebde6570b618e7c3",
   "publicPath": "/",
   "outputPath": "E:\\webdesign\\mywebsite\\mygatsbywebsite",
   "assetsByChunkName": {
     "polyfill": [
       "polyfill.js",
-      "polyfill.0da8bb571e93cd0f2045.hot-update.js"
+      "polyfill.7d06392a77ddafb895e8.hot-update.js"
     ],
     "commons": [
       "commons.css",
       "commons.js",
-      "commons.0da8bb571e93cd0f2045.hot-update.js"
+      "commons.7d06392a77ddafb895e8.hot-update.js"
     ],
     "component---cache-dev-404-page-js": [
       "component---cache-dev-404-page-js.js"
@@ -19,7 +19,8 @@
       "component---src-pages-404-js.js"
     ],
     "component---src-pages-about-js": [
-      "component---src-pages-about-js.js"
+      "component---src-pages-about-js.js",
+      "component---src-pages-about-js.7d06392a77ddafb895e8.hot-update.js"
     ],
     "component---src-pages-blog-js": [
       "component---src-pages-blog-js.js"
@@ -50,8 +51,8 @@
     {
       "type": "assets by status",
       "cached": true,
-      "filteredChildren": 39,
-      "size": 93130528
+      "filteredChildren": 40,
+      "size": 93174484
     }
   ],
   "namedChunkGroups": {
@@ -65,7 +66,7 @@
           "name": "polyfill.js"
         },
         {
-          "name": "polyfill.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "polyfill.7d06392a77ddafb895e8.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -92,7 +93,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -137,7 +138,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-404-js.js"
@@ -168,10 +169,13 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-about-js.js"
+        },
+        {
+          "name": "component---src-pages-about-js.7d06392a77ddafb895e8.hot-update.js"
         }
       ],
       "filteredAssets": 0,
@@ -199,7 +203,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-blog-js.js"
@@ -230,7 +234,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-contact-js.js"
@@ -261,7 +265,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-index-js.js"
@@ -292,7 +296,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-legal-js.js"
@@ -323,7 +327,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-privacy-js.js"
@@ -354,7 +358,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-pages-projects-js.js"
@@ -385,7 +389,7 @@
           "name": "commons.js"
         },
         {
-          "name": "commons.0da8bb571e93cd0f2045.hot-update.js"
+          "name": "commons.7d06392a77ddafb895e8.hot-update.js"
         },
         {
           "name": "component---src-templates-blog-template-js.js"
@@ -405,7 +409,7 @@
       "id": "polyfill",
       "files": [
         "polyfill.js",
-        "polyfill.0da8bb571e93cd0f2045.hot-update.js"
+        "polyfill.7d06392a77ddafb895e8.hot-update.js"
       ]
     },
     {
@@ -413,7 +417,7 @@
       "files": [
         "commons.css",
         "commons.js",
-        "commons.0da8bb571e93cd0f2045.hot-update.js"
+        "commons.7d06392a77ddafb895e8.hot-update.js"
       ]
     },
     {
@@ -455,7 +459,8 @@
     {
       "id": "component---src-pages-about-js",
       "files": [
-        "component---src-pages-about-js.js"
+        "component---src-pages-about-js.js",
+        "component---src-pages-about-js.7d06392a77ddafb895e8.hot-update.js"
       ]
     },
     {

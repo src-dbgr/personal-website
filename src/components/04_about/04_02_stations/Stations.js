@@ -220,7 +220,9 @@ const Stations = ({ stations, categories }) => {
                             <h4>To:</h4>
                           </div>
                           <div>
-                            {station.To_Month}/{station.To_Year}
+                            {station.To_Text !== null
+                              ? station.To_Text
+                              : station.To_Month + "/" + station.To_Year}
                           </div>
                         </div>
                       </div>
