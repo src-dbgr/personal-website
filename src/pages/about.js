@@ -143,7 +143,10 @@ export const query = graphql`
         }
       }
     }
-    allStrapiStation(sort: { order: DESC, fields: Order_Id }) {
+    allStrapiStation(
+      sort: { order: DESC, fields: Order_Id }
+      filter: { Activated: { eq: true } }
+    ) {
       nodes {
         Date
         Description
