@@ -1,6 +1,6 @@
-# Personal website
+# Personal web app
 
-This project hosts the code base for my personal web application develop in Gatsby.js
+This project hosts the code base for my personal web application developed in Gatsby.js
 
 Note:
 - Text content is administered separately from this application via Strapi API
@@ -22,7 +22,7 @@ Note:
    npm install -g gatsby-cli
    ```
 
-2. Remove the following block from gatsby-config.js - otherwise it will fail to run since it is looking for the data resources, consider replacing it with your custom data if you want to use this code base
+2. Remove the following block from gatsby-config.js - otherwise, it will fail to run since it is looking for the data resources, consider replacing it with your custom data if you want to use this codebase
 
    ```sh
    {
@@ -50,15 +50,15 @@ Note:
    gatsby develop
    ```
 
-- if gatsby is not recognize, check the following: [github](https://github.com/nodejs/node/issues/29287#issuecomment-524859390)
+- if gatsby is not recognized, check the following: [github](https://github.com/nodejs/node/issues/29287#issuecomment-524859390)
 - using npx is suboptimal since it will not make the Gatsby CLI globally available see [Using npx to install Gatsby](https://www.gatsbyjs.com/docs/glossary/npm/#using-npx-to-install-gatsby)
 
 ## Adding custom javascript to gatsby
 
 - create a js file named `gatsby-ssr.js` in **root** folder, NOT src!
-- add tag lines you want to include, see the example below.
-- the custom .js files you want to add at to the bottom of your project need to be placed into folder named **static**, this folder needs also to be created in the root directory of your project. You may create whatever sub-folder structure within this **static** folder as you like. The final rendered gatsby project takes content the **static** folder and passes it into the **public** folder of your gatsby project. **NOTE:** when referencing your custom .js files as a source in a script tag in the **gatsby-ssr.js** file, you do not need to type **static/<your .js file>**, you just need to provide the path the files within the static folder without typing static explicitly.
-- By applying this configuration the .js files are treated as props, more specifically as "postBodyComponents" props, you can find more information about this topic in the official documentation [Gatsby Server Rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/#onRenderBody)
+- add tag lines you want to include. See the example below.
+- the custom .js files you want to add at the bottom of your project need to be placed into a folder named **static**. This folder also needs to be created in the root directory of your project. You may create whatever sub-folder structure within this **static** folder you like. What happens is, the final rendered gatsby project takes the content inside the **static** folder and passes it into the **public** folder of your gatsby project. **NOTE:** when referencing your custom .js files as a source in a script tag in the **gatsby-ssr.js** file, you do not need to type **static/<your .js file>**. You need to provide the path of the files within the static folder without typing static explicitly.
+- With the application of this configuration, the .js files are treated as props, more specifically as "postBodyComponents" props. You can find more information about this topic in the official documentation [Gatsby Server Rendering APIs](https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/#onRenderBody)
   - Example of **gatsby-ssr.js**:
 
 ```
@@ -84,7 +84,7 @@ export const onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
 
 ```
 
-- You can see exactly where the files will be placed by opening the file _.cache/default-html.js_ in line #23 you see "{props.postBodyComponents}" this is the place gatsby renders the files into. Of course only if you apply the changes to this specific prop.
+- You can see exactly where the files will be placed by opening the file _.cache/default-html.js_ in line #23 you see "{props.postBodyComponents}" this is the place gatsby renders the files into. Of course, only if you apply the changes to this specific prop.
   - Default template of **html.js**:
 
 ```
@@ -126,10 +126,10 @@ HTML.propTypes = {
 }
 ```
 
-- You can even perform changes to the ".cache/default-html.js" file. In order to do this you need to perform the following steps:
+- You can even perform changes to the ".cache/default-html.js" file. To do this you need to complete the following steps:
   - Make a copy of the file ".cache/default-html.js"
   - Paste the copy into your _src_ folder and **rename** the file to **html.js**
-  - apply whatever changes you want to the file, but note that gatsby places this entire content simply into the body of the finally rendered index.html file, so javascript script files will to be placed outside of the **body** tags, this can lead to weird effects such as code not running correctly, or event handler cannot be assigned, simply because the dom tree is not yet fully build but javascript tries to access certain elements. Be cautious here and research how this can be avoided.
+  - apply whatever changes you want to the file, but note that gatsby places this entire content simply into the body of the final rendered index.html file, so javascript script files will be placed outside of the **body** tags. This may lead to weird effects such as code not running correctly, or event handler cannot be assigned, simply because the dom tree is not yet fully built, but javascript tries to access certain elements. So be cautious here and research how this can be avoided.
 
 ## Global State
 
