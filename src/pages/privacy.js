@@ -46,25 +46,25 @@ const privacy = () => {
             </div>
             <div>
               <div className="impressum-name">
-                <div className="impressum-name">Al</div>
-                <div className="impressum-name">te&nbsp;</div>
-                <div className="impressum-name">Gl</div>
-                <div className="impressum-name">ock</div>
-                <div className="impressum-name">engi</div>
-                <div className="impressum-name">eße</div>
-                <div className="impressum-name">re</div>
-                <div className="impressum-name">i&nbsp;4</div>
+                <div className="impressum-name">Kr</div>
+                <div className="impressum-name">ai</div>
+                <div className="impressum-name">ch</div>
+                <div className="impressum-name">gau</div>
+                <div className="impressum-name">st</div>
+                <div className="impressum-name">ra</div>
+                <div className="impressum-name">ß</div>
+                <div className="impressum-name">e&nbsp;3</div>
               </div>
             </div>
             <div>
               <div className="impressum-name">
-                <div className="impressum-name">681</div>
+                <div className="impressum-name">691</div>
                 <div className="impressum-name">65&nbsp;</div>
-                <div className="impressum-name">He</div>
-                <div className="impressum-name">id</div>
-                <div className="impressum-name">elb</div>
-                <div className="impressum-name">er</div>
-                <div className="impressum-name">g</div>
+                <div className="impressum-name">Wi</div>
+                <div className="impressum-name">es</div>
+                <div className="impressum-name">lo</div>
+                <div className="impressum-name">c</div>
+                <div className="impressum-name">h</div>
               </div>
               <div>Deutschland</div>
             </div>
@@ -72,11 +72,11 @@ const privacy = () => {
               <div className="impressum-name">+4</div>
               <div className="impressum-name">9</div>
               <div className="impressum-name">&nbsp;</div>
-              <div className="impressum-name">176&nbsp;</div>
-              <div className="impressum-name">49</div>
-              <div className="impressum-name">69</div>
-              <div className="impressum-name">56</div>
-              <div className="impressum-name">17</div>
+              <div className="impressum-name">151&nbsp;</div>
+              <div className="impressum-name">708</div>
+              <div className="impressum-name">76</div>
+              <div className="impressum-name">6</div>
+              <div className="impressum-name">04</div>
             </div>
             <div className="impressum-name">
               <div className="impressum-name">https://www.</div>

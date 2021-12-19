@@ -94,7 +94,7 @@ const Layout = ({ children, darkFooter }) => {
   // disable in production
   // disabling on first render
   // useEffect(() => {
-  //   const noop = () => {};
+  //   const noop = () => { };
   //   [
   //     "assert",
   //     "clear",

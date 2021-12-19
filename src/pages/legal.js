@@ -24,25 +24,25 @@ const legal = () => {
           <h3>Postanschrift:</h3>
           <div>
             <div className="impressum-name">
-              <div className="impressum-name">Al</div>
-              <div className="impressum-name">te&nbsp;</div>
-              <div className="impressum-name">Gl</div>
-              <div className="impressum-name">ock</div>
-              <div className="impressum-name">engi</div>
-              <div className="impressum-name">eße</div>
-              <div className="impressum-name">re</div>
-              <div className="impressum-name">i&nbsp;4</div>
+              <div className="impressum-name">Kr</div>
+              <div className="impressum-name">ai</div>
+              <div className="impressum-name">ch</div>
+              <div className="impressum-name">gau</div>
+              <div className="impressum-name">st</div>
+              <div className="impressum-name">ra</div>
+              <div className="impressum-name">ß</div>
+              <div className="impressum-name">e&nbsp;3</div>
             </div>
           </div>
           <div>
             <div className="impressum-name">
-              <div className="impressum-name">681</div>
-              <div className="impressum-name">65&nbsp;</div>
-              <div className="impressum-name">He</div>
-              <div className="impressum-name">id</div>
-              <div className="impressum-name">elb</div>
-              <div className="impressum-name">er</div>
-              <div className="impressum-name">g</div>
+              <div className="impressum-name">691</div>
+              <div className="impressum-name">68&nbsp;</div>
+              <div className="impressum-name">Wie</div>
+              <div className="impressum-name">s</div>
+              <div className="impressum-name">l</div>
+              <div className="impressum-name">o</div>
+              <div className="impressum-name">ch</div>
             </div>
           </div>
           <h3>Kontakt:</h3>
@@ -52,11 +52,11 @@ const legal = () => {
               <div className="impressum-name">+4</div>
               <div className="impressum-name">9</div>
               <div className="impressum-name">&nbsp;</div>
-              <div className="impressum-name">176&nbsp;</div>
-              <div className="impressum-name">49</div>
-              <div className="impressum-name">69</div>
-              <div className="impressum-name">56</div>
-              <div className="impressum-name">17</div>
+              <div className="impressum-name">15&nbsp;</div>
+              <div className="impressum-name">170</div>
+              <div className="impressum-name">87</div>
+              <div className="impressum-name">66</div>
+              <div className="impressum-name">04</div>
             </div>
             <div className="impressum-name">
               <p>E-Mail:&nbsp;</p>

@@ -3243,3 +3243,107 @@ Privacy Policy
 .impressum-name {
   font-size: 11pt;
 }
+
+.animationWrapper{
+  height: 100%;
+  width: 100%;
+}
+
+.animationToggleWrapper{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: calc(2 * var(--navbar-height) + 10px);
+  width: 100px;
+  z-index: 1000;
+}
+
+.animationToggle{
+  background: var(--clr-light-dark);
+  padding: 5px;
+  position: absolute;
+  text-align: center;
+  cursor: pointer;
+  top: calc(2*var(--neg-page-top-space) - 10px);
+  height: 100%;
+  width: 100%;
+  opacity: .3;
+  padding-top: var(--navbar-height);
+  transition: var(--transition-fast);
+  z-index: 999;
+}
+
+.stopAnim{
+  color: var(--clr-green-everywhere);
+}
+
+.startAnim{
+  color: tomato;
+}
+
+.animationToggle h6{
+  color: var(--clr-mountain-stroke);
+}
+
+.animationToggleWrapper:hover .animationToggle{
+  opacity: 1;
+  top: 0;
+  transition: var(--transition-fast);
+}
+
+.animationToggleWrapper:hover .arrows{
+  opacity: 0;
+  transition: var(--transition-slow);
+}
+
+.arrows {
+  z-index: 998;
+	width: 60px;
+	height: 72px;
+	position: absolute;
+  top: 50px;
+	left: 50%;
+	margin-left: -30px;
+	bottom: 20px;
+  opacity: 1;
+  transition: var(--transition-slow);
+}
+
+.arrows path {
+	stroke: var(--clr-green-major);
+	fill: transparent;
+	stroke-width: 1px;	
+	animation: arrow 2s infinite;
+	-webkit-animation: arrow 2s infinite; 
+}
+
+@keyframes arrow
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+@-webkit-keyframes arrow /*Safari and Chrome*/
+{
+0% {opacity:0}
+40% {opacity:1}
+80% {opacity:0}
+100% {opacity:0}
+}
+
+.arrows path.a1 {
+	animation-delay:-1s;
+	-webkit-animation-delay:-1s; /* Safari 和 Chrome */
+}
+
+.arrows path.a2 {
+	animation-delay:-0.5s;
+	-webkit-animation-delay:-0.5s; /* Safari 和 Chrome */
+}
+
+.arrows path.a3 {	
+	animation-delay:0s;
+	-webkit-animation-delay:0s; /* Safari 和 Chrome */
+}
