@@ -50,6 +50,9 @@
   "overrides": {
     "patch-package": {
       "minimist": "~1.2.6"
+    },
+    "gatsby-source-strapi": {
+      "shell-quote": "~1.7.3"
     }
   },
   "devDependencies": {
