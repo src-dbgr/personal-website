@@ -1,3 +1,8 @@
+html{
+  background-color: rgb(46, 46, 46);
+  scrollbar-color: rgb(61, 139, 104) rgb(51, 51, 51);
+} /*Startup background */
+
 @font-face {
   font-family: "Oswald-300";
   src: local("Oswald"), local("Oswald-300"),
@@ -79,7 +84,7 @@
 
   --clr-prisma-background-gradient: linear-gradient(
     270deg,
-    var(--clr-dark),
+    rgba(120,120,120,0.8),
     var(--clr-background-major)
   );
 
@@ -162,7 +167,7 @@
   );
   --clr-prisma-background-gradient: linear-gradient(
     270deg,
-    rgba(61, 139, 104, 0.8),
+    rgba(73, 73, 73, 0.8),
     rgb(46, 46, 46, 0.8)
   );
   --clr-launch-body-background-radial-gradient: radial-gradient(
@@ -911,7 +916,7 @@ Launch
   overflow: hidden !important;
 }
 
-#logo {
+#logo, #logo_2 {
   position: absolute;
   margin: auto;
   top: 0;
@@ -919,10 +924,17 @@ Launch
   right: 0;
   bottom: 0;
   min-height: 30vh;
-  min-width: 40vw;
   max-height: 40vh;
   max-width: 90vw;
   overflow: hidden;
+}
+
+#logo_2 {
+  opacity: 0.8;
+}
+
+#logo {
+  min-width: 40vw;
   opacity: 0; /* make opaque for animation */
 }
 
@@ -3278,7 +3290,7 @@ Privacy Policy
 }
 
 .startAnim{
-  color: tomato;
+  color: var(--clr-green-everywhere);
 }
 
 .animationToggle h6{

@@ -42,7 +42,26 @@ const ThreejsRender = () => {
             <Plane position={[1, 0, 0]} />
           </Canvas>
         </Suspense>
-      ) : (<></>)
+      ) : (<>
+        <svg xmlns="http://www.w3.org/2000/svg" width={250} height={250} id="logo_2">
+          <defs>
+            <linearGradient
+              id="rad_grad_a"
+              data-name="grad_trngl"
+              x1={264.1}
+              y1={130.6}
+              x2={514.1}
+              y2={130.6}
+              gradientTransform="rotate(180 257.05 127.8)"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset={0} stopColor="#ac4a9c" />
+              <stop offset={1} stopColor="#00af64" />
+            </linearGradient>
+          </defs>
+          <path data-name="triangle nav" d="m0 0 124.3 250L250 0Z" fill="url(#rad_grad_a)" />
+        </svg>
+      </>)
       }
     </div>
   );

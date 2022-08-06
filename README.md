@@ -154,8 +154,16 @@ HTML.propTypes = {
 - `npm i -g npm-check-updates`
 
 ### Setting a Tag
-`git tag -a v1.2 9fceb02 -m "Message here"`
+- `git tag -a v1.2 9fceb02 -m "Message here"`
 
 Push the tag change to the remote repository
 
-`git push origin v1.2`
+- `git push origin v1.2`
+
+Delete a git tag locally
+
+- `git tag -d <tag name>`
+
+Delete a git tag remotely
+
+- `git push --delete origin <tag name>`

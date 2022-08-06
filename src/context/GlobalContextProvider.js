@@ -4,7 +4,7 @@ export const GlobalStateContext = React.createContext();
 export const GlobalDispatchContext = React.createContext();
 
 const initialState = {
-  theme: "light",
+  theme: "dark",
   animation: true,
   navopen: false,
   navlogoscale: false,

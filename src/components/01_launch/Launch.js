@@ -1,4 +1,7 @@
-import React, { useEffect } from "react";
+import {
+  GlobalStateContext,
+} from "../../context/GlobalContextProvider";
+import React, { useEffect, useContext } from "react";
 import anime from "animejs";
 import Seo from "../general/Seo";
 
@@ -51,7 +54,7 @@ const Launch = (props) => {
                   anime({
                     targets: trianglePathEls[i],
                     stroke: {
-                      value: ["rgba(150, 149, 141, 0.8)"],
+                      value: [`${theme === "dark" ? "rgb(61, 139, 104)" : "rgba(150, 149, 141, 0.8)"}`],
                       duration: 1000,
                     },
                     strokeWidth: [0, 1.5],
@@ -379,6 +382,8 @@ const Launch = (props) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const theme = useContext(GlobalStateContext).theme;
+
   return (
     <>
       <Seo title="Launch" />
@@ -559,7 +564,7 @@ const Launch = (props) => {
               cy={148.4}
               rx={111.6}
               ry={111.6}
-              fill="url(#Unbenannter_Verlauf_249)"
+              fill={`${theme === "dark" ? "rgba(53, 53, 53, 0.7)" : "url(#Unbenannter_Verlauf_249)"}`}
             />
           </g>
           <g
@@ -577,7 +582,7 @@ const Launch = (props) => {
               cy={148.4}
               rx={78.4}
               ry={78.4}
-              fill="url(#Unbenannter_Verlauf_1075)"
+              fill={`${theme === "dark" ? "rgba(62, 62, 62, 0.7)" : "url(#Unbenannter_Verlauf_1075)"}`}
             />
           </g>
           <g id="triangle">
