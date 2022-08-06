@@ -152,3 +152,10 @@ HTML.propTypes = {
 
 ### Check for Dependency updates
 - `npm i -g npm-check-updates`
+
+### Setting a Tag
+`git tag -a v1.2 9fceb02 -m "Message here"`
+
+Push the tag change to the remote repository
+
+`git push origin v1.2`
