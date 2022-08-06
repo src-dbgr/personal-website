@@ -7,7 +7,7 @@ import FadeInSection from "../../../hooks/FadeInSection";
 
 const query = graphql`
   {
-    allStrapiJob(sort: { fields: strapiId, order: DESC }) {
+    allStrapiJob(sort: { fields: strapi_id, order: DESC }) {
       nodes {
         company
         date
@@ -16,7 +16,7 @@ const query = graphql`
           id
         }
         position
-        strapiId
+        strapi_id
       }
     }
   }
@@ -39,7 +39,7 @@ const Experience = () => {
             {jobs.map((item, index) => {
               return (
                 <button
-                  key={item.strapiId}
+                  key={item.strapi_id}
                   onClick={() => setValue(index)}
                   className={`job-btn
         ${index === value ? "active-btn" : ""}

@@ -16,7 +16,7 @@ const ComponentName = ({ data }) => {
         <FadeInSection>
           <div className="section-center">
             <article className="blog-content">
-              <ReactMarkdown children={content} />
+              <ReactMarkdown children={content.data.content} />
               <Link to="/blog" className="btn center-btn">
                 <span className="btn">all blogs</span>
               </Link>
@@ -31,7 +31,11 @@ const ComponentName = ({ data }) => {
 export const query = graphql`
   query GetSingleBlog($slug: String) {
     blog: strapiBlog(slug: { eq: $slug }) {
-      content
+      content {
+        data {
+          content
+        }
+      }
       title
       desc
     }

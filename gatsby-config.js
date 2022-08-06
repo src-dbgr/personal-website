@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   // In your gatsby-config.js
   siteMetadata: {
@@ -26,10 +30,12 @@ module.exports = {
       },
     },
     {
+
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `http://localhost:1337`,
-        queryLimit: 1000, // Defaults to 100
+        apiURL: process.env.STRAPI_API_URL || "http://localhost:1337",
+        accessToken: process.env.STRAPI_TOKEN,
+        // queryLimit: 1000, // Defaults to 100
         collectionTypes: [
           `job`,
           `project`,

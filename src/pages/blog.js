@@ -28,35 +28,39 @@ const BlogPage = ({
 };
 
 export const query = graphql`
-  {
-    allStrapiBlog(sort: { order: DESC, fields: date }) {
-      nodes {
-        slug
-        content
-        desc
-        date(formatString: "MMMM Do, YYYY")
-        id
-        title
-        category
-        image {
-          localFile {
-            childImageSharp {
-              gatsbyImageData(
-                placeholder: DOMINANT_COLOR
-                formats: [WEBP, PNG]
-                blurredOptions: { width: 100 }
-                transformOptions: { cropFocus: NORTH, fit: COVER }
-                quality: 80
-                width: 800
-                height: 500
-                backgroundColor: "transparent"
-              )
-            }
+{
+  allStrapiBlog(sort: {order: DESC, fields: date}) {
+    nodes {
+      slug
+      desc
+      date(formatString: "MMMM Do, YYYY")
+      id
+      title
+      content {
+        data {
+          content
+        }
+      }
+      category
+      image {
+        localFile {
+          childImageSharp {
+            gatsbyImageData(
+              placeholder: DOMINANT_COLOR
+              formats: [WEBP, PNG]
+              blurredOptions: {width: 100}
+              transformOptions: {cropFocus: NORTH, fit: COVER}
+              quality: 80
+              width: 800
+              height: 500
+              backgroundColor: "transparent"
+            )
           }
         }
       }
     }
   }
+}
 `;
 
 export default BlogPage;
