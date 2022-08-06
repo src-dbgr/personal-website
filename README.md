@@ -146,3 +146,9 @@ HTML.propTypes = {
 - Markdown [Basic Syntax](https://www.markdownguide.org/basic-syntax/)
 - Markdown [Extended Syntax](https://www.markdownguide.org/extended-syntax/)
 - Markdown [Online Tool Collection](https://www.markdownguide.org/tools/)
+
+### Strapi Populate All:  
+- `npm install strapi-plugin-populate-deep`
+
+### Check for Dependency updates
+- `npm i -g npm-check-updates`
