@@ -1,4 +1,7 @@
-import React, { Suspense, useState } from "react";
+import {
+  GlobalStateContext,
+} from "../../../context/GlobalContextProvider";
+import React, { Suspense, useState, useContext} from "react";
 import Sphere from "./Sphere";
 import Tetrahedron from "./Tetrahedron";
 import Plane from "./Plane";
@@ -7,7 +10,7 @@ import { ResizeObserver } from "@juggle/resize-observer";
 
 const ThreejsRender = () => {
   const [animation, toggleAnimation] = useState(false);
-
+  const theme = useContext(GlobalStateContext).theme;
   return (
     <div className="animationWrapper">
       <div className="animationToggleWrapper">
@@ -55,8 +58,8 @@ const ThreejsRender = () => {
               gradientTransform="rotate(180 257.05 127.8)"
               gradientUnits="userSpaceOnUse"
             >
-              <stop offset={0} stopColor="#ac4a9c" />
-              <stop offset={1} stopColor="#00af64" />
+              <stop offset={0} stopColor={`${theme === "dark" ? "#ac4a9c" : "rgb(61,139,104)"}`} />
+              <stop offset={1} stopColor={`${theme === "dark" ? "#00af64" : "rgb(123,97,110)"}`} />
             </linearGradient>
           </defs>
           <path data-name="triangle nav" d="m0 0 124.3 250L250 0Z" fill="url(#rad_grad_a)" />

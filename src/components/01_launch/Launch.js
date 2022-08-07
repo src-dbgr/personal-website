@@ -1,7 +1,4 @@
-import {
-  GlobalStateContext,
-} from "../../context/GlobalContextProvider";
-import React, { useEffect, useContext } from "react";
+import React, { useEffect} from "react";
 import anime from "animejs";
 import Seo from "../general/Seo";
 
@@ -54,7 +51,7 @@ const Launch = (props) => {
                   anime({
                     targets: trianglePathEls[i],
                     stroke: {
-                      value: [`${theme === "dark" ? "rgb(61, 139, 104)" : "rgba(150, 149, 141, 0.8)"}`],
+                      value: ["rgb(61, 139, 104)"],
                       duration: 1000,
                     },
                     strokeWidth: [0, 1.5],
@@ -157,9 +154,17 @@ const Launch = (props) => {
 
           let animTimeout = 1000;
           let killAnimationTriggered = false;
-
+          let iteration = 0;
           function killAnimation(e) {
             if (!killAnimationTriggered) {
+              if(iteration === 0){
+                ++iteration;
+                if(e.code === 'customIdentifier'){
+                  console.log("Automatically")
+                  setTimeout(killAnimation,1000 ,e);
+                  return
+                }
+              }
               document.querySelector(
                 "#triangle #_12triangleback"
               ).style.opacity = 0;
@@ -382,8 +387,6 @@ const Launch = (props) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const theme = useContext(GlobalStateContext).theme;
-
   return (
     <>
       <Seo title="Launch" />
@@ -564,7 +567,7 @@ const Launch = (props) => {
               cy={148.4}
               rx={111.6}
               ry={111.6}
-              fill={`${theme === "dark" ? "rgba(53, 53, 53, 0.7)" : "url(#Unbenannter_Verlauf_249)"}`}
+              fill={"rgba(53,53,53,0.7)"}
             />
           </g>
           <g
@@ -582,7 +585,7 @@ const Launch = (props) => {
               cy={148.4}
               rx={78.4}
               ry={78.4}
-              fill={`${theme === "dark" ? "rgba(62, 62, 62, 0.7)" : "url(#Unbenannter_Verlauf_1075)"}`}
+              fill={"rgba(62,62,62,0.7)"}
             />
           </g>
           <g id="triangle">
