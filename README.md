@@ -87,6 +87,7 @@ export const onRenderBody = ({ setPostBodyComponents }, pluginOptions) => {
 - You can see exactly where the files will be placed by opening the file _.cache/default-html.js_ in line #23 you see "{props.postBodyComponents}" this is the place gatsby renders the files into. Of course, only if you apply the changes to this specific prop.
   - Default template of **html.js**:
 
+- Utilization of `html.js` in this project for setting theme dependend background color in html tag
 ```
 import React from "react"
 import PropTypes from "prop-types"

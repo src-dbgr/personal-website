@@ -60,4 +60,5 @@ const GlobalContextProvider = ({ children }) => {
   );
 };
 
+export const themeStyle = initialState.theme;
 export default GlobalContextProvider;

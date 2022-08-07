@@ -97,7 +97,7 @@
   --transition-slow: all 2.5s ease;
   --transition: all 0.5s ease;
   --transition-medium: all 0.8s ease;
-  --transition-fast: all 0.3s ease;
+  --transition-fast: all 0.2s ease;
   --transition-very-fast: all 0.15s ease;
   --spacing: 0.07rem;
   --spacing-big: 0.135rem;
@@ -110,6 +110,7 @@
   --default-box-shadow: 1px 1px 2px var(--clr-dark-shadow);
   --default-btn-shadow: 0px 1px 2px rgba(17, 17, 17, 0.3);
   --default-nav-shadow: 2px 0px 4px var(--clr-dark-strong);
+  --clr-navbar-background: rgba(139,138,136,0.4);
 }
 
 .dark-theme {
@@ -138,17 +139,20 @@
   --clr-mountain-stroke: rgb(137, 163, 149);
   --clr-sunmoon-topbar: rgb(137, 163, 149);
   --default-box-shadow: 1px 1px 3px var(--clr-dark-shadow);
+  --clr-navbar-background: rgba(69,69,69,0.4);
   --clr-about-img-background-hover: linear-gradient(rgb(46, 46, 46),
       rgb(51, 51, 51));
   --clr-green-minor: rgb(137, 163, 149);
   --clr-topbar-text-hover-linear-gradient: linear-gradient(270deg,
       var(--clr-background-minor),
       var(--clr-light-dark));
-  --clr-prisma-background-gradient: linear-gradient(270deg,
+  --clr-prisma-background-gradient: rgb(46, 46, 46, 0.8);
+  /* --clr-prisma-background-gradient: linear-gradient(270deg,
       rgba(73, 73, 73, 0.8),
-      rgb(46, 46, 46, 0.8));
-  --clr-launch-body-background-radial-gradient: radial-gradient(rgb(59, 59, 59),
-      var(--clr-background-major));
+      rgb(46, 46, 46, 0.8)); */
+  --clr-launch-body-background-radial-gradient: rgb(46, 46, 46);
+  /* --clr-launch-body-background-radial-gradient: radial-gradient(rgb(59, 59, 59),
+      var(--clr-background-major)); */
   --clr-section-radial-gradient: radial-gradient(circle,
       var(--clr-background-major) 0%,
       var(--clr-background-minor) 30%);
@@ -165,7 +169,7 @@
   scrollbar-color: var(--clr-dark) var(--clr-background-minor);
   scrollbar-width: thin;
   overflow-y: scroll;
-  overflow-x: hidden!important;
+  overflow-x: hidden !important;
 }
 
 /*
@@ -615,7 +619,7 @@ Section Triangle Transitions
   }
 
   100% {
-    stop-color: var(--clr-background-major);
+    stop-color: grey;
   }
 }
 
@@ -661,6 +665,22 @@ html {
   font-size: 100%;
 }
 
+.dark-launch-style {
+  overflow: hidden !important;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(rgb(46, 46, 46) rgb(51, 51, 51)) !important;
+  background-color: radial-gradient(rgb(46, 46, 46) rgb(51, 51, 51)) !important;
+}
+
+.light-launch-style {
+  overflow: hidden !important;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(rgb(181, 178, 166) rgb(150, 149, 141)) !important;
+  background-color: radial-gradient(rgb(181, 178, 166) rgb(150, 149, 141)) !important;
+}
+
 *,
 ::after,
 ::before {
@@ -702,11 +722,11 @@ a {
 }
 
 html::-webkit-scrollbar {
-  background: var(--clr-background-minor)!important;
+  background: var(--clr-background-minor) !important;
 }
 
-html::-webkit-scrollbar-thumb{
-  background: var(--clr-dark)!important;
+html::-webkit-scrollbar-thumb {
+  background: var(--clr-dark) !important;
 }
 
 body::-webkit-scrollbar,
@@ -720,14 +740,14 @@ body::-webkit-scrollbar,
 body::-webkit-scrollbar-track,
 .cookie-info-box::-webkit-scrollbar-track,
 .blog-template pre::-webkit-scrollbar-track {
-  background: var(--clr-background-minor);
+  background: var(--clr-background-minor) !important;
   height: 9px;
 }
 
 body::-webkit-scrollbar-thumb,
 .cookie-info-box::-webkit-scrollbar-thumb,
 .blog-template pre::-webkit-scrollbar-thumb {
-  background-color: var(--clr-dark);
+  background-color: var(--clr-dark) !important;
   border-top: 0px;
   border-bottom: 0px;
   width: 20% !important;
@@ -1042,6 +1062,7 @@ NAVBAR
   box-shadow: var(--default-nav-shadow);
   backdrop-filter: blur(10px);
   transition: var(--transition);
+  background: var(--clr-navbar-background);
 }
 
 .navbar_disappear {
@@ -1216,7 +1237,7 @@ NAVBAR
     text-transform: uppercase;
     color: var(--clr-dark);
     letter-spacing: var(--spacing);
-    transition: var(--transition-fast);
+    transition: none;
     padding: 0.2rem 0;
   }
 
@@ -1520,7 +1541,8 @@ About Component
   /* min-height: 100vh; */
   /* background: var(--clr-launch-body-background-radial-gradient); */
   /* background: var(--clr-background-minor); */
-  background: var(--clr-section-radial-gradient);
+  /* background: var(--clr-section-radial-gradient); */
+  background: var(--clr-background-minor);
 }
 
 .shadow-box {
@@ -1992,7 +2014,7 @@ Projects
 .projects {
   /* background: var(--clr-launch-body-background-radial-gradient); */
   /* background: var(--clr-background-minor); */
-  background: var(--clr-section-radial-gradient);
+  background: var(--clr-background-minor);
 }
 
 .project {
@@ -3369,7 +3391,7 @@ Privacy Policy
 }
 
 .animationToggle {
-  background: var(--clr-light-dark);
+  background: rgb(65,65,65);
   padding: 5px;
   position: absolute;
   text-align: center;
@@ -3384,11 +3406,11 @@ Privacy Policy
 }
 
 .stopAnim {
-  color: var(--clr-green-everywhere);
+  color: rgb(198 102 102);
 }
 
 .startAnim {
-  color: var(--clr-green-everywhere);
+  color: rgb(74, 177, 130);
 }
 
 .animationToggle h6 {

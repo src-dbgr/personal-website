@@ -18,17 +18,21 @@ const Sphere = (props) => {
 
   // Rotate mesh every frame, this is outside of React without overhead
   let sin = 0;
+  let elapsedTime = 0;
+  let scaleValue = 0;
   useFrame(() => {
-    sin = Math.sin(clock.elapsedTime / 10);
+    elapsedTime = clock.elapsedTime;
+    sin = Math.sin(elapsedTime / 10);
+    scaleValue = (sin + 0.2) * (active ? 1.8 : 0.8);
     mesh.current.rotation.x = mesh.current.rotation.y +=
-      0.003 + (mouse.x * mouse.y) / 80;
-    mesh.current.position.y = 0.9 * Math.abs(Math.sin(clock.elapsedTime / 5));
+      0.003 + Math.pow(mouse.x,2) / 80;
+    mesh.current.position.y = 0.9 * Math.abs(Math.sin(elapsedTime / 5));
     mesh.current.material.emissiveIntensity = 0.9 * sin;
     mesh.current.material.opacity =
-      0.7 * Math.abs(Math.sin(clock.elapsedTime / 3));
-    mesh.current.scale.x = (sin + 0.2) * (active ? 1.8 : 0.8);
-    mesh.current.scale.y = (sin + 0.2) * (active ? 1.8 : 0.8);
-    mesh.current.scale.z = (sin + 0.2) * (active ? 1.8 : 0.8);
+      0.7 * Math.abs(Math.sin(elapsedTime / 3));
+    mesh.current.scale.x = scaleValue
+    mesh.current.scale.y = scaleValue;
+    mesh.current.scale.z = scaleValue;
   });
 
   const {

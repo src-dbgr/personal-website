@@ -1,4 +1,7 @@
-import React, { useEffect} from "react";
+import {
+  GlobalStateContext,
+} from "../../context/GlobalContextProvider";
+import React, { useEffect, useContext } from "react";
 import anime from "animejs";
 import Seo from "../general/Seo";
 
@@ -51,7 +54,7 @@ const Launch = (props) => {
                   anime({
                     targets: trianglePathEls[i],
                     stroke: {
-                      value: ["rgb(61, 139, 104)"],
+                      value: [`${theme === "dark" ? "rgb(61, 139, 104)" : "rgba(150, 149, 141, 0.8)"}`],
                       duration: 1000,
                     },
                     strokeWidth: [0, 1.5],
@@ -154,14 +157,19 @@ const Launch = (props) => {
 
           let animTimeout = 1000;
           let killAnimationTriggered = false;
-          let iteration = 0;
+          let iteration = 1; // set to 0 if you want to enable customization of the intro animation duration
           function killAnimation(e) {
+            if (theme === 'dark') {
+              document.documentElement.classList.remove("dark-launch-style");
+            } else {
+              document.documentElement.classList.remove("light-launch-style");
+            }
             if (!killAnimationTriggered) {
-              if(iteration === 0){
+              if (iteration < 1) {
                 ++iteration;
-                if(e.code === 'customIdentifier'){
+                if (e.code === 'customIdentifier') {
                   console.log("Automatically")
-                  setTimeout(killAnimation,1000 ,e);
+                  setTimeout(killAnimation, 2000, e); // timeout determines the duration of the intro animation before it decays
                   return
                 }
               }
@@ -387,6 +395,8 @@ const Launch = (props) => {
     }
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  const theme = useContext(GlobalStateContext).theme;
+
   return (
     <>
       <Seo title="Launch" />
@@ -413,6 +423,21 @@ const Launch = (props) => {
               <stop offset={0.61} stopColor="#868881" />
               <stop offset={0.83} stopColor="#95948b" />
               <stop offset={1} stopColor="#9a988e" />
+            </radialGradient>
+            <radialGradient
+              id="Unbenannter_Verlauf_999"
+              data-name="Unbenannter Verlauf 249"
+              cx={189.92}
+              cy={206.48}
+              r={99.62}
+              gradientTransform="translate(-62.8 -82.7) scale(1.12 1.12)"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop offset={0.70} stopColor="rgba(53, 53, 53, 0.7)" />
+              <stop offset={0.71} stopColor="rgba(61, 139, 104, 0.7)" />
+              <stop offset={0.76} stopColor="rgba(61, 139, 104, 0.7)" />
+              <stop offset={0.77} stopColor="rgba(53, 53, 53, 0.7)" />
+              <stop offset={1} stopColor="rgba(53, 53, 53, 0.7)" />
             </radialGradient>
             <radialGradient
               id="Unbenannter_Verlauf_1075"
@@ -567,7 +592,7 @@ const Launch = (props) => {
               cy={148.4}
               rx={111.6}
               ry={111.6}
-              fill={"rgba(53,53,53,0.7)"}
+              fill={`${theme === "dark" ? "url(#Unbenannter_Verlauf_999)" : "url(#Unbenannter_Verlauf_249)"}`}
             />
           </g>
           <g
@@ -585,7 +610,7 @@ const Launch = (props) => {
               cy={148.4}
               rx={78.4}
               ry={78.4}
-              fill={"rgba(62,62,62,0.7)"}
+              fill={`${theme === "dark" ? "rgba(62, 62, 62, 0.7)" : "url(#Unbenannter_Verlauf_1075)"}`}
             />
           </g>
           <g id="triangle">
@@ -604,6 +629,7 @@ const Launch = (props) => {
               points="186.7 213.5 262 213.5 261.2 212.1 206 180.2 186.7 213.5"
               fill="url(#Unbenannter_Verlauf_278)"
               style={{
+                opacity: 0.85,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -613,6 +639,7 @@ const Launch = (props) => {
               points="206 180.2 261.2 212.1 224.4 148.4 206 180.2"
               fill="url(#Unbenannter_Verlauf_1265)"
               style={{
+                opacity: 0.6,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -622,6 +649,7 @@ const Launch = (props) => {
               points="75.4 148.4 38.4 212.5 93.9 180.5 75.4 148.4"
               fill="url(#Unbenannter_Verlauf_1269)"
               style={{
+                opacity: 1,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -631,6 +659,7 @@ const Launch = (props) => {
               points="38.4 212.5 37.8 213.5 113 213.5 93.9 180.5 38.4 212.5"
               fill="url(#Unbenannter_Verlauf_278-2)"
               style={{
+                opacity: 0.75,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -640,6 +669,7 @@ const Launch = (props) => {
               points="150.2 148 150.2 213.5 186.7 213.5 206 180.2 150.2 148"
               fill="url(#Unbenannter_Verlauf_145)"
               style={{
+                opacity: 0.95,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -649,6 +679,7 @@ const Launch = (props) => {
               points="150.2 148 150.2 148 93.9 180.5 113 213.5 150.2 213.5 150.2 148"
               fill="url(#Unbenannter_Verlauf_145-2)"
               style={{
+                opacity: 0.75,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -658,6 +689,7 @@ const Launch = (props) => {
               points="150.2 148 94.3 115.8 75.4 148.4 93.9 180.5 150.2 148"
               fill="url(#Unbenannter_Verlauf_1278)"
               style={{
+                opacity: 0.65,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -667,6 +699,7 @@ const Launch = (props) => {
               points="150.2 148 150.2 148 206 180.2 224.4 148.4 205.6 116 150.2 148"
               fill="url(#Unbenannter_Verlauf_145-3)"
               style={{
+                opacity: 0.9,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -676,6 +709,7 @@ const Launch = (props) => {
               points="150.2 148 150.2 148 150.2 83.4 113 83.4 94.3 115.8 150.2 148"
               fill="url(#Unbenannter_Verlauf_145-4)"
               style={{
+                opacity: 1,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -685,6 +719,7 @@ const Launch = (props) => {
               points="150.2 148 205.6 116 186.7 83.4 150.2 83.4 150.2 148"
               fill="url(#Unbenannter_Verlauf_145-5)"
               style={{
+                opacity: 0.75,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -694,6 +729,7 @@ const Launch = (props) => {
               points="150.2 20.1 149.8 19.6 113 83.4 150.2 83.4 150.2 20.1"
               fill="url(#Unbenannter_Verlauf_280)"
               style={{
+                opacity: 0.9,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
@@ -703,6 +739,7 @@ const Launch = (props) => {
               points="186.7 83.4 150.2 20.1 150.2 83.4 186.7 83.4"
               fill="url(#Unbenannter_Verlauf_1258-2)"
               style={{
+                opacity: 0.8,
                 transform: "translateX(0px) translateY(0px) rotateZ(0deg)",
               }}
             />
