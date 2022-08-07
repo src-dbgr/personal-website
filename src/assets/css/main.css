@@ -146,7 +146,7 @@
   --clr-topbar-text-hover-linear-gradient: linear-gradient(270deg,
       var(--clr-background-minor),
       var(--clr-light-dark));
-  --clr-prisma-background-gradient: rgb(46, 46, 46, 0.8);
+  --clr-prisma-background-gradient: rgb(46, 46, 46, 0);
   /* --clr-prisma-background-gradient: linear-gradient(270deg,
       rgba(73, 73, 73, 0.8),
       rgb(46, 46, 46, 0.8)); */
@@ -933,7 +933,9 @@ Launch
   height: 100vh;
   width: 100vw !important;
   position: relative;
-  background: var(--clr-launch-body-background-radial-gradient);
+  /* CHANGE BACKGROUND to background: var(--clr-launch-body-background-radial-gradient); when using light mode */
+  /* background: var(--clr-launch-body-background-radial-gradient); */
+  background: rgb(46, 46, 46);
   margin-top: var(--neg-page-top-space);
   /* to compensate window height difference */
   overflow: hidden !important;
