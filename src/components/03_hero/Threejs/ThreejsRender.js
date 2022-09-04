@@ -1,7 +1,7 @@
 import {
   GlobalStateContext,
 } from "../../../context/GlobalContextProvider";
-import React, { Suspense, useState, useContext} from "react";
+import React, { Suspense, useState, useContext } from "react";
 import Sphere from "./Sphere";
 import Tetrahedron from "./Tetrahedron";
 import Plane from "./Plane";
@@ -25,7 +25,13 @@ const ThreejsRender = () => {
         </svg>
       </div>
       {animation ? (
-        <Suspense fallback={<h3>Loading...</h3>}>
+        <Suspense fallback={<div className="spinner-box">
+          <div className="pulse-container">
+            <div className="pulse-bubble pulse-bubble-1"></div>
+            <div className="pulse-bubble pulse-bubble-2"></div>
+            <div className="pulse-bubble pulse-bubble-3"></div>
+          </div>
+        </div>}>
           <Canvas
             camera={{ fov: 75, near: 0.1, far: 500, position: [-2, 2, 3] }}
             className="trianglecanvas"

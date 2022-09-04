@@ -10,6 +10,7 @@ const query = graphql`
     allStrapiJob(sort: { fields: strapi_id, order: DESC }) {
       nodes {
         company
+        short_company
         date
         desc {
           name
@@ -45,7 +46,7 @@ const Experience = () => {
         ${index === value ? "active-btn" : ""}
         `}
                 >
-                  {item.company}
+                  {item.short_company}
                 </button>
               );
             })}
