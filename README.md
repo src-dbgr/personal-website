@@ -168,3 +168,12 @@ Delete a git tag locally
 Delete a git tag remotely
 
 - `git push --delete origin <tag name>`
+
+Change Node Version
+- [https://github.com/coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows)
+
+```
+npm install 18.16.0
+nvm use 18.16.0
+node -v
+```
