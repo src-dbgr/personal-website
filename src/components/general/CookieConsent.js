@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "@reach/router";
-import { initializeAndTrack } from "gatsby-plugin-gdpr-cookies";
+import { initializeAndTrack } from "@spencerwhyte/gatsby-plugin-gdpr-cookies";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import SwitchToggle from "./SwitchToggle";
 

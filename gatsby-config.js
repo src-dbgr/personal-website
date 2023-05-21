@@ -49,7 +49,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-gdpr-cookies`,
+      resolve: `@spencerwhyte/gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
           trackingId: "G-ET703HRR3G", // leave empty if you want to disable the tracker
