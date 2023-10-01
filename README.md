@@ -154,6 +154,11 @@ HTML.propTypes = {
 ### Check for Dependency updates
 - `npm i -g npm-check-updates`
 
+### add .env.production and .env.development with entries
+FS_API_URL=<formspree-url>
+STRAPI_API_URL=http://127.0.0.1:1337
+STRAPI_TOKEN=<token>
+
 ### Setting a Tag
 - `git tag -a v1.2 9fceb02 -m "Message here"`
 
