@@ -5,6 +5,8 @@ import React, { useEffect, useContext } from "react";
 import anime from "animejs";
 import Seo from "../general/Seo";
 
+const introAnimationDisabled = false;
+
 const Launch = (props) => {
   useEffect(() => {
     function isIE() {
@@ -29,6 +31,15 @@ const Launch = (props) => {
       }
     }
 
+    function skipAnimation() {
+      if (theme === 'dark') {
+        document.documentElement.classList.remove("dark-launch-style");
+      } else {
+        document.documentElement.classList.remove("light-launch-style");
+      }
+      props.finishLaunching();
+    }
+
     if (isIE()) {
       try {
         document.querySelector("#logo").style.opacity = 1;
@@ -37,6 +48,8 @@ const Launch = (props) => {
         console.log("issue occured selecting document elements");
         console.error(err);
       }
+    } else if (introAnimationDisabled) {
+      skipAnimation();
     } else {
       let launchAnimation = function () {
         try {
