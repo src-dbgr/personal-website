@@ -53,6 +53,7 @@
   --clr-light-dark: rgb(86, 95, 97);
   --clr-triangle-nav-stroke: rgb(53, 160, 103);
   --clr-green-major: rgb(61, 139, 104);
+  --clr-green-blog-circle: rgba(52, 69, 73,.5);
   --clr-green-minor: rgb(61, 139, 104);
   --clr-green-everywhere: rgb(74, 177, 130);
   --clr-magenta: rgb(118, 112, 129);
@@ -126,6 +127,7 @@
   --clr-light-dark: rgb(46, 46, 46);
   --clr-green-everywhere: rgb(120, 170, 143);
   --clr-green-major: rgb(137, 163, 149);
+  --clr-green-blog-circle: rgba(137,163,149,.6);  
   --clr-magenta: rgb(53, 161, 105);
   --clr-btn-text-on-hover: rgb(46, 46, 46);
   --clr-about-img-border: rgb(46, 46, 46);
@@ -2326,10 +2328,6 @@ Blog
   background: var(--clr-background-minor);
 }
 
-.blog-card h4{
-  min-height: 42px;
-}
-
 .blog-card p {
   background: var(--clr-background-major);
   padding: var(--border-thickness);
@@ -2345,15 +2343,27 @@ Blog
   position: relative;
   display: flex !important;
   flex-direction: column !important;
+  display: grid;
+  place-items: center;
+}
+
+.rounded-img-child {
+  margin-top: var(--border-thickness);
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  border: 4px solid var(--clr-green-blog-circle);
+  display: grid;
+  place-items: center;
+  background: var(--clr-background-major);
 }
 
 .blog-img {
-  height: 6rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  height: 5rem;
 }
 
 .blog-card h4 {
+  min-height: 42px;
   text-align: center;
   font-size: 1.3rem;
   font-weight: 500;
