@@ -9,10 +9,10 @@ const Blog = ({ id, title, desc, slug, date, category, image }) => {
       <Link to={`/blog/${slug}`} className="blog shadow-box-dark" key={id}>
         <article className="blog-img-parent">
           <div className="rounded-img-child">
-            <img className="blog-img"
-              src={image.url}
-              alt={title}
-            />
+              <img className="blog-img"
+                src={image.url}
+                alt={title}
+              />
           </div>
           <div className="blog-card">
             <h4>{title}</h4>

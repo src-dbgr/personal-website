@@ -2325,7 +2325,6 @@ Blog
   border-top: 0;
   border-bottom: 0;
   padding: 0;
-  background: var(--clr-background-minor);
 }
 
 .blog-card p {
@@ -2345,6 +2344,7 @@ Blog
   flex-direction: column !important;
   display: grid;
   place-items: center;
+  overflow: hidden;
 }
 
 .rounded-img-child {
@@ -2357,6 +2357,38 @@ Blog
   place-items: center;
   background: var(--clr-background-major);
 }
+
+@keyframes slideAndReturn {
+  33% {
+    transform: translate(-200%, 200%); /* Bewegt das Bild vollständig nach unten links */
+}
+66% {
+    transform: translate(100%, -100%); /* Bringt das Bild von oben rechts, außerhalb des Containers */
+}
+100% {
+    transform: translate(0%, 0%); /* Setzt das Bild wieder auf seine ursprüngliche Position zurück */
+}
+}
+
+@keyframes rotate360 {
+  0% {
+      transform: rotate(0deg);
+  }
+  33% {
+      transform: rotate(60deg);
+  }
+  66% {
+      transform: rotate(-60deg); 
+  }
+  100% {
+    transform: rotate(0deg); 
+  }
+}
+
+.rounded-img-child:hover {
+  animation: rotate360 0.5s forwards;
+}
+
 
 .blog-img {
   height: 5rem;
