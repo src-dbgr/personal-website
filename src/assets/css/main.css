@@ -2912,7 +2912,7 @@ caption {
   color: var(--clr-green-major);
   background-color: var(--clr-passive);
   height: 100%;
-  min-height: 41px;
+  min-height: 42px;
 }
 
 .timeline-flex-title-dark {
@@ -3059,11 +3059,28 @@ caption {
   left: 50%;
   top: 70px;
   transform: translateX(-50%);
-  width: 21px;
-  height: 21px;
+  /* width: 21px;
+  height: 21px; */
   border-radius: 50%;
   background: var(--clr-background-major);
   z-index: 1;
+}
+
+.timeline-bullet-time {
+  position: absolute;
+  z-index: 2;
+  text-align: center!important;
+  background: unset!important;
+  padding: unset !important;
+  /* padding-top: 4px!important; */
+  left: -40px!important;
+  font-weight: bold;
+  /* left: -28px!important; */
+  top: 67px;
+  /* width: 60px; */
+  width: 85px;
+  opacity: 0;
+  background: var(--clr-background-major)!important;
 }
 
 .timeline ul li .timeline-node {
@@ -3073,34 +3090,34 @@ caption {
   background: var(--clr-background-major);
 }
 
-.timeline ul li .timeline-node::before {
+/* .timeline ul li .timeline-node::before {
   content: "";
   position: absolute;
   top: 57px;
   width: 3px;
   height: 3px;
   border-style: solid;
-}
+} */
 
 .timeline ul li:nth-child(odd) div {
   left: 45px;
 }
 
-.timeline ul li:nth-child(odd) div::before {
+/* .timeline ul li:nth-child(odd) div::before {
   left: -35px;
   border-width: 3px 20px;
   border-color: var(--clr-background-major);
-}
+} */
 
 .timeline ul li:nth-child(even) div {
   left: -439px;
 }
 
-.timeline ul li:nth-child(even) div::before {
+/* .timeline ul li:nth-child(even) div::before {
   right: -35px;
   border-width: 3px 20px;
   border-color: var(--clr-background-major);
-}
+} */
 
 time {
   display: block;
@@ -3136,10 +3153,15 @@ ul li:nth-child(even) .timeline-node {
 }
 
 .in-view {
-  top: -30px;
   margin: 0px !important;
-  opacity: 1 !important;
+  top: -30px;
   transition: var(--transition);
+  opacity: 1 !important;
+}
+
+.bullet-in-view {
+  transition: var(--transition-medium);
+  opacity: 1 !important;
 }
 
 .timeline ul {
@@ -3197,6 +3219,11 @@ ul li:nth-child(even) .timeline-node {
   .timeline ul li:nth-child(even) div::before {
     left: -35px;
   }
+
+  .timeline-bullet-time {
+    padding-left: 21px!important;
+  }
+
 }
 
 @media screen and (max-width: 400px) {
