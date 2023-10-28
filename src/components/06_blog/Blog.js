@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import FadeInSection from "../../hooks/FadeInSection";
 const Blog = ({ id, title, desc, slug, date, category, image }) => {
