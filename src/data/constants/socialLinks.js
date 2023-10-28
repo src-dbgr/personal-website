@@ -15,7 +15,7 @@ const data = [
   {
     id: 2,
     icon: <FaXTwitter className="social-icon"></FaXTwitter>,
-    url: "https://www.twitter.com/smlblm",
+    url: "https://www.x.com/smlblm",
     type: "external",
   },
   {
