@@ -43,20 +43,7 @@ export const query = graphql`
       }
       category
       image {
-        localFile {
-          childImageSharp {
-            gatsbyImageData(
-              placeholder: DOMINANT_COLOR
-              formats: [WEBP, PNG]
-              blurredOptions: {width: 100}
-              transformOptions: {cropFocus: NORTH, fit: COVER}
-              quality: 80
-              width: 800
-              height: 500
-              backgroundColor: "transparent"
-            )
-          }
-        }
+        url
       }
     }
   }

@@ -4,16 +4,26 @@ import {
 import React, { useEffect, useContext } from "react";
 import anime from "animejs";
 import Seo from "../general/Seo";
+import { useLocation } from "@reach/router"
+
+let introAnimationDisabled = false;
 
 const Launch = (props) => {
+  const location = useLocation();
   useEffect(() => {
+    if (
+      location.search.includes('n') ||
+      location.search.includes('a') ||
+      location.search.includes('sk')
+    ) {
+      introAnimationDisabled = true;
+    }
     function isIE() {
       const ua = window.navigator.userAgent;
       const msie = ua.indexOf("MSIE "); // IE 10 or older
       const trident = ua.indexOf("Trident/"); //IE 11
       return msie > 0 || trident > 0;
     }
-
     function clickIE(e) {
       try {
         document
@@ -29,6 +39,15 @@ const Launch = (props) => {
       }
     }
 
+    function skipAnimation() {
+      if (theme === 'dark') {
+        document.documentElement.classList.remove("dark-launch-style");
+      } else {
+        document.documentElement.classList.remove("light-launch-style");
+      }
+      props.finishLaunching();
+    }
+
     if (isIE()) {
       try {
         document.querySelector("#logo").style.opacity = 1;
@@ -37,6 +56,8 @@ const Launch = (props) => {
         console.log("issue occured selecting document elements");
         console.error(err);
       }
+    } else if (introAnimationDisabled) {
+      skipAnimation();
     } else {
       let launchAnimation = function () {
         try {

@@ -17,6 +17,7 @@ const Navbar = (props) => {
   const downTopPath = "M0,0,124.3,250,250,0Z";
   const upTopPath = "M250,250,125.7,0,0,250Z";
   const navopen = useContext(GlobalStateContext).navopen;
+  const navcircanim = useContext(GlobalStateContext).navcircanim;
 
   useEffect(() => {
     mounted.current = true;
@@ -127,15 +128,14 @@ const Navbar = (props) => {
 
   return (
     <nav
-      className={`${
-        navopen
-          ? showNavbar
-            ? "navbar navbar_open blurred-container"
-            : "navbar_disappear blurred-container"
-          : showNavbar
+      className={`${navopen
+        ? showNavbar
+          ? "navbar navbar_open blurred-container"
+          : "navbar_disappear blurred-container"
+        : showNavbar
           ? "navbar navbar_closed blurred-container"
           : "navbar_disappear blurred-container"
-      }`}
+        }`}
     >
       <div className="nav-center">
         <div className="nav-header">
@@ -551,7 +551,8 @@ const Navbar = (props) => {
             type="button"
             className="toggle-btn"
             onClick={() => {
-              dispatch({ type: "NAV_TOGGLE_LOGO" });
+              setTimeout(() => dispatch({ type: "NAV_TOGGLE_LOGO" }));
+              setTimeout(() => dispatch({ type: "NAV_CIRC" }));
             }}
           >
             <svg
@@ -618,16 +619,18 @@ const Navbar = (props) => {
                 id="circle_nav"
                 d="M125,0A125,125,0,1,0,250,125,125,125,0,0,0,125,0Z"
                 fill="url(#circle_gradient)"
-                className={`${scaleTrigger ? "scale" : ""}`}
+                className={`${scaleTrigger ? "scale" :
+                  !scaleTrigger && navcircanim ? "circle_nav_animation" :
+                    "stop-nav-animation"
+                  }`}
               ></path>
               <path
                 id="triangle_nav"
                 d="M0,0,124.3,250,250,0Z"
-                fill={`${
-                  navopen
-                    ? "url(#circle_gradient_magenta)"
-                    : "url(#circle_gradient_green)"
-                }`}
+                fill={`${navopen
+                  ? "url(#circle_gradient_magenta)"
+                  : "url(#circle_gradient_green)"
+                  }`}
               ></path>
             </svg>
           </button>

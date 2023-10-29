@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
-import { FaGithubAlt, FaTwitter } from "react-icons/fa";
+import { FaGithubAlt } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { ImSoundcloud } from "react-icons/im";
 import { IoIosPaperPlane } from "react-icons/io";
 
@@ -13,8 +14,8 @@ const data = [
   },
   {
     id: 2,
-    icon: <FaTwitter className="social-icon"></FaTwitter>,
-    url: "https://www.twitter.com/smlblm",
+    icon: <FaXTwitter className="social-icon"></FaXTwitter>,
+    url: "https://www.x.com/smlblm",
     type: "external",
   },
   {
