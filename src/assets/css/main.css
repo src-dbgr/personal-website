@@ -1169,7 +1169,8 @@ NAVBAR
 }
 
 .circle_nav_animation{
-  animation: scaleAnimation 7.5s infinite;
+  animation: scaleAnimation 3s infinite;
+  animation-delay: 1.5s;
 }
 
 .stop-nav-animation {
@@ -1177,14 +1178,20 @@ NAVBAR
 }
 
 @keyframes scaleAnimation {
-  /* 0%, 100% { */
-  0%, 23.07%, 46.15%, 69.23%, 92.31%, 100% {
+  0%, 55%, 100% {
+  /* 0%, 23.07%, 46.15%, 69.23%, 92.31%, 100% { */
     transform: scale(0.9);
     stroke: var(--clr-triangle-nav-stroke);
     stroke-width: 0rem;
   }
-  /* 50% { */
-  34.62%, 80.77% {
+  5% {
+  /* 34.62%, 80.77% { */
+    transform: scale(0.75);
+    stroke: var(--clr-triangle-nav-stroke);
+    stroke-width: 3rem;
+  }
+  10% {
+  /* 34.62%, 80.77% { */
     transform: scale(0.5);
     stroke: var(--clr-triangle-nav-stroke);
     stroke-width: 3rem;
