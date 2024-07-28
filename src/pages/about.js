@@ -19,7 +19,7 @@ const AboutPage = ({
     allStrapiStationctgry: { nodes: categories },
   },
 }) => {
-  const [isDefault, setDefault] = useState(true);
+  const [isDefault, setDefault] = useState(false);
 
   function flipRadioButton() {
     setDefault((isDefault) => !isDefault);
@@ -83,17 +83,6 @@ const AboutPage = ({
                 <label>
                   <input
                     type="radio"
-                    value="Default"
-                    name="resume"
-                    checked={isDefault}
-                    onChange={flipRadioButton}
-                  />
-                  <span className="overlay"></span>
-                  <span className="text-radio">DEFAULT</span>
-                </label>
-                <label>
-                  <input
-                    type="radio"
                     value="White"
                     name="resume"
                     checked={!isDefault}
@@ -101,6 +90,17 @@ const AboutPage = ({
                   />
                   <span className="overlay"></span>
                   <span className="text-radio">WHITE</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="Default"
+                    name="resume"
+                    checked={isDefault}
+                    onChange={flipRadioButton}
+                  />
+                  <span className="overlay"></span>
+                  <span className="text-radio">DEFAULT</span>
                 </label>
               </div>
             </div>
