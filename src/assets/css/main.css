@@ -1742,6 +1742,7 @@ About Component
   background: transparent;
   transition: var(--transition);
   padding: 0;
+  margin: 0;
 }
 
 .about-img {
@@ -1868,6 +1869,10 @@ ul.skill-set li::before {
     border: var(--border-thickness);
     border-style: solid;
     border-color: var(--clr-about-img-border);
+  }
+
+  .about-img-container {
+    margin-bottom: 2rem;
   }
 }
 
@@ -1996,7 +2001,7 @@ Jobs
   color: var(--clr-passive);
   font-size: 1rem;
   letter-spacing: var(--spacing);
-  margin: 0 0.5rem;
+  margin: 0 0.1rem;
   transition: var(--transition-fast);
   cursor: pointer;
   padding: 0.25rem 0;
@@ -2012,7 +2017,7 @@ Jobs
 
 .job-btn:hover {
   background: var(--clr-background-minor-opaque);
-  color: var(--clr-passive);
+  /* color: var(--clr-passive); */
   box-shadow: 0 3px var(--clr-green-minor);
 }
 
