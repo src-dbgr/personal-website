@@ -19,7 +19,13 @@ const AboutPage = ({
     allStrapiStationctgry: { nodes: categories },
   },
 }) => {
-  const [isDefault, setDefault] = useState(true);
+  const [isDefault, setDefault] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const toggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+
 
   function flipRadioButton() {
     setDefault((isDefault) => !isDefault);
@@ -46,7 +52,12 @@ const AboutPage = ({
               </div>
               <h4>Who am I?</h4>
               <div className="underline"></div>
-              <p>{info}</p>
+              <div className={`about-text ${isExpanded ? 'expanded' : 'colappsed'}`}>
+                <p>{info}</p>
+              </div>
+              <button className="about-btn-toggle" onClick={toggleExpand}>
+                {isExpanded ? 'SHOW LESS' : 'SHOW MORE'}
+              </button>
               <div className="about-stack">
                 {stack.map((item) => {
                   return <span key={item.id}>{item.title}</span>;
@@ -83,17 +94,6 @@ const AboutPage = ({
                 <label>
                   <input
                     type="radio"
-                    value="Default"
-                    name="resume"
-                    checked={isDefault}
-                    onChange={flipRadioButton}
-                  />
-                  <span className="overlay"></span>
-                  <span className="text-radio">DEFAULT</span>
-                </label>
-                <label>
-                  <input
-                    type="radio"
                     value="White"
                     name="resume"
                     checked={!isDefault}
@@ -101,6 +101,17 @@ const AboutPage = ({
                   />
                   <span className="overlay"></span>
                   <span className="text-radio">WHITE</span>
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    value="Default"
+                    name="resume"
+                    checked={isDefault}
+                    onChange={flipRadioButton}
+                  />
+                  <span className="overlay"></span>
+                  <span className="text-radio">DEFAULT</span>
                 </label>
               </div>
             </div>
