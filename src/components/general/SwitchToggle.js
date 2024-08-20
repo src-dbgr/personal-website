@@ -21,8 +21,9 @@ const SwitchToggle = ({
     <div className="switch-content-wrapper">
       {selectable ? (
         <>
-          <label className="switch">
+          <label className="switch"  aria-label="analytics-toggle">
             <input
+              id="analytics-toggle"
               className="analytics-checkbox"
               type="checkbox"
               onClick={toggleHandler}
@@ -59,8 +60,8 @@ const SwitchToggle = ({
         </>
       ) : (
         <>
-          <label className="switch-enabled" value="on">
-            <input type="checkbox" />
+          <label className="switch-enabled" htmlFor="required-toggle" aria-label="switch-toggle">
+            <input type="checkbox" id="required-toggle" />
             <span className="slider-enabled">
               <span className="enabled-text-required">required</span>
             </span>

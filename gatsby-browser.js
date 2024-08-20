@@ -1,3 +1,4 @@
+import 'aos/dist/aos.css';
 import "./src/assets/css/main.css";
 import { AnimatePresence } from "framer-motion";
 import React from "react";

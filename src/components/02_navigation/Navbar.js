@@ -550,6 +550,7 @@ const Navbar = (props) => {
           <button
             type="button"
             className="toggle-btn"
+            aria-label="Toggle Navigation"
             onClick={() => {
               setTimeout(() => dispatch({ type: "NAV_TOGGLE_LOGO" }));
               setTimeout(() => dispatch({ type: "NAV_CIRC" }));

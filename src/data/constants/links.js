@@ -100,6 +100,7 @@ const Links = function (props) {
 
       <div
         id="themeiconwrapper"
+        aria-label="Toggle Theme"
         onClick={() => {
           dispatch({ type: "TOGGLE_THEME" });
         }}
