@@ -668,8 +668,8 @@ html {
   scrollbar-shadow-color: var(--clr-magenta);
   scrollbar-highlight-color: var(--clr-magenta); */
   background: rgb(46, 46, 46);
-  background-color: rgb(46, 46, 46);
-  scrollbar-color: var(--clr-dark) var(--clr-background-minor);
+  /* background-color: rgb(46, 46, 46); */
+  /* scrollbar-color: var(--clr-dark) var(--clr-background-minor); */
   scrollbar-width: thin;
   overflow-y: scroll;
   overflow-x: hidden !important;
@@ -701,7 +701,7 @@ html {
 }
 
 body {
-  background: rgb(46, 46, 46); /*fallback color for initial render*/  
+  /* background: rgb(46, 46, 46); */
   font-family: var(--ff-secondary);
   /* margin-top: 0; */
   color: var(--clr-dark);
@@ -773,6 +773,7 @@ h4 {
   text-transform: capitalize;
   line-height: 1.25;
   margin-bottom: 0.75rem;
+  font-weight: normal;
   font-family: var(--ff-primary);
 }
 
@@ -851,6 +852,11 @@ p {
   h4 {
     line-height: 1;
   }
+
+  .cookie-info-parent h1, h2, h3, h4 {
+    font-weight: normal;
+  }
+
 }
 
 /*  global classes */
@@ -862,7 +868,7 @@ p {
   /* padding: 0.375rem 0.75rem; */
   letter-spacing: var(--spacing);
   display: inline-block;
-  font-weight: 700;
+  font-weight: normal !important;
   -webkit-transition: var(--transition-fast);
   transition: var(--transition-fast);
   /* font-size: 0.7rem; */
@@ -934,7 +940,9 @@ p {
   text-align: center;
 }
 
-/* page links */
+.section-title h2 {
+  font-weight: normal;
+}
 
 /*
 ==========
@@ -978,7 +986,9 @@ Launch
 }
 
 #logo_2 {
+  top: -50px;
   opacity: 0.8;
+  max-height: unset!important;
 }
 
 #logo {
@@ -1501,6 +1511,7 @@ Hero
 }
 
 .hero-info {
+  margin-top: -50px;
   background: transparent;
 }
 
@@ -1542,6 +1553,10 @@ Hero
 .hero p span {
   font-family: var(--ff-secondary);
   color: var(--clr-green-major);
+}
+
+.hero-description-wrapper h1, h2 {
+  font-weight: bold;
 }
 
 .hero-description {
@@ -2914,6 +2929,11 @@ Timeline
 ===============
 */
 
+th {
+  font-weight: normal;
+  font-size: 1.1rem;
+}
+
 .tablebody {
   max-height: 50px;
 }
@@ -3030,6 +3050,7 @@ caption {
 .tech-caption h4 {
   color: var(--clr-background-major) !important;
   background: var(--clr-passive) !important;
+  font-size: 1.3rem;
 }
 
 .timeline-legend-table,
@@ -3053,6 +3074,7 @@ caption {
   font-family: var(--ff-ternary);
   width: 100%;
   text-align: center;
+  font-weight: normal;
 }
 
 .timeline-flex-collapsible-icon {
@@ -3099,6 +3121,7 @@ caption {
   background: var(--clr-background-major);
   width: 100%;
   transition: var(--transition);
+  font-weight: normal;
 }
 
 .timeline div {
@@ -3270,7 +3293,6 @@ time {
   display: block;
   text-align: center;
   font-size: 1.2rem;
-  font-weight: bold;
   padding: calc(var(--border-thickness) / 2) 0;
   /* margin-bottom: 8px; */
 }
@@ -3280,6 +3302,7 @@ time {
   padding: var(--border-thickness);
   text-align: justify;
   margin-bottom: 0;
+  font-weight: normal;
 }
 
 /* EFFECTS
@@ -3548,6 +3571,7 @@ textarea:focus {
   width: 100%;
   padding: 1rem;
   border-radius: unset!important;
+  font-size: 0.9rem;
 }
 
 #send-status {
