@@ -1,3 +1,11 @@
+## ⚠️ End of Life (EOL) Announcement ⚠️
+
+This project is no longer maintained and has reached its End of Life (EOL).
+
+It has been migrated to [Next.js](https://github.com/src-dbgr/personal-website-nextjs). 
+The new site is live [devsam.io](https://devsam.io). 
+The new repository will soon be available for public access, there you will find the latest updates and ongoing development.
+
 # Personal web app
 
 This project hosts the code base for my personal web application developed in Gatsby.js
